@@ -1,0 +1,14 @@
+.\objects\dma.o: ..\driver\src\dma.c
+.\objects\dma.o: ..\common\inc\tcasxxx.h
+.\objects\dma.o: ..\common\inc\base_types.h
+.\objects\dma.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\dma.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\dma.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\dma.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\dma.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
+.\objects\dma.o: C:\Users\longten\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm0.h
+.\objects\dma.o: C:\Users\longten\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_version.h
+.\objects\dma.o: C:\Users\longten\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_compiler.h
+.\objects\dma.o: C:\Users\longten\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_armcc.h
+.\objects\dma.o: ..\driver\inc\dma.h
+.\objects\dma.o: ..\driver\inc\interrupt.h

@@ -1,0 +1,14 @@
+.\objects\delay.o: ..\driver\src\delay.c
+.\objects\delay.o: ..\driver\inc\delay.h
+.\objects\delay.o: ..\common\inc\tcasxxx.h
+.\objects\delay.o: ..\common\inc\base_types.h
+.\objects\delay.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\delay.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\delay.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\delay.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\delay.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
+.\objects\delay.o: C:\Users\longten\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm0.h
+.\objects\delay.o: C:\Users\longten\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_version.h
+.\objects\delay.o: C:\Users\longten\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_compiler.h
+.\objects\delay.o: C:\Users\longten\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_armcc.h
+.\objects\delay.o: ..\common\inc\system_tcasxxx.h

@@ -1,0 +1,17 @@
+.\objects\system_tcasxxx.o: ..\common\src\system_tcasxxx.c
+.\objects\system_tcasxxx.o: ..\common\inc\tcasxxx.h
+.\objects\system_tcasxxx.o: ..\common\inc\base_types.h
+.\objects\system_tcasxxx.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\system_tcasxxx.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\system_tcasxxx.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\system_tcasxxx.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\system_tcasxxx.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
+.\objects\system_tcasxxx.o: C:\Users\longten\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm0.h
+.\objects\system_tcasxxx.o: C:\Users\longten\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_version.h
+.\objects\system_tcasxxx.o: C:\Users\longten\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_compiler.h
+.\objects\system_tcasxxx.o: C:\Users\longten\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_armcc.h
+.\objects\system_tcasxxx.o: ..\common\inc\system_tcasxxx.h
+.\objects\system_tcasxxx.o: ..\driver\inc\uart.h
+.\objects\system_tcasxxx.o: ..\driver\inc\dma.h
+.\objects\system_tcasxxx.o: ..\driver\inc\trim.h
+.\objects\system_tcasxxx.o: ..\driver\inc\flash.h

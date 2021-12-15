@@ -1,0 +1,15 @@
+.\objects\lpm.o: ..\driver\src\lpm.c
+.\objects\lpm.o: ..\common\inc\tcasxxx.h
+.\objects\lpm.o: ..\common\inc\base_types.h
+.\objects\lpm.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\lpm.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\lpm.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\lpm.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\lpm.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
+.\objects\lpm.o: C:\Users\longten\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm0.h
+.\objects\lpm.o: C:\Users\longten\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_version.h
+.\objects\lpm.o: C:\Users\longten\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_compiler.h
+.\objects\lpm.o: C:\Users\longten\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_armcc.h
+.\objects\lpm.o: ..\driver\inc\lpm.h
+.\objects\lpm.o: ..\driver\inc\gpio.h
+.\objects\lpm.o: ..\driver\inc\interrupt.h

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspace>
+    <project>
+        <path>$WS_DIR$\FlashTCASxxx.ewp</path>
+    </project>
+    <batchBuild>
+        <batchDefinition>
+            <name>All</name>
+            <member>
+                <project>FlashTC60xx</project>
+                <configuration>FlashTC60xxxxRAM16K</configuration>
+            </member>
+            <member>
+                <project>FlashTC60xx</project>
+                <configuration>FlashTC60xxxxRAM6K</configuration>
+            </member>
+            <member>
+                <project>FlashTC60xx</project>
+                <configuration>FlashTC60xxxxRAM8K</configuration>
+            </member>
+            <member>
+                <project>FlashTC60xx</project>
+                <configuration>FlashTC60xxxxRAM4K</configuration>
+            </member>
+            <member>
+                <project>FlashTC60xx</project>
+                <configuration>FlashTC60xxxxRAM32K</configuration>
+            </member>
+        </batchDefinition>
+    </batchBuild>
+</workspace>

@@ -1,0 +1,16 @@
+.\objects\vdac.o: ..\driver\src\vdac.c
+.\objects\vdac.o: ..\driver\inc\vdac.h
+.\objects\vdac.o: ..\common\inc\tcasxxx.h
+.\objects\vdac.o: ..\common\inc\base_types.h
+.\objects\vdac.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\vdac.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\vdac.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\vdac.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\vdac.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
+.\objects\vdac.o: C:\Users\longten\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm0.h
+.\objects\vdac.o: C:\Users\longten\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_version.h
+.\objects\vdac.o: C:\Users\longten\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_compiler.h
+.\objects\vdac.o: C:\Users\longten\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_armcc.h
+.\objects\vdac.o: ..\driver\inc\trim.h
+.\objects\vdac.o: ..\driver\inc\gpio.h
+.\objects\vdac.o: ..\driver\inc\interrupt.h

@@ -1,0 +1,16 @@
+.\objects\lightdriver.o: ..\Users\FuncDrivers\LightDriver.c
+.\objects\lightdriver.o: ..\Users\FuncDrivers\LightDriver.h
+.\objects\lightdriver.o: ..\Users\DataType.h
+.\objects\lightdriver.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\lightdriver.o: ..\Users\FuncDrivers\Preprocess.h
+.\objects\lightdriver.o: ..\Users\Algorithm\Spo2Interface.h
+.\objects\lightdriver.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\lightdriver.o: ..\common\inc\tcasxxx.h
+.\objects\lightdriver.o: ..\common\inc\base_types.h
+.\objects\lightdriver.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\lightdriver.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\lightdriver.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
+.\objects\lightdriver.o: C:\Users\longten\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm0.h
+.\objects\lightdriver.o: C:\Users\longten\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_version.h
+.\objects\lightdriver.o: C:\Users\longten\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_compiler.h
+.\objects\lightdriver.o: C:\Users\longten\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_armcc.h

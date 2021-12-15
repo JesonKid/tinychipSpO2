@@ -1,0 +1,14 @@
+.\objects\wdg.o: ..\driver\src\wdg.c
+.\objects\wdg.o: ..\driver\inc\wdg.h
+.\objects\wdg.o: ..\common\inc\tcasxxx.h
+.\objects\wdg.o: ..\common\inc\base_types.h
+.\objects\wdg.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\wdg.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\wdg.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\wdg.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\wdg.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
+.\objects\wdg.o: C:\Users\longten\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm0.h
+.\objects\wdg.o: C:\Users\longten\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_version.h
+.\objects\wdg.o: C:\Users\longten\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_compiler.h
+.\objects\wdg.o: C:\Users\longten\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_armcc.h
+.\objects\wdg.o: ..\driver\inc\interrupt.h

@@ -1,0 +1,13 @@
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.2\arm\bin\armproc.dll" 
+
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.2\arm\bin\armjlink2.dll" 
+
+"D:\oximeter\Release\Oximeter_V1.0.1\Tool\IAR\flashloader\src\TCASxxx\FlashTC60xx\Exe\FlashTCASxxx.out" 
+
+--plugin="C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.2\arm\bin\armbat.dll" 
+
+--macro="..\..\TINYCHIP\TCASxxx.mac" 
+
+
+
+

@@ -1,0 +1,15 @@
+.\objects\aes.o: ..\driver\src\aes.c
+.\objects\aes.o: ..\driver\inc\aes.h
+.\objects\aes.o: ..\common\inc\tcasxxx.h
+.\objects\aes.o: ..\common\inc\base_types.h
+.\objects\aes.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\aes.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\aes.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\aes.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\aes.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
+.\objects\aes.o: C:\Users\longten\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm0.h
+.\objects\aes.o: C:\Users\longten\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_version.h
+.\objects\aes.o: C:\Users\longten\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_compiler.h
+.\objects\aes.o: C:\Users\longten\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_armcc.h
+.\objects\aes.o: ..\driver\inc\dma.h
+.\objects\aes.o: ..\driver\inc\interrupt.h

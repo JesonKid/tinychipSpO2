@@ -1,0 +1,27 @@
+[FILEFORMAT]
+rev=1.6
+
+[CHIP]
+name=TCASxxx
+endiansupport=le
+thumbsupport=true
+armsupport=false
+fpu=None
+SIMD=false
+
+JTAG=false
+SWD=true
+SWO_TraceD0=false
+
+[CORE]
+name=Cortex-M0
+
+[DDF FILE]
+name=TINYCHIP\TCASxxx.ddf
+
+[LINKER FILE]
+name=$TOOLKIT_DIR$\config\linker\TINYCHIP\TCASxxx.icf
+
+[FLASH LOADER]
+little=$TOOLKIT_DIR$\config\flashloader\TINYCHIP\TCASxxx.board
+

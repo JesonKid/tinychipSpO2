@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<optionMenuItem>
+  <tag>TC6011</tag>
+  <display>TINYCHIP TCASxxx</display>
+  <data>$CUR_DIR$\TCASxxx.i79</data>
+</optionMenuItem>
+

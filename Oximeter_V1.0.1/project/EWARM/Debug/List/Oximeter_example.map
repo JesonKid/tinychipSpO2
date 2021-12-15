@@ -1,0 +1,744 @@
+###############################################################################
+#
+# IAR ELF Linker V8.32.3.193/W32 for ARM                  19/Nov/2021  17:01:56
+# Copyright 2007-2019 IAR Systems AB.
+#
+#    Output file  =  
+#        D:\oximeter\Release\Oximeter_V1.0.1\project\EWARM\Debug\Exe\Oximeter_example.out
+#    Map file     =  
+#        D:\oximeter\Release\Oximeter_V1.0.1\project\EWARM\Debug\List\Oximeter_example.map
+#    Command line =  
+#        -f C:\Users\longten\AppData\Local\Temp\EWFFB4.tmp
+#        (D:\oximeter\Release\Oximeter_V1.0.1\project\EWARM\Debug\Obj\aes.o
+#        D:\oximeter\Release\Oximeter_V1.0.1\project\EWARM\Debug\Obj\ana_misc.o
+#        D:\oximeter\Release\Oximeter_V1.0.1\project\EWARM\Debug\Obj\BluetoothDriver.o
+#        D:\oximeter\Release\Oximeter_V1.0.1\project\EWARM\Debug\Obj\BuzzDriver.o
+#        D:\oximeter\Release\Oximeter_V1.0.1\project\EWARM\Debug\Obj\cmp.o
+#        D:\oximeter\Release\Oximeter_V1.0.1\project\EWARM\Debug\Obj\DefaultSetup.o
+#        D:\oximeter\Release\Oximeter_V1.0.1\project\EWARM\Debug\Obj\delay.o
+#        D:\oximeter\Release\Oximeter_V1.0.1\project\EWARM\Debug\Obj\DisplayDriver.o
+#        D:\oximeter\Release\Oximeter_V1.0.1\project\EWARM\Debug\Obj\divider.o
+#        D:\oximeter\Release\Oximeter_V1.0.1\project\EWARM\Debug\Obj\dma.o
+#        D:\oximeter\Release\Oximeter_V1.0.1\project\EWARM\Debug\Obj\flash.o
+#        D:\oximeter\Release\Oximeter_V1.0.1\project\EWARM\Debug\Obj\fontlibs.o
+#        D:\oximeter\Release\Oximeter_V1.0.1\project\EWARM\Debug\Obj\gpio.o
+#        D:\oximeter\Release\Oximeter_V1.0.1\project\EWARM\Debug\Obj\i2c.o
+#        D:\oximeter\Release\Oximeter_V1.0.1\project\EWARM\Debug\Obj\idac.o
+#        D:\oximeter\Release\Oximeter_V1.0.1\project\EWARM\Debug\Obj\interrupt.o
+#        D:\oximeter\Release\Oximeter_V1.0.1\project\EWARM\Debug\Obj\LightDriver.o
+#        D:\oximeter\Release\Oximeter_V1.0.1\project\EWARM\Debug\Obj\lpm.o
+#        D:\oximeter\Release\Oximeter_V1.0.1\project\EWARM\Debug\Obj\lvd.o
+#        D:\oximeter\Release\Oximeter_V1.0.1\project\EWARM\Debug\Obj\main.o
+#        D:\oximeter\Release\Oximeter_V1.0.1\project\EWARM\Debug\Obj\op.o
+#        D:\oximeter\Release\Oximeter_V1.0.1\project\EWARM\Debug\Obj\Preprocess.o
+#        D:\oximeter\Release\Oximeter_V1.0.1\project\EWARM\Debug\Obj\rtc.o
+#        D:\oximeter\Release\Oximeter_V1.0.1\project\EWARM\Debug\Obj\saradc.o
+#        D:\oximeter\Release\Oximeter_V1.0.1\project\EWARM\Debug\Obj\SEGGER_RTT.o
+#        D:\oximeter\Release\Oximeter_V1.0.1\project\EWARM\Debug\Obj\SEGGER_RTT_printf.o
+#        D:\oximeter\Release\Oximeter_V1.0.1\project\EWARM\Debug\Obj\SEGGER_RTT_Syscalls_IAR.o
+#        D:\oximeter\Release\Oximeter_V1.0.1\project\EWARM\Debug\Obj\spi.o
+#        D:\oximeter\Release\Oximeter_V1.0.1\project\EWARM\Debug\Obj\Spo2Interface.o
+#        D:\oximeter\Release\Oximeter_V1.0.1\project\EWARM\Debug\Obj\startup_tcasxxx_iar.o
+#        D:\oximeter\Release\Oximeter_V1.0.1\project\EWARM\Debug\Obj\system_tcasxxx.o
+#        D:\oximeter\Release\Oximeter_V1.0.1\project\EWARM\Debug\Obj\SystemDriver.o
+#        D:\oximeter\Release\Oximeter_V1.0.1\project\EWARM\Debug\Obj\tia.o
+#        D:\oximeter\Release\Oximeter_V1.0.1\project\EWARM\Debug\Obj\timer.o
+#        D:\oximeter\Release\Oximeter_V1.0.1\project\EWARM\Debug\Obj\trace.o
+#        D:\oximeter\Release\Oximeter_V1.0.1\project\EWARM\Debug\Obj\trim.o
+#        D:\oximeter\Release\Oximeter_V1.0.1\project\EWARM\Debug\Obj\uart.o
+#        D:\oximeter\Release\Oximeter_V1.0.1\project\EWARM\Debug\Obj\UG2864Driver.o
+#        D:\oximeter\Release\Oximeter_V1.0.1\project\EWARM\Debug\Obj\vdac.o
+#        D:\oximeter\Release\Oximeter_V1.0.1\project\EWARM\Debug\Obj\wdg.o
+#        --no_out_extension -o
+#        D:\oximeter\Release\Oximeter_V1.0.1\project\EWARM\Debug\Exe\Oximeter_example.out
+#        --map
+#        D:\oximeter\Release\Oximeter_V1.0.1\project\EWARM\Debug\List\Oximeter_example.map
+#        --config
+#        D:\oximeter\Release\Oximeter_V1.0.1\project\EWARM\Oximeter_example.icf
+#        --semihosting --entry __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__Heap_Handler  = Basic
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because no calls to memory allocation
+functions were found in the application outside of system library
+functions, and there are calls to deallocation functions in the
+application.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at 0x1000'0000 { ro section .intvec };
+"P1":  place in [from 0x1000'0000 to 0x1000'ffff] { ro };
+"A1":  place at start of [from 0x4000 to 0x4020] {
+          rw section .jump_table_mem_area };
+define block CSTACK with size = 512, alignment = 8 { };
+define block PROC_STACK with size = 0M, alignment = 8 { };
+define block HEAP with size = 512, alignment = 8 { };
+"P2":  place in [from 0x4020 to 0x5fff] {
+          rw, block CSTACK, block PROC_STACK, block HEAP };
+"P3":  place in [from 0x4020 to 0x5fff] { section .textrw };
+initialize manually with packing = copy, complex ranges { rw, section .textrw };
+
+  Section                 Kind         Address    Size  Object
+  -------                 ----         -------    ----  ------
+"A1":                                             0x20
+  rw section .jump_table_mem_area-1
+                                        0x4000    0x20  <Init block>
+    .jump_table_mem_area  inited        0x4000    0x20  interrupt.o [1]
+                                      - 0x4020    0x20
+
+"P2-P3", part 1 of 3:                             0xa4
+  .textrw                               0x4020    0x84  <Block>
+    .textrw-1                           0x4020    0x84  <Init block>
+      .textrw             inited        0x4020    0x84  flash.o [1]
+  .data                                 0x40a4    0x20  <Block>
+    .data-1                             0x40a4    0x20  <Init block>
+      .data               inited        0x40a4     0x4  DefaultSetup.o [1]
+      .data               inited        0x40a8     0xc  Spo2Interface.o [1]
+      .data               inited        0x40b4     0x4  system_tcasxxx.o [1]
+      .data               inited        0x40b8     0x2  DisplayDriver.o [1]
+      .data               inited        0x40ba     0x2  interrupt.o [1]
+      .data               inited        0x40bc     0x2  LightDriver.o [1]
+      .data               inited        0x40be     0x2  LightDriver.o [1]
+      .data               inited        0x40c0     0x2  Spo2Interface.o [1]
+      .data               inited        0x40c2     0x1  interrupt.o [1]
+      .data               inited        0x40c3     0x1  Preprocess.o [1]
+                                      - 0x40c4    0xa4
+
+"P2-P3", part 2 of 3:                            0x5bc
+  .bss                                  0x40c4   0x5bc  <Block>
+    .bss                  zero          0x40c4     0x8  BuzzDriver.o [1]
+    .bss                  zero          0x40cc    0x18  DefaultSetup.o [1]
+    .bss                  zero          0x40e4    0x78  DisplayDriver.o [1]
+    .bss                  zero          0x415c    0x14  DisplayDriver.o [1]
+    .bss                  zero          0x4170     0x8  DisplayDriver.o [1]
+    .bss                  zero          0x4178     0xc  DisplayDriver.o [1]
+    .bss                  zero          0x4184    0x10  DisplayDriver.o [1]
+    .bss                  zero          0x4194    0x14  DisplayDriver.o [1]
+    .bss                  zero          0x41a8     0x4  interrupt.o [1]
+    .bss                  zero          0x41ac     0x4  interrupt.o [1]
+    .bss                  zero          0x41b0     0x4  interrupt.o [1]
+    .bss                  zero          0x41b4     0x4  interrupt.o [1]
+    .bss                  zero          0x41b8     0x4  interrupt.o [1]
+    .bss                  zero          0x41bc     0x4  interrupt.o [1]
+    .bss                  zero          0x41c0    0x10  LightDriver.o [1]
+    .bss                  zero          0x41d0    0x10  LightDriver.o [1]
+    .bss                  zero          0x41e0    0x10  LightDriver.o [1]
+    .bss                  zero          0x41f0    0x10  LightDriver.o [1]
+    .bss                  zero          0x4200    0x2c  LightDriver.o [1]
+    .bss                  zero          0x422c    0x20  Preprocess.o [1]
+    .bss                  zero          0x424c    0x18  Preprocess.o [1]
+    .bss                  zero          0x4264   0x180  Preprocess.o [1]
+    .bss                  zero          0x43e4   0x254  Preprocess.o [1]
+    .bss                  zero          0x4638    0x20  Preprocess.o [1]
+    .bss                  zero          0x4658     0x4  Spo2Interface.o [1]
+    .bss                  zero          0x465c     0x2  DefaultSetup.o [1]
+    .bss                  zero          0x465e     0x2  interrupt.o [1]
+    .bss                  zero          0x4660     0x2  interrupt.o [1]
+    .bss                  zero          0x4662     0x2  Preprocess.o [1]
+    .bss                  zero          0x4664     0x2  Spo2Interface.o [1]
+    .bss                  zero          0x4666     0x2  Spo2Interface.o [1]
+    .bss                  zero          0x4668     0x2  Spo2Interface.o [1]
+    .bss                  zero          0x466a     0x2  Spo2Interface.o [1]
+    .bss                  zero          0x466c     0x1  DisplayDriver.o [1]
+    .bss                  zero          0x466d     0x1  DisplayDriver.o [1]
+    .bss                  zero          0x466e     0x1  DisplayDriver.o [1]
+    .bss                  zero          0x466f     0x1  DisplayDriver.o [1]
+    .bss                  zero          0x4670     0x1  DisplayDriver.o [1]
+    .bss                  zero          0x4671     0x1  DisplayDriver.o [1]
+    .bss                  zero          0x4672     0x1  DisplayDriver.o [1]
+    .bss                  zero          0x4673     0x1  DisplayDriver.o [1]
+    .bss                  zero          0x4674     0x1  DisplayDriver.o [1]
+    .bss                  zero          0x4675     0x1  interrupt.o [1]
+    .bss                  zero          0x4676     0x1  interrupt.o [1]
+    .bss                  zero          0x4677     0x1  LightDriver.o [1]
+    .bss                  zero          0x4678     0x1  LightDriver.o [1]
+    .bss                  zero          0x4679     0x1  Preprocess.o [1]
+    .bss                  zero          0x467a     0x1  Spo2Interface.o [1]
+    .bss                  zero          0x467b     0x1  Spo2Interface.o [1]
+    .bss                  zero          0x467c     0x1  Spo2Interface.o [1]
+    .bss                  zero          0x467d     0x1  Spo2Interface.o [1]
+                                      - 0x4680   0x5bc
+
+"P2-P3", part 3 of 3:                            0x200
+  CSTACK                                0x4680   0x200  <Block>
+    CSTACK                uninit        0x4680   0x200  <Block tail>
+                                      - 0x4880   0x200
+
+"A0":                                             0x4c
+  .intvec                 ro code  0x1000'0000    0x4c  startup_tcasxxx_iar.o [1]
+                                 - 0x1000'004c    0x4c
+
+"P1":                                           0x735c
+  .text                   ro code  0x1000'004c  0x2324  DisplayDriver.o [1]
+  .text                   ro code  0x1000'2370   0x3e6  UG2864Driver.o [1]
+  .text                   ro code  0x1000'2756    0xe0  I32DivModFast.o [4]
+  .text                   ro code  0x1000'2838    0x52  ABImemset.o [4]
+  .text                   ro code  0x1000'288c    0x4e  ABImemcpy.o [4]
+  Veneer                  ro code  0x1000'28dc    0x10  - Linker created -
+  Veneer                  ro code  0x1000'28ec    0x10  - Linker created -
+  .text                   ro code  0x1000'28fc   0x148  DefaultSetup.o [1]
+  .text                   ro code  0x1000'2a44   0x328  gpio.o [1]
+  .text                   ro code  0x1000'2d6c   0x134  spi.o [1]
+  .text                   ro code  0x1000'2ea0     0x2  IntDivZer.o [4]
+  Veneer                  ro code  0x1000'2ea4    0x10  - Linker created -
+  .text                   ro code  0x1000'2eb4    0x20  flash.o [1]
+  .text                   ro code  0x1000'2ed4   0x7a0  LightDriver.o [1]
+  .text                   ro code  0x1000'3674   0x700  SystemDriver.o [1]
+  .text                   ro code  0x1000'3d74   0x140  tia.o [1]
+  .text                   ro code  0x1000'3eb4   0x3b0  op.o [1]
+  .text                   ro code  0x1000'4264   0x1b4  dma.o [1]
+  .text                   ro code  0x1000'4418    0x20  saradc.o [1]
+  .text                   ro code  0x1000'4438    0x8e  timer.o [1]
+  .text                   ro code  0x1000'44c8   0x3ac  cmp.o [1]
+  .text                   ro code  0x1000'4874    0xf4  wdg.o [1]
+  .text                   ro code  0x1000'4968    0x22  delay.o [1]
+  .text                   ro code  0x1000'498c   0x4b4  interrupt.o [1]
+  .text                   ro code  0x1000'4e40   0x490  Preprocess.o [1]
+  .text                   ro code  0x1000'52d0    0x90  BuzzDriver.o [1]
+  .text                   ro code  0x1000'5360    0x20  ABImemmove.o [4]
+  .text                   ro code  0x1000'5380    0x36  IxxToFlt.o [3]
+  .text                   ro code  0x1000'53b6    0xb0  FltMul.o [3]
+  .text                   ro code  0x1000'5466   0x120  FltAddSub.o [3]
+  .text                   ro code  0x1000'5588    0x3a  FltToS32.o [3]
+  .text                   ro code  0x1000'55c4    0x34  IxxToDbl.o [3]
+  .text                   ro code  0x1000'55f8    0xc2  DblDiv.o [3]
+  .text                   ro code  0x1000'56ba   0x184  DblMul.o [3]
+  .text                   ro code  0x1000'5840    0x52  DblToI32.o [3]
+  .rodata                 const    0x1000'5894   0x2f0  fontlibs.o [1]
+  .text                   ro code  0x1000'5b84   0x27c  system_tcasxxx.o [1]
+  .rodata                 const    0x1000'5e00   0x234  fontlibs.o [1]
+  .text                   ro code  0x1000'6034   0x1e8  Spo2Interface.o [1]
+  .text                   ro code  0x1000'621c    0xaa  FltDiv.o [3]
+  .rodata                 const    0x1000'62c8   0x1e4  fontlibs.o [1]
+  .rodata                 const    0x1000'64ac   0x1b4  fontlibs.o [1]
+  .rodata                 const    0x1000'6660   0x1b0  fontlibs.o [1]
+  .rodata                 const    0x1000'6810   0x18c  fontlibs.o [1]
+  .rodata                 const    0x1000'699c   0x170  fontlibs.o [1]
+  .rodata                 const    0x1000'6b0c   0x100  UG2864Driver.o [1]
+  .rodata                 const    0x1000'6c0c    0xd0  fontlibs.o [1]
+  .rodata                 const    0x1000'6cdc    0xa8  fontlibs.o [1]
+  .rodata                 const    0x1000'6d84    0x9c  fontlibs.o [1]
+  .textrw_init                     0x1000'6e20    0x84  <Block>
+    Initializer bytes     const    0x1000'6e20    0x84  <for .textrw-1>
+  .rodata                 const    0x1000'6ea4    0x60  Preprocess.o [1]
+  .rodata                 const    0x1000'6f04    0x50  fontlibs.o [1]
+  .rodata                 const    0x1000'6f54    0x48  fontlibs.o [1]
+  .rodata                 const    0x1000'6f9c    0x40  fontlibs.o [1]
+  .rodata                 const    0x1000'6fdc    0x40  fontlibs.o [1]
+  .rodata                 const    0x1000'701c    0x3c  fontlibs.o [1]
+  .text                   ro code  0x1000'7058    0x3c  zero_init3.o [4]
+  .text                   ro code  0x1000'7094    0x38  main.o [1]
+  .rodata                 const    0x1000'70cc    0x30  fontlibs.o [1]
+  .rodata                 const    0x1000'70fc    0x30  fontlibs.o [1]
+  .rodata                 const    0x1000'712c    0x30  fontlibs.o [1]
+  .rodata                 const    0x1000'715c    0x2c  fontlibs.o [1]
+  .text                   ro code  0x1000'7188    0x28  data_init.o [4]
+  .iar.init_table         const    0x1000'71b0    0x10  - Linker created -
+  .rodata                 const    0x1000'71c0    0x20  DisplayDriver.o [1]
+  .rodata                 const    0x1000'71e0    0x20  fontlibs.o [1]
+  .rodata                 const    0x1000'7200    0x20  fontlibs.o [1]
+  Initializer bytes       const    0x1000'7220    0x20  <for rw section .jump_table_mem_area-1>
+  .data_init                       0x1000'7240    0x20  <Block>
+    Initializer bytes     const    0x1000'7240    0x20  <for .data-1>
+  .text                   ro code  0x1000'7260    0x1e  cmain.o [4]
+  .text                   ro code  0x1000'727e     0x4  low_level_init.o [2]
+  .text                   ro code  0x1000'7282     0x8  exit.o [2]
+  .text                   ro code  0x1000'728c     0xa  cexit.o [4]
+  .text                   ro code  0x1000'7298    0x14  exit.o [5]
+  .rodata                 const    0x1000'72ac    0x1c  SystemDriver.o [1]
+  .rodata                 const    0x1000'72c8    0x18  fontlibs.o [1]
+  .rodata                 const    0x1000'72e0    0x18  fontlibs.o [1]
+  .rodata                 const    0x1000'72f8    0x14  fontlibs.o [1]
+  .rodata                 const    0x1000'730c    0x14  fontlibs.o [1]
+  .rodata                 const    0x1000'7320    0x10  fontlibs.o [1]
+  .rodata                 const    0x1000'7330    0x10  fontlibs.o [1]
+  .rodata                 const    0x1000'7340    0x10  fontlibs.o [1]
+  .text                   ro code  0x1000'7350    0x10  startup_tcasxxx_iar.o [1]
+  .text                   ro code  0x1000'7360     0xc  cstartup_M.o [4]
+  .rodata                 const    0x1000'736c     0x8  fontlibs.o [1]
+  .rodata                 const    0x1000'7374     0x8  fontlibs.o [1]
+  .rodata                 const    0x1000'737c     0x8  op.o [1]
+  .rodata                 const    0x1000'7384     0x8  op.o [1]
+  .rodata                 const    0x1000'738c     0x8  SystemDriver.o [1]
+  .rodata                 const    0x1000'7394     0x8  UG2864Driver.o [1]
+  .rodata                 const    0x1000'739c     0x4  DisplayDriver.o [1]
+  .rodata                 const    0x1000'73a0     0x4  DisplayDriver.o [1]
+  .rodata                 const    0x1000'73a4     0x4  interrupt.o [1]
+  .rodata                 const    0x1000'73a8     0x0  zero_init3.o [4]
+                                 - 0x1000'73a8  0x735c
+
+Unused ranges:
+
+         From           To    Size
+         ----           --    ----
+       0x4880       0x5fff  0x1780
+  0x1000'73a8  0x1000'ffff  0x8c58
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address  Size
+          -------  ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x5ba:
+           0x40c4  0x5ba
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                 ro code  rw code  ro data  rw data
+    ------                 -------  -------  -------  -------
+command line/config:
+    ---------------------------------------------------------
+    Total:
+
+D:\oximeter\Release\Oximeter_V1.0.1\project\EWARM\Debug\Obj: [1]
+    BuzzDriver.o               144                          8
+    DefaultSetup.o             328                 4       30
+    DisplayDriver.o          8 996                42      207
+    LightDriver.o            1 952                 4      114
+    Preprocess.o             1 168                97    1 072
+    Spo2Interface.o            488                14       30
+    SystemDriver.o           1 792                36
+    UG2864Driver.o             998               264
+    cmp.o                      940
+    delay.o                     34
+    dma.o                      436
+    flash.o                     32      132      132
+    fontlibs.o                                 4 708
+    gpio.o                     808
+    interrupt.o              1 204                39       65
+    main.o                      56
+    op.o                       944                16
+    saradc.o                    32
+    spi.o                      308
+    startup_tcasxxx_iar.o       92
+    system_tcasxxx.o           636                 4        4
+    tia.o                      320
+    timer.o                    142
+    wdg.o                      244
+    ---------------------------------------------------------
+    Total:                  22 094      132    5 360    1 530
+
+dl6M_tlf.a: [2]
+    exit.o                       8
+    low_level_init.o             4
+    ---------------------------------------------------------
+    Total:                      12
+
+m6M_tl.a: [3]
+    DblDiv.o                   194
+    DblMul.o                   388
+    DblToI32.o                  82
+    FltAddSub.o                288
+    FltDiv.o                   170
+    FltMul.o                   176
+    FltToS32.o                  58
+    IxxToDbl.o                  52
+    IxxToFlt.o                  54
+    ---------------------------------------------------------
+    Total:                   1 462
+
+rt6M_tl.a: [4]
+    ABImemcpy.o                 78
+    ABImemmove.o                32
+    ABImemset.o                 82
+    I32DivModFast.o            224
+    IntDivZer.o                  2
+    cexit.o                     10
+    cmain.o                     30
+    cstartup_M.o                12
+    data_init.o                 40
+    zero_init3.o                60
+    ---------------------------------------------------------
+    Total:                     570
+
+shb_l.a: [5]
+    exit.o                      20
+    ---------------------------------------------------------
+    Total:                      20
+
+    Gaps                        22                 4
+    Linker created              48                16      512
+-------------------------------------------------------------
+    Grand Total:            24 228      132    5 380    2 042
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address   Size  Type      Object
+-----                       -------   ----  ----      ------
+.bss$$Base                   0x40c4          --   Gb  - Linker created -
+.bss$$Limit                  0x4680          --   Gb  - Linker created -
+.data$$Base                  0x40a4          --   Gb  - Linker created -
+.data$$Limit                 0x40c4          --   Gb  - Linker created -
+.data_init$$Base        0x1000'7240          --   Gb  - Linker created -
+.data_init$$Limit       0x1000'7260          --   Gb  - Linker created -
+.iar.init_table$$Base   0x1000'71b0          --   Gb  - Linker created -
+.iar.init_table$$Limit  0x1000'71c0          --   Gb  - Linker created -
+.textrw$$Base                0x4020          --   Gb  - Linker created -
+.textrw$$Limit               0x40a4          --   Gb  - Linker created -
+.textrw_init$$Base      0x1000'6e20          --   Gb  - Linker created -
+.textrw_init$$Limit     0x1000'6ea4          --   Gb  - Linker created -
+?main                   0x1000'7261         Code  Gb  cmain.o [4]
+ADC_GetDmaValue         0x1000'49d1   0x28  Code  Lc  interrupt.o [1]
+ADT_StartTimer          0x1000'4439    0xe  Code  Gb  timer.o [1]
+Buzz_Speaker            0x1000'52d1   0x90  Code  Gb  BuzzDriver.o [1]
+CSTACK$$Base                 0x4680          --   Gb  - Linker created -
+CSTACK$$Limit                0x4880          --   Gb  - Linker created -
+Cmp_CLKConfig           0x1000'46bb   0x70  Code  Gb  cmp.o [1]
+Cmp_Enable              0x1000'472b   0x28  Code  Gb  cmp.o [1]
+Cmp_Init                0x1000'44c9  0x1f2  Code  Gb  cmp.o [1]
+Cmp_VrefConfig          0x1000'476d   0xd8  Code  Gb  cmp.o [1]
+CopyDataRWtoImage       0x1000'5b85   0x4c  Code  Gb  system_tcasxxx.o [1]
+DMA_Init                0x1000'427b   0x64  Code  Gb  dma.o [1]
+DMA_StartChannel        0x1000'4265   0x16  Code  Gb  dma.o [1]
+DelayForCommandExeDone  0x1000'4969   0x22  Code  Gb  delay.o [1]
+Display_AlarmMenu       0x1000'1c05   0xda  Code  Gb  DisplayDriver.o [1]
+Display_AlarmThrd       0x1000'1531  0x4ec  Code  Gb  DisplayDriver.o [1]
+Display_AlarmThrd::sDelay
+                             0x466f    0x1  Data  Lc  DisplayDriver.o [1]
+Display_Bargraph        0x1000'11f5  0x164  Code  Gb  DisplayDriver.o [1]
+Display_Battery         0x1000'0305  0x214  Code  Lc  DisplayDriver.o [1]
+Display_Battery::sBlink
+                             0x466c    0x1  Data  Lc  DisplayDriver.o [1]
+Display_Ble             0x1000'0519   0x52  Code  Lc  DisplayDriver.o [1]
+Display_BlinkSelection  0x1000'1a1d  0x1e0  Code  Gb  DisplayDriver.o [1]
+Display_BlinkSelection::sBlink
+                             0x4670    0x1  Data  Lc  DisplayDriver.o [1]
+Display_Caption         0x1000'0579   0xe0  Code  Lc  DisplayDriver.o [1]
+Display_GUI             0x1000'1d65  0x5b8  Code  Gb  DisplayDriver.o [1]
+Display_GUI::oldKeyVal       0x4674    0x1  Data  Lc  DisplayDriver.o [1]
+Display_GUI::oldProbeOff
+                             0x4672    0x1  Data  Lc  DisplayDriver.o [1]
+Display_GUI::sOffCnt         0x4671    0x1  Data  Lc  DisplayDriver.o [1]
+Display_GUI::showBleLogo
+                             0x4673    0x1  Data  Lc  DisplayDriver.o [1]
+Display_Init            0x1000'231d   0x2e  Code  Gb  DisplayDriver.o [1]
+Display_Logo            0x1000'02ad   0x44  Code  Lc  DisplayDriver.o [1]
+Display_Perfusion       0x1000'0675  0x546  Code  Lc  DisplayDriver.o [1]
+Display_Pleth           0x1000'135d  0x1a0  Code  Gb  DisplayDriver.o [1]
+Display_Pleth::sPreIndex
+                             0x466d    0x1  Data  Lc  DisplayDriver.o [1]
+Display_Pleth::sUpdatePos
+                             0x466e    0x1  Data  Lc  DisplayDriver.o [1]
+Display_ProbeOff        0x1000'1ce5   0x66  Code  Gb  DisplayDriver.o [1]
+Display_Pulse           0x1000'0bc5  0x2de  Code  Gb  DisplayDriver.o [1]
+Display_SpO2            0x1000'0eb1  0x33a  Code  Gb  DisplayDriver.o [1]
+Display_Version         0x1000'0057  0x256  Code  Lc  DisplayDriver.o [1]
+ErasePage               0x1000'28fd    0xa  Code  Gb  DefaultSetup.o [1]
+Flash_ConfigRCTC             0x4021   0x12  Code  Gb  flash.o [1]
+Flash_DeInit            0x1000'2ec5    0x8  Code  Gb  flash.o [1]
+Flash_Erase                  0x4033   0x38  Code  Gb  flash.o [1]
+Flash_Init              0x1000'2eb5   0x10  Code  Gb  flash.o [1]
+Flash_Write                  0x406b   0x22  Code  Gb  flash.o [1]
+GPIO_ClearBits          0x1000'2c0d   0x28  Code  Gb  gpio.o [1]
+GPIO_ClrAFMode          0x1000'2b1f   0x20  Code  Gb  gpio.o [1]
+GPIO_Init               0x1000'2c41  0x114  Code  Gb  gpio.o [1]
+GPIO_PinMuxAdrMap       0x1000'2a45   0x90  Code  Lc  gpio.o [1]
+GPIO_RegisterMap        0x1000'2b3f   0x8e  Code  Lc  gpio.o [1]
+GPIO_SetAFMode          0x1000'2ad5   0x4a  Code  Gb  gpio.o [1]
+GPIO_SetBits            0x1000'2be5   0x28  Code  Gb  gpio.o [1]
+GetHardwareVer          0x1000'0051    0x6  Code  Lc  DisplayDriver.o [1]
+GetSoftwareVer          0x1000'004d    0x4  Code  Lc  DisplayDriver.o [1]
+HardFault_Handler       0x1000'49c1    0x4  Code  Gb  interrupt.o [1]
+IC_PowupInit            0x1000'4de1   0x32  Code  Gb  interrupt.o [1]
+IWDG_ClearITPending     0x1000'4907   0x3c  Code  Gb  wdg.o [1]
+IWDG_Enable             0x1000'48b3    0xc  Code  Gb  wdg.o [1]
+IWDG_GetITFlag          0x1000'48bf   0x48  Code  Gb  wdg.o [1]
+IWDG_Init               0x1000'4875   0x3e  Code  Gb  wdg.o [1]
+IWDG_ResetCnt           0x1000'4943    0x8  Code  Gb  wdg.o [1]
+IwdgCallback            0x1000'3d55   0x20  Code  Gb  SystemDriver.o [1]
+Light_AdaptBaselineSet  0x1000'31c9  0x154  Code  Gb  LightDriver.o [1]
+Light_AdjustDrive       0x1000'333d  0x1cc  Code  Gb  LightDriver.o [1]
+Light_ProbeDriveAdjust  0x1000'3515  0x118  Code  Gb  LightDriver.o [1]
+Light_ProbeDriveAdjust::sOffDelay
+                             0x4678    0x1  Data  Lc  LightDriver.o [1]
+Light_ProbeDriveAdjust::sProbeFlag
+                             0x4677    0x1  Data  Lc  LightDriver.o [1]
+Light_StatSampleACVariety
+                        0x1000'2ed5  0x2ea  Code  Lc  LightDriver.o [1]
+NMI_Handler             0x1000'49bd    0x4  Code  Gb  interrupt.o [1]
+OP2_OutPadConfig        0x1000'422f   0x14  Code  Gb  op.o [1]
+OP2_VinPadConfig        0x1000'4205   0x16  Code  Gb  op.o [1]
+OP2_VipPadConfig        0x1000'421b   0x14  Code  Gb  op.o [1]
+OPA_Enable              0x1000'41c3   0x32  Code  Gb  op.o [1]
+OPA_Init                0x1000'3eb5  0x30e  Code  Gb  op.o [1]
+PendSV_Handler          0x1000'49c9    0x4  Code  Gb  interrupt.o [1]
+PeripheralsRxDmaConfig  0x1000'42df  0x118  Code  Gb  dma.o [1]
+Process_FixedSmoothFilter
+                        0x1000'4f5f  0x172  Code  Lc  Preprocess.o [1]
+Process_LowPassFiltFIR  0x1000'4e41  0x11e  Code  Lc  Preprocess.o [1]
+Process_ResampleSignal  0x1000'50d5  0x110  Code  Lc  Preprocess.o [1]
+Process_ResampleSignal::sDatBuf
+                             0x4638   0x20  Data  Lc  Preprocess.o [1]
+Process_ResampleSignal::sOriPos
+                             0x4662    0x2  Data  Lc  Preprocess.o [1]
+Process_SampleData      0x1000'51e9   0xba  Code  Gb  Preprocess.o [1]
+PwmToDacDrive           0x1000'49f9   0x22  Code  Lc  interrupt.o [1]
+ReadFlashCfg            0x1000'2907   0x80  Code  Gb  DefaultSetup.o [1]
+Region$$Table$$Base     0x1000'71b0          --   Gb  - Linker created -
+Region$$Table$$Limit    0x1000'71c0          --   Gb  - Linker created -
+SPI_Init                0x1000'2ddb   0xa2  Code  Gb  spi.o [1]
+SPI_SendData_Host       0x1000'2e7d   0x24  Code  Gb  spi.o [1]
+SPI_SetCpolCpha         0x1000'2da5   0x1e  Code  Gb  spi.o [1]
+SPI_SetFrameSize        0x1000'2d6d   0x38  Code  Gb  spi.o [1]
+SPI_SetRfr              0x1000'2dc3   0x18  Code  Gb  spi.o [1]
+SVC_Handler             0x1000'49c5    0x4  Code  Gb  interrupt.o [1]
+SYS_ADC_Init            0x1000'3a85   0xea  Code  Lc  SystemDriver.o [1]
+SYS_Buzz_Init           0x1000'3c33   0x40  Code  Lc  SystemDriver.o [1]
+SYS_GPIO_Init           0x1000'372b  0x25a  Code  Lc  SystemDriver.o [1]
+SYS_Hardware_Init       0x1000'3c73   0x24  Code  Gb  SystemDriver.o [1]
+SYS_Interrupt_Enable    0x1000'3ca3   0x48  Code  Gb  SystemDriver.o [1]
+SYS_ModuleDrive_Init    0x1000'3c97    0xc  Code  Gb  SystemDriver.o [1]
+SYS_OPA_Init            0x1000'3991   0xa0  Code  Lc  SystemDriver.o [1]
+SYS_PressKey_Init       0x1000'3bf1   0x42  Code  Lc  SystemDriver.o [1]
+SYS_SPI0_Init           0x1000'3bcd   0x24  Code  Lc  SystemDriver.o [1]
+SYS_TIMER_Init          0x1000'3b75   0x1c  Code  Lc  SystemDriver.o [1]
+SYS_TIMER_PWM_Init      0x1000'3b91   0x3c  Code  Lc  SystemDriver.o [1]
+SetTimer                0x1000'4447   0x80  Code  Gb  timer.o [1]
+Setup_RestoreDevice     0x1000'29dd   0x28  Code  Gb  DefaultSetup.o [1]
+Setup_UpdateDevice      0x1000'2a05   0x28  Code  Gb  DefaultSetup.o [1]
+SpO2_algorithm          0x1000'611f   0xb8  Code  Gb  Spo2Interface.o [1]
+SpO2_algorithm::acIr_max
+                             0x466a    0x2  Data  Lc  Spo2Interface.o [1]
+SpO2_algorithm::acRed_max
+                             0x4668    0x2  Data  Lc  Spo2Interface.o [1]
+SpO2_algorithm::spo2         0x467d    0x1  Data  Lc  Spo2Interface.o [1]
+SpO2_algorithm::tick         0x467c    0x1  Data  Lc  Spo2Interface.o [1]
+SpO2_algorithm{1}{2}{4}{5}::Ratio
+                             0x4658    0x4  Data  Lc  Spo2Interface.o [1]
+SysCheckTrimValid       0x1000'5ce9   0x4e  Code  Gb  system_tcasxxx.o [1]
+SysTick_Handler         0x1000'49cd    0x4  Code  Gb  interrupt.o [1]
+SystemAnlogTrim         0x1000'5ce7    0x2  Code  Gb  system_tcasxxx.o [1]
+SystemConfigFlash       0x1000'5ccb   0x1c  Code  Gb  system_tcasxxx.o [1]
+SystemCoreClock              0x40b4    0x4  Data  Gb  system_tcasxxx.o [1]
+SystemCoreClockUpdate   0x1000'5c43    0xc  Code  Gb  system_tcasxxx.o [1]
+SystemCoreSwitchHclkSrc
+                        0x1000'5c4f   0x7c  Code  Gb  system_tcasxxx.o [1]
+SystemGetHClkFreq       0x1000'5bd1   0x72  Code  Gb  system_tcasxxx.o [1]
+SystemInit              0x1000'5d37   0x58  Code  Gb  system_tcasxxx.o [1]
+Tia_Enable              0x1000'3e89    0xc  Code  Gb  tia.o [1]
+Tia_Init                0x1000'3d75  0x114  Code  Gb  tia.o [1]
+TriggerSARAdcStart      0x1000'4419   0x1a  Code  Gb  saradc.o [1]
+UG2864_ClearRegion      0x1000'26a1   0xb6  Code  Gb  UG2864Driver.o [1]
+UG2864_Display          0x1000'25c9   0xca  Code  Gb  UG2864Driver.o [1]
+UG2864_Fill_RAM         0x1000'250b   0x3a  Code  Gb  UG2864Driver.o [1]
+UG2864_OLED_Init        0x1000'2545   0x70  Code  Gb  UG2864Driver.o [1]
+UG2864_Set_Addressing_Mode
+                        0x1000'23e9   0x10  Code  Gb  UG2864Driver.o [1]
+UG2864_Set_Common_Config
+                        0x1000'24e1   0x16  Code  Gb  UG2864Driver.o [1]
+UG2864_Set_Common_Remap
+                        0x1000'2495   0x10  Code  Gb  UG2864Driver.o [1]
+UG2864_Set_Contrast_Control
+                        0x1000'2409   0x14  Code  Gb  UG2864Driver.o [1]
+UG2864_Set_Display_Clock
+                        0x1000'24b9   0x14  Code  Gb  UG2864Driver.o [1]
+UG2864_Set_Display_Offset
+                        0x1000'24a5   0x14  Code  Gb  UG2864Driver.o [1]
+UG2864_Set_Display_On_Off
+                        0x1000'2475   0x10  Code  Gb  UG2864Driver.o [1]
+UG2864_Set_Entire_Display
+                        0x1000'2441   0x10  Code  Gb  UG2864Driver.o [1]
+UG2864_Set_Inverse_Display
+                        0x1000'2451   0x10  Code  Gb  UG2864Driver.o [1]
+UG2864_Set_Multiplex_Ratio
+                        0x1000'2461   0x14  Code  Gb  UG2864Driver.o [1]
+UG2864_Set_Precharge_Period
+                        0x1000'24cd   0x14  Code  Gb  UG2864Driver.o [1]
+UG2864_Set_Pump         0x1000'241d   0x14  Code  Gb  UG2864Driver.o [1]
+UG2864_Set_Segment_Remap
+                        0x1000'2431   0x10  Code  Gb  UG2864Driver.o [1]
+UG2864_Set_Start_Column
+                        0x1000'23bd   0x2c  Code  Gb  UG2864Driver.o [1]
+UG2864_Set_Start_Line   0x1000'23f9   0x10  Code  Gb  UG2864Driver.o [1]
+UG2864_Set_Start_Page   0x1000'2485   0x10  Code  Gb  UG2864Driver.o [1]
+UG2864_Set_VCOMH        0x1000'24f7   0x14  Code  Gb  UG2864Driver.o [1]
+UG2864_Write_Command    0x1000'2371   0x26  Code  Lc  UG2864Driver.o [1]
+UG2864_Write_Data       0x1000'2397   0x26  Code  Lc  UG2864Driver.o [1]
+WriteFlashCfg           0x1000'2987   0x56  Code  Gb  DefaultSetup.o [1]
+__NVIC_ClearPendingIRQ  0x1000'49a5   0x18  Code  Lc  interrupt.o [1]
+__NVIC_EnableIRQ        0x1000'3675   0x18  Code  Lc  SystemDriver.o [1]
+__NVIC_SetPendingIRQ    0x1000'498d   0x18  Code  Lc  interrupt.o [1]
+__NVIC_SetPriority      0x1000'368d   0x8a  Code  Lc  SystemDriver.o [1]
+__NVIC_SystemReset      0x1000'3717   0x14  Code  Lc  SystemDriver.o [1]
+__aeabi_d2iz            0x1000'5841         Code  Gb  DblToI32.o [3]
+__aeabi_d2uiz           0x1000'5865         Code  Gb  DblToI32.o [3]
+__aeabi_ddiv            0x1000'55f9         Code  Gb  DblDiv.o [3]
+__aeabi_dmul            0x1000'56bb         Code  Gb  DblMul.o [3]
+__aeabi_f2iz            0x1000'5589         Code  Gb  FltToS32.o [3]
+__aeabi_fadd            0x1000'5467         Code  Gb  FltAddSub.o [3]
+__aeabi_fdiv            0x1000'621d         Code  Gb  FltDiv.o [3]
+__aeabi_fmul            0x1000'53b7         Code  Gb  FltMul.o [3]
+__aeabi_fsub            0x1000'54d7         Code  Gb  FltAddSub.o [3]
+__aeabi_i2d             0x1000'55e5         Code  Gb  IxxToDbl.o [3]
+__aeabi_i2f             0x1000'53a1         Code  Gb  IxxToFlt.o [3]
+__aeabi_idiv            0x1000'2783         Code  Gb  I32DivModFast.o [4]
+__aeabi_idiv0           0x1000'2ea1         Code  Gb  IntDivZer.o [4]
+__aeabi_idivmod         0x1000'2783         Code  Gb  I32DivModFast.o [4]
+__aeabi_memclr4         0x1000'2859         Code  Gb  ABImemset.o [4]
+__aeabi_memclr8         0x1000'2859         Code  Gb  ABImemset.o [4]
+__aeabi_memcpy          0x1000'28c1         Code  Gb  ABImemcpy.o [4]
+__aeabi_memcpy4         0x1000'288d         Code  Gb  ABImemcpy.o [4]
+__aeabi_memcpy8         0x1000'288d         Code  Gb  ABImemcpy.o [4]
+__aeabi_memmove         0x1000'5361         Code  Gb  ABImemmove.o [4]
+__aeabi_memmove4        0x1000'5361         Code  Gb  ABImemmove.o [4]
+__aeabi_memmove8        0x1000'5361         Code  Gb  ABImemmove.o [4]
+__aeabi_memset          0x1000'2839         Code  Gb  ABImemset.o [4]
+__aeabi_ui2d            0x1000'55c5         Code  Gb  IxxToDbl.o [3]
+__aeabi_ui2f            0x1000'5381         Code  Gb  IxxToFlt.o [3]
+__aeabi_uidiv           0x1000'2789         Code  Gb  I32DivModFast.o [4]
+__aeabi_uidivmod        0x1000'2789         Code  Gb  I32DivModFast.o [4]
+__cmain                 0x1000'7261         Code  Gb  cmain.o [4]
+__exit                  0x1000'7299   0x14  Code  Gb  exit.o [5]
+__iar_Memcpy            0x1000'28cd         Code  Gb  ABImemcpy.o [4]
+__iar_Memset4_word      0x1000'285d         Code  Gb  ABImemset.o [4]
+__iar_Memset_word       0x1000'2845         Code  Gb  ABImemset.o [4]
+__iar_d2uiz             0x1000'5869         Code  Gb  DblToI32.o [3]
+__iar_data_init3        0x1000'7189   0x28  Code  Gb  data_init.o [4]
+__iar_program_start     0x1000'7361         Code  Gb  cstartup_M.o [4]
+__iar_zero_init3        0x1000'7059   0x3c  Code  Gb  zero_init3.o [4]
+__low_level_init        0x1000'727f    0x4  Code  Gb  low_level_init.o [2]
+__vector_table          0x1000'0000         Data  Gb  startup_tcasxxx_iar.o [1]
+_call_main              0x1000'726d         Code  Gb  cmain.o [4]
+_exit                   0x1000'728d         Code  Gb  cexit.o [4]
+_main                   0x1000'727b         Code  Gb  cmain.o [4]
+aic_IRQHandler          0x1000'4cc9   0xd6  Code  Gb  interrupt.o [1]
+aic_IRQHandler::sBuzzSet
+                             0x40c2    0x1  Data  Lc  interrupt.o [1]
+aic_IRQHandler::sSecCnt
+                             0x4676    0x1  Data  Lc  interrupt.o [1]
+exit                    0x1000'7283    0x8  Code  Gb  exit.o [2]
+fic_IRQHandler          0x1000'4a1b  0x23c  Code  Gb  interrupt.o [1]
+fic_IRQHandler::gDrvCur
+                             0x4660    0x2  Data  Lc  interrupt.o [1]
+fic_IRQHandler::gSampIrdAmb
+                             0x41b4    0x4  Data  Lc  interrupt.o [1]
+fic_IRQHandler::gSampIrdSamp
+                             0x41b8    0x4  Data  Lc  interrupt.o [1]
+fic_IRQHandler::gSampRedAmb
+                             0x41ac    0x4  Data  Lc  interrupt.o [1]
+fic_IRQHandler::gSampRedSamp
+                             0x41b0    0x4  Data  Lc  interrupt.o [1]
+fic_IRQHandler::gSampVolt
+                             0x41bc    0x4  Data  Lc  interrupt.o [1]
+fic_IRQHandler::gSrtCnt
+                             0x4675    0x1  Data  Lc  interrupt.o [1]
+fic_IRQHandler::sCellSpan
+                             0x40ba    0x2  Data  Lc  interrupt.o [1]
+fic_IRQHandler::sSpo2Span
+                             0x465e    0x2  Data  Lc  interrupt.o [1]
+gAdptIrd                     0x41f0   0x10  Data  Gb  LightDriver.o [1]
+gAdptRed                     0x41e0   0x10  Data  Gb  LightDriver.o [1]
+gAlarmDigit             0x1000'699c  0x170  Data  Gb  fontlibs.o [1]
+gAlarmFont              0x1000'5e00  0x234  Data  Gb  fontlibs.o [1]
+gAllBattery             0x1000'7320   0x10  Data  Gb  fontlibs.o [1]
+gAlmCtrl                     0x4178    0xc  Data  Gb  DisplayDriver.o [1]
+gBaseAddr                    0x40a4    0x4  Data  Lc  DefaultSetup.o [1]
+gBeepCtrl                    0x40c4    0x8  Data  Gb  BuzzDriver.o [1]
+gBrightnessTab          0x1000'7394    0x8  Data  Gb  UG2864Driver.o [1]
+gCellVolt                    0x40b8    0x2  Data  Gb  DisplayDriver.o [1]
+gCfgCtrl                     0x40cc   0x18  Data  Gb  DefaultSetup.o [1]
+gChkFunc                     0x465c    0x2  Data  Gb  DefaultSetup.o [1]
+gCtrlIrd                     0x41d0   0x10  Data  Gb  LightDriver.o [1]
+gCtrlRed                     0x41c0   0x10  Data  Gb  LightDriver.o [1]
+gDepletePWR             0x1000'6fdc   0x40  Data  Gb  fontlibs.o [1]
+gDirMapping             0x1000'739c    0x4  Data  Gb  DisplayDriver.o [1]
+gDirMappingBigFont      0x1000'73a0    0x4  Data  Gb  DisplayDriver.o [1]
+gDmaAdcBuf                   0x422c   0x20  Data  Gb  Preprocess.o [1]
+gDriveIrd                    0x40be    0x2  Data  Gb  LightDriver.o [1]
+gDriveRed                    0x40bc    0x2  Data  Gb  LightDriver.o [1]
+gFirBuf                      0x4264  0x180  Data  Gb  Preprocess.o [1]
+gFluCtrl                     0x4200   0x2c  Data  Gb  LightDriver.o [1]
+gGuiCtrl                     0x415c   0x14  Data  Gb  DisplayDriver.o [1]
+gHorBarGrid_15          0x1000'736c    0x8  Data  Gb  fontlibs.o [1]
+gHorBarGrid_16          0x1000'7374    0x8  Data  Gb  fontlibs.o [1]
+gHorBarGrid_27          0x1000'7330   0x10  Data  Gb  fontlibs.o [1]
+gHorBarGrid_28          0x1000'7340   0x10  Data  Gb  fontlibs.o [1]
+gHorBarGrid_39          0x1000'71e0   0x20  Data  Gb  fontlibs.o [1]
+gHorBarGrid_3A          0x1000'7200   0x20  Data  Gb  fontlibs.o [1]
+gHorBarGrid_4B          0x1000'70fc   0x30  Data  Gb  fontlibs.o [1]
+gHorBarGrid_4C          0x1000'712c   0x30  Data  Gb  fontlibs.o [1]
+gHorBluetoothLogo       0x1000'715c   0x2c  Data  Gb  fontlibs.o [1]
+gHorCaptionPI           0x1000'72c8   0x18  Data  Gb  fontlibs.o [1]
+gHorCaptionPR           0x1000'6f04   0x50  Data  Gb  fontlibs.o [1]
+gHorCaptionSat          0x1000'6f54   0x48  Data  Gb  fontlibs.o [1]
+gHorHw                  0x1000'72f8   0x14  Data  Gb  fontlibs.o [1]
+gHorParamPI             0x1000'6c0c   0xd0  Data  Gb  fontlibs.o [1]
+gHorPluse               0x1000'6660  0x1b0  Data  Gb  fontlibs.o [1]
+gHorSpO2                0x1000'5894  0x2f0  Data  Gb  fontlibs.o [1]
+gHorSw                  0x1000'730c   0x14  Data  Gb  fontlibs.o [1]
+gInitCnt                     0x40c3    0x1  Data  Gb  Preprocess.o [1]
+gInvertMap              0x1000'6b0c  0x100  Data  Gb  UG2864Driver.o [1]
+gKeyCtrl                     0x4170    0x8  Data  Gb  DisplayDriver.o [1]
+gLogoNarigmed           0x1000'64ac  0x1b4  Data  Gb  fontlibs.o [1]
+gMenuBuf                     0x40e4   0x78  Data  Gb  DisplayDriver.o [1]
+gProbeOff               0x1000'6cdc   0xa8  Data  Gb  fontlibs.o [1]
+gSampArray                   0x424c   0x18  Data  Gb  Preprocess.o [1]
+gSampleFIR              0x1000'6ea4   0x60  Data  Gb  Preprocess.o [1]
+gSatParam                    0x4194   0x14  Data  Gb  DisplayDriver.o [1]
+gSatSamp                     0x4184   0x10  Data  Gb  DisplayDriver.o [1]
+gSmoCtrl                     0x43e4  0x254  Data  Gb  Preprocess.o [1]
+gSumVal                      0x41a8    0x4  Data  Gb  interrupt.o [1]
+gVerBarGrid             0x1000'6f9c   0x40  Data  Gb  fontlibs.o [1]
+gVerCaptionPI           0x1000'72e0   0x18  Data  Gb  fontlibs.o [1]
+gVerCaptionPR           0x1000'70cc   0x30  Data  Gb  fontlibs.o [1]
+gVerCaptionSat          0x1000'701c   0x3c  Data  Gb  fontlibs.o [1]
+gVerParamPI             0x1000'6d84   0x9c  Data  Gb  fontlibs.o [1]
+gVerPluse               0x1000'6810  0x18c  Data  Gb  fontlibs.o [1]
+gVerSpO2                0x1000'62c8  0x1e4  Data  Gb  fontlibs.o [1]
+heart_beat_sample            0x40a8    0xc  Data  Lc  Spo2Interface.o [1]
+heartbeat_algorithm     0x1000'6035   0xea  Code  Gb  Spo2Interface.o [1]
+heartbeat_algorithm::tick
+                             0x467b    0x1  Data  Lc  Spo2Interface.o [1]
+heartbeat_algorithm::value
+                             0x4664    0x2  Data  Lc  Spo2Interface.o [1]
+heartbeat_algorithm::value_last
+                             0x4666    0x2  Data  Lc  Spo2Interface.o [1]
+heartbeat_algorithm{6}{7}::heartRate
+                             0x40c0    0x2  Data  Lc  Spo2Interface.o [1]
+is_new_sample_ready          0x4679    0x1  Data  Gb  Preprocess.o [1]
+jump_table_base              0x4000   0x20  Data  Gb  interrupt.o [1]
+lic_IRQHandler          0x1000'4c61   0x2a  Code  Gb  interrupt.o [1]
+main                    0x1000'7095   0x38  Code  Gb  main.o [1]
+rollPos                      0x467a    0x1  Data  Lc  Spo2Interface.o [1]
+
+
+[1] = D:\oximeter\Release\Oximeter_V1.0.1\project\EWARM\Debug\Obj
+[2] = dl6M_tlf.a
+[3] = m6M_tl.a
+[4] = rt6M_tl.a
+[5] = shb_l.a
+
+  24 228 bytes of readonly  code memory
+     132 bytes of readwrite code memory
+   5 380 bytes of readonly  data memory
+   2 042 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

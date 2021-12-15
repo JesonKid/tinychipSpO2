@@ -1,0 +1,2189 @@
+Component: ARM Compiler 5.06 update 6 (build 750) Tool: armlink [4d35ed]
+
+==============================================================================
+
+Section Cross References
+
+    systemdriver.o(i.IwdgCallback) refers to wdg.o(i.IWDG_GetITFlag) for IWDG_GetITFlag
+    systemdriver.o(i.IwdgCallback) refers to wdg.o(i.IWDG_ClearITPending) for IWDG_ClearITPending
+    systemdriver.o(i.IwdgCallback) refers to gpio.o(i.GPIO_ClrAFMode) for GPIO_ClrAFMode
+    systemdriver.o(i.SYS_ADC_Init) refers to dma.o(i.DMA_Init) for DMA_Init
+    systemdriver.o(i.SYS_ADC_Init) refers to dma.o(i.PeripheralsRxDmaConfig) for PeripheralsRxDmaConfig
+    systemdriver.o(i.SYS_ADC_Init) refers to saradc.o(i.TriggerSARAdcStart) for TriggerSARAdcStart
+    systemdriver.o(i.SYS_ADC_Init) refers to preprocess.o(.bss) for gDmaAdcBuf
+    systemdriver.o(i.SYS_Buzz_Init) refers to timer.o(i.SetTimer) for SetTimer
+    systemdriver.o(i.SYS_Buzz_Init) refers to timer.o(i.ADT_StartTimer) for ADT_StartTimer
+    systemdriver.o(i.SYS_GPIO_Init) refers to gpio.o(i.GPIO_ClrAFMode) for GPIO_ClrAFMode
+    systemdriver.o(i.SYS_GPIO_Init) refers to gpio.o(i.GPIO_SetBits) for GPIO_SetBits
+    systemdriver.o(i.SYS_GPIO_Init) refers to gpio.o(i.GPIO_Init) for GPIO_Init
+    systemdriver.o(i.SYS_GPIO_Init) refers to gpio.o(i.GPIO_SetAFMode) for GPIO_SetAFMode
+    systemdriver.o(i.SYS_GPIO_Init) refers to gpio.o(i.GPIO_ClearBits) for GPIO_ClearBits
+    systemdriver.o(i.SYS_Hardware_Init) refers to systemdriver.o(i.SYS_GPIO_Init) for SYS_GPIO_Init
+    systemdriver.o(i.SYS_Hardware_Init) refers to systemdriver.o(i.SYS_TIMER_Init) for SYS_TIMER_Init
+    systemdriver.o(i.SYS_Hardware_Init) refers to systemdriver.o(i.SYS_TIMER_PWM_Init) for SYS_TIMER_PWM_Init
+    systemdriver.o(i.SYS_Hardware_Init) refers to systemdriver.o(i.SYS_SPI0_Init) for SYS_SPI0_Init
+    systemdriver.o(i.SYS_Hardware_Init) refers to systemdriver.o(i.SYS_Buzz_Init) for SYS_Buzz_Init
+    systemdriver.o(i.SYS_Hardware_Init) refers to systemdriver.o(i.SYS_PressKey_Init) for SYS_PressKey_Init
+    systemdriver.o(i.SYS_Hardware_Init) refers to systemdriver.o(i.SYS_OPA_Init) for SYS_OPA_Init
+    systemdriver.o(i.SYS_Hardware_Init) refers to systemdriver.o(i.SYS_ADC_Init) for SYS_ADC_Init
+    systemdriver.o(i.SYS_Interrupt_Enable) refers to systemdriver.o(i.__NVIC_SetPriority) for __NVIC_SetPriority
+    systemdriver.o(i.SYS_Interrupt_Enable) refers to systemdriver.o(i.__NVIC_EnableIRQ) for __NVIC_EnableIRQ
+    systemdriver.o(i.SYS_Interrupt_Enable) refers to wdg.o(i.IWDG_Enable) for IWDG_Enable
+    systemdriver.o(i.SYS_ModuleDrive_Init) refers to defaultsetup.o(i.Setup_RestoreDevice) for Setup_RestoreDevice
+    systemdriver.o(i.SYS_ModuleDrive_Init) refers to displaydriver.o(i.Display_Init) for Display_Init
+    systemdriver.o(i.SYS_OPA_Init) refers to tia.o(i.Tia_Init) for Tia_Init
+    systemdriver.o(i.SYS_OPA_Init) refers to tia.o(i.Tia_Enable) for Tia_Enable
+    systemdriver.o(i.SYS_OPA_Init) refers to op.o(i.OPA_Init) for OPA_Init
+    systemdriver.o(i.SYS_OPA_Init) refers to op.o(i.OPA_Enable) for OPA_Enable
+    systemdriver.o(i.SYS_OPA_Init) refers to op.o(i.OP2_VinPadConfig) for OP2_VinPadConfig
+    systemdriver.o(i.SYS_OPA_Init) refers to op.o(i.OP2_VipPadConfig) for OP2_VipPadConfig
+    systemdriver.o(i.SYS_OPA_Init) refers to op.o(i.OP2_OutPadConfig) for OP2_OutPadConfig
+    systemdriver.o(i.SYS_PressKey_Init) refers to cmp.o(i.Cmp_CLKConfig) for Cmp_CLKConfig
+    systemdriver.o(i.SYS_PressKey_Init) refers to cmp.o(i.Cmp_Init) for Cmp_Init
+    systemdriver.o(i.SYS_PressKey_Init) refers to cmp.o(i.Cmp_VrefConfig) for Cmp_VrefConfig
+    systemdriver.o(i.SYS_PressKey_Init) refers to cmp.o(i.Cmp_Enable) for Cmp_Enable
+    systemdriver.o(i.SYS_SPI0_Init) refers to memmovea.o(.text) for __aeabi_memcpy4
+    systemdriver.o(i.SYS_SPI0_Init) refers to spi.o(i.SPI_Init) for SPI_Init
+    systemdriver.o(i.SYS_SPI0_Init) refers to systemdriver.o(.constdata) for .constdata
+    systemdriver.o(i.SYS_TIMER_PWM_Init) refers to timer.o(i.SetTimer) for SetTimer
+    systemdriver.o(i.SYS_TIMER_PWM_Init) refers to timer.o(i.ADT_StartTimer) for ADT_StartTimer
+    main.o(i.TCmain) refers to trace.o(i.PrintInit) for PrintInit
+    main.o(i.TCmain) refers to interrupt.o(i.IC_PowupInit) for IC_PowupInit
+    main.o(i.TCmain) refers to systemdriver.o(i.SYS_Hardware_Init) for SYS_Hardware_Init
+    main.o(i.TCmain) refers to systemdriver.o(i.SYS_ModuleDrive_Init) for SYS_ModuleDrive_Init
+    main.o(i.TCmain) refers to systemdriver.o(i.SYS_Interrupt_Enable) for SYS_Interrupt_Enable
+    main.o(i.TCmain) refers to segger_rtt_printf.o(i.SEGGER_RTT_printf) for SEGGER_RTT_printf
+    main.o(i.TCmain) refers to delay.o(i.delay1ms) for delay1ms
+    main.o(i.TCmain) refers to displaydriver.o(.bss) for gSatSamp
+    gpio.o(i.GPIO_ClearBits) refers to gpio.o(i.GPIO_RegisterMap) for GPIO_RegisterMap
+    gpio.o(i.GPIO_ClearITBit) refers to gpio.o(i.GPIO_RegisterMap) for GPIO_RegisterMap
+    gpio.o(i.GPIO_ClrAFMode) refers to gpio.o(i.GPIO_PinMuxAdrMap) for GPIO_PinMuxAdrMap
+    gpio.o(i.GPIO_Config) refers to gpio.o(i.GPIO_RegisterMap) for GPIO_RegisterMap
+    gpio.o(i.GPIO_ExtModeConfig) refers to gpio.o(i.GPIO_PinMuxAdrMap) for GPIO_PinMuxAdrMap
+    gpio.o(i.GPIO_ExtModeConfig) refers to gpio.o(i.GPIO_RegisterMap) for GPIO_RegisterMap
+    gpio.o(i.GPIO_GetAFMode) refers to gpio.o(i.GPIO_PinMuxAdrMap) for GPIO_PinMuxAdrMap
+    gpio.o(i.GPIO_GetBit) refers to gpio.o(i.GPIO_RegisterMap) for GPIO_RegisterMap
+    gpio.o(i.GPIO_GetITStatus) refers to gpio.o(i.GPIO_RegisterMap) for GPIO_RegisterMap
+    gpio.o(i.GPIO_ITConfig) refers to gpio.o(i.GPIO_RegisterMap) for GPIO_RegisterMap
+    gpio.o(i.GPIO_ITConfig) refers to interrupt.o(i.XIC_DisableIRQ) for XIC_DisableIRQ
+    gpio.o(i.GPIO_ITConfig) refers to interrupt.o(i.XIC_EnableIRQ) for XIC_EnableIRQ
+    gpio.o(i.GPIO_Init) refers to gpio.o(i.GPIO_RegisterMap) for GPIO_RegisterMap
+    gpio.o(i.GPIO_Init) refers to gpio.o(i.GPIO_PinMuxAdrMap) for GPIO_PinMuxAdrMap
+    gpio.o(i.GPIO_SetAFMode) refers to gpio.o(i.GPIO_PinMuxAdrMap) for GPIO_PinMuxAdrMap
+    gpio.o(i.GPIO_SetBits) refers to gpio.o(i.GPIO_RegisterMap) for GPIO_RegisterMap
+    gpio.o(i.GPIO_ToggleBits) refers to gpio.o(i.GPIO_RegisterMap) for GPIO_RegisterMap
+    delay.o(i.delay100us) refers to uidiv.o(.text) for __aeabi_uidivmod
+    delay.o(i.delay100us) refers to system_tcasxxx.o(.data) for SystemCoreClock
+    delay.o(i.delay1ms) refers to uidiv.o(.text) for __aeabi_uidivmod
+    delay.o(i.delay1ms) refers to system_tcasxxx.o(.data) for SystemCoreClock
+    delay.o(i.delay1us) refers to uidiv.o(.text) for __aeabi_uidivmod
+    delay.o(i.delay1us) refers to system_tcasxxx.o(.data) for SystemCoreClock
+    dma.o(i.PeripheralsRxDmaConfig) refers to dma.o(i.DMA_StartChannel) for DMA_StartChannel
+    dma.o(i.PeripheralsTxDmaConfig) refers to dma.o(i.DMA_StartChannel) for DMA_StartChannel
+    uart.o(i.DisableUartInt) refers to interrupt.o(i.XIC_DisableIRQ) for XIC_DisableIRQ
+    uart.o(i.SetUartBaudrate) refers to uart.o(i.GetUartFclkVal) for GetUartFclkVal
+    uart.o(i.SetUartBaudrate) refers to uidiv.o(.text) for __aeabi_uidivmod
+    uart.o(i.SetUartBaudrate) refers to uart.o(i.UART_Divided) for UART_Divided
+    uart.o(i.UART_Divided) refers to uart.o(i.UART_DivideLatch) for UART_DivideLatch
+    uart.o(i.UART_Init) refers to uart.o(i.DisableUartInt) for DisableUartInt
+    uart.o(i.UART_Init) refers to uart.o(i.SetUartBaudrate) for SetUartBaudrate
+    uart.o(i.UART_Init) refers to uart.o(i.UartIOConfig) for UartIOConfig
+    uart.o(i.UART_Init) refers to uart.o(i.UART_GetFlagStatus) for UART_GetFlagStatus
+    uart.o(i.UART_RcvDataDma) refers to dma.o(i.PeripheralsRxDmaConfig) for PeripheralsRxDmaConfig
+    uart.o(i.UART_SendData) refers to uart.o(i.UART_SendOneData) for UART_SendOneData
+    uart.o(i.UART_SendDataDma) refers to dma.o(i.PeripheralsTxDmaConfig) for PeripheralsTxDmaConfig
+    uart.o(i.UartIOConfig) refers to gpio.o(i.GPIO_SetAFMode) for GPIO_SetAFMode
+    i2c.o(i.GetI2CFclkSource) refers to uidiv.o(.text) for __aeabi_uidivmod
+    i2c.o(i.I2C_ConfigIO) refers to gpio.o(i.GPIO_SetAFMode) for GPIO_SetAFMode
+    i2c.o(i.I2C_Init) refers to i2c.o(i.GetI2CFclkSource) for GetI2CFclkSource
+    i2c.o(i.I2C_Init) refers to i2c.o(i.I2C_ConfigIO) for I2C_ConfigIO
+    i2c.o(i.I2C_Init) refers to i2c.o(i.SetI2CFclkSource) for SetI2CFclkSource
+    i2c.o(i.I2C_Init) refers to uidiv.o(.text) for __aeabi_uidivmod
+    i2c.o(i.I2C_ReceiveData) refers to delay.o(i.delay1us) for delay1us
+    i2c.o(i.I2C_RxDmaConfig) refers to dma.o(i.PeripheralsRxDmaConfig) for PeripheralsRxDmaConfig
+    i2c.o(i.I2C_SendData) refers to delay.o(i.delay1us) for delay1us
+    i2c.o(i.I2C_TxDmaConfig) refers to dma.o(i.PeripheralsTxDmaConfig) for PeripheralsTxDmaConfig
+    vdac.o(i.ConfigVdacOutputPin) refers to gpio.o(i.GPIO_ClrAFMode) for GPIO_ClrAFMode
+    vdac.o(i.ConfigVdacOutputPin) refers to gpio.o(i.GPIO_SetAFMode) for GPIO_SetAFMode
+    op.o(i.OPA_Disable) refers to op.o(.constdata) for .constdata
+    op.o(i.OPA_Enable) refers to op.o(.constdata) for .constdata
+    op.o(i.OPA_GainConfig) refers to op.o(.constdata) for .constdata
+    op.o(i.OPA_Init) refers to op.o(.constdata) for .constdata
+    tia.o(i.TiaIOConfigure) refers to gpio.o(i.GPIO_SetAFMode) for GPIO_SetAFMode
+    saradc.o(i.TriggerSARAdcStart) refers to delay.o(i.DelayForCommandExeDone) for DelayForCommandExeDone
+    aes.o(i.AesCbcDecode) refers to aes.o(i.AestxDmaConfig) for AestxDmaConfig
+    aes.o(i.AesCbcDecode) refers to aes.o(i.AesrxDmaConfig) for AesrxDmaConfig
+    aes.o(i.AesCbcDecode) refers to aes.o(i.AesWaitActionDone) for AesWaitActionDone
+    aes.o(i.AesCbcDecode) refers to aes.o(.data) for .data
+    aes.o(i.AesCbcEnc) refers to aes.o(i.AestxDmaConfig) for AestxDmaConfig
+    aes.o(i.AesCbcEnc) refers to aes.o(i.AesrxDmaConfig) for AesrxDmaConfig
+    aes.o(i.AesCbcEnc) refers to aes.o(i.AesWaitActionDone) for AesWaitActionDone
+    aes.o(i.AesCbcEnc) refers to aes.o(.data) for .data
+    aes.o(i.AesEcbDecode) refers to aes.o(i.AestxDmaConfig) for AestxDmaConfig
+    aes.o(i.AesEcbDecode) refers to aes.o(i.AesrxDmaConfig) for AesrxDmaConfig
+    aes.o(i.AesEcbDecode) refers to aes.o(i.AesWaitActionDone) for AesWaitActionDone
+    aes.o(i.AesEcbDecode) refers to aes.o(.data) for .data
+    aes.o(i.AesEcbEnc) refers to aes.o(i.AestxDmaConfig) for AestxDmaConfig
+    aes.o(i.AesEcbEnc) refers to aes.o(i.AesrxDmaConfig) for AesrxDmaConfig
+    aes.o(i.AesEcbEnc) refers to aes.o(i.AesWaitActionDone) for AesWaitActionDone
+    aes.o(i.AesEcbEnc) refers to aes.o(.data) for .data
+    aes.o(i.AesEnd) refers to interrupt.o(i.IC_PowupDeinit) for IC_PowupDeinit
+    aes.o(i.AesEnd) refers to interrupt.o(i.IC_DisableNVIC) for IC_DisableNVIC
+    aes.o(i.AesIRQHandler) refers to aes.o(.data) for .data
+    aes.o(i.AesSha256) refers to aes.o(i.AestxDmaConfig) for AestxDmaConfig
+    aes.o(i.AesSha256) refers to aes.o(i.AesWaitActionDone) for AesWaitActionDone
+    aes.o(i.AesSha256) refers to memmovea.o(.text) for __aeabi_memcpy4
+    aes.o(i.AesSha256) refers to aes.o(.data) for .data
+    aes.o(i.AesStart) refers to interrupt.o(i.IC_PowupInit) for IC_PowupInit
+    aes.o(i.AesStart) refers to interrupt.o(i.XIC_EnableIRQ) for XIC_EnableIRQ
+    aes.o(i.AesStart) refers to interrupt.o(i.IC_EnableNVIC) for IC_EnableNVIC
+    aes.o(i.AesStart) refers to aes.o(i.AesIRQHandler) for AesIRQHandler
+    aes.o(i.AesWaitActionDone) refers to printfb.o(i.__0printf$bare) for __2printf
+    aes.o(i.AesrxDmaConfig) refers to dma.o(i.DMA_StartChannel) for DMA_StartChannel
+    aes.o(i.AesrxDmaConfig) refers to aes.o(.data) for .data
+    aes.o(i.AestxDmaConfig) refers to dma.o(i.DMA_StartChannel) for DMA_StartChannel
+    aes.o(i.AestxDmaConfig) refers to aes.o(.data) for .data
+    timer.o(i.CalExtPulse) refers to printfb.o(i.__0printf$bare) for __2printf
+    timer.o(i.Hal_LptimerHandler) refers to printfb.o(i.__0printf$bare) for __2printf
+    timer.o(i.Hal_Timer0Handler) refers to printfb.o(i.__0printf$bare) for __2printf
+    timer.o(i.Hal_Timer1Handler) refers to printfb.o(i.__0printf$bare) for __2printf
+    timer.o(i.Hal_Timer2Handler) refers to printfb.o(i.__0printf$bare) for __2printf
+    timer.o(i.Hal_Timer3Handler) refers to printfb.o(i.__0printf$bare) for __2printf
+    timer.o(i.Hal_Timer4Handler) refers to printfb.o(i.__0printf$bare) for __2printf
+    timer.o(i.Hal_Timer5Handler) refers to printfb.o(i.__0printf$bare) for __2printf
+    flash.o(i.Flash_Init) refers to flash.o(RAMCODE) for Flash_ConfigRCTC
+    interrupt.o(i.IC_PowupDeinit) refers to interrupt.o(.jump_table_mem_area) for .jump_table_mem_area
+    interrupt.o(i.IC_PowupInit) refers to interrupt.o(.jump_table_mem_area) for .jump_table_mem_area
+    interrupt.o(i.IC_PowupInit) refers to interrupt.o(i.NMI_Handler) for NMI_Handler
+    interrupt.o(i.IC_PowupInit) refers to interrupt.o(i.HardFault_Handler) for HardFault_Handler
+    interrupt.o(i.IC_PowupInit) refers to interrupt.o(i.SVC_Handler) for SVC_Handler
+    interrupt.o(i.IC_PowupInit) refers to interrupt.o(i.PendSV_Handler) for PendSV_Handler
+    interrupt.o(i.IC_PowupInit) refers to interrupt.o(i.SysTick_Handler) for SysTick_Handler
+    interrupt.o(i.IC_PowupInit) refers to interrupt.o(i.fic_IRQHandler) for fic_IRQHandler
+    interrupt.o(i.IC_PowupInit) refers to interrupt.o(i.lic_IRQHandler) for lic_IRQHandler
+    interrupt.o(i.IC_PowupInit) refers to interrupt.o(i.aic_IRQHandler) for aic_IRQHandler
+    interrupt.o(i.XIC_DisableIRQ) refers to interrupt.o(i.XIC_GetVectIdx) for XIC_GetVectIdx
+    interrupt.o(i.XIC_DisableIRQ) refers to interrupt.o(i.XIC_GetModule) for XIC_GetModule
+    interrupt.o(i.XIC_EnableIRQ) refers to interrupt.o(i.XIC_GetVectIdx) for XIC_GetVectIdx
+    interrupt.o(i.XIC_EnableIRQ) refers to interrupt.o(i.XIC_GetModule) for XIC_GetModule
+    interrupt.o(i.XIC_EnableIRQ) refers to interrupt.o(.jump_table_mem_area) for .jump_table_mem_area
+    interrupt.o(i.XIC_SetVector) refers to interrupt.o(.jump_table_mem_area) for .jump_table_mem_area
+    interrupt.o(i.aic_IRQHandler) refers to interrupt.o(i.__NVIC_ClearPendingIRQ) for __NVIC_ClearPendingIRQ
+    interrupt.o(i.aic_IRQHandler) refers to systemdriver.o(i.IwdgCallback) for IwdgCallback
+    interrupt.o(i.aic_IRQHandler) refers to displaydriver.o(i.Display_GUI) for Display_GUI
+    interrupt.o(i.aic_IRQHandler) refers to buzzdriver.o(i.Buzz_Speaker) for Buzz_Speaker
+    interrupt.o(i.aic_IRQHandler) refers to interrupt.o(.data) for .data
+    interrupt.o(i.aic_IRQHandler) refers to buzzdriver.o(.data) for gBeepCtrl
+    interrupt.o(i.aic_IRQHandler) refers to displaydriver.o(.bss) for gAlmCtrl
+    interrupt.o(i.fic_IRQHandler) refers to interrupt.o(i.__NVIC_SetPendingIRQ) for __NVIC_SetPendingIRQ
+    interrupt.o(i.fic_IRQHandler) refers to gpio.o(i.GPIO_ClearBits) for GPIO_ClearBits
+    interrupt.o(i.fic_IRQHandler) refers to interrupt.o(.data) for .data
+    interrupt.o(i.fic_IRQHandler) refers to preprocess.o(.bss) for gDmaAdcBuf
+    interrupt.o(i.fic_IRQHandler) refers to lightdriver.o(.data) for gDriveRed
+    interrupt.o(i.fic_IRQHandler) refers to defaultsetup.o(.bss) for gCfgCtrl
+    interrupt.o(i.fic_IRQHandler) refers to preprocess.o(.bss) for gSampArray
+    interrupt.o(i.fic_IRQHandler) refers to displaydriver.o(.data) for gCellVolt
+    interrupt.o(i.lic_IRQHandler) refers to interrupt.o(i.__NVIC_ClearPendingIRQ) for __NVIC_ClearPendingIRQ
+    interrupt.o(i.lic_IRQHandler) refers to preprocess.o(i.Process_SampleData) for Process_SampleData
+    interrupt.o(i.lic_IRQHandler) refers to lightdriver.o(i.Light_ProbeDriveAdjust) for Light_ProbeDriveAdjust
+    interrupt.o(i.lic_IRQHandler) refers to interrupt.o(i.__NVIC_SetPendingIRQ) for __NVIC_SetPendingIRQ
+    interrupt.o(i.lic_IRQHandler) refers to displaydriver.o(.bss) for gSatParam
+    lpm.o(i.EnterLpmPmuState) refers to lpm.o(i.__ARM_common_switch8) for __ARM_common_switch8
+    lpm.o(i.EnterLpmPmuState) refers to lpm.o(i.EnterLpmNormalSleep) for EnterLpmNormalSleep
+    lpm.o(i.EnterLpmPmuState) refers to lpm.o(i.EnterLpmDeepSleep) for EnterLpmDeepSleep
+    lpm.o(i.SwitchOffModulePower) refers to gpio.o(i.GPIO_SwitchOffIe) for GPIO_SwitchOffIe
+    rtc.o(i.Hal_CalendarIRQHandler) refers to printfb.o(i.__0printf$bare) for __2printf
+    rtc.o(i.Hal_WaveCalendarIRQHandler) refers to printfb.o(i.__0printf$bare) for __2printf
+    rtc.o(i.RTC_AlarmWrite) refers to rtc.o(i.RTC_IsrSet) for RTC_IsrSet
+    rtc.o(i.RTC_TimeRead) refers to memmovea.o(.text) for __aeabi_memcpy4
+    spi.o(i.SPI_Init) refers to spi.o(i.SPI_SetRfr) for SPI_SetRfr
+    spi.o(i.SPI_Init) refers to spi.o(i.SPI_SetFrameSize) for SPI_SetFrameSize
+    spi.o(i.SPI_Init) refers to spi.o(i.SPI_SetCpolCpha) for SPI_SetCpolCpha
+    spi.o(i.SPI_Receive_DMAConfig) refers to dma.o(i.PeripheralsRxDmaConfig) for PeripheralsRxDmaConfig
+    spi.o(i.SPI_Send_DMAConfig) refers to dma.o(i.PeripheralsTxDmaConfig) for PeripheralsTxDmaConfig
+    spi.o(i.SpiIOConfig) refers to gpio.o(i.GPIO_SetAFMode) for GPIO_SetAFMode
+    trim.o(i.CmpTrimToTarget) refers to gpio.o(i.GPIO_ClrAFMode) for GPIO_ClrAFMode
+    trim.o(i.CmpTrimToTarget) refers to gpio.o(i.GPIO_SetAFMode) for GPIO_SetAFMode
+    trim.o(i.IDACTrimToTarget) refers to gpio.o(i.GPIO_SetAFMode) for GPIO_SetAFMode
+    trim.o(i.RC16mTrimToTarget) refers to system_tcasxxx.o(i.SystemCoreClockUpdate) for SystemCoreClockUpdate
+    trim.o(i.RC16mTrimToTarget) refers to delay.o(i.SysTickClkSourceConfig) for SysTickClkSourceConfig
+    trim.o(i.RC32kTrimToTarget) refers to system_tcasxxx.o(i.SystemCoreClockUpdate) for SystemCoreClockUpdate
+    trim.o(i.RC32kTrimToTarget) refers to delay.o(i.SysTickClkSourceConfig) for SysTickClkSourceConfig
+    trim.o(i.VDACTrimToTarget) refers to gpio.o(i.GPIO_ClrAFMode) for GPIO_ClrAFMode
+    trim.o(i.VDACTrimToTarget) refers to gpio.o(i.GPIO_SetAFMode) for GPIO_SetAFMode
+    wdg.o(i.Hal_IWDGHandler) refers to printfb.o(i.__0printf$bare) for __2printf
+    wdg.o(i.Hal_WWDGAdvHandler) refers to printfb.o(i.__0printf$bare) for __2printf
+    wdg.o(i.Hal_WWDGT2Handler) refers to printfb.o(i.__0printf$bare) for __2printf
+    wdg.o(i.Hal_WWDGTimeOutHandler) refers to printfb.o(i.__0printf$bare) for __2printf
+    startup_tcasxxx.o(RESET) refers to startup_tcasxxx.o(STACK) for __initial_sp
+    startup_tcasxxx.o(RESET) refers to startup_tcasxxx.o(.text) for Reset_Handler
+    startup_tcasxxx.o(RESET) refers to interrupt.o(i.NMI_Handler) for NMI_Handler
+    startup_tcasxxx.o(RESET) refers to interrupt.o(i.HardFault_Handler) for HardFault_Handler
+    startup_tcasxxx.o(RESET) refers to interrupt.o(i.SVC_Handler) for SVC_Handler
+    startup_tcasxxx.o(RESET) refers to interrupt.o(i.PendSV_Handler) for PendSV_Handler
+    startup_tcasxxx.o(RESET) refers to interrupt.o(i.SysTick_Handler) for SysTick_Handler
+    startup_tcasxxx.o(RESET) refers to interrupt.o(i.fic_IRQHandler) for fic_IRQHandler
+    startup_tcasxxx.o(RESET) refers to interrupt.o(i.lic_IRQHandler) for lic_IRQHandler
+    startup_tcasxxx.o(RESET) refers to interrupt.o(i.aic_IRQHandler) for aic_IRQHandler
+    startup_tcasxxx.o(.text) refers to system_tcasxxx.o(i.SystemInit) for SystemInit
+    startup_tcasxxx.o(.text) refers to main.o(i.TCmain) for TCmain
+    system_tcasxxx.o(i.SystemConfigFlash) refers to flash.o(RAMCODE) for Flash_ConfigRCTC
+    system_tcasxxx.o(i.SystemConfigFlash) refers to system_tcasxxx.o(.data) for .data
+    system_tcasxxx.o(i.SystemCoreClockUpdate) refers to system_tcasxxx.o(i.SystemGetHClkFreq) for SystemGetHClkFreq
+    system_tcasxxx.o(i.SystemCoreClockUpdate) refers to system_tcasxxx.o(.data) for .data
+    system_tcasxxx.o(i.SystemCoreSwitchHclkSrc) refers to lpm.o(i.__ARM_common_switch8) for __ARM_common_switch8
+    system_tcasxxx.o(i.SystemGetHClkFreq) refers to lpm.o(i.__ARM_common_switch8) for __ARM_common_switch8
+    system_tcasxxx.o(i.SystemInit) refers to system_tcasxxx.o(i.SystemCoreSwitchHclkSrc) for SystemCoreSwitchHclkSrc
+    system_tcasxxx.o(i.SystemInit) refers to system_tcasxxx.o(i.CopyDataRWtoImage) for CopyDataRWtoImage
+    system_tcasxxx.o(i.SystemInit) refers to system_tcasxxx.o(i.SystemAnlogTrim) for SystemAnlogTrim
+    system_tcasxxx.o(i.SystemInit) refers to system_tcasxxx.o(i.SystemCoreClockUpdate) for SystemCoreClockUpdate
+    system_tcasxxx.o(i.SystemInit) refers to system_tcasxxx.o(i.SystemConfigFlash) for SystemConfigFlash
+    system_tcasxxx.o(i.SystemInit) refers to system_tcasxxx.o(i.SysCheckTrimValid) for SysCheckTrimValid
+    defaultsetup.o(i.ErasePage) refers to flash.o(RAMCODE) for Flash_Erase
+    defaultsetup.o(i.ReadFlashCfg) refers to defaultsetup.o(i.WriteFlashCfg) for WriteFlashCfg
+    defaultsetup.o(i.ReadFlashCfg) refers to defaultsetup.o(.bss) for .bss
+    defaultsetup.o(i.ReadFlashCfg) refers to defaultsetup.o(.data) for .data
+    defaultsetup.o(i.Setup_IsRestoreValue) refers to displaydriver.o(.bss) for gAlmCtrl
+    defaultsetup.o(i.Setup_IsRestoreValue) refers to defaultsetup.o(.bss) for .bss
+    defaultsetup.o(i.Setup_RestoreDevice) refers to defaultsetup.o(i.ReadFlashCfg) for ReadFlashCfg
+    defaultsetup.o(i.Setup_RestoreDevice) refers to defaultsetup.o(.bss) for .bss
+    defaultsetup.o(i.Setup_RestoreDevice) refers to displaydriver.o(.bss) for gAlmCtrl
+    defaultsetup.o(i.Setup_UpdateDevice) refers to defaultsetup.o(i.WriteFlashCfg) for WriteFlashCfg
+    defaultsetup.o(i.Setup_UpdateDevice) refers to displaydriver.o(.bss) for gAlmCtrl
+    defaultsetup.o(i.Setup_UpdateDevice) refers to defaultsetup.o(.bss) for .bss
+    defaultsetup.o(i.WriteFlashCfg) refers to flash.o(i.Flash_Init) for Flash_Init
+    defaultsetup.o(i.WriteFlashCfg) refers to defaultsetup.o(i.ErasePage) for ErasePage
+    defaultsetup.o(i.WriteFlashCfg) refers to flash.o(RAMCODE) for Flash_Write
+    defaultsetup.o(i.WriteFlashCfg) refers to flash.o(i.Flash_DeInit) for Flash_DeInit
+    defaultsetup.o(i.WriteFlashCfg) refers to defaultsetup.o(.bss) for .bss
+    defaultsetup.o(i.WriteFlashCfg) refers to defaultsetup.o(.data) for .data
+    lightdriver.o(i.Light_AdaptBaselineSet) refers to lightdriver.o(.bss) for .bss
+    lightdriver.o(i.Light_ProbeDriveAdjust) refers to lightdriver.o(i.Light_AdjustDrive) for Light_AdjustDrive
+    lightdriver.o(i.Light_ProbeDriveAdjust) refers to lightdriver.o(i.Light_StatSampleACVariety) for Light_StatSampleACVariety
+    lightdriver.o(i.Light_ProbeDriveAdjust) refers to lightdriver.o(i.Light_AdaptBaselineSet) for Light_AdaptBaselineSet
+    lightdriver.o(i.Light_ProbeDriveAdjust) refers to memseta.o(.text) for __aeabi_memclr4
+    lightdriver.o(i.Light_ProbeDriveAdjust) refers to preprocess.o(.bss) for gSampArray
+    lightdriver.o(i.Light_ProbeDriveAdjust) refers to lightdriver.o(.bss) for .bss
+    lightdriver.o(i.Light_ProbeDriveAdjust) refers to displaydriver.o(.bss) for gSatSamp
+    lightdriver.o(i.Light_ProbeDriveAdjust) refers to lightdriver.o(.data) for .data
+    lightdriver.o(i.Light_ProbeDriveAdjust) refers to preprocess.o(.data) for gInitCnt
+    lightdriver.o(i.Light_StatSampleACVariety) refers to memseta.o(.text) for __aeabi_memclr4
+    lightdriver.o(i.Light_StatSampleACVariety) refers to lightdriver.o(.bss) for .bss
+    lightdriver.o(i.Light_StatSampleACVariety) refers to lightdriver.o(.data) for .data
+    preprocess.o(i.Process_FixedSmoothFilter) refers to memseta.o(.text) for __aeabi_memclr4
+    preprocess.o(i.Process_FixedSmoothFilter) refers to dflti.o(.text) for __aeabi_i2d
+    preprocess.o(i.Process_FixedSmoothFilter) refers to ddiv.o(.text) for __aeabi_ddiv
+    preprocess.o(i.Process_FixedSmoothFilter) refers to dmul.o(.text) for __aeabi_dmul
+    preprocess.o(i.Process_FixedSmoothFilter) refers to dfixi.o(.text) for __aeabi_d2iz
+    preprocess.o(i.Process_FixedSmoothFilter) refers to preprocess.o(.data) for .data
+    preprocess.o(i.Process_FixedSmoothFilter) refers to preprocess.o(.bss) for .bss
+    preprocess.o(i.Process_LowPassFiltFIR) refers to memmovea.o(.text) for __aeabi_memmove4
+    preprocess.o(i.Process_LowPassFiltFIR) refers to fflti.o(.text) for __aeabi_i2f
+    preprocess.o(i.Process_LowPassFiltFIR) refers to fmul.o(.text) for __aeabi_fmul
+    preprocess.o(i.Process_LowPassFiltFIR) refers to fadd.o(.text) for __aeabi_fadd
+    preprocess.o(i.Process_LowPassFiltFIR) refers to ffixi.o(.text) for __aeabi_f2iz
+    preprocess.o(i.Process_LowPassFiltFIR) refers to preprocess.o(.data) for .data
+    preprocess.o(i.Process_LowPassFiltFIR) refers to preprocess.o(.constdata) for .constdata
+    preprocess.o(i.Process_ResampleSignal) refers to idiv.o(.text) for __aeabi_idivmod
+    preprocess.o(i.Process_ResampleSignal) refers to preprocess.o(.bss) for .bss
+    preprocess.o(i.Process_ResampleSignal) refers to preprocess.o(.data) for .data
+    preprocess.o(i.Process_SampleData) refers to preprocess.o(i.Process_LowPassFiltFIR) for Process_LowPassFiltFIR
+    preprocess.o(i.Process_SampleData) refers to preprocess.o(i.Process_ResampleSignal) for Process_ResampleSignal
+    preprocess.o(i.Process_SampleData) refers to preprocess.o(i.Process_FixedSmoothFilter) for Process_FixedSmoothFilter
+    preprocess.o(i.Process_SampleData) refers to preprocess.o(.bss) for .bss
+    preprocess.o(i.Process_SampleData) refers to displaydriver.o(.bss) for gSatSamp
+    preprocess.o(i.Process_SampleData) refers to preprocess.o(.data) for .data
+    spo2interface.o(i.SpO2_algorithm) refers to ffltui.o(.text) for __aeabi_ui2f
+    spo2interface.o(i.SpO2_algorithm) refers to fflti.o(.text) for __aeabi_i2f
+    spo2interface.o(i.SpO2_algorithm) refers to fdiv.o(.text) for __aeabi_fdiv
+    spo2interface.o(i.SpO2_algorithm) refers to fmul.o(.text) for __aeabi_fmul
+    spo2interface.o(i.SpO2_algorithm) refers to fadd.o(.text) for __aeabi_frsub
+    spo2interface.o(i.SpO2_algorithm) refers to ffixui.o(.text) for __aeabi_f2uiz
+    spo2interface.o(i.SpO2_algorithm) refers to wdg.o(i.IWDG_ResetCnt) for IWDG_ResetCnt
+    spo2interface.o(i.SpO2_algorithm) refers to displaydriver.o(.bss) for gSatSamp
+    spo2interface.o(i.SpO2_algorithm) refers to spo2interface.o(.data) for .data
+    spo2interface.o(i.SpO2_algorithm) refers to preprocess.o(.data) for is_new_sample_ready
+    spo2interface.o(i.SpO2_algorithm) refers to displaydriver.o(.bss) for gSatParam
+    displaydriver.o(i.Display_AlarmMenu) refers to lpm.o(i.__ARM_common_switch8) for __ARM_common_switch8
+    displaydriver.o(i.Display_AlarmMenu) refers to ug2864driver.o(i.UG2864_Display) for UG2864_Display
+    displaydriver.o(i.Display_AlarmMenu) refers to displaydriver.o(i.Display_AlarmThrd) for Display_AlarmThrd
+    displaydriver.o(i.Display_AlarmMenu) refers to fontlibs.o(.constdata) for gAlarmFont
+    displaydriver.o(i.Display_AlarmMenu) refers to displaydriver.o(.bss) for .bss
+    displaydriver.o(i.Display_AlarmThrd) refers to lpm.o(i.__ARM_common_switch8) for __ARM_common_switch8
+    displaydriver.o(i.Display_AlarmThrd) refers to uidiv.o(.text) for __aeabi_uidivmod
+    displaydriver.o(i.Display_AlarmThrd) refers to ug2864driver.o(i.UG2864_Display) for UG2864_Display
+    displaydriver.o(i.Display_AlarmThrd) refers to fontlibs.o(.constdata) for gAlarmDigit
+    displaydriver.o(i.Display_AlarmThrd) refers to displaydriver.o(.bss) for .bss
+    displaydriver.o(i.Display_AlarmThrd) refers to displaydriver.o(.data) for .data
+    displaydriver.o(i.Display_Bargraph) refers to ug2864driver.o(i.UG2864_Display) for UG2864_Display
+    displaydriver.o(i.Display_Bargraph) refers to ug2864driver.o(i.UG2864_ClearRegion) for UG2864_ClearRegion
+    displaydriver.o(i.Display_Bargraph) refers to lpm.o(i.__ARM_common_switch8) for __ARM_common_switch8
+    displaydriver.o(i.Display_Bargraph) refers to fontlibs.o(.constdata) for gVerBarGrid
+    displaydriver.o(i.Display_Bargraph) refers to fontlibs.o(.constdata) for gHorBarGrid_15
+    displaydriver.o(i.Display_Bargraph) refers to fontlibs.o(.constdata) for gHorBarGrid_16
+    displaydriver.o(i.Display_Bargraph) refers to fontlibs.o(.constdata) for gHorBarGrid_27
+    displaydriver.o(i.Display_Bargraph) refers to fontlibs.o(.constdata) for gHorBarGrid_28
+    displaydriver.o(i.Display_Bargraph) refers to fontlibs.o(.constdata) for gHorBarGrid_39
+    displaydriver.o(i.Display_Bargraph) refers to fontlibs.o(.constdata) for gHorBarGrid_3A
+    displaydriver.o(i.Display_Bargraph) refers to fontlibs.o(.constdata) for gHorBarGrid_4B
+    displaydriver.o(i.Display_Bargraph) refers to fontlibs.o(.constdata) for gHorBarGrid_4C
+    displaydriver.o(i.Display_Battery) refers to ug2864driver.o(i.UG2864_Display) for UG2864_Display
+    displaydriver.o(i.Display_Battery) refers to ug2864driver.o(i.UG2864_ClearRegion) for UG2864_ClearRegion
+    displaydriver.o(i.Display_Battery) refers to fontlibs.o(.constdata) for gAllBattery
+    displaydriver.o(i.Display_Battery) refers to displaydriver.o(.data) for .data
+    displaydriver.o(i.Display_Ble) refers to ug2864driver.o(i.UG2864_Display) for UG2864_Display
+    displaydriver.o(i.Display_Ble) refers to fontlibs.o(.constdata) for gHorBluetoothLogo
+    displaydriver.o(i.Display_BlinkSelection) refers to memseta.o(.text) for __aeabi_memclr4
+    displaydriver.o(i.Display_BlinkSelection) refers to memmovea.o(.text) for __aeabi_memcpy
+    displaydriver.o(i.Display_BlinkSelection) refers to lpm.o(i.__ARM_common_switch8) for __ARM_common_switch8
+    displaydriver.o(i.Display_BlinkSelection) refers to ug2864driver.o(i.UG2864_Display) for UG2864_Display
+    displaydriver.o(i.Display_BlinkSelection) refers to ug2864driver.o(i.UG2864_ClearRegion) for UG2864_ClearRegion
+    displaydriver.o(i.Display_BlinkSelection) refers to displaydriver.o(.bss) for .bss
+    displaydriver.o(i.Display_BlinkSelection) refers to displaydriver.o(.data) for .data
+    displaydriver.o(i.Display_BlinkSelection) refers to fontlibs.o(.constdata) for gAlarmFont
+    displaydriver.o(i.Display_Caption) refers to ug2864driver.o(i.UG2864_Display) for UG2864_Display
+    displaydriver.o(i.Display_Caption) refers to fontlibs.o(.constdata) for gVerCaptionSat
+    displaydriver.o(i.Display_Caption) refers to fontlibs.o(.constdata) for gVerCaptionPR
+    displaydriver.o(i.Display_Caption) refers to fontlibs.o(.constdata) for gVerCaptionPI
+    displaydriver.o(i.Display_Caption) refers to fontlibs.o(.constdata) for gHorCaptionSat
+    displaydriver.o(i.Display_Caption) refers to fontlibs.o(.constdata) for gHorCaptionPR
+    displaydriver.o(i.Display_Caption) refers to fontlibs.o(.constdata) for gHorCaptionPI
+    displaydriver.o(i.Display_GUI) refers to ug2864driver.o(i.UG2864_Set_Contrast_Control) for UG2864_Set_Contrast_Control
+    displaydriver.o(i.Display_GUI) refers to memseta.o(.text) for __aeabi_memclr
+    displaydriver.o(i.Display_GUI) refers to defaultsetup.o(i.Setup_UpdateDevice) for Setup_UpdateDevice
+    displaydriver.o(i.Display_GUI) refers to ug2864driver.o(i.UG2864_Fill_RAM) for UG2864_Fill_RAM
+    displaydriver.o(i.Display_GUI) refers to displaydriver.o(i.Display_Version) for Display_Version
+    displaydriver.o(i.Display_GUI) refers to displaydriver.o(i.Display_Logo) for Display_Logo
+    displaydriver.o(i.Display_GUI) refers to displaydriver.o(i.Display_Caption) for Display_Caption
+    displaydriver.o(i.Display_GUI) refers to displaydriver.o(i.Display_Battery) for Display_Battery
+    displaydriver.o(i.Display_GUI) refers to displaydriver.o(i.Display_Pleth) for Display_Pleth
+    displaydriver.o(i.Display_GUI) refers to displaydriver.o(i.Display_Bargraph) for Display_Bargraph
+    displaydriver.o(i.Display_GUI) refers to uidiv.o(.text) for __aeabi_uidivmod
+    displaydriver.o(i.Display_GUI) refers to displaydriver.o(i.Display_SpO2) for Display_SpO2
+    displaydriver.o(i.Display_GUI) refers to displaydriver.o(i.Display_Pulse) for Display_Pulse
+    displaydriver.o(i.Display_GUI) refers to displaydriver.o(i.Display_Perfusion) for Display_Perfusion
+    displaydriver.o(i.Display_GUI) refers to displaydriver.o(i.Display_Ble) for Display_Ble
+    displaydriver.o(i.Display_GUI) refers to displaydriver.o(i.Display_AlarmMenu) for Display_AlarmMenu
+    displaydriver.o(i.Display_GUI) refers to defaultsetup.o(.bss) for gCfgCtrl
+    displaydriver.o(i.Display_GUI) refers to ug2864driver.o(.constdata) for gBrightnessTab
+    displaydriver.o(i.Display_GUI) refers to displaydriver.o(.bss) for .bss
+    displaydriver.o(i.Display_GUI) refers to displaydriver.o(.data) for .data
+    displaydriver.o(i.Display_GUI) refers to displaydriver.o(.constdata) for .constdata
+    displaydriver.o(i.Display_GUI) refers to displaydriver.o(i.Display_BlinkSelection) for Display_BlinkSelection
+    displaydriver.o(i.Display_GUI) refers to displaydriver.o(i.Display_AlarmThrd) for Display_AlarmThrd
+    displaydriver.o(i.Display_GUI) refers to displaydriver.o(i.Display_ProbeOff) for Display_ProbeOff
+    displaydriver.o(i.Display_GUI) refers to ug2864driver.o(i.UG2864_Set_Display_On_Off) for UG2864_Set_Display_On_Off
+    displaydriver.o(i.Display_GUI) refers to gpio.o(i.GPIO_ClearBits) for GPIO_ClearBits
+    displaydriver.o(i.Display_GUI) refers to defaultsetup.o(.data) for gChkFunc
+    displaydriver.o(i.Display_Init) refers to memseta.o(.text) for __aeabi_memclr
+    displaydriver.o(i.Display_Init) refers to ug2864driver.o(i.UG2864_OLED_Init) for UG2864_OLED_Init
+    displaydriver.o(i.Display_Init) refers to displaydriver.o(.bss) for .bss
+    displaydriver.o(i.Display_Init) refers to displaydriver.o(.data) for .data
+    displaydriver.o(i.Display_Init) refers to defaultsetup.o(.bss) for gCfgCtrl
+    displaydriver.o(i.Display_Logo) refers to ug2864driver.o(i.UG2864_Display) for UG2864_Display
+    displaydriver.o(i.Display_Logo) refers to fontlibs.o(.constdata) for gLogoNarigmed
+    displaydriver.o(i.Display_Perfusion) refers to idiv.o(.text) for __aeabi_idivmod
+    displaydriver.o(i.Display_Perfusion) refers to ug2864driver.o(i.UG2864_Display) for UG2864_Display
+    displaydriver.o(i.Display_Perfusion) refers to ug2864driver.o(i.UG2864_ClearRegion) for UG2864_ClearRegion
+    displaydriver.o(i.Display_Perfusion) refers to fontlibs.o(.constdata) for gVerParamPI
+    displaydriver.o(i.Display_Perfusion) refers to fontlibs.o(.constdata) for gHorParamPI
+    displaydriver.o(i.Display_Pleth) refers to memmovea.o(.text) for __aeabi_memcpy4
+    displaydriver.o(i.Display_Pleth) refers to ug2864driver.o(i.UG2864_ClearRegion) for UG2864_ClearRegion
+    displaydriver.o(i.Display_Pleth) refers to idiv.o(.text) for __aeabi_idivmod
+    displaydriver.o(i.Display_Pleth) refers to ug2864driver.o(i.UG2864_Display) for UG2864_Display
+    displaydriver.o(i.Display_Pleth) refers to displaydriver.o(.constdata) for .constdata
+    displaydriver.o(i.Display_Pleth) refers to displaydriver.o(.bss) for .bss
+    displaydriver.o(i.Display_Pleth) refers to displaydriver.o(.data) for .data
+    displaydriver.o(i.Display_ProbeOff) refers to ug2864driver.o(i.UG2864_ClearRegion) for UG2864_ClearRegion
+    displaydriver.o(i.Display_ProbeOff) refers to ug2864driver.o(i.UG2864_Display) for UG2864_Display
+    displaydriver.o(i.Display_ProbeOff) refers to displaydriver.o(.data) for .data
+    displaydriver.o(i.Display_ProbeOff) refers to fontlibs.o(.constdata) for gProbeOff
+    displaydriver.o(i.Display_ProbeOff) refers to fontlibs.o(.constdata) for gDepletePWR
+    displaydriver.o(i.Display_Pulse) refers to idiv.o(.text) for __aeabi_idivmod
+    displaydriver.o(i.Display_Pulse) refers to ug2864driver.o(i.UG2864_Display) for UG2864_Display
+    displaydriver.o(i.Display_Pulse) refers to ug2864driver.o(i.UG2864_ClearRegion) for UG2864_ClearRegion
+    displaydriver.o(i.Display_Pulse) refers to displaydriver.o(.bss) for .bss
+    displaydriver.o(i.Display_Pulse) refers to fontlibs.o(.constdata) for gVerPluse
+    displaydriver.o(i.Display_Pulse) refers to fontlibs.o(.constdata) for gHorPluse
+    displaydriver.o(i.Display_SpO2) refers to idiv.o(.text) for __aeabi_idivmod
+    displaydriver.o(i.Display_SpO2) refers to ug2864driver.o(i.UG2864_Display) for UG2864_Display
+    displaydriver.o(i.Display_SpO2) refers to ug2864driver.o(i.UG2864_ClearRegion) for UG2864_ClearRegion
+    displaydriver.o(i.Display_SpO2) refers to displaydriver.o(.bss) for .bss
+    displaydriver.o(i.Display_SpO2) refers to fontlibs.o(.constdata) for gVerSpO2
+    displaydriver.o(i.Display_SpO2) refers to fontlibs.o(.constdata) for gHorSpO2
+    displaydriver.o(i.Display_Version) refers to ug2864driver.o(i.UG2864_Display) for UG2864_Display
+    displaydriver.o(i.Display_Version) refers to displaydriver.o(i.GetHardwareVer) for GetHardwareVer
+    displaydriver.o(i.Display_Version) refers to uidiv.o(.text) for __aeabi_uidivmod
+    displaydriver.o(i.Display_Version) refers to displaydriver.o(i.GetSoftwareVer) for GetSoftwareVer
+    displaydriver.o(i.Display_Version) refers to fontlibs.o(.constdata) for gHorHw
+    displaydriver.o(i.Display_Version) refers to fontlibs.o(.constdata) for gHorParamPI
+    displaydriver.o(i.Display_Version) refers to fontlibs.o(.constdata) for gAlarmDigit
+    displaydriver.o(i.Display_Version) refers to fontlibs.o(.constdata) for gHorSw
+    ug2864driver.o(i.UG2864_ClearRegion) refers to ug2864driver.o(i.UG2864_Set_Start_Page) for UG2864_Set_Start_Page
+    ug2864driver.o(i.UG2864_ClearRegion) refers to ug2864driver.o(i.UG2864_Set_Start_Column) for UG2864_Set_Start_Column
+    ug2864driver.o(i.UG2864_ClearRegion) refers to ug2864driver.o(i.UG2864_Write_Data) for UG2864_Write_Data
+    ug2864driver.o(i.UG2864_Continuous_Scroll) refers to ug2864driver.o(i.UG2864_Write_Command) for UG2864_Write_Command
+    ug2864driver.o(i.UG2864_Continuous_Scroll) refers to ug2864driver.o(i.UG2864_Delay) for UG2864_Delay
+    ug2864driver.o(i.UG2864_Deactivate_Scroll) refers to ug2864driver.o(i.UG2864_Write_Command) for UG2864_Write_Command
+    ug2864driver.o(i.UG2864_Delay) refers to ug2864driver.o(i.UG2864_uDelay) for UG2864_uDelay
+    ug2864driver.o(i.UG2864_Display) refers to ug2864driver.o(i.UG2864_Set_Start_Page) for UG2864_Set_Start_Page
+    ug2864driver.o(i.UG2864_Display) refers to ug2864driver.o(i.UG2864_Set_Start_Column) for UG2864_Set_Start_Column
+    ug2864driver.o(i.UG2864_Display) refers to ug2864driver.o(i.UG2864_Write_Data) for UG2864_Write_Data
+    ug2864driver.o(i.UG2864_Display) refers to ug2864driver.o(.constdata) for .constdata
+    ug2864driver.o(i.UG2864_Fill_RAM) refers to ug2864driver.o(i.UG2864_Set_Start_Page) for UG2864_Set_Start_Page
+    ug2864driver.o(i.UG2864_Fill_RAM) refers to ug2864driver.o(i.UG2864_Set_Start_Column) for UG2864_Set_Start_Column
+    ug2864driver.o(i.UG2864_Fill_RAM) refers to ug2864driver.o(i.UG2864_Write_Data) for UG2864_Write_Data
+    ug2864driver.o(i.UG2864_Horizontal_Scroll) refers to ug2864driver.o(i.UG2864_Write_Command) for UG2864_Write_Command
+    ug2864driver.o(i.UG2864_Horizontal_Scroll) refers to ug2864driver.o(i.UG2864_Delay) for UG2864_Delay
+    ug2864driver.o(i.UG2864_OLED_Init) refers to ug2864driver.o(i.UG2864_Set_Display_On_Off) for UG2864_Set_Display_On_Off
+    ug2864driver.o(i.UG2864_OLED_Init) refers to ug2864driver.o(i.UG2864_Set_Display_Clock) for UG2864_Set_Display_Clock
+    ug2864driver.o(i.UG2864_OLED_Init) refers to ug2864driver.o(i.UG2864_Set_Multiplex_Ratio) for UG2864_Set_Multiplex_Ratio
+    ug2864driver.o(i.UG2864_OLED_Init) refers to ug2864driver.o(i.UG2864_Set_Display_Offset) for UG2864_Set_Display_Offset
+    ug2864driver.o(i.UG2864_OLED_Init) refers to ug2864driver.o(i.UG2864_Set_Start_Line) for UG2864_Set_Start_Line
+    ug2864driver.o(i.UG2864_OLED_Init) refers to ug2864driver.o(i.UG2864_Set_Pump) for UG2864_Set_Pump
+    ug2864driver.o(i.UG2864_OLED_Init) refers to ug2864driver.o(i.UG2864_Set_Addressing_Mode) for UG2864_Set_Addressing_Mode
+    ug2864driver.o(i.UG2864_OLED_Init) refers to ug2864driver.o(i.UG2864_Set_Segment_Remap) for UG2864_Set_Segment_Remap
+    ug2864driver.o(i.UG2864_OLED_Init) refers to ug2864driver.o(i.UG2864_Set_Common_Remap) for UG2864_Set_Common_Remap
+    ug2864driver.o(i.UG2864_OLED_Init) refers to ug2864driver.o(i.UG2864_Set_Common_Config) for UG2864_Set_Common_Config
+    ug2864driver.o(i.UG2864_OLED_Init) refers to ug2864driver.o(i.UG2864_Set_Contrast_Control) for UG2864_Set_Contrast_Control
+    ug2864driver.o(i.UG2864_OLED_Init) refers to ug2864driver.o(i.UG2864_Set_Precharge_Period) for UG2864_Set_Precharge_Period
+    ug2864driver.o(i.UG2864_OLED_Init) refers to ug2864driver.o(i.UG2864_Set_VCOMH) for UG2864_Set_VCOMH
+    ug2864driver.o(i.UG2864_OLED_Init) refers to ug2864driver.o(i.UG2864_Set_Entire_Display) for UG2864_Set_Entire_Display
+    ug2864driver.o(i.UG2864_OLED_Init) refers to ug2864driver.o(i.UG2864_Set_Inverse_Display) for UG2864_Set_Inverse_Display
+    ug2864driver.o(i.UG2864_OLED_Init) refers to ug2864driver.o(i.UG2864_Fill_RAM) for UG2864_Fill_RAM
+    ug2864driver.o(i.UG2864_OLED_Init) refers to defaultsetup.o(.bss) for gCfgCtrl
+    ug2864driver.o(i.UG2864_OLED_Init) refers to ug2864driver.o(.constdata) for .constdata
+    ug2864driver.o(i.UG2864_OLED_Init_Remap) refers to ug2864driver.o(i.UG2864_Set_Display_On_Off) for UG2864_Set_Display_On_Off
+    ug2864driver.o(i.UG2864_OLED_Init_Remap) refers to ug2864driver.o(i.UG2864_Set_Segment_Remap) for UG2864_Set_Segment_Remap
+    ug2864driver.o(i.UG2864_OLED_Init_Remap) refers to ug2864driver.o(i.UG2864_Set_Common_Remap) for UG2864_Set_Common_Remap
+    ug2864driver.o(i.UG2864_OLED_Init_Remap) refers to ug2864driver.o(i.UG2864_Set_Entire_Display) for UG2864_Set_Entire_Display
+    ug2864driver.o(i.UG2864_OLED_Init_Remap) refers to ug2864driver.o(i.UG2864_Fill_RAM) for UG2864_Fill_RAM
+    ug2864driver.o(i.UG2864_Set_Addressing_Mode) refers to ug2864driver.o(i.UG2864_Write_Command) for UG2864_Write_Command
+    ug2864driver.o(i.UG2864_Set_Area_Brightness) refers to ug2864driver.o(i.UG2864_Write_Command) for UG2864_Write_Command
+    ug2864driver.o(i.UG2864_Set_Area_Color) refers to ug2864driver.o(i.UG2864_Write_Command) for UG2864_Write_Command
+    ug2864driver.o(i.UG2864_Set_Column_Address) refers to ug2864driver.o(i.UG2864_Write_Command) for UG2864_Write_Command
+    ug2864driver.o(i.UG2864_Set_Common_Config) refers to ug2864driver.o(i.UG2864_Write_Command) for UG2864_Write_Command
+    ug2864driver.o(i.UG2864_Set_Common_Remap) refers to ug2864driver.o(i.UG2864_Write_Command) for UG2864_Write_Command
+    ug2864driver.o(i.UG2864_Set_Contrast_Control) refers to ug2864driver.o(i.UG2864_Write_Command) for UG2864_Write_Command
+    ug2864driver.o(i.UG2864_Set_Dim_Mode) refers to ug2864driver.o(i.UG2864_Write_Command) for UG2864_Write_Command
+    ug2864driver.o(i.UG2864_Set_Display_Clock) refers to ug2864driver.o(i.UG2864_Write_Command) for UG2864_Write_Command
+    ug2864driver.o(i.UG2864_Set_Display_Offset) refers to ug2864driver.o(i.UG2864_Write_Command) for UG2864_Write_Command
+    ug2864driver.o(i.UG2864_Set_Display_On_Off) refers to ug2864driver.o(i.UG2864_Write_Command) for UG2864_Write_Command
+    ug2864driver.o(i.UG2864_Set_Entire_Display) refers to ug2864driver.o(i.UG2864_Write_Command) for UG2864_Write_Command
+    ug2864driver.o(i.UG2864_Set_Inverse_Display) refers to ug2864driver.o(i.UG2864_Write_Command) for UG2864_Write_Command
+    ug2864driver.o(i.UG2864_Set_Master_Config) refers to ug2864driver.o(i.UG2864_Write_Command) for UG2864_Write_Command
+    ug2864driver.o(i.UG2864_Set_Multiplex_Ratio) refers to ug2864driver.o(i.UG2864_Write_Command) for UG2864_Write_Command
+    ug2864driver.o(i.UG2864_Set_NOP) refers to ug2864driver.o(i.UG2864_Write_Command) for UG2864_Write_Command
+    ug2864driver.o(i.UG2864_Set_Page_Address) refers to ug2864driver.o(i.UG2864_Write_Command) for UG2864_Write_Command
+    ug2864driver.o(i.UG2864_Set_Precharge_Period) refers to ug2864driver.o(i.UG2864_Write_Command) for UG2864_Write_Command
+    ug2864driver.o(i.UG2864_Set_Pump) refers to ug2864driver.o(i.UG2864_Write_Command) for UG2864_Write_Command
+    ug2864driver.o(i.UG2864_Set_Read_Modify_Write) refers to ug2864driver.o(i.UG2864_Write_Command) for UG2864_Write_Command
+    ug2864driver.o(i.UG2864_Set_Segment_Remap) refers to ug2864driver.o(i.UG2864_Write_Command) for UG2864_Write_Command
+    ug2864driver.o(i.UG2864_Set_Start_Column) refers to ug2864driver.o(i.UG2864_Write_Command) for UG2864_Write_Command
+    ug2864driver.o(i.UG2864_Set_Start_Line) refers to ug2864driver.o(i.UG2864_Write_Command) for UG2864_Write_Command
+    ug2864driver.o(i.UG2864_Set_Start_Page) refers to ug2864driver.o(i.UG2864_Write_Command) for UG2864_Write_Command
+    ug2864driver.o(i.UG2864_Set_VCOMH) refers to ug2864driver.o(i.UG2864_Write_Command) for UG2864_Write_Command
+    ug2864driver.o(i.UG2864_Show_ASCII) refers to ug2864driver.o(i.UG2864_Set_Start_Page) for UG2864_Set_Start_Page
+    ug2864driver.o(i.UG2864_Show_ASCII) refers to ug2864driver.o(i.UG2864_Set_Start_Column) for UG2864_Set_Start_Column
+    ug2864driver.o(i.UG2864_Show_ASCII) refers to ug2864driver.o(i.UG2864_Write_Data) for UG2864_Write_Data
+    ug2864driver.o(i.UG2864_Show_Pattern) refers to ug2864driver.o(i.UG2864_Set_Start_Page) for UG2864_Set_Start_Page
+    ug2864driver.o(i.UG2864_Show_Pattern) refers to ug2864driver.o(i.UG2864_Set_Start_Column) for UG2864_Set_Start_Column
+    ug2864driver.o(i.UG2864_Show_Pattern) refers to ug2864driver.o(i.UG2864_Write_Data) for UG2864_Write_Data
+    ug2864driver.o(i.UG2864_Write_Command) refers to spi.o(i.SPI_SendData_Host) for SPI_SendData_Host
+    ug2864driver.o(i.UG2864_Write_Data) refers to spi.o(i.SPI_SendData_Host) for SPI_SendData_Host
+    bluetoothdriver.o(i.BLE_SetRxState) refers to gpio.o(i.GPIO_ClearBits) for GPIO_ClearBits
+    bluetoothdriver.o(i.BLE_SetRxState) refers to gpio.o(i.GPIO_SetBits) for GPIO_SetBits
+    buzzdriver.o(i.Buzz_Speaker) refers to buzzdriver.o(.data) for .data
+    segger_rtt.o(i.SEGGER_RTT_AllocDownBuffer) refers to segger_rtt.o(i._DoInit) for _DoInit
+    segger_rtt.o(i.SEGGER_RTT_AllocDownBuffer) refers to segger_rtt.o(.ARM.__AT_0x00004800) for .ARM.__AT_0x00004800
+    segger_rtt.o(i.SEGGER_RTT_AllocUpBuffer) refers to segger_rtt.o(i._DoInit) for _DoInit
+    segger_rtt.o(i.SEGGER_RTT_AllocUpBuffer) refers to segger_rtt.o(.ARM.__AT_0x00004800) for .ARM.__AT_0x00004800
+    segger_rtt.o(i.SEGGER_RTT_ConfigDownBuffer) refers to segger_rtt.o(i._DoInit) for _DoInit
+    segger_rtt.o(i.SEGGER_RTT_ConfigDownBuffer) refers to segger_rtt.o(.ARM.__AT_0x00004800) for .ARM.__AT_0x00004800
+    segger_rtt.o(i.SEGGER_RTT_ConfigUpBuffer) refers to segger_rtt.o(i._DoInit) for _DoInit
+    segger_rtt.o(i.SEGGER_RTT_ConfigUpBuffer) refers to segger_rtt.o(.ARM.__AT_0x00004800) for .ARM.__AT_0x00004800
+    segger_rtt.o(i.SEGGER_RTT_GetKey) refers to segger_rtt.o(i.SEGGER_RTT_Read) for SEGGER_RTT_Read
+    segger_rtt.o(i.SEGGER_RTT_HasData) refers to segger_rtt.o(.ARM.__AT_0x00004800) for .ARM.__AT_0x00004800
+    segger_rtt.o(i.SEGGER_RTT_HasKey) refers to segger_rtt.o(i._DoInit) for _DoInit
+    segger_rtt.o(i.SEGGER_RTT_HasKey) refers to segger_rtt.o(.ARM.__AT_0x00004800) for .ARM.__AT_0x00004800
+    segger_rtt.o(i.SEGGER_RTT_Init) refers to segger_rtt.o(i._DoInit) for _DoInit
+    segger_rtt.o(i.SEGGER_RTT_Read) refers to segger_rtt.o(i.SEGGER_RTT_ReadNoLock) for SEGGER_RTT_ReadNoLock
+    segger_rtt.o(i.SEGGER_RTT_ReadNoLock) refers to segger_rtt.o(i._DoInit) for _DoInit
+    segger_rtt.o(i.SEGGER_RTT_ReadNoLock) refers to memmovea.o(.text) for __aeabi_memcpy
+    segger_rtt.o(i.SEGGER_RTT_ReadNoLock) refers to segger_rtt.o(.ARM.__AT_0x00004800) for .ARM.__AT_0x00004800
+    segger_rtt.o(i.SEGGER_RTT_SetNameDownBuffer) refers to segger_rtt.o(i._DoInit) for _DoInit
+    segger_rtt.o(i.SEGGER_RTT_SetNameDownBuffer) refers to segger_rtt.o(.ARM.__AT_0x00004800) for .ARM.__AT_0x00004800
+    segger_rtt.o(i.SEGGER_RTT_SetNameUpBuffer) refers to segger_rtt.o(i._DoInit) for _DoInit
+    segger_rtt.o(i.SEGGER_RTT_SetNameUpBuffer) refers to segger_rtt.o(.ARM.__AT_0x00004800) for .ARM.__AT_0x00004800
+    segger_rtt.o(i.SEGGER_RTT_SetTerminal) refers to segger_rtt.o(i._DoInit) for _DoInit
+    segger_rtt.o(i.SEGGER_RTT_SetTerminal) refers to segger_rtt.o(i._GetAvailWriteSpace) for _GetAvailWriteSpace
+    segger_rtt.o(i.SEGGER_RTT_SetTerminal) refers to segger_rtt.o(i._WriteNoCheck) for _WriteNoCheck
+    segger_rtt.o(i.SEGGER_RTT_SetTerminal) refers to segger_rtt.o(i._WriteBlocking) for _WriteBlocking
+    segger_rtt.o(i.SEGGER_RTT_SetTerminal) refers to segger_rtt.o(.ARM.__AT_0x00004800) for .ARM.__AT_0x00004800
+    segger_rtt.o(i.SEGGER_RTT_SetTerminal) refers to segger_rtt.o(.data) for .data
+    segger_rtt.o(i.SEGGER_RTT_TerminalOut) refers to segger_rtt.o(i._DoInit) for _DoInit
+    segger_rtt.o(i.SEGGER_RTT_TerminalOut) refers to strlen.o(.text) for strlen
+    segger_rtt.o(i.SEGGER_RTT_TerminalOut) refers to segger_rtt.o(i._GetAvailWriteSpace) for _GetAvailWriteSpace
+    segger_rtt.o(i.SEGGER_RTT_TerminalOut) refers to segger_rtt.o(i._PostTerminalSwitch) for _PostTerminalSwitch
+    segger_rtt.o(i.SEGGER_RTT_TerminalOut) refers to segger_rtt.o(i._WriteBlocking) for _WriteBlocking
+    segger_rtt.o(i.SEGGER_RTT_TerminalOut) refers to segger_rtt.o(.ARM.__AT_0x00004800) for .ARM.__AT_0x00004800
+    segger_rtt.o(i.SEGGER_RTT_TerminalOut) refers to segger_rtt.o(.data) for .data
+    segger_rtt.o(i.SEGGER_RTT_WaitKey) refers to segger_rtt.o(i.SEGGER_RTT_GetKey) for SEGGER_RTT_GetKey
+    segger_rtt.o(i.SEGGER_RTT_Write) refers to segger_rtt.o(i._DoInit) for _DoInit
+    segger_rtt.o(i.SEGGER_RTT_Write) refers to segger_rtt.o(i.SEGGER_RTT_WriteNoLock) for SEGGER_RTT_WriteNoLock
+    segger_rtt.o(i.SEGGER_RTT_Write) refers to segger_rtt.o(.ARM.__AT_0x00004800) for .ARM.__AT_0x00004800
+    segger_rtt.o(i.SEGGER_RTT_WriteNoLock) refers to segger_rtt.o(i._GetAvailWriteSpace) for _GetAvailWriteSpace
+    segger_rtt.o(i.SEGGER_RTT_WriteNoLock) refers to segger_rtt.o(i._WriteNoCheck) for _WriteNoCheck
+    segger_rtt.o(i.SEGGER_RTT_WriteNoLock) refers to segger_rtt.o(i._WriteBlocking) for _WriteBlocking
+    segger_rtt.o(i.SEGGER_RTT_WriteNoLock) refers to segger_rtt.o(.ARM.__AT_0x00004800) for .ARM.__AT_0x00004800
+    segger_rtt.o(i.SEGGER_RTT_WriteSkipNoLock) refers to memmovea.o(.text) for __aeabi_memcpy
+    segger_rtt.o(i.SEGGER_RTT_WriteSkipNoLock) refers to segger_rtt.o(.ARM.__AT_0x00004800) for .ARM.__AT_0x00004800
+    segger_rtt.o(i.SEGGER_RTT_WriteString) refers to strlen.o(.text) for strlen
+    segger_rtt.o(i.SEGGER_RTT_WriteString) refers to segger_rtt.o(i.SEGGER_RTT_Write) for SEGGER_RTT_Write
+    segger_rtt.o(i.SEGGER_RTT_WriteWithOverwriteNoLock) refers to memmovea.o(.text) for __aeabi_memcpy
+    segger_rtt.o(i.SEGGER_RTT_WriteWithOverwriteNoLock) refers to segger_rtt.o(.ARM.__AT_0x00004800) for .ARM.__AT_0x00004800
+    segger_rtt.o(i._DoInit) refers to strcpy.o(.text) for strcpy
+    segger_rtt.o(i._DoInit) refers to segger_rtt.o(.ARM.__AT_0x00004800) for .ARM.__AT_0x00004800
+    segger_rtt.o(i._DoInit) refers to segger_rtt.o(.bss) for .bss
+    segger_rtt.o(i._PostTerminalSwitch) refers to segger_rtt.o(i._WriteBlocking) for _WriteBlocking
+    segger_rtt.o(i._PostTerminalSwitch) refers to segger_rtt.o(.data) for .data
+    segger_rtt.o(i._WriteBlocking) refers to memmovea.o(.text) for __aeabi_memcpy
+    segger_rtt.o(i._WriteNoCheck) refers to memmovea.o(.text) for __aeabi_memcpy
+    segger_rtt_printf.o(i.SEGGER_RTT_printf) refers to segger_rtt_printf.o(i.SEGGER_RTT_vprintf) for SEGGER_RTT_vprintf
+    segger_rtt_printf.o(i.SEGGER_RTT_vprintf) refers to segger_rtt_printf.o(i._StoreChar) for _StoreChar
+    segger_rtt_printf.o(i.SEGGER_RTT_vprintf) refers to segger_rtt.o(i.SEGGER_RTT_Write) for SEGGER_RTT_Write
+    segger_rtt_printf.o(i.SEGGER_RTT_vprintf) refers to segger_rtt_printf.o(i._PrintInt) for _PrintInt
+    segger_rtt_printf.o(i.SEGGER_RTT_vprintf) refers to segger_rtt_printf.o(i._PrintUnsigned) for _PrintUnsigned
+    segger_rtt_printf.o(i._PrintInt) refers to idiv.o(.text) for __aeabi_idivmod
+    segger_rtt_printf.o(i._PrintInt) refers to segger_rtt_printf.o(i._StoreChar) for _StoreChar
+    segger_rtt_printf.o(i._PrintInt) refers to segger_rtt_printf.o(i._PrintUnsigned) for _PrintUnsigned
+    segger_rtt_printf.o(i._PrintUnsigned) refers to uidiv.o(.text) for __aeabi_uidivmod
+    segger_rtt_printf.o(i._PrintUnsigned) refers to segger_rtt_printf.o(i._StoreChar) for _StoreChar
+    segger_rtt_printf.o(i._PrintUnsigned) refers to segger_rtt_printf.o(.constdata) for .constdata
+    segger_rtt_printf.o(i._StoreChar) refers to segger_rtt.o(i.SEGGER_RTT_Write) for SEGGER_RTT_Write
+    segger_rtt_syscalls_keil.o(i._sys_open) refers to strcmp.o(.text) for strcmp
+    segger_rtt_syscalls_keil.o(i._sys_open) refers to segger_rtt_syscalls_keil.o(.constdata) for .constdata
+    segger_rtt_syscalls_keil.o(i._sys_write) refers to segger_rtt.o(i.SEGGER_RTT_Write) for SEGGER_RTT_Write
+    segger_rtt_syscalls_keil.o(i._ttywrch) refers to retarget_io.o(i.fputc) for fputc
+    segger_rtt_syscalls_keil.o(i._ttywrch) refers to stdout.o(.data) for __stdout
+    retarget_io.o(i.__aeabi_assert) refers to fputs.o(i.fputs) for fputs
+    retarget_io.o(i.__aeabi_assert) refers to idiv.o(.text) for __aeabi_idivmod
+    retarget_io.o(i.__aeabi_assert) refers to retarget_io.o(i.abort) for abort
+    retarget_io.o(i.__aeabi_assert) refers to stderr.o(.data) for __stderr
+    retarget_io.o(i.fputc) refers to retarget_io.o(i.stdout_putchar) for stdout_putchar
+    retarget_io.o(i.fputc) refers to stdout.o(.data) for __stdout
+    fputs.o(i.fputs) refers to retarget_io.o(i.fputc) for fputc
+    fputs_e.o(.text) refers to retarget_io.o(i.fputc) for fputc
+    idiv.o(.text) refers to uidiv.o(.text) for __aeabi_uidivmod
+    printfb.o(i.__0fprintf$bare) refers to printfb.o(i._printf_core) for _printf_core
+    printfb.o(i.__0fprintf$bare) refers to retarget_io.o(i.fputc) for fputc
+    printfb.o(i.__0printf$bare) refers to printfb.o(i._printf_core) for _printf_core
+    printfb.o(i.__0printf$bare) refers to retarget_io.o(i.fputc) for fputc
+    printfb.o(i.__0printf$bare) refers to stdout.o(.data) for __stdout
+    printfb.o(i.__0snprintf$bare) refers to printfb.o(i._printf_core) for _printf_core
+    printfb.o(i.__0snprintf$bare) refers to printfb.o(i._snputc) for _snputc
+    printfb.o(i.__0sprintf$bare) refers to printfb.o(i._printf_core) for _printf_core
+    printfb.o(i.__0sprintf$bare) refers to printfb.o(i._sputc) for _sputc
+    printfb.o(i.__0vfprintf$bare) refers to printfb.o(i._printf_core) for _printf_core
+    printfb.o(i.__0vfprintf$bare) refers to retarget_io.o(i.fputc) for fputc
+    printfb.o(i.__0vprintf$bare) refers to printfb.o(i._printf_core) for _printf_core
+    printfb.o(i.__0vprintf$bare) refers to retarget_io.o(i.fputc) for fputc
+    printfb.o(i.__0vprintf$bare) refers to stdout.o(.data) for __stdout
+    printfb.o(i.__0vsnprintf$bare) refers to printfb.o(i._printf_core) for _printf_core
+    printfb.o(i.__0vsnprintf$bare) refers to printfb.o(i._snputc) for _snputc
+    printfb.o(i.__0vsprintf$bare) refers to printfb.o(i._printf_core) for _printf_core
+    printfb.o(i.__0vsprintf$bare) refers to printfb.o(i._sputc) for _sputc
+    printf0.o(i.__0fprintf$0) refers to printf0.o(i._printf_core) for _printf_core
+    printf0.o(i.__0fprintf$0) refers to retarget_io.o(i.fputc) for fputc
+    printf0.o(i.__0printf$0) refers to printf0.o(i._printf_core) for _printf_core
+    printf0.o(i.__0printf$0) refers to retarget_io.o(i.fputc) for fputc
+    printf0.o(i.__0printf$0) refers to stdout.o(.data) for __stdout
+    printf0.o(i.__0snprintf$0) refers to printf0.o(i._printf_core) for _printf_core
+    printf0.o(i.__0snprintf$0) refers to printf0.o(i._snputc) for _snputc
+    printf0.o(i.__0sprintf$0) refers to printf0.o(i._printf_core) for _printf_core
+    printf0.o(i.__0sprintf$0) refers to printf0.o(i._sputc) for _sputc
+    printf0.o(i.__0vfprintf$0) refers to printf0.o(i._printf_core) for _printf_core
+    printf0.o(i.__0vfprintf$0) refers to retarget_io.o(i.fputc) for fputc
+    printf0.o(i.__0vprintf$0) refers to printf0.o(i._printf_core) for _printf_core
+    printf0.o(i.__0vprintf$0) refers to retarget_io.o(i.fputc) for fputc
+    printf0.o(i.__0vprintf$0) refers to stdout.o(.data) for __stdout
+    printf0.o(i.__0vsnprintf$0) refers to printf0.o(i._printf_core) for _printf_core
+    printf0.o(i.__0vsnprintf$0) refers to printf0.o(i._snputc) for _snputc
+    printf0.o(i.__0vsprintf$0) refers to printf0.o(i._printf_core) for _printf_core
+    printf0.o(i.__0vsprintf$0) refers to printf0.o(i._sputc) for _sputc
+    printf1.o(i.__0fprintf$1) refers to printf1.o(i._printf_core) for _printf_core
+    printf1.o(i.__0fprintf$1) refers to retarget_io.o(i.fputc) for fputc
+    printf1.o(i.__0printf$1) refers to printf1.o(i._printf_core) for _printf_core
+    printf1.o(i.__0printf$1) refers to retarget_io.o(i.fputc) for fputc
+    printf1.o(i.__0printf$1) refers to stdout.o(.data) for __stdout
+    printf1.o(i.__0snprintf$1) refers to printf1.o(i._printf_core) for _printf_core
+    printf1.o(i.__0snprintf$1) refers to printf1.o(i._snputc) for _snputc
+    printf1.o(i.__0sprintf$1) refers to printf1.o(i._printf_core) for _printf_core
+    printf1.o(i.__0sprintf$1) refers to printf1.o(i._sputc) for _sputc
+    printf1.o(i.__0vfprintf$1) refers to printf1.o(i._printf_core) for _printf_core
+    printf1.o(i.__0vfprintf$1) refers to retarget_io.o(i.fputc) for fputc
+    printf1.o(i.__0vprintf$1) refers to printf1.o(i._printf_core) for _printf_core
+    printf1.o(i.__0vprintf$1) refers to retarget_io.o(i.fputc) for fputc
+    printf1.o(i.__0vprintf$1) refers to stdout.o(.data) for __stdout
+    printf1.o(i.__0vsnprintf$1) refers to printf1.o(i._printf_core) for _printf_core
+    printf1.o(i.__0vsnprintf$1) refers to printf1.o(i._snputc) for _snputc
+    printf1.o(i.__0vsprintf$1) refers to printf1.o(i._printf_core) for _printf_core
+    printf1.o(i.__0vsprintf$1) refers to printf1.o(i._sputc) for _sputc
+    printf1.o(i._printf_core) refers to uidiv.o(.text) for __aeabi_uidivmod
+    printf2.o(i.__0fprintf$2) refers to printf2.o(i._printf_core) for _printf_core
+    printf2.o(i.__0fprintf$2) refers to retarget_io.o(i.fputc) for fputc
+    printf2.o(i.__0printf$2) refers to printf2.o(i._printf_core) for _printf_core
+    printf2.o(i.__0printf$2) refers to retarget_io.o(i.fputc) for fputc
+    printf2.o(i.__0printf$2) refers to stdout.o(.data) for __stdout
+    printf2.o(i.__0snprintf$2) refers to printf2.o(i._printf_core) for _printf_core
+    printf2.o(i.__0snprintf$2) refers to printf2.o(i._snputc) for _snputc
+    printf2.o(i.__0sprintf$2) refers to printf2.o(i._printf_core) for _printf_core
+    printf2.o(i.__0sprintf$2) refers to printf2.o(i._sputc) for _sputc
+    printf2.o(i.__0vfprintf$2) refers to printf2.o(i._printf_core) for _printf_core
+    printf2.o(i.__0vfprintf$2) refers to retarget_io.o(i.fputc) for fputc
+    printf2.o(i.__0vprintf$2) refers to printf2.o(i._printf_core) for _printf_core
+    printf2.o(i.__0vprintf$2) refers to retarget_io.o(i.fputc) for fputc
+    printf2.o(i.__0vprintf$2) refers to stdout.o(.data) for __stdout
+    printf2.o(i.__0vsnprintf$2) refers to printf2.o(i._printf_core) for _printf_core
+    printf2.o(i.__0vsnprintf$2) refers to printf2.o(i._snputc) for _snputc
+    printf2.o(i.__0vsprintf$2) refers to printf2.o(i._printf_core) for _printf_core
+    printf2.o(i.__0vsprintf$2) refers to printf2.o(i._sputc) for _sputc
+    printf3.o(i.__0fprintf$3) refers to printf3.o(i._printf_core) for _printf_core
+    printf3.o(i.__0fprintf$3) refers to retarget_io.o(i.fputc) for fputc
+    printf3.o(i.__0printf$3) refers to printf3.o(i._printf_core) for _printf_core
+    printf3.o(i.__0printf$3) refers to retarget_io.o(i.fputc) for fputc
+    printf3.o(i.__0printf$3) refers to stdout.o(.data) for __stdout
+    printf3.o(i.__0snprintf$3) refers to printf3.o(i._printf_core) for _printf_core
+    printf3.o(i.__0snprintf$3) refers to printf3.o(i._snputc) for _snputc
+    printf3.o(i.__0sprintf$3) refers to printf3.o(i._printf_core) for _printf_core
+    printf3.o(i.__0sprintf$3) refers to printf3.o(i._sputc) for _sputc
+    printf3.o(i.__0vfprintf$3) refers to printf3.o(i._printf_core) for _printf_core
+    printf3.o(i.__0vfprintf$3) refers to retarget_io.o(i.fputc) for fputc
+    printf3.o(i.__0vprintf$3) refers to printf3.o(i._printf_core) for _printf_core
+    printf3.o(i.__0vprintf$3) refers to retarget_io.o(i.fputc) for fputc
+    printf3.o(i.__0vprintf$3) refers to stdout.o(.data) for __stdout
+    printf3.o(i.__0vsnprintf$3) refers to printf3.o(i._printf_core) for _printf_core
+    printf3.o(i.__0vsnprintf$3) refers to printf3.o(i._snputc) for _snputc
+    printf3.o(i.__0vsprintf$3) refers to printf3.o(i._printf_core) for _printf_core
+    printf3.o(i.__0vsprintf$3) refers to printf3.o(i._sputc) for _sputc
+    printf3.o(i._printf_core) refers to uidiv.o(.text) for __aeabi_uidivmod
+    printf4.o(i.__0fprintf$4) refers to printf4.o(i._printf_core) for _printf_core
+    printf4.o(i.__0fprintf$4) refers to retarget_io.o(i.fputc) for fputc
+    printf4.o(i.__0printf$4) refers to printf4.o(i._printf_core) for _printf_core
+    printf4.o(i.__0printf$4) refers to retarget_io.o(i.fputc) for fputc
+    printf4.o(i.__0printf$4) refers to stdout.o(.data) for __stdout
+    printf4.o(i.__0snprintf$4) refers to printf4.o(i._printf_core) for _printf_core
+    printf4.o(i.__0snprintf$4) refers to printf4.o(i._snputc) for _snputc
+    printf4.o(i.__0sprintf$4) refers to printf4.o(i._printf_core) for _printf_core
+    printf4.o(i.__0sprintf$4) refers to printf4.o(i._sputc) for _sputc
+    printf4.o(i.__0vfprintf$4) refers to printf4.o(i._printf_core) for _printf_core
+    printf4.o(i.__0vfprintf$4) refers to retarget_io.o(i.fputc) for fputc
+    printf4.o(i.__0vprintf$4) refers to printf4.o(i._printf_core) for _printf_core
+    printf4.o(i.__0vprintf$4) refers to retarget_io.o(i.fputc) for fputc
+    printf4.o(i.__0vprintf$4) refers to stdout.o(.data) for __stdout
+    printf4.o(i.__0vsnprintf$4) refers to printf4.o(i._printf_core) for _printf_core
+    printf4.o(i.__0vsnprintf$4) refers to printf4.o(i._snputc) for _snputc
+    printf4.o(i.__0vsprintf$4) refers to printf4.o(i._printf_core) for _printf_core
+    printf4.o(i.__0vsprintf$4) refers to printf4.o(i._sputc) for _sputc
+    printf4.o(i._printf_core) refers to uldiv.o(.text) for __aeabi_uldivmod
+    printf5.o(i.__0fprintf$5) refers to printf5.o(i._printf_core) for _printf_core
+    printf5.o(i.__0fprintf$5) refers to retarget_io.o(i.fputc) for fputc
+    printf5.o(i.__0printf$5) refers to printf5.o(i._printf_core) for _printf_core
+    printf5.o(i.__0printf$5) refers to retarget_io.o(i.fputc) for fputc
+    printf5.o(i.__0printf$5) refers to stdout.o(.data) for __stdout
+    printf5.o(i.__0snprintf$5) refers to printf5.o(i._printf_core) for _printf_core
+    printf5.o(i.__0snprintf$5) refers to printf5.o(i._snputc) for _snputc
+    printf5.o(i.__0sprintf$5) refers to printf5.o(i._printf_core) for _printf_core
+    printf5.o(i.__0sprintf$5) refers to printf5.o(i._sputc) for _sputc
+    printf5.o(i.__0vfprintf$5) refers to printf5.o(i._printf_core) for _printf_core
+    printf5.o(i.__0vfprintf$5) refers to retarget_io.o(i.fputc) for fputc
+    printf5.o(i.__0vprintf$5) refers to printf5.o(i._printf_core) for _printf_core
+    printf5.o(i.__0vprintf$5) refers to retarget_io.o(i.fputc) for fputc
+    printf5.o(i.__0vprintf$5) refers to stdout.o(.data) for __stdout
+    printf5.o(i.__0vsnprintf$5) refers to printf5.o(i._printf_core) for _printf_core
+    printf5.o(i.__0vsnprintf$5) refers to printf5.o(i._snputc) for _snputc
+    printf5.o(i.__0vsprintf$5) refers to printf5.o(i._printf_core) for _printf_core
+    printf5.o(i.__0vsprintf$5) refers to printf5.o(i._sputc) for _sputc
+    printf5.o(i._printf_core) refers to uldiv.o(.text) for __aeabi_uldivmod
+    printf6.o(i.__0fprintf$6) refers to printf6.o(i._printf_core) for _printf_core
+    printf6.o(i.__0fprintf$6) refers to retarget_io.o(i.fputc) for fputc
+    printf6.o(i.__0printf$6) refers to printf6.o(i._printf_core) for _printf_core
+    printf6.o(i.__0printf$6) refers to retarget_io.o(i.fputc) for fputc
+    printf6.o(i.__0printf$6) refers to stdout.o(.data) for __stdout
+    printf6.o(i.__0snprintf$6) refers to printf6.o(i._printf_core) for _printf_core
+    printf6.o(i.__0snprintf$6) refers to printf6.o(i._snputc) for _snputc
+    printf6.o(i.__0sprintf$6) refers to printf6.o(i._printf_core) for _printf_core
+    printf6.o(i.__0sprintf$6) refers to printf6.o(i._sputc) for _sputc
+    printf6.o(i.__0vfprintf$6) refers to printf6.o(i._printf_core) for _printf_core
+    printf6.o(i.__0vfprintf$6) refers to retarget_io.o(i.fputc) for fputc
+    printf6.o(i.__0vprintf$6) refers to printf6.o(i._printf_core) for _printf_core
+    printf6.o(i.__0vprintf$6) refers to retarget_io.o(i.fputc) for fputc
+    printf6.o(i.__0vprintf$6) refers to stdout.o(.data) for __stdout
+    printf6.o(i.__0vsnprintf$6) refers to printf6.o(i._printf_core) for _printf_core
+    printf6.o(i.__0vsnprintf$6) refers to printf6.o(i._snputc) for _snputc
+    printf6.o(i.__0vsprintf$6) refers to printf6.o(i._printf_core) for _printf_core
+    printf6.o(i.__0vsprintf$6) refers to printf6.o(i._sputc) for _sputc
+    printf6.o(i._printf_core) refers to printf6.o(i._printf_pre_padding) for _printf_pre_padding
+    printf6.o(i._printf_core) refers to printf6.o(i._printf_post_padding) for _printf_post_padding
+    printf6.o(i._printf_core) refers to uidiv.o(.text) for __aeabi_uidivmod
+    printf7.o(i.__0fprintf$7) refers to printf7.o(i._printf_core) for _printf_core
+    printf7.o(i.__0fprintf$7) refers to retarget_io.o(i.fputc) for fputc
+    printf7.o(i.__0printf$7) refers to printf7.o(i._printf_core) for _printf_core
+    printf7.o(i.__0printf$7) refers to retarget_io.o(i.fputc) for fputc
+    printf7.o(i.__0printf$7) refers to stdout.o(.data) for __stdout
+    printf7.o(i.__0snprintf$7) refers to printf7.o(i._printf_core) for _printf_core
+    printf7.o(i.__0snprintf$7) refers to printf7.o(i._snputc) for _snputc
+    printf7.o(i.__0sprintf$7) refers to printf7.o(i._printf_core) for _printf_core
+    printf7.o(i.__0sprintf$7) refers to printf7.o(i._sputc) for _sputc
+    printf7.o(i.__0vfprintf$7) refers to printf7.o(i._printf_core) for _printf_core
+    printf7.o(i.__0vfprintf$7) refers to retarget_io.o(i.fputc) for fputc
+    printf7.o(i.__0vprintf$7) refers to printf7.o(i._printf_core) for _printf_core
+    printf7.o(i.__0vprintf$7) refers to retarget_io.o(i.fputc) for fputc
+    printf7.o(i.__0vprintf$7) refers to stdout.o(.data) for __stdout
+    printf7.o(i.__0vsnprintf$7) refers to printf7.o(i._printf_core) for _printf_core
+    printf7.o(i.__0vsnprintf$7) refers to printf7.o(i._snputc) for _snputc
+    printf7.o(i.__0vsprintf$7) refers to printf7.o(i._printf_core) for _printf_core
+    printf7.o(i.__0vsprintf$7) refers to printf7.o(i._sputc) for _sputc
+    printf7.o(i._printf_core) refers to printf7.o(i._printf_pre_padding) for _printf_pre_padding
+    printf7.o(i._printf_core) refers to printf7.o(i._printf_post_padding) for _printf_post_padding
+    printf7.o(i._printf_core) refers to uldiv.o(.text) for __aeabi_uldivmod
+    printf8.o(i.__0fprintf$8) refers to printf8.o(i._printf_core) for _printf_core
+    printf8.o(i.__0fprintf$8) refers to retarget_io.o(i.fputc) for fputc
+    printf8.o(i.__0printf$8) refers to printf8.o(i._printf_core) for _printf_core
+    printf8.o(i.__0printf$8) refers to retarget_io.o(i.fputc) for fputc
+    printf8.o(i.__0printf$8) refers to stdout.o(.data) for __stdout
+    printf8.o(i.__0snprintf$8) refers to printf8.o(i._printf_core) for _printf_core
+    printf8.o(i.__0snprintf$8) refers to printf8.o(i._snputc) for _snputc
+    printf8.o(i.__0sprintf$8) refers to printf8.o(i._printf_core) for _printf_core
+    printf8.o(i.__0sprintf$8) refers to printf8.o(i._sputc) for _sputc
+    printf8.o(i.__0vfprintf$8) refers to printf8.o(i._printf_core) for _printf_core
+    printf8.o(i.__0vfprintf$8) refers to retarget_io.o(i.fputc) for fputc
+    printf8.o(i.__0vprintf$8) refers to printf8.o(i._printf_core) for _printf_core
+    printf8.o(i.__0vprintf$8) refers to retarget_io.o(i.fputc) for fputc
+    printf8.o(i.__0vprintf$8) refers to stdout.o(.data) for __stdout
+    printf8.o(i.__0vsnprintf$8) refers to printf8.o(i._printf_core) for _printf_core
+    printf8.o(i.__0vsnprintf$8) refers to printf8.o(i._snputc) for _snputc
+    printf8.o(i.__0vsprintf$8) refers to printf8.o(i._printf_core) for _printf_core
+    printf8.o(i.__0vsprintf$8) refers to printf8.o(i._sputc) for _sputc
+    printf8.o(i._printf_core) refers to printf8.o(i._printf_pre_padding) for _printf_pre_padding
+    printf8.o(i._printf_core) refers to printf8.o(i._printf_post_padding) for _printf_post_padding
+    printf8.o(i._printf_core) refers to uldiv.o(.text) for __aeabi_uldivmod
+    printfa.o(i.__0fprintf) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i.__0fprintf) refers to printfa.o(i._printf_core) for _printf_core
+    printfa.o(i.__0fprintf) refers to retarget_io.o(i.fputc) for fputc
+    printfa.o(i.__0printf) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i.__0printf) refers to printfa.o(i._printf_core) for _printf_core
+    printfa.o(i.__0printf) refers to retarget_io.o(i.fputc) for fputc
+    printfa.o(i.__0printf) refers to stdout.o(.data) for __stdout
+    printfa.o(i.__0snprintf) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i.__0snprintf) refers to printfa.o(i._printf_core) for _printf_core
+    printfa.o(i.__0snprintf) refers to printfa.o(i._snputc) for _snputc
+    printfa.o(i.__0sprintf) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i.__0sprintf) refers to printfa.o(i._printf_core) for _printf_core
+    printfa.o(i.__0sprintf) refers to printfa.o(i._sputc) for _sputc
+    printfa.o(i.__0vfprintf) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i.__0vfprintf) refers to printfa.o(i._printf_core) for _printf_core
+    printfa.o(i.__0vfprintf) refers to retarget_io.o(i.fputc) for fputc
+    printfa.o(i.__0vprintf) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i.__0vprintf) refers to printfa.o(i._printf_core) for _printf_core
+    printfa.o(i.__0vprintf) refers to retarget_io.o(i.fputc) for fputc
+    printfa.o(i.__0vprintf) refers to stdout.o(.data) for __stdout
+    printfa.o(i.__0vsnprintf) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i.__0vsnprintf) refers to printfa.o(i._printf_core) for _printf_core
+    printfa.o(i.__0vsnprintf) refers to printfa.o(i._snputc) for _snputc
+    printfa.o(i.__0vsprintf) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i.__0vsprintf) refers to printfa.o(i._printf_core) for _printf_core
+    printfa.o(i.__0vsprintf) refers to printfa.o(i._sputc) for _sputc
+    printfa.o(i._fp_digits) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i._fp_digits) refers to dmul.o(.text) for __aeabi_dmul
+    printfa.o(i._fp_digits) refers to ddiv.o(.text) for __aeabi_ddiv
+    printfa.o(i._fp_digits) refers to cdrcmple.o(.text) for __aeabi_cdrcmple
+    printfa.o(i._fp_digits) refers to dadd.o(.text) for __aeabi_dadd
+    printfa.o(i._fp_digits) refers to dfixul.o(.text) for __aeabi_d2ulz
+    printfa.o(i._fp_digits) refers to uldiv.o(.text) for __aeabi_uldivmod
+    printfa.o(i._printf_core) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i._printf_core) refers to printfa.o(i._printf_pre_padding) for _printf_pre_padding
+    printfa.o(i._printf_core) refers to uldiv.o(.text) for __aeabi_uldivmod
+    printfa.o(i._printf_core) refers to printfa.o(i._printf_post_padding) for _printf_post_padding
+    printfa.o(i._printf_core) refers to printfa.o(i._fp_digits) for _fp_digits
+    printfa.o(i._printf_core) refers to uidiv.o(.text) for __aeabi_uidivmod
+    printfa.o(i._printf_post_padding) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i._printf_pre_padding) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i._snputc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i._sputc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    fadd.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    fadd.o(.text) refers to fepilogue.o(.text) for _float_epilogue
+    fmul.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    fdiv.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    fdiv.o(.text) refers to fepilogue.o(.text) for _float_round
+    dmul.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dmul.o(.text) refers to depilogue.o(.text) for _double_epilogue
+    ddiv.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    ddiv.o(.text) refers to depilogue.o(.text) for _double_round
+    fflti.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    fflti.o(.text) refers to fepilogue.o(.text) for _float_epilogue
+    ffltui.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    ffltui.o(.text) refers to fepilogue.o(.text) for _float_epilogue
+    dflti.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dflti.o(.text) refers to depilogue.o(.text) for _double_epilogue
+    ffixi.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    ffixui.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dfixi.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dfixi.o(.text) refers to llushr.o(.text) for __aeabi_llsr
+    uldiv.o(.text) refers to llushr.o(.text) for __aeabi_llsr
+    uldiv.o(.text) refers to llshl.o(.text) for __aeabi_llsl
+    depilogue.o(.text) refers to depilogue.o(i.__ARM_clz) for __ARM_clz
+    depilogue.o(.text) refers to llshl.o(.text) for __aeabi_llsl
+    depilogue.o(.text) refers to llushr.o(.text) for __aeabi_llsr
+    dadd.o(.text) refers to llshl.o(.text) for __aeabi_llsl
+    dadd.o(.text) refers to llsshr.o(.text) for __aeabi_lasr
+    dadd.o(.text) refers to depilogue.o(.text) for _double_epilogue
+    dfixul.o(.text) refers to llushr.o(.text) for __aeabi_llsr
+    dfixul.o(.text) refers to llshl.o(.text) for __aeabi_llsl
+
+
+==============================================================================
+
+Removing Unused input sections from the image.
+
+    Removing systemdriver.o(.rev16_text), (4 bytes).
+    Removing systemdriver.o(.revsh_text), (4 bytes).
+    Removing main.o(.rev16_text), (4 bytes).
+    Removing main.o(.revsh_text), (4 bytes).
+    Removing gpio.o(.rev16_text), (4 bytes).
+    Removing gpio.o(.revsh_text), (4 bytes).
+    Removing gpio.o(i.GPIO_20mA_Mode), (108 bytes).
+    Removing gpio.o(i.GPIO_ClearITBit), (44 bytes).
+    Removing gpio.o(i.GPIO_Config), (52 bytes).
+    Removing gpio.o(i.GPIO_ExtModeConfig), (210 bytes).
+    Removing gpio.o(i.GPIO_GetAFMode), (22 bytes).
+    Removing gpio.o(i.GPIO_GetBit), (36 bytes).
+    Removing gpio.o(i.GPIO_GetITStatus), (44 bytes).
+    Removing gpio.o(i.GPIO_ITConfig), (248 bytes).
+    Removing gpio.o(i.GPIO_SwitchOffIe), (168 bytes).
+    Removing gpio.o(i.GPIO_ToggleBits), (64 bytes).
+    Removing delay.o(.rev16_text), (4 bytes).
+    Removing delay.o(.revsh_text), (4 bytes).
+    Removing delay.o(i.SysTickClkSourceConfig), (28 bytes).
+    Removing delay.o(i.delay100us), (80 bytes).
+    Removing delay.o(i.delay1us), (80 bytes).
+    Removing dma.o(.rev16_text), (4 bytes).
+    Removing dma.o(.revsh_text), (4 bytes).
+    Removing dma.o(i.DMA_M2MTransferSetup), (48 bytes).
+    Removing dma.o(i.DMA_StopChannel), (20 bytes).
+    Removing dma.o(i.PeripheralsTxDmaConfig), (120 bytes).
+    Removing uart.o(.rev16_text), (4 bytes).
+    Removing uart.o(.revsh_text), (4 bytes).
+    Removing uart.o(i.DisableUartInt), (128 bytes).
+    Removing uart.o(i.GetRxFifoTrigNum), (36 bytes).
+    Removing uart.o(i.GetUartFclkVal), (176 bytes).
+    Removing uart.o(i.SetUartBaudrate), (70 bytes).
+    Removing uart.o(i.SetUartFclkSource), (288 bytes).
+    Removing uart.o(i.UART_DivideLatch), (14 bytes).
+    Removing uart.o(i.UART_Divided), (46 bytes).
+    Removing uart.o(i.UART_GetFlagStatus), (14 bytes).
+    Removing uart.o(i.UART_Init), (188 bytes).
+    Removing uart.o(i.UART_RcvDataDma), (40 bytes).
+    Removing uart.o(i.UART_ReceiveOneDataBlocked), (12 bytes).
+    Removing uart.o(i.UART_ReceiveOneDataUnblocked), (18 bytes).
+    Removing uart.o(i.UART_SendData), (28 bytes).
+    Removing uart.o(i.UART_SendDataDma), (36 bytes).
+    Removing uart.o(i.UART_SendOneData), (10 bytes).
+    Removing uart.o(i.UartIOConfig), (224 bytes).
+    Removing uart.o(.bss), (100 bytes).
+    Removing uart.o(.data), (4 bytes).
+    Removing uart.o(.data), (4 bytes).
+    Removing uart.o(.data), (1 bytes).
+    Removing i2c.o(.rev16_text), (4 bytes).
+    Removing i2c.o(.revsh_text), (4 bytes).
+    Removing i2c.o(i.GetI2CFclkSource), (192 bytes).
+    Removing i2c.o(i.I2C_ConfigIO), (152 bytes).
+    Removing i2c.o(i.I2C_GetFlagISR), (20 bytes).
+    Removing i2c.o(i.I2C_GetFlagStatus), (14 bytes).
+    Removing i2c.o(i.I2C_Init), (328 bytes).
+    Removing i2c.o(i.I2C_ReceiveData), (112 bytes).
+    Removing i2c.o(i.I2C_RxDmaConfig), (92 bytes).
+    Removing i2c.o(i.I2C_SendData), (134 bytes).
+    Removing i2c.o(i.I2C_TxDmaConfig), (94 bytes).
+    Removing i2c.o(i.SetI2CFclkSource), (112 bytes).
+    Removing vdac.o(.rev16_text), (4 bytes).
+    Removing vdac.o(.revsh_text), (4 bytes).
+    Removing vdac.o(i.ConfigVdacOutputPin), (92 bytes).
+    Removing vdac.o(i.GetVdacFifoFreeNum), (16 bytes).
+    Removing vdac.o(i.SetVdacFclkSource), (76 bytes).
+    Removing vdac.o(i.SetVdacOutputValue), (12 bytes).
+    Removing vdac.o(i.TriggerVdacStart), (12 bytes).
+    Removing vdac.o(i.TriggerVdacStop), (12 bytes).
+    Removing vdac.o(i.VdacBlockDisable), (16 bytes).
+    Removing vdac.o(i.VdacBlockEnable), (16 bytes).
+    Removing vdac.o(i.VdacConfigure), (72 bytes).
+    Removing op.o(.rev16_text), (4 bytes).
+    Removing op.o(.revsh_text), (4 bytes).
+    Removing op.o(i.OPA_Disable), (36 bytes).
+    Removing op.o(i.OPA_GainConfig), (40 bytes).
+    Removing op.o(i.OPA_VcmConfig), (28 bytes).
+    Removing op.o(i.OPA_VcmDisable), (16 bytes).
+    Removing op.o(i.OPA_VcmEnable), (16 bytes).
+    Removing tia.o(.rev16_text), (4 bytes).
+    Removing tia.o(.revsh_text), (4 bytes).
+    Removing tia.o(i.TiaConfigureComVoltageFromInternal), (116 bytes).
+    Removing tia.o(i.TiaConfigureVoltagefollow), (80 bytes).
+    Removing tia.o(i.TiaIOConfigure), (14 bytes).
+    Removing tia.o(i.Tia_Disable), (16 bytes).
+    Removing tia.o(i.Tia_PosVrefConfig), (24 bytes).
+    Removing saradc.o(.rev16_text), (4 bytes).
+    Removing saradc.o(.revsh_text), (4 bytes).
+    Removing saradc.o(i.GetSarAdcFifoValidState), (16 bytes).
+    Removing saradc.o(i.SetSARADCFclkSource), (48 bytes).
+    Removing saradc.o(i.SetSARAdcConfig), (36 bytes).
+    Removing saradc.o(i.SetSARAdcTriggerNum), (24 bytes).
+    Removing aes.o(.rev16_text), (4 bytes).
+    Removing aes.o(.revsh_text), (4 bytes).
+    Removing aes.o(i.AesCbcDecode), (132 bytes).
+    Removing aes.o(i.AesCbcEnc), (136 bytes).
+    Removing aes.o(i.AesEcbDecode), (116 bytes).
+    Removing aes.o(i.AesEcbEnc), (112 bytes).
+    Removing aes.o(i.AesEnd), (12 bytes).
+    Removing aes.o(i.AesIRQHandler), (12 bytes).
+    Removing aes.o(i.AesSha256), (92 bytes).
+    Removing aes.o(i.AesStart), (24 bytes).
+    Removing aes.o(i.AesWaitActionDone), (84 bytes).
+    Removing aes.o(i.AesrxDmaConfig), (100 bytes).
+    Removing aes.o(i.AestxDmaConfig), (88 bytes).
+    Removing aes.o(.data), (3 bytes).
+    Removing cmp.o(.rev16_text), (4 bytes).
+    Removing cmp.o(.revsh_text), (4 bytes).
+    Removing cmp.o(i.Cmp_CLKDisable), (40 bytes).
+    Removing cmp.o(i.Cmp_Disable), (36 bytes).
+    Removing cmp.o(i.Cmp_Trim), (44 bytes).
+    Removing timer.o(.rev16_text), (4 bytes).
+    Removing timer.o(.revsh_text), (4 bytes).
+    Removing timer.o(i.ADT_StopTimer), (12 bytes).
+    Removing timer.o(i.CalExtPulse), (100 bytes).
+    Removing timer.o(i.Hal_LptimerHandler), (36 bytes).
+    Removing timer.o(i.Hal_Timer0Handler), (64 bytes).
+    Removing timer.o(i.Hal_Timer1Handler), (36 bytes).
+    Removing timer.o(i.Hal_Timer2Handler), (36 bytes).
+    Removing timer.o(i.Hal_Timer3Handler), (36 bytes).
+    Removing timer.o(i.Hal_Timer4Handler), (36 bytes).
+    Removing timer.o(i.Hal_Timer5Handler), (36 bytes).
+    Removing timer.o(i.SetTimerIsr), (32 bytes).
+    Removing timer.o(i.SoftwareForceBK), (10 bytes).
+    Removing timer.o(i.SyncStartStop), (20 bytes).
+    Removing timer.o(i.TimerStart), (10 bytes).
+    Removing timer.o(i.TimerStop), (12 bytes).
+    Removing divider.o(.rev16_text), (4 bytes).
+    Removing divider.o(.revsh_text), (4 bytes).
+    Removing divider.o(i.DividerFuction), (24 bytes).
+    Removing flash.o(.rev16_text), (4 bytes).
+    Removing flash.o(.revsh_text), (4 bytes).
+    Removing flash.o(i.Flash_Read), (40 bytes).
+    Removing flash.o(i.Flash_Read16), (40 bytes).
+    Removing flash.o(i.NVR_Read), (44 bytes).
+    Removing idac.o(.rev16_text), (4 bytes).
+    Removing idac.o(.revsh_text), (4 bytes).
+    Removing idac.o(i.SetIdacBasicCurrent), (36 bytes).
+    Removing idac.o(i.SetIdacIn), (24 bytes).
+    Removing idac.o(i.SetIdacOutput), (48 bytes).
+    Removing idac.o(i.TriggerIdacStart), (36 bytes).
+    Removing idac.o(i.TriggerIdacStop), (36 bytes).
+    Removing interrupt.o(.rev16_text), (4 bytes).
+    Removing interrupt.o(.revsh_text), (4 bytes).
+    Removing interrupt.o(i.IC_DisableNVIC), (12 bytes).
+    Removing interrupt.o(i.IC_EnableNVIC), (12 bytes).
+    Removing interrupt.o(i.IC_PowupDeinit), (12 bytes).
+    Removing interrupt.o(i.XIC_DisableIRQ), (92 bytes).
+    Removing interrupt.o(i.XIC_EnableIRQ), (108 bytes).
+    Removing interrupt.o(i.XIC_GetModule), (32 bytes).
+    Removing interrupt.o(i.XIC_GetVectIdx), (10 bytes).
+    Removing interrupt.o(i.XIC_SetVector), (76 bytes).
+    Removing interrupt.o(i.calculate_CLZ), (46 bytes).
+    Removing lpm.o(.rev16_text), (4 bytes).
+    Removing lpm.o(.revsh_text), (4 bytes).
+    Removing lpm.o(i.EnterLpmDeepSleep), (28 bytes).
+    Removing lpm.o(i.EnterLpmNormalSleep), (28 bytes).
+    Removing lpm.o(i.EnterLpmPmuState), (80 bytes).
+    Removing lpm.o(i.SwitchOffModuleClk), (256 bytes).
+    Removing lpm.o(i.SwitchOffModulePower), (96 bytes).
+    Removing lvd.o(.rev16_text), (4 bytes).
+    Removing lvd.o(.revsh_text), (4 bytes).
+    Removing lvd.o(i.LVD_CLKConfig), (48 bytes).
+    Removing lvd.o(i.LVD_CLKDisable), (16 bytes).
+    Removing lvd.o(i.LVD_Disable), (16 bytes).
+    Removing lvd.o(i.LVD_Enable), (16 bytes).
+    Removing lvd.o(i.LVD_ITConfig), (24 bytes).
+    Removing lvd.o(i.LVD_ModeConfig), (60 bytes).
+    Removing lvd.o(i.LVD_PortConfig), (60 bytes).
+    Removing lvd.o(i.LVD_SetFilterTime), (20 bytes).
+    Removing lvd.o(i.LVD_SetTripVolt), (20 bytes).
+    Removing lvd.o(i.LVD_SetVrefSel), (24 bytes).
+    Removing rtc.o(.rev16_text), (4 bytes).
+    Removing rtc.o(.revsh_text), (4 bytes).
+    Removing rtc.o(i.Hal_CalendarIRQHandler), (64 bytes).
+    Removing rtc.o(i.Hal_WaveCalendarIRQHandler), (60 bytes).
+    Removing rtc.o(i.RTC_AlarmWrite), (28 bytes).
+    Removing rtc.o(i.RTC_ClearITFlag), (16 bytes).
+    Removing rtc.o(i.RTC_CmpThrelInit), (72 bytes).
+    Removing rtc.o(i.RTC_DeInit), (20 bytes).
+    Removing rtc.o(i.RTC_Enable), (16 bytes).
+    Removing rtc.o(i.RTC_GetITFlag), (20 bytes).
+    Removing rtc.o(i.RTC_GetTime), (36 bytes).
+    Removing rtc.o(i.RTC_ITConfig), (128 bytes).
+    Removing rtc.o(i.RTC_IsrSet), (36 bytes).
+    Removing rtc.o(i.RTC_Lock), (12 bytes).
+    Removing rtc.o(i.RTC_Ready), (16 bytes).
+    Removing rtc.o(i.RTC_SetAlarm), (28 bytes).
+    Removing rtc.o(i.RTC_SetTime), (52 bytes).
+    Removing rtc.o(i.RTC_TimeRead), (56 bytes).
+    Removing rtc.o(i.RTC_TimeWrite), (56 bytes).
+    Removing rtc.o(i.RTC_UnLock), (16 bytes).
+    Removing spi.o(.rev16_text), (4 bytes).
+    Removing spi.o(.revsh_text), (4 bytes).
+    Removing spi.o(i.SPI_GetFlagStatus), (14 bytes).
+    Removing spi.o(i.SPI_ReceiveData_Host), (38 bytes).
+    Removing spi.o(i.SPI_ReceiveData_Slave), (24 bytes).
+    Removing spi.o(i.SPI_Receive_DMAConfig), (42 bytes).
+    Removing spi.o(i.SPI_SendData_Slave), (38 bytes).
+    Removing spi.o(i.SPI_Send_DMAConfig), (38 bytes).
+    Removing spi.o(i.SPI_SetRate), (24 bytes).
+    Removing spi.o(i.SpiIOConfig), (108 bytes).
+    Removing trim.o(.rev16_text), (4 bytes).
+    Removing trim.o(.revsh_text), (4 bytes).
+    Removing trim.o(i.BandGapTrimToTarget), (20 bytes).
+    Removing trim.o(i.CmpTrimToTarget), (408 bytes).
+    Removing trim.o(i.IDACTrimToTarget), (108 bytes).
+    Removing trim.o(i.LDO15TrimToTarget), (16 bytes).
+    Removing trim.o(i.LDO3TrimToTarget), (24 bytes).
+    Removing trim.o(i.LDOLPTrimToTarget), (20 bytes).
+    Removing trim.o(i.RC16mTrimToTarget), (24 bytes).
+    Removing trim.o(i.RC32kTrimToTarget), (24 bytes).
+    Removing trim.o(i.RTCThrelTrimToTarget), (52 bytes).
+    Removing trim.o(i.VDACTrimToTarget), (84 bytes).
+    Removing trim.o(i.VbiasIbiasTrimToTarget), (20 bytes).
+    Removing wdg.o(.rev16_text), (4 bytes).
+    Removing wdg.o(.revsh_text), (4 bytes).
+    Removing wdg.o(i.EnableIWDG), (16 bytes).
+    Removing wdg.o(i.EnableWWDG), (30 bytes).
+    Removing wdg.o(i.Hal_IWDGHandler), (64 bytes).
+    Removing wdg.o(i.Hal_WWDGAdvHandler), (60 bytes).
+    Removing wdg.o(i.Hal_WWDGT2Handler), (60 bytes).
+    Removing wdg.o(i.Hal_WWDGTimeOutHandler), (64 bytes).
+    Removing wdg.o(i.IWDG_Disable), (16 bytes).
+    Removing wdg.o(i.IWDG_Init), (60 bytes).
+    Removing wdg.o(i.IWDG_Lock), (16 bytes).
+    Removing wdg.o(i.IWDG_ResetCnt), (12 bytes).
+    Removing wdg.o(i.IWDG_UnLock), (16 bytes).
+    Removing wdg.o(i.WWDG_ClearITPending), (48 bytes).
+    Removing wdg.o(i.WWDG_Disable), (16 bytes).
+    Removing wdg.o(i.WWDG_Enable), (16 bytes).
+    Removing wdg.o(i.WWDG_GetITFlag), (48 bytes).
+    Removing wdg.o(i.WWDG_Init), (136 bytes).
+    Removing wdg.o(i.WWDG_Lock), (16 bytes).
+    Removing wdg.o(i.WWDG_ResetCnt), (12 bytes).
+    Removing wdg.o(i.WWDG_UnLock), (16 bytes).
+    Removing startup_tcasxxx.o(HEAP), (0 bytes).
+    Removing system_tcasxxx.o(.rev16_text), (4 bytes).
+    Removing system_tcasxxx.o(.revsh_text), (4 bytes).
+    Removing defaultsetup.o(.rev16_text), (4 bytes).
+    Removing defaultsetup.o(.revsh_text), (4 bytes).
+    Removing defaultsetup.o(i.Setup_IsRestoreValue), (128 bytes).
+    Removing lightdriver.o(.rev16_text), (4 bytes).
+    Removing lightdriver.o(.revsh_text), (4 bytes).
+    Removing lightdriver.o(.bss), (20 bytes).
+    Removing preprocess.o(.rev16_text), (4 bytes).
+    Removing preprocess.o(.revsh_text), (4 bytes).
+    Removing spo2interface.o(.rev16_text), (4 bytes).
+    Removing spo2interface.o(.revsh_text), (4 bytes).
+    Removing spo2interface.o(i.SpO2_algorithm), (180 bytes).
+    Removing spo2interface.o(i.heartbeat_algorithm), (2 bytes).
+    Removing spo2interface.o(.data), (30 bytes).
+    Removing displaydriver.o(.rev16_text), (4 bytes).
+    Removing displaydriver.o(.revsh_text), (4 bytes).
+    Removing displaydriver.o(.data), (1 bytes).
+    Removing displaydriver.o(.data), (6 bytes).
+    Removing fontlibs.o(.constdata), (196 bytes).
+    Removing ug2864driver.o(.rev16_text), (4 bytes).
+    Removing ug2864driver.o(.revsh_text), (4 bytes).
+    Removing ug2864driver.o(i.UG2864_Continuous_Scroll), (80 bytes).
+    Removing ug2864driver.o(i.UG2864_Deactivate_Scroll), (10 bytes).
+    Removing ug2864driver.o(i.UG2864_Delay), (44 bytes).
+    Removing ug2864driver.o(i.UG2864_Horizontal_Scroll), (56 bytes).
+    Removing ug2864driver.o(i.UG2864_OLED_Init_Remap), (40 bytes).
+    Removing ug2864driver.o(i.UG2864_Set_Area_Brightness), (18 bytes).
+    Removing ug2864driver.o(i.UG2864_Set_Area_Color), (18 bytes).
+    Removing ug2864driver.o(i.UG2864_Set_Column_Address), (26 bytes).
+    Removing ug2864driver.o(i.UG2864_Set_Dim_Mode), (38 bytes).
+    Removing ug2864driver.o(i.UG2864_Set_Master_Config), (20 bytes).
+    Removing ug2864driver.o(i.UG2864_Set_NOP), (10 bytes).
+    Removing ug2864driver.o(i.UG2864_Set_Page_Address), (26 bytes).
+    Removing ug2864driver.o(i.UG2864_Set_Read_Modify_Write), (12 bytes).
+    Removing ug2864driver.o(i.UG2864_Show_ASCII), (58 bytes).
+    Removing ug2864driver.o(i.UG2864_Show_Pattern), (58 bytes).
+    Removing ug2864driver.o(i.UG2864_uDelay), (12 bytes).
+    Removing bluetoothdriver.o(.rev16_text), (4 bytes).
+    Removing bluetoothdriver.o(.revsh_text), (4 bytes).
+    Removing bluetoothdriver.o(i.BLE_IsConnect), (12 bytes).
+    Removing bluetoothdriver.o(i.BLE_SetRxState), (26 bytes).
+    Removing buzzdriver.o(.rev16_text), (4 bytes).
+    Removing buzzdriver.o(.revsh_text), (4 bytes).
+    Removing segger_rtt.o(i.SEGGER_RTT_AllocDownBuffer), (100 bytes).
+    Removing segger_rtt.o(i.SEGGER_RTT_AllocUpBuffer), (100 bytes).
+    Removing segger_rtt.o(i.SEGGER_RTT_ConfigDownBuffer), (92 bytes).
+    Removing segger_rtt.o(i.SEGGER_RTT_ConfigUpBuffer), (92 bytes).
+    Removing segger_rtt.o(i.SEGGER_RTT_GetKey), (28 bytes).
+    Removing segger_rtt.o(i.SEGGER_RTT_HasData), (20 bytes).
+    Removing segger_rtt.o(i.SEGGER_RTT_HasKey), (36 bytes).
+    Removing segger_rtt.o(i.SEGGER_RTT_Init), (8 bytes).
+    Removing segger_rtt.o(i.SEGGER_RTT_Read), (24 bytes).
+    Removing segger_rtt.o(i.SEGGER_RTT_ReadNoLock), (128 bytes).
+    Removing segger_rtt.o(i.SEGGER_RTT_SetNameDownBuffer), (64 bytes).
+    Removing segger_rtt.o(i.SEGGER_RTT_SetNameUpBuffer), (64 bytes).
+    Removing segger_rtt.o(i.SEGGER_RTT_SetTerminal), (132 bytes).
+    Removing segger_rtt.o(i.SEGGER_RTT_TerminalOut), (224 bytes).
+    Removing segger_rtt.o(i.SEGGER_RTT_WaitKey), (12 bytes).
+    Removing segger_rtt.o(i.SEGGER_RTT_WriteSkipNoLock), (160 bytes).
+    Removing segger_rtt.o(i.SEGGER_RTT_WriteString), (24 bytes).
+    Removing segger_rtt.o(i.SEGGER_RTT_WriteWithOverwriteNoLock), (152 bytes).
+    Removing segger_rtt.o(i._PostTerminalSwitch), (28 bytes).
+    Removing segger_rtt.o(.data), (17 bytes).
+    Removing segger_rtt_syscalls_keil.o(i._sys_close), (4 bytes).
+    Removing segger_rtt_syscalls_keil.o(i._sys_command_string), (2 bytes).
+    Removing segger_rtt_syscalls_keil.o(i._sys_ensure), (6 bytes).
+    Removing segger_rtt_syscalls_keil.o(i._sys_exit), (2 bytes).
+    Removing segger_rtt_syscalls_keil.o(i._sys_flen), (4 bytes).
+    Removing segger_rtt_syscalls_keil.o(i._sys_istty), (16 bytes).
+    Removing segger_rtt_syscalls_keil.o(i._sys_open), (52 bytes).
+    Removing segger_rtt_syscalls_keil.o(i._sys_read), (4 bytes).
+    Removing segger_rtt_syscalls_keil.o(i._sys_seek), (4 bytes).
+    Removing segger_rtt_syscalls_keil.o(i._sys_tmpnam), (4 bytes).
+    Removing segger_rtt_syscalls_keil.o(i._sys_write), (28 bytes).
+    Removing segger_rtt_syscalls_keil.o(i._ttywrch), (20 bytes).
+    Removing segger_rtt_syscalls_keil.o(.constdata), (14 bytes).
+    Removing trace.o(.rev16_text), (4 bytes).
+    Removing trace.o(.revsh_text), (4 bytes).
+    Removing retarget_io.o(i.__aeabi_assert), (140 bytes).
+    Removing retarget_io.o(i.__backspace), (6 bytes).
+    Removing retarget_io.o(i.abort), (2 bytes).
+    Removing retarget_io.o(i.fgetc), (6 bytes).
+    Removing retarget_io.o(i.fputc), (24 bytes).
+    Removing retarget_io.o(i.stdout_putchar), (4 bytes).
+    Removing fdiv.o(.text), (124 bytes).
+    Removing ffltui.o(.text), (14 bytes).
+    Removing ffixui.o(.text), (40 bytes).
+    Removing dadd.o(.text), (356 bytes).
+    Removing dfixul.o(.text), (64 bytes).
+    Removing cdrcmple.o(.text), (40 bytes).
+
+327 unused section(s) (total 14384 bytes) removed from the image.
+
+==============================================================================
+
+Adding Veneers to the image
+
+    Adding TT veneer (12 bytes, Long) for call to 'Flash_Erase' from defaultsetup.o(i.ErasePage).
+    Adding TT veneer (12 bytes, Long) for call to 'Flash_ConfigRCTC' from flash.o(i.Flash_Init).
+    Adding TT veneer (12 bytes, Long) for call to 'Flash_Write' from defaultsetup.o(i.WriteFlashCfg).
+
+3 Veneer(s) (total 36 bytes) added to the image.
+
+==============================================================================
+
+Image Symbol Table
+
+    Local Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    ../clib/microlib/division.c              0x00000000   Number         0  uldiv.o ABSOLUTE
+    ../clib/microlib/division.c              0x00000000   Number         0  idiv.o ABSOLUTE
+    ../clib/microlib/division.c              0x00000000   Number         0  uidiv.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llsshr.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llushr.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llshl.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf2.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfa.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf8.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf7.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf6.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf5.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf4.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf3.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf1.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf0.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfb.o ABSOLUTE
+    ../clib/microlib/stdio/fflush.c          0x00000000   Number         0  fflush.o ABSOLUTE
+    ../clib/microlib/stdio/fputs.c           0x00000000   Number         0  fputs_e.o ABSOLUTE
+    ../clib/microlib/stdio/fputs.c           0x00000000   Number         0  fputs.o ABSOLUTE
+    ../clib/microlib/stdio/streams.c         0x00000000   Number         0  stderr.o ABSOLUTE
+    ../clib/microlib/stdio/streams.c         0x00000000   Number         0  stdout.o ABSOLUTE
+    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memmovea.o ABSOLUTE
+    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memmoveb.o ABSOLUTE
+    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpyb.o ABSOLUTE
+    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpya.o ABSOLUTE
+    ../clib/microlib/string/memset.c         0x00000000   Number         0  memseta.o ABSOLUTE
+    ../clib/microlib/string/strcmp.c         0x00000000   Number         0  strcmp.o ABSOLUTE
+    ../clib/microlib/string/strcpy.c         0x00000000   Number         0  strcpy.o ABSOLUTE
+    ../clib/microlib/string/strlen.c         0x00000000   Number         0  strlen.o ABSOLUTE
+    ../clib/microlib/stubs.s                 0x00000000   Number         0  useno.o ABSOLUTE
+    ../clib/microlib/stubs.s                 0x00000000   Number         0  iusefp.o ABSOLUTE
+    ../fplib/microlib/fpadd.c                0x00000000   Number         0  fadd.o ABSOLUTE
+    ../fplib/microlib/fpadd.c                0x00000000   Number         0  dadd.o ABSOLUTE
+    ../fplib/microlib/fpdiv.c                0x00000000   Number         0  ddiv.o ABSOLUTE
+    ../fplib/microlib/fpdiv.c                0x00000000   Number         0  fdiv.o ABSOLUTE
+    ../fplib/microlib/fpepilogue.c           0x00000000   Number         0  fepilogue.o ABSOLUTE
+    ../fplib/microlib/fpepilogue.c           0x00000000   Number         0  depilogue.o ABSOLUTE
+    ../fplib/microlib/fpfix.c                0x00000000   Number         0  ffixi.o ABSOLUTE
+    ../fplib/microlib/fpfix.c                0x00000000   Number         0  ffixui.o ABSOLUTE
+    ../fplib/microlib/fpfix.c                0x00000000   Number         0  dfixi.o ABSOLUTE
+    ../fplib/microlib/fpfix.c                0x00000000   Number         0  dfixul.o ABSOLUTE
+    ../fplib/microlib/fpflt.c                0x00000000   Number         0  fflti.o ABSOLUTE
+    ../fplib/microlib/fpflt.c                0x00000000   Number         0  dflti.o ABSOLUTE
+    ../fplib/microlib/fpflt.c                0x00000000   Number         0  ffltui.o ABSOLUTE
+    ../fplib/microlib/fpmul.c                0x00000000   Number         0  dmul.o ABSOLUTE
+    ../fplib/microlib/fpmul.c                0x00000000   Number         0  fmul.o ABSOLUTE
+    ..\Users\Algorithm\Spo2Interface.c       0x00000000   Number         0  spo2interface.o ABSOLUTE
+    ..\Users\BlueToothDrivers\BluetoothDriver.c 0x00000000   Number         0  bluetoothdriver.o ABSOLUTE
+    ..\Users\BuzzDrivers\BuzzDriver.c        0x00000000   Number         0  buzzdriver.o ABSOLUTE
+    ..\Users\FuncDrivers\DefaultSetup.c      0x00000000   Number         0  defaultsetup.o ABSOLUTE
+    ..\Users\FuncDrivers\LightDriver.c       0x00000000   Number         0  lightdriver.o ABSOLUTE
+    ..\Users\FuncDrivers\Preprocess.c        0x00000000   Number         0  preprocess.o ABSOLUTE
+    ..\Users\OledDrivers\DisplayDriver.c     0x00000000   Number         0  displaydriver.o ABSOLUTE
+    ..\Users\OledDrivers\UG2864Driver.c      0x00000000   Number         0  ug2864driver.o ABSOLUTE
+    ..\Users\OledDrivers\fontlibs.c          0x00000000   Number         0  fontlibs.o ABSOLUTE
+    ..\Users\SystemDriver.c                  0x00000000   Number         0  systemdriver.o ABSOLUTE
+    ..\Users\main.c                          0x00000000   Number         0  main.o ABSOLUTE
+    ..\\Users\\Algorithm\\Spo2Interface.c    0x00000000   Number         0  spo2interface.o ABSOLUTE
+    ..\\Users\\BlueToothDrivers\\BluetoothDriver.c 0x00000000   Number         0  bluetoothdriver.o ABSOLUTE
+    ..\\Users\\BuzzDrivers\\BuzzDriver.c     0x00000000   Number         0  buzzdriver.o ABSOLUTE
+    ..\\Users\\FuncDrivers\\DefaultSetup.c   0x00000000   Number         0  defaultsetup.o ABSOLUTE
+    ..\\Users\\FuncDrivers\\LightDriver.c    0x00000000   Number         0  lightdriver.o ABSOLUTE
+    ..\\Users\\FuncDrivers\\Preprocess.c     0x00000000   Number         0  preprocess.o ABSOLUTE
+    ..\\Users\\OledDrivers\\DisplayDriver.c  0x00000000   Number         0  displaydriver.o ABSOLUTE
+    ..\\Users\\OledDrivers\\UG2864Driver.c   0x00000000   Number         0  ug2864driver.o ABSOLUTE
+    ..\\Users\\SystemDriver.c                0x00000000   Number         0  systemdriver.o ABSOLUTE
+    ..\\Users\\main.c                        0x00000000   Number         0  main.o ABSOLUTE
+    ..\\common\\src\\system_tcasxxx.c        0x00000000   Number         0  system_tcasxxx.o ABSOLUTE
+    ..\\driver\\src\\aes.c                   0x00000000   Number         0  aes.o ABSOLUTE
+    ..\\driver\\src\\cmp.c                   0x00000000   Number         0  cmp.o ABSOLUTE
+    ..\\driver\\src\\delay.c                 0x00000000   Number         0  delay.o ABSOLUTE
+    ..\\driver\\src\\divider.c               0x00000000   Number         0  divider.o ABSOLUTE
+    ..\\driver\\src\\dma.c                   0x00000000   Number         0  dma.o ABSOLUTE
+    ..\\driver\\src\\flash.c                 0x00000000   Number         0  flash.o ABSOLUTE
+    ..\\driver\\src\\gpio.c                  0x00000000   Number         0  gpio.o ABSOLUTE
+    ..\\driver\\src\\i2c.c                   0x00000000   Number         0  i2c.o ABSOLUTE
+    ..\\driver\\src\\idac.c                  0x00000000   Number         0  idac.o ABSOLUTE
+    ..\\driver\\src\\interrupt.c             0x00000000   Number         0  interrupt.o ABSOLUTE
+    ..\\driver\\src\\lpm.c                   0x00000000   Number         0  lpm.o ABSOLUTE
+    ..\\driver\\src\\lvd.c                   0x00000000   Number         0  lvd.o ABSOLUTE
+    ..\\driver\\src\\op.c                    0x00000000   Number         0  op.o ABSOLUTE
+    ..\\driver\\src\\rtc.c                   0x00000000   Number         0  rtc.o ABSOLUTE
+    ..\\driver\\src\\saradc.c                0x00000000   Number         0  saradc.o ABSOLUTE
+    ..\\driver\\src\\spi.c                   0x00000000   Number         0  spi.o ABSOLUTE
+    ..\\driver\\src\\tia.c                   0x00000000   Number         0  tia.o ABSOLUTE
+    ..\\driver\\src\\timer.c                 0x00000000   Number         0  timer.o ABSOLUTE
+    ..\\driver\\src\\trim.c                  0x00000000   Number         0  trim.o ABSOLUTE
+    ..\\driver\\src\\uart.c                  0x00000000   Number         0  uart.o ABSOLUTE
+    ..\\driver\\src\\vdac.c                  0x00000000   Number         0  vdac.o ABSOLUTE
+    ..\\driver\\src\\wdg.c                   0x00000000   Number         0  wdg.o ABSOLUTE
+    ..\\midware\\src\\trace.c                0x00000000   Number         0  trace.o ABSOLUTE
+    ..\common\src\startup_tcasxxx.s          0x00000000   Number         0  startup_tcasxxx.o ABSOLUTE
+    ..\common\src\system_tcasxxx.c           0x00000000   Number         0  system_tcasxxx.o ABSOLUTE
+    ..\driver\src\aes.c                      0x00000000   Number         0  aes.o ABSOLUTE
+    ..\driver\src\cmp.c                      0x00000000   Number         0  cmp.o ABSOLUTE
+    ..\driver\src\delay.c                    0x00000000   Number         0  delay.o ABSOLUTE
+    ..\driver\src\divider.c                  0x00000000   Number         0  divider.o ABSOLUTE
+    ..\driver\src\dma.c                      0x00000000   Number         0  dma.o ABSOLUTE
+    ..\driver\src\flash.c                    0x00000000   Number         0  flash.o ABSOLUTE
+    ..\driver\src\gpio.c                     0x00000000   Number         0  gpio.o ABSOLUTE
+    ..\driver\src\i2c.c                      0x00000000   Number         0  i2c.o ABSOLUTE
+    ..\driver\src\idac.c                     0x00000000   Number         0  idac.o ABSOLUTE
+    ..\driver\src\interrupt.c                0x00000000   Number         0  interrupt.o ABSOLUTE
+    ..\driver\src\lpm.c                      0x00000000   Number         0  lpm.o ABSOLUTE
+    ..\driver\src\lvd.c                      0x00000000   Number         0  lvd.o ABSOLUTE
+    ..\driver\src\op.c                       0x00000000   Number         0  op.o ABSOLUTE
+    ..\driver\src\rtc.c                      0x00000000   Number         0  rtc.o ABSOLUTE
+    ..\driver\src\saradc.c                   0x00000000   Number         0  saradc.o ABSOLUTE
+    ..\driver\src\spi.c                      0x00000000   Number         0  spi.o ABSOLUTE
+    ..\driver\src\tia.c                      0x00000000   Number         0  tia.o ABSOLUTE
+    ..\driver\src\timer.c                    0x00000000   Number         0  timer.o ABSOLUTE
+    ..\driver\src\trim.c                     0x00000000   Number         0  trim.o ABSOLUTE
+    ..\driver\src\uart.c                     0x00000000   Number         0  uart.o ABSOLUTE
+    ..\driver\src\vdac.c                     0x00000000   Number         0  vdac.o ABSOLUTE
+    ..\driver\src\wdg.c                      0x00000000   Number         0  wdg.o ABSOLUTE
+    ..\midware\RTT\SEGGER_RTT.c              0x00000000   Number         0  segger_rtt.o ABSOLUTE
+    ..\midware\RTT\SEGGER_RTT_Syscalls_KEIL.c 0x00000000   Number         0  segger_rtt_syscalls_keil.o ABSOLUTE
+    ..\midware\RTT\SEGGER_RTT_printf.c       0x00000000   Number         0  segger_rtt_printf.o ABSOLUTE
+    ..\midware\src\trace.c                   0x00000000   Number         0  trace.o ABSOLUTE
+    C:\Users\longten\AppData\Local\Arm\Packs\Keil\ARM_Compiler\1.6.2\Source\retarget_io.c 0x00000000   Number         0  retarget_io.o ABSOLUTE
+    cdrcmple.s                               0x00000000   Number         0  cdrcmple.o ABSOLUTE
+    dc.s                                     0x00000000   Number         0  dc.o ABSOLUTE
+    .jump_table_mem_area                     0x00004000   Section       32  interrupt.o(.jump_table_mem_area)
+    RAMCODE                                  0x00004020   Section        0  flash.o(RAMCODE)
+    .data                                    0x00004114   Section       36  interrupt.o(.data)
+    gSrtCnt                                  0x00004114   Data           1  interrupt.o(.data)
+    sBuzzSet                                 0x00004115   Data           1  interrupt.o(.data)
+    sSecCnt                                  0x00004116   Data           1  interrupt.o(.data)
+    sCellSpan                                0x00004118   Data           2  interrupt.o(.data)
+    sSpo2Span                                0x0000411a   Data           2  interrupt.o(.data)
+    gDrvCur                                  0x0000411c   Data           2  interrupt.o(.data)
+    gSampRedAmb                              0x00004124   Data           4  interrupt.o(.data)
+    gSampRedSamp                             0x00004128   Data           4  interrupt.o(.data)
+    gSampIrdAmb                              0x0000412c   Data           4  interrupt.o(.data)
+    gSampIrdSamp                             0x00004130   Data           4  interrupt.o(.data)
+    gSampVolt                                0x00004134   Data           4  interrupt.o(.data)
+    .data                                    0x00004138   Section        4  system_tcasxxx.o(.data)
+    .data                                    0x0000413c   Section        2  defaultsetup.o(.data)
+    .data                                    0x00004140   Section        4  defaultsetup.o(.data)
+    gBaseAddr                                0x00004140   Data           4  defaultsetup.o(.data)
+    .data                                    0x00004144   Section        6  lightdriver.o(.data)
+    sProbeFlag                               0x00004144   Data           1  lightdriver.o(.data)
+    sOffDelay                                0x00004145   Data           1  lightdriver.o(.data)
+    .data                                    0x0000414a   Section        4  preprocess.o(.data)
+    sOriPos                                  0x0000414c   Data           2  preprocess.o(.data)
+    .data                                    0x0000414e   Section       20  displaydriver.o(.data)
+    sBlink                                   0x0000414e   Data           1  displaydriver.o(.data)
+    sPreIndex                                0x0000414f   Data           1  displaydriver.o(.data)
+    sUpdatePos                               0x00004150   Data           1  displaydriver.o(.data)
+    sDelay                                   0x00004151   Data           1  displaydriver.o(.data)
+    sBlink                                   0x00004152   Data           1  displaydriver.o(.data)
+    sOffCnt                                  0x00004153   Data           1  displaydriver.o(.data)
+    oldProbeOff                              0x00004154   Data           1  displaydriver.o(.data)
+    showBleLogo                              0x00004155   Data           1  displaydriver.o(.data)
+    oldKeyVal                                0x00004156   Data           1  displaydriver.o(.data)
+    .data                                    0x00004162   Section        6  buzzdriver.o(.data)
+    .bss                                     0x00004168   Section       24  defaultsetup.o(.bss)
+    .bss                                     0x00004180   Section      108  lightdriver.o(.bss)
+    .bss                                     0x000041ec   Section       32  preprocess.o(.bss)
+    .bss                                     0x0000420c   Section     1036  preprocess.o(.bss)
+    sDatBuf                                  0x000045f8   Data          32  preprocess.o(.bss)
+    .bss                                     0x00004618   Section      170  displaydriver.o(.bss)
+    .bss                                     0x000046c2   Section       16  displaydriver.o(.bss)
+    .ARM.__AT_0x00004800                     0x00004800   Section      120  segger_rtt.o(.ARM.__AT_0x00004800)
+    .bss                                     0x00004878   Section     1040  segger_rtt.o(.bss)
+    _acUpBuffer                              0x00004878   Data        1024  segger_rtt.o(.bss)
+    _acDownBuffer                            0x00004c78   Data          16  segger_rtt.o(.bss)
+    STACK                                    0x00004c88   Section     1024  startup_tcasxxx.o(STACK)
+    RESET                                    0x10000000   Section       76  startup_tcasxxx.o(RESET)
+    .text                                    0x1000004c   Section       72  startup_tcasxxx.o(.text)
+    .text                                    0x10000094   Section        0  uidiv.o(.text)
+    .text                                    0x100000c0   Section        0  idiv.o(.text)
+    .text                                    0x100000e8   Section        0  memmovea.o(.text)
+    .text                                    0x10000128   Section        0  memseta.o(.text)
+    .text                                    0x1000014c   Section        0  strcpy.o(.text)
+    .text                                    0x1000015e   Section        0  fadd.o(.text)
+    .text                                    0x10000210   Section        0  fmul.o(.text)
+    .text                                    0x1000028c   Section        0  dmul.o(.text)
+    .text                                    0x1000035c   Section        0  ddiv.o(.text)
+    .text                                    0x1000044c   Section        0  fflti.o(.text)
+    .text                                    0x10000464   Section        0  dflti.o(.text)
+    .text                                    0x1000048c   Section        0  ffixi.o(.text)
+    .text                                    0x100004c0   Section        0  dfixi.o(.text)
+    .text                                    0x10000508   Section        0  llushr.o(.text)
+    .text                                    0x1000052a   Section        0  iusefp.o(.text)
+    .text                                    0x1000052a   Section        0  fepilogue.o(.text)
+    .text                                    0x100005ac   Section        0  depilogue.o(.text)
+    .text                                    0x1000066a   Section        0  llshl.o(.text)
+    i.ADT_StartTimer                         0x100006b0   Section        0  timer.o(i.ADT_StartTimer)
+    i.Buzz_Speaker                           0x100006bc   Section        0  buzzdriver.o(i.Buzz_Speaker)
+    i.Cmp_CLKConfig                          0x1000072c   Section        0  cmp.o(i.Cmp_CLKConfig)
+    i.Cmp_Enable                             0x10000788   Section        0  cmp.o(i.Cmp_Enable)
+    i.Cmp_Init                               0x100007a8   Section        0  cmp.o(i.Cmp_Init)
+    i.Cmp_VrefConfig                         0x10000960   Section        0  cmp.o(i.Cmp_VrefConfig)
+    i.CopyDataRWtoImage                      0x10000a0c   Section        0  system_tcasxxx.o(i.CopyDataRWtoImage)
+    i.DMA_Init                               0x10000a38   Section        0  dma.o(i.DMA_Init)
+    i.DMA_StartChannel                       0x10000a80   Section        0  dma.o(i.DMA_StartChannel)
+    i.DelayForCommandExeDone                 0x10000a98   Section        0  delay.o(i.DelayForCommandExeDone)
+    i.Display_AlarmMenu                      0x10000abc   Section        0  displaydriver.o(i.Display_AlarmMenu)
+    i.Display_AlarmThrd                      0x10000b80   Section        0  displaydriver.o(i.Display_AlarmThrd)
+    i.Display_Bargraph                       0x10000eb4   Section        0  displaydriver.o(i.Display_Bargraph)
+    i.Display_Battery                        0x10000fc4   Section        0  displaydriver.o(i.Display_Battery)
+    Display_Battery                          0x10000fc5   Thumb Code   406  displaydriver.o(i.Display_Battery)
+    i.Display_Ble                            0x10001164   Section        0  displaydriver.o(i.Display_Ble)
+    Display_Ble                              0x10001165   Thumb Code    64  displaydriver.o(i.Display_Ble)
+    i.Display_BlinkSelection                 0x100011a8   Section        0  displaydriver.o(i.Display_BlinkSelection)
+    i.Display_Caption                        0x1000130c   Section        0  displaydriver.o(i.Display_Caption)
+    Display_Caption                          0x1000130d   Thumb Code   162  displaydriver.o(i.Display_Caption)
+    i.Display_GUI                            0x100013c8   Section        0  displaydriver.o(i.Display_GUI)
+    i.Display_Init                           0x100018e0   Section        0  displaydriver.o(i.Display_Init)
+    i.Display_Logo                           0x10001910   Section        0  displaydriver.o(i.Display_Logo)
+    Display_Logo                             0x10001911   Thumb Code    52  displaydriver.o(i.Display_Logo)
+    i.Display_Perfusion                      0x10001948   Section        0  displaydriver.o(i.Display_Perfusion)
+    Display_Perfusion                        0x10001949   Thumb Code   940  displaydriver.o(i.Display_Perfusion)
+    i.Display_Pleth                          0x10001d00   Section        0  displaydriver.o(i.Display_Pleth)
+    i.Display_ProbeOff                       0x10001e20   Section        0  displaydriver.o(i.Display_ProbeOff)
+    i.Display_Pulse                          0x10001e7c   Section        0  displaydriver.o(i.Display_Pulse)
+    i.Display_SpO2                           0x10002078   Section        0  displaydriver.o(i.Display_SpO2)
+    i.Display_Version                        0x100022a8   Section        0  displaydriver.o(i.Display_Version)
+    Display_Version                          0x100022a9   Thumb Code   408  displaydriver.o(i.Display_Version)
+    i.ErasePage                              0x10002450   Section        0  defaultsetup.o(i.ErasePage)
+    i.Flash_DeInit                           0x1000245c   Section        0  flash.o(i.Flash_DeInit)
+    i.Flash_Init                             0x10002468   Section        0  flash.o(i.Flash_Init)
+    i.GPIO_ClearBits                         0x10002480   Section        0  gpio.o(i.GPIO_ClearBits)
+    i.GPIO_ClrAFMode                         0x100024ac   Section        0  gpio.o(i.GPIO_ClrAFMode)
+    i.GPIO_Init                              0x100024c8   Section        0  gpio.o(i.GPIO_Init)
+    i.GPIO_PinMuxAdrMap                      0x100025c0   Section        0  gpio.o(i.GPIO_PinMuxAdrMap)
+    GPIO_PinMuxAdrMap                        0x100025c1   Thumb Code    98  gpio.o(i.GPIO_PinMuxAdrMap)
+    i.GPIO_RegisterMap                       0x1000262c   Section        0  gpio.o(i.GPIO_RegisterMap)
+    GPIO_RegisterMap                         0x1000262d   Thumb Code    96  gpio.o(i.GPIO_RegisterMap)
+    i.GPIO_SetAFMode                         0x10002694   Section        0  gpio.o(i.GPIO_SetAFMode)
+    i.GPIO_SetBits                           0x100026ce   Section        0  gpio.o(i.GPIO_SetBits)
+    i.GetHardwareVer                         0x100026fa   Section        0  displaydriver.o(i.GetHardwareVer)
+    GetHardwareVer                           0x100026fb   Thumb Code     6  displaydriver.o(i.GetHardwareVer)
+    i.GetSoftwareVer                         0x10002700   Section        0  displaydriver.o(i.GetSoftwareVer)
+    GetSoftwareVer                           0x10002701   Thumb Code     4  displaydriver.o(i.GetSoftwareVer)
+    i.HardFault_Handler                      0x10002708   Section        0  interrupt.o(i.HardFault_Handler)
+    i.IC_PowupInit                           0x1000270c   Section        0  interrupt.o(i.IC_PowupInit)
+    i.IWDG_ClearITPending                    0x10002754   Section        0  wdg.o(i.IWDG_ClearITPending)
+    i.IWDG_Enable                            0x10002784   Section        0  wdg.o(i.IWDG_Enable)
+    i.IWDG_GetITFlag                         0x10002794   Section        0  wdg.o(i.IWDG_GetITFlag)
+    i.IwdgCallback                           0x100027c4   Section        0  systemdriver.o(i.IwdgCallback)
+    i.Light_AdaptBaselineSet                 0x100027fc   Section        0  lightdriver.o(i.Light_AdaptBaselineSet)
+    i.Light_AdjustDrive                      0x100028fc   Section        0  lightdriver.o(i.Light_AdjustDrive)
+    i.Light_ProbeDriveAdjust                 0x10002a50   Section        0  lightdriver.o(i.Light_ProbeDriveAdjust)
+    i.Light_StatSampleACVariety              0x10002b60   Section        0  lightdriver.o(i.Light_StatSampleACVariety)
+    Light_StatSampleACVariety                0x10002b61   Thumb Code   616  lightdriver.o(i.Light_StatSampleACVariety)
+    i.NMI_Handler                            0x10002dd4   Section        0  interrupt.o(i.NMI_Handler)
+    i.OP2_OutPadConfig                       0x10002dd8   Section        0  op.o(i.OP2_OutPadConfig)
+    i.OP2_VinPadConfig                       0x10002df0   Section        0  op.o(i.OP2_VinPadConfig)
+    i.OP2_VipPadConfig                       0x10002e08   Section        0  op.o(i.OP2_VipPadConfig)
+    i.OPA_Enable                             0x10002e20   Section        0  op.o(i.OPA_Enable)
+    i.OPA_Init                               0x10002e44   Section        0  op.o(i.OPA_Init)
+    i.PendSV_Handler                         0x10002f54   Section        0  interrupt.o(i.PendSV_Handler)
+    i.PeripheralsRxDmaConfig                 0x10002f58   Section        0  dma.o(i.PeripheralsRxDmaConfig)
+    i.PrintInit                              0x10002fd0   Section        0  trace.o(i.PrintInit)
+    i.Process_FixedSmoothFilter              0x10002fd4   Section        0  preprocess.o(i.Process_FixedSmoothFilter)
+    Process_FixedSmoothFilter                0x10002fd5   Thumb Code   280  preprocess.o(i.Process_FixedSmoothFilter)
+    i.Process_LowPassFiltFIR                 0x100030f8   Section        0  preprocess.o(i.Process_LowPassFiltFIR)
+    Process_LowPassFiltFIR                   0x100030f9   Thumb Code   188  preprocess.o(i.Process_LowPassFiltFIR)
+    i.Process_ResampleSignal                 0x100031bc   Section        0  preprocess.o(i.Process_ResampleSignal)
+    Process_ResampleSignal                   0x100031bd   Thumb Code   192  preprocess.o(i.Process_ResampleSignal)
+    i.Process_SampleData                     0x10003288   Section        0  preprocess.o(i.Process_SampleData)
+    i.ReadFlashCfg                           0x10003354   Section        0  defaultsetup.o(i.ReadFlashCfg)
+    i.SEGGER_RTT_Write                       0x100033c4   Section        0  segger_rtt.o(i.SEGGER_RTT_Write)
+    i.SEGGER_RTT_WriteNoLock                 0x100033f8   Section        0  segger_rtt.o(i.SEGGER_RTT_WriteNoLock)
+    i.SEGGER_RTT_printf                      0x10003460   Section        0  segger_rtt_printf.o(i.SEGGER_RTT_printf)
+    i.SEGGER_RTT_vprintf                     0x10003478   Section        0  segger_rtt_printf.o(i.SEGGER_RTT_vprintf)
+    i.SPI_Init                               0x10003616   Section        0  spi.o(i.SPI_Init)
+    i.SPI_SendData_Host                      0x100036ae   Section        0  spi.o(i.SPI_SendData_Host)
+    i.SPI_SetCpolCpha                        0x100036d0   Section        0  spi.o(i.SPI_SetCpolCpha)
+    i.SPI_SetFrameSize                       0x100036e8   Section        0  spi.o(i.SPI_SetFrameSize)
+    i.SPI_SetRfr                             0x10003710   Section        0  spi.o(i.SPI_SetRfr)
+    i.SVC_Handler                            0x10003724   Section        0  interrupt.o(i.SVC_Handler)
+    i.SYS_ADC_Init                           0x10003728   Section        0  systemdriver.o(i.SYS_ADC_Init)
+    SYS_ADC_Init                             0x10003729   Thumb Code   232  systemdriver.o(i.SYS_ADC_Init)
+    i.SYS_Buzz_Init                          0x10003824   Section        0  systemdriver.o(i.SYS_Buzz_Init)
+    SYS_Buzz_Init                            0x10003825   Thumb Code    60  systemdriver.o(i.SYS_Buzz_Init)
+    i.SYS_GPIO_Init                          0x10003864   Section        0  systemdriver.o(i.SYS_GPIO_Init)
+    SYS_GPIO_Init                            0x10003865   Thumb Code   512  systemdriver.o(i.SYS_GPIO_Init)
+    i.SYS_Hardware_Init                      0x10003a70   Section        0  systemdriver.o(i.SYS_Hardware_Init)
+    i.SYS_Interrupt_Enable                   0x10003a94   Section        0  systemdriver.o(i.SYS_Interrupt_Enable)
+    i.SYS_ModuleDrive_Init                   0x10003aec   Section        0  systemdriver.o(i.SYS_ModuleDrive_Init)
+    i.SYS_OPA_Init                           0x10003af8   Section        0  systemdriver.o(i.SYS_OPA_Init)
+    SYS_OPA_Init                             0x10003af9   Thumb Code   136  systemdriver.o(i.SYS_OPA_Init)
+    i.SYS_PressKey_Init                      0x10003b80   Section        0  systemdriver.o(i.SYS_PressKey_Init)
+    SYS_PressKey_Init                        0x10003b81   Thumb Code    64  systemdriver.o(i.SYS_PressKey_Init)
+    i.SYS_SPI0_Init                          0x10003bc0   Section        0  systemdriver.o(i.SYS_SPI0_Init)
+    SYS_SPI0_Init                            0x10003bc1   Thumb Code    34  systemdriver.o(i.SYS_SPI0_Init)
+    i.SYS_TIMER_Init                         0x10003be8   Section        0  systemdriver.o(i.SYS_TIMER_Init)
+    SYS_TIMER_Init                           0x10003be9   Thumb Code    20  systemdriver.o(i.SYS_TIMER_Init)
+    i.SYS_TIMER_PWM_Init                     0x10003c04   Section        0  systemdriver.o(i.SYS_TIMER_PWM_Init)
+    SYS_TIMER_PWM_Init                       0x10003c05   Thumb Code    56  systemdriver.o(i.SYS_TIMER_PWM_Init)
+    i.SetTimer                               0x10003c40   Section        0  timer.o(i.SetTimer)
+    i.Setup_RestoreDevice                    0x10003cb8   Section        0  defaultsetup.o(i.Setup_RestoreDevice)
+    i.Setup_UpdateDevice                     0x10003ce8   Section        0  defaultsetup.o(i.Setup_UpdateDevice)
+    i.SysCheckTrimValid                      0x10003d18   Section        0  system_tcasxxx.o(i.SysCheckTrimValid)
+    i.SysTick_Handler                        0x10003d6c   Section        0  interrupt.o(i.SysTick_Handler)
+    i.SystemAnlogTrim                        0x10003d6e   Section        0  system_tcasxxx.o(i.SystemAnlogTrim)
+    i.SystemConfigFlash                      0x10003d70   Section        0  system_tcasxxx.o(i.SystemConfigFlash)
+    i.SystemCoreClockUpdate                  0x10003d94   Section        0  system_tcasxxx.o(i.SystemCoreClockUpdate)
+    i.SystemCoreSwitchHclkSrc                0x10003da4   Section        0  system_tcasxxx.o(i.SystemCoreSwitchHclkSrc)
+    i.SystemGetHClkFreq                      0x10003e08   Section        0  system_tcasxxx.o(i.SystemGetHClkFreq)
+    i.SystemInit                             0x10003e7c   Section        0  system_tcasxxx.o(i.SystemInit)
+    i.TCmain                                 0x10003ee8   Section        0  main.o(i.TCmain)
+    i.Tia_Enable                             0x10003f1c   Section        0  tia.o(i.Tia_Enable)
+    i.Tia_Init                               0x10003f2c   Section        0  tia.o(i.Tia_Init)
+    i.TriggerSARAdcStart                     0x10004018   Section        0  saradc.o(i.TriggerSARAdcStart)
+    i.UG2864_ClearRegion                     0x10004038   Section        0  ug2864driver.o(i.UG2864_ClearRegion)
+    i.UG2864_Display                         0x100040c4   Section        0  ug2864driver.o(i.UG2864_Display)
+    i.UG2864_Fill_RAM                        0x10004164   Section        0  ug2864driver.o(i.UG2864_Fill_RAM)
+    i.UG2864_OLED_Init                       0x10004190   Section        0  ug2864driver.o(i.UG2864_OLED_Init)
+    i.UG2864_Set_Addressing_Mode             0x10004208   Section        0  ug2864driver.o(i.UG2864_Set_Addressing_Mode)
+    i.UG2864_Set_Common_Config               0x10004214   Section        0  ug2864driver.o(i.UG2864_Set_Common_Config)
+    i.UG2864_Set_Common_Remap                0x10004228   Section        0  ug2864driver.o(i.UG2864_Set_Common_Remap)
+    i.UG2864_Set_Contrast_Control            0x10004234   Section        0  ug2864driver.o(i.UG2864_Set_Contrast_Control)
+    i.UG2864_Set_Display_Clock               0x10004246   Section        0  ug2864driver.o(i.UG2864_Set_Display_Clock)
+    i.UG2864_Set_Display_Offset              0x10004258   Section        0  ug2864driver.o(i.UG2864_Set_Display_Offset)
+    i.UG2864_Set_Display_On_Off              0x1000426a   Section        0  ug2864driver.o(i.UG2864_Set_Display_On_Off)
+    i.UG2864_Set_Entire_Display              0x10004276   Section        0  ug2864driver.o(i.UG2864_Set_Entire_Display)
+    i.UG2864_Set_Inverse_Display             0x10004282   Section        0  ug2864driver.o(i.UG2864_Set_Inverse_Display)
+    i.UG2864_Set_Multiplex_Ratio             0x1000428e   Section        0  ug2864driver.o(i.UG2864_Set_Multiplex_Ratio)
+    i.UG2864_Set_Precharge_Period            0x100042a0   Section        0  ug2864driver.o(i.UG2864_Set_Precharge_Period)
+    i.UG2864_Set_Pump                        0x100042b2   Section        0  ug2864driver.o(i.UG2864_Set_Pump)
+    i.UG2864_Set_Segment_Remap               0x100042c4   Section        0  ug2864driver.o(i.UG2864_Set_Segment_Remap)
+    i.UG2864_Set_Start_Column                0x100042d0   Section        0  ug2864driver.o(i.UG2864_Set_Start_Column)
+    i.UG2864_Set_Start_Line                  0x100042e6   Section        0  ug2864driver.o(i.UG2864_Set_Start_Line)
+    i.UG2864_Set_Start_Page                  0x100042f2   Section        0  ug2864driver.o(i.UG2864_Set_Start_Page)
+    i.UG2864_Set_VCOMH                       0x100042fe   Section        0  ug2864driver.o(i.UG2864_Set_VCOMH)
+    i.UG2864_Write_Command                   0x10004310   Section        0  ug2864driver.o(i.UG2864_Write_Command)
+    UG2864_Write_Command                     0x10004311   Thumb Code    36  ug2864driver.o(i.UG2864_Write_Command)
+    i.UG2864_Write_Data                      0x10004338   Section        0  ug2864driver.o(i.UG2864_Write_Data)
+    UG2864_Write_Data                        0x10004339   Thumb Code    34  ug2864driver.o(i.UG2864_Write_Data)
+    i.WriteFlashCfg                          0x10004360   Section        0  defaultsetup.o(i.WriteFlashCfg)
+    i._DoInit                                0x100043b8   Section        0  segger_rtt.o(i._DoInit)
+    _DoInit                                  0x100043b9   Thumb Code    72  segger_rtt.o(i._DoInit)
+    i._GetAvailWriteSpace                    0x10004424   Section        0  segger_rtt.o(i._GetAvailWriteSpace)
+    _GetAvailWriteSpace                      0x10004425   Thumb Code    24  segger_rtt.o(i._GetAvailWriteSpace)
+    i._PrintInt                              0x1000443c   Section        0  segger_rtt_printf.o(i._PrintInt)
+    _PrintInt                                0x1000443d   Thumb Code   230  segger_rtt_printf.o(i._PrintInt)
+    i._PrintUnsigned                         0x10004524   Section        0  segger_rtt_printf.o(i._PrintUnsigned)
+    _PrintUnsigned                           0x10004525   Thumb Code   226  segger_rtt_printf.o(i._PrintUnsigned)
+    i._StoreChar                             0x1000460c   Section        0  segger_rtt_printf.o(i._StoreChar)
+    _StoreChar                               0x1000460d   Thumb Code    62  segger_rtt_printf.o(i._StoreChar)
+    i._WriteBlocking                         0x1000464a   Section        0  segger_rtt.o(i._WriteBlocking)
+    _WriteBlocking                           0x1000464b   Thumb Code    98  segger_rtt.o(i._WriteBlocking)
+    i._WriteNoCheck                          0x100046ac   Section        0  segger_rtt.o(i._WriteNoCheck)
+    _WriteNoCheck                            0x100046ad   Thumb Code    62  segger_rtt.o(i._WriteNoCheck)
+    i.__ARM_clz                              0x100046ea   Section        0  depilogue.o(i.__ARM_clz)
+    i.__ARM_common_switch8                   0x10004718   Section        0  lpm.o(i.__ARM_common_switch8)
+    i.__NVIC_ClearPendingIRQ                 0x10004734   Section        0  interrupt.o(i.__NVIC_ClearPendingIRQ)
+    __NVIC_ClearPendingIRQ                   0x10004735   Thumb Code    18  interrupt.o(i.__NVIC_ClearPendingIRQ)
+    i.__NVIC_EnableIRQ                       0x1000474c   Section        0  systemdriver.o(i.__NVIC_EnableIRQ)
+    __NVIC_EnableIRQ                         0x1000474d   Thumb Code    18  systemdriver.o(i.__NVIC_EnableIRQ)
+    i.__NVIC_SetPendingIRQ                   0x10004764   Section        0  interrupt.o(i.__NVIC_SetPendingIRQ)
+    __NVIC_SetPendingIRQ                     0x10004765   Thumb Code    18  interrupt.o(i.__NVIC_SetPendingIRQ)
+    i.__NVIC_SetPriority                     0x1000477c   Section        0  systemdriver.o(i.__NVIC_SetPriority)
+    __NVIC_SetPriority                       0x1000477d   Thumb Code    60  systemdriver.o(i.__NVIC_SetPriority)
+    i.aic_IRQHandler                         0x100047c0   Section        0  interrupt.o(i.aic_IRQHandler)
+    i.delay1ms                               0x10004888   Section        0  delay.o(i.delay1ms)
+    i.fic_IRQHandler                         0x100048d8   Section        0  interrupt.o(i.fic_IRQHandler)
+    i.lic_IRQHandler                         0x10004b14   Section        0  interrupt.o(i.lic_IRQHandler)
+    .constdata                               0x10004b44   Section       28  systemdriver.o(.constdata)
+    .constdata                               0x10004b60   Section       32  op.o(.constdata)
+    .constdata                               0x10004b80   Section       96  preprocess.o(.constdata)
+    .constdata                               0x10004be0   Section       40  displaydriver.o(.constdata)
+    .constdata                               0x10004c08   Section      436  fontlibs.o(.constdata)
+    .constdata                               0x10004dbc   Section      562  fontlibs.o(.constdata)
+    .constdata                               0x10004fee   Section      368  fontlibs.o(.constdata)
+    .constdata                               0x1000515e   Section      752  fontlibs.o(.constdata)
+    .constdata                               0x1000544e   Section      484  fontlibs.o(.constdata)
+    .constdata                               0x10005632   Section      429  fontlibs.o(.constdata)
+    .constdata                               0x100057df   Section      396  fontlibs.o(.constdata)
+    .constdata                               0x1000596b   Section      206  fontlibs.o(.constdata)
+    .constdata                               0x10005a39   Section      156  fontlibs.o(.constdata)
+    .constdata                               0x10005ad5   Section       70  fontlibs.o(.constdata)
+    .constdata                               0x10005b1b   Section       60  fontlibs.o(.constdata)
+    .constdata                               0x10005b57   Section       78  fontlibs.o(.constdata)
+    .constdata                               0x10005ba5   Section       45  fontlibs.o(.constdata)
+    .constdata                               0x10005bd2   Section       21  fontlibs.o(.constdata)
+    .constdata                               0x10005be7   Section       21  fontlibs.o(.constdata)
+    .constdata                               0x10005bfc   Section       14  fontlibs.o(.constdata)
+    .constdata                               0x10005c0a   Section       44  fontlibs.o(.constdata)
+    .constdata                               0x10005c36   Section       18  fontlibs.o(.constdata)
+    .constdata                               0x10005c48   Section       18  fontlibs.o(.constdata)
+    .constdata                               0x10005c5a   Section        6  fontlibs.o(.constdata)
+    .constdata                               0x10005c60   Section        6  fontlibs.o(.constdata)
+    .constdata                               0x10005c66   Section       16  fontlibs.o(.constdata)
+    .constdata                               0x10005c76   Section       16  fontlibs.o(.constdata)
+    .constdata                               0x10005c86   Section       30  fontlibs.o(.constdata)
+    .constdata                               0x10005ca4   Section       30  fontlibs.o(.constdata)
+    .constdata                               0x10005cc2   Section       48  fontlibs.o(.constdata)
+    .constdata                               0x10005cf2   Section       48  fontlibs.o(.constdata)
+    .constdata                               0x10005d22   Section       64  fontlibs.o(.constdata)
+    .constdata                               0x10005d62   Section      168  fontlibs.o(.constdata)
+    .constdata                               0x10005e0a   Section       62  fontlibs.o(.constdata)
+    .constdata                               0x10005e48   Section      262  ug2864driver.o(.constdata)
+    .constdata                               0x10005f4e   Section       16  segger_rtt_printf.o(.constdata)
+    _aV2C                                    0x10005f4e   Data          16  segger_rtt_printf.o(.constdata)
+
+    Global Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    BuildAttributes$$THM_ISAv3M$S$PE$A:L22$X:L11$S22$IEEE1$IW$USESV6$~STKCKD$USESV7$~SHL$OTIME$ROPI$EBA8$MICROLIB$REQ8$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    __use_no_errno                           0x00000000   Number         0  useno.o ABSOLUTE
+    __use_no_exception_handling              0x00000000   Number         0  useno.o ABSOLUTE
+    __use_no_fp                              0x00000000   Number         0  useno.o ABSOLUTE
+    __use_no_heap                            0x00000000   Number         0  useno.o ABSOLUTE
+    __use_no_heap_region                     0x00000000   Number         0  useno.o ABSOLUTE
+    __use_no_semihosting                     0x00000000   Number         0  useno.o ABSOLUTE
+    __use_no_semihosting_swi                 0x00000000   Number         0  useno.o ABSOLUTE
+    __use_no_signal_handling                 0x00000000   Number         0  useno.o ABSOLUTE
+    __Vectors_Size                           0x0000004c   Number         0  startup_tcasxxx.o ABSOLUTE
+    Image$$RW_IRAM1$$Length                  0x00000148   Number         0  anon$$obj.o ABSOLUTE
+    jump_table_base                          0x00004000   Data          32  interrupt.o(.jump_table_mem_area)
+    Flash_ConfigRCTC                         0x00004021   Thumb Code    16  flash.o(RAMCODE)
+    Image$$RW_IRAM1$$Base                    0x00004020   Number         0  anon$$obj.o ABSOLUTE
+    Flash_Erase                              0x00004031   Thumb Code    46  flash.o(RAMCODE)
+    Flash_Write                              0x0000405f   Thumb Code    28  flash.o(RAMCODE)
+    NVR_Erase                                0x0000407b   Thumb Code    94  flash.o(RAMCODE)
+    NVR_Write                                0x000040d9   Thumb Code    50  flash.o(RAMCODE)
+    gSumVal                                  0x00004120   Data           4  interrupt.o(.data)
+    SystemCoreClock                          0x00004138   Data           4  system_tcasxxx.o(.data)
+    gChkFunc                                 0x0000413c   Data           2  defaultsetup.o(.data)
+    gDriveRed                                0x00004146   Data           2  lightdriver.o(.data)
+    gDriveIrd                                0x00004148   Data           2  lightdriver.o(.data)
+    is_new_sample_ready                      0x0000414a   Data           1  preprocess.o(.data)
+    gInitCnt                                 0x0000414b   Data           1  preprocess.o(.data)
+    gCellVolt                                0x00004158   Data           2  displaydriver.o(.data)
+    gKeyCtrl                                 0x0000415a   Data           8  displaydriver.o(.data)
+    gBeepCtrl                                0x00004162   Data           6  buzzdriver.o(.data)
+    Image$$RW_IRAM1$$ZI$$Base                0x00004168   Number         0  anon$$obj.o ABSOLUTE
+    gCfgCtrl                                 0x00004168   Data          24  defaultsetup.o(.bss)
+    gCtrlRed                                 0x00004180   Data          16  lightdriver.o(.bss)
+    gCtrlIrd                                 0x00004190   Data          16  lightdriver.o(.bss)
+    gAdptRed                                 0x000041a0   Data          16  lightdriver.o(.bss)
+    gAdptIrd                                 0x000041b0   Data          16  lightdriver.o(.bss)
+    gFluCtrl                                 0x000041c0   Data          44  lightdriver.o(.bss)
+    gDmaAdcBuf                               0x000041ec   Data          32  preprocess.o(.bss)
+    gSampArray                               0x0000420c   Data          24  preprocess.o(.bss)
+    gFirBuf                                  0x00004224   Data         384  preprocess.o(.bss)
+    gSmoCtrl                                 0x000043a4   Data         596  preprocess.o(.bss)
+    gMenuBuf                                 0x00004618   Data         120  displaydriver.o(.bss)
+    gGuiCtrl                                 0x00004690   Data          20  displaydriver.o(.bss)
+    gAlmCtrl                                 0x000046a4   Data          12  displaydriver.o(.bss)
+    gSatParam                                0x000046b0   Data          18  displaydriver.o(.bss)
+    gSatSamp                                 0x000046c2   Data          16  displaydriver.o(.bss)
+    _SEGGER_RTT                              0x00004800   Data         120  segger_rtt.o(.ARM.__AT_0x00004800)
+    Image$$RW_IRAM1$$ZI$$Limit               0x00005088   Number         0  anon$$obj.o ABSOLUTE
+    __initial_sp                             0x00005088   Data           0  startup_tcasxxx.o(STACK)
+    __Vectors                                0x10000000   Data           4  startup_tcasxxx.o(RESET)
+    Reset_Handler                            0x1000004d   Thumb Code    28  startup_tcasxxx.o(.text)
+    __Vectors_End                            0x1000004c   Data           0  startup_tcasxxx.o(RESET)
+    __aeabi_uidiv                            0x10000095   Thumb Code     0  uidiv.o(.text)
+    __aeabi_uidivmod                         0x10000095   Thumb Code    44  uidiv.o(.text)
+    __aeabi_idiv                             0x100000c1   Thumb Code     0  idiv.o(.text)
+    __aeabi_idivmod                          0x100000c1   Thumb Code    40  idiv.o(.text)
+    ___aeabi_memcpy8$move                    0x100000e9   Thumb Code     0  memmovea.o(.text)
+    __aeabi_memcpy                           0x100000e9   Thumb Code    64  memmovea.o(.text)
+    __aeabi_memcpy4                          0x100000e9   Thumb Code     0  memmovea.o(.text)
+    __aeabi_memmove                          0x100000e9   Thumb Code     0  memmovea.o(.text)
+    __aeabi_memmove4                         0x100000e9   Thumb Code     0  memmovea.o(.text)
+    __aeabi_memmove8                         0x100000e9   Thumb Code     0  memmovea.o(.text)
+    __aeabi_memset                           0x10000129   Thumb Code    14  memseta.o(.text)
+    __aeabi_memset4                          0x10000129   Thumb Code     0  memseta.o(.text)
+    __aeabi_memset8                          0x10000129   Thumb Code     0  memseta.o(.text)
+    __aeabi_memclr                           0x10000137   Thumb Code     4  memseta.o(.text)
+    __aeabi_memclr4                          0x10000137   Thumb Code     0  memseta.o(.text)
+    __aeabi_memclr8                          0x10000137   Thumb Code     0  memseta.o(.text)
+    _memset$wrapper                          0x1000013b   Thumb Code    18  memseta.o(.text)
+    strcpy                                   0x1000014d   Thumb Code    18  strcpy.o(.text)
+    __aeabi_fadd                             0x1000015f   Thumb Code   162  fadd.o(.text)
+    __aeabi_fsub                             0x10000201   Thumb Code     8  fadd.o(.text)
+    __aeabi_frsub                            0x10000209   Thumb Code     8  fadd.o(.text)
+    __aeabi_fmul                             0x10000211   Thumb Code   122  fmul.o(.text)
+    __aeabi_dmul                             0x1000028d   Thumb Code   202  dmul.o(.text)
+    __aeabi_ddiv                             0x1000035d   Thumb Code   234  ddiv.o(.text)
+    __aeabi_i2f                              0x1000044d   Thumb Code    22  fflti.o(.text)
+    __aeabi_i2d                              0x10000465   Thumb Code    34  dflti.o(.text)
+    __aeabi_f2iz                             0x1000048d   Thumb Code    50  ffixi.o(.text)
+    __aeabi_d2iz                             0x100004c1   Thumb Code    62  dfixi.o(.text)
+    __aeabi_llsr                             0x10000509   Thumb Code    34  llushr.o(.text)
+    _ll_ushift_r                             0x10000509   Thumb Code     0  llushr.o(.text)
+    __I$use$fp                               0x1000052b   Thumb Code     0  iusefp.o(.text)
+    _float_round                             0x1000052b   Thumb Code    16  fepilogue.o(.text)
+    _float_epilogue                          0x1000053b   Thumb Code   114  fepilogue.o(.text)
+    _double_round                            0x100005ad   Thumb Code    26  depilogue.o(.text)
+    _double_epilogue                         0x100005c7   Thumb Code   164  depilogue.o(.text)
+    __aeabi_llsl                             0x1000066b   Thumb Code    32  llshl.o(.text)
+    _ll_shift_l                              0x1000066b   Thumb Code     0  llshl.o(.text)
+    Long Thumb to Thumb Veneer to Flash_Erase 0x1000068d   Thumb Code    12  anon$$obj.o(Veneer$$Code)
+    Long Thumb to Thumb Veneer to Flash_ConfigRCTC 0x10000699   Thumb Code    12  anon$$obj.o(Veneer$$Code)
+    Long Thumb to Thumb Veneer to Flash_Write 0x100006a5   Thumb Code    12  anon$$obj.o(Veneer$$Code)
+    ADT_StartTimer                           0x100006b1   Thumb Code    12  timer.o(i.ADT_StartTimer)
+    Buzz_Speaker                             0x100006bd   Thumb Code   102  buzzdriver.o(i.Buzz_Speaker)
+    Cmp_CLKConfig                            0x1000072d   Thumb Code    80  cmp.o(i.Cmp_CLKConfig)
+    Cmp_Enable                               0x10000789   Thumb Code    28  cmp.o(i.Cmp_Enable)
+    Cmp_Init                                 0x100007a9   Thumb Code   432  cmp.o(i.Cmp_Init)
+    Cmp_VrefConfig                           0x10000961   Thumb Code   166  cmp.o(i.Cmp_VrefConfig)
+    CopyDataRWtoImage                        0x10000a0d   Thumb Code    32  system_tcasxxx.o(i.CopyDataRWtoImage)
+    DMA_Init                                 0x10000a39   Thumb Code    58  dma.o(i.DMA_Init)
+    DMA_StartChannel                         0x10000a81   Thumb Code    18  dma.o(i.DMA_StartChannel)
+    DelayForCommandExeDone                   0x10000a99   Thumb Code    34  delay.o(i.DelayForCommandExeDone)
+    Display_AlarmMenu                        0x10000abd   Thumb Code   184  displaydriver.o(i.Display_AlarmMenu)
+    Display_AlarmThrd                        0x10000b81   Thumb Code   808  displaydriver.o(i.Display_AlarmThrd)
+    Display_Bargraph                         0x10000eb5   Thumb Code   236  displaydriver.o(i.Display_Bargraph)
+    Display_BlinkSelection                   0x100011a9   Thumb Code   338  displaydriver.o(i.Display_BlinkSelection)
+    Display_GUI                              0x100013c9   Thumb Code  1290  displaydriver.o(i.Display_GUI)
+    Display_Init                             0x100018e1   Thumb Code    36  displaydriver.o(i.Display_Init)
+    Display_Pleth                            0x10001d01   Thumb Code   276  displaydriver.o(i.Display_Pleth)
+    Display_ProbeOff                         0x10001e21   Thumb Code    78  displaydriver.o(i.Display_ProbeOff)
+    Display_Pulse                            0x10001e7d   Thumb Code   494  displaydriver.o(i.Display_Pulse)
+    Display_SpO2                             0x10002079   Thumb Code   548  displaydriver.o(i.Display_SpO2)
+    ErasePage                                0x10002451   Thumb Code    10  defaultsetup.o(i.ErasePage)
+    Flash_DeInit                             0x1000245d   Thumb Code     8  flash.o(i.Flash_DeInit)
+    Flash_Init                               0x10002469   Thumb Code    16  flash.o(i.Flash_Init)
+    GPIO_ClearBits                           0x10002481   Thumb Code    44  gpio.o(i.GPIO_ClearBits)
+    GPIO_ClrAFMode                           0x100024ad   Thumb Code    28  gpio.o(i.GPIO_ClrAFMode)
+    GPIO_Init                                0x100024c9   Thumb Code   248  gpio.o(i.GPIO_Init)
+    GPIO_SetAFMode                           0x10002695   Thumb Code    58  gpio.o(i.GPIO_SetAFMode)
+    GPIO_SetBits                             0x100026cf   Thumb Code    44  gpio.o(i.GPIO_SetBits)
+    HardFault_Handler                        0x10002709   Thumb Code     2  interrupt.o(i.HardFault_Handler)
+    IC_PowupInit                             0x1000270d   Thumb Code    36  interrupt.o(i.IC_PowupInit)
+    IWDG_ClearITPending                      0x10002755   Thumb Code    44  wdg.o(i.IWDG_ClearITPending)
+    IWDG_Enable                              0x10002785   Thumb Code    12  wdg.o(i.IWDG_Enable)
+    IWDG_GetITFlag                           0x10002795   Thumb Code    42  wdg.o(i.IWDG_GetITFlag)
+    IwdgCallback                             0x100027c5   Thumb Code    46  systemdriver.o(i.IwdgCallback)
+    Light_AdaptBaselineSet                   0x100027fd   Thumb Code   246  lightdriver.o(i.Light_AdaptBaselineSet)
+    Light_AdjustDrive                        0x100028fd   Thumb Code   326  lightdriver.o(i.Light_AdjustDrive)
+    Light_ProbeDriveAdjust                   0x10002a51   Thumb Code   250  lightdriver.o(i.Light_ProbeDriveAdjust)
+    NMI_Handler                              0x10002dd5   Thumb Code     2  interrupt.o(i.NMI_Handler)
+    OP2_OutPadConfig                         0x10002dd9   Thumb Code    18  op.o(i.OP2_OutPadConfig)
+    OP2_VinPadConfig                         0x10002df1   Thumb Code    18  op.o(i.OP2_VinPadConfig)
+    OP2_VipPadConfig                         0x10002e09   Thumb Code    18  op.o(i.OP2_VipPadConfig)
+    OPA_Enable                               0x10002e21   Thumb Code    30  op.o(i.OPA_Enable)
+    OPA_Init                                 0x10002e45   Thumb Code   266  op.o(i.OPA_Init)
+    PendSV_Handler                           0x10002f55   Thumb Code     2  interrupt.o(i.PendSV_Handler)
+    PeripheralsRxDmaConfig                   0x10002f59   Thumb Code   104  dma.o(i.PeripheralsRxDmaConfig)
+    PrintInit                                0x10002fd1   Thumb Code     2  trace.o(i.PrintInit)
+    Process_SampleData                       0x10003289   Thumb Code   190  preprocess.o(i.Process_SampleData)
+    ReadFlashCfg                             0x10003355   Thumb Code    98  defaultsetup.o(i.ReadFlashCfg)
+    SEGGER_RTT_Write                         0x100033c5   Thumb Code    48  segger_rtt.o(i.SEGGER_RTT_Write)
+    SEGGER_RTT_WriteNoLock                   0x100033f9   Thumb Code   100  segger_rtt.o(i.SEGGER_RTT_WriteNoLock)
+    SEGGER_RTT_printf                        0x10003461   Thumb Code    24  segger_rtt_printf.o(i.SEGGER_RTT_printf)
+    SEGGER_RTT_vprintf                       0x10003479   Thumb Code   414  segger_rtt_printf.o(i.SEGGER_RTT_vprintf)
+    SPI_Init                                 0x10003617   Thumb Code   152  spi.o(i.SPI_Init)
+    SPI_SendData_Host                        0x100036af   Thumb Code    34  spi.o(i.SPI_SendData_Host)
+    SPI_SetCpolCpha                          0x100036d1   Thumb Code    24  spi.o(i.SPI_SetCpolCpha)
+    SPI_SetFrameSize                         0x100036e9   Thumb Code    40  spi.o(i.SPI_SetFrameSize)
+    SPI_SetRfr                               0x10003711   Thumb Code    20  spi.o(i.SPI_SetRfr)
+    SVC_Handler                              0x10003725   Thumb Code     2  interrupt.o(i.SVC_Handler)
+    SYS_Hardware_Init                        0x10003a71   Thumb Code    36  systemdriver.o(i.SYS_Hardware_Init)
+    SYS_Interrupt_Enable                     0x10003a95   Thumb Code    72  systemdriver.o(i.SYS_Interrupt_Enable)
+    SYS_ModuleDrive_Init                     0x10003aed   Thumb Code    12  systemdriver.o(i.SYS_ModuleDrive_Init)
+    SetTimer                                 0x10003c41   Thumb Code   120  timer.o(i.SetTimer)
+    Setup_RestoreDevice                      0x10003cb9   Thumb Code    40  defaultsetup.o(i.Setup_RestoreDevice)
+    Setup_UpdateDevice                       0x10003ce9   Thumb Code    40  defaultsetup.o(i.Setup_UpdateDevice)
+    SysCheckTrimValid                        0x10003d19   Thumb Code    74  system_tcasxxx.o(i.SysCheckTrimValid)
+    SysTick_Handler                          0x10003d6d   Thumb Code     2  interrupt.o(i.SysTick_Handler)
+    SystemAnlogTrim                          0x10003d6f   Thumb Code     2  system_tcasxxx.o(i.SystemAnlogTrim)
+    SystemConfigFlash                        0x10003d71   Thumb Code    28  system_tcasxxx.o(i.SystemConfigFlash)
+    SystemCoreClockUpdate                    0x10003d95   Thumb Code    12  system_tcasxxx.o(i.SystemCoreClockUpdate)
+    SystemCoreSwitchHclkSrc                  0x10003da5   Thumb Code    92  system_tcasxxx.o(i.SystemCoreSwitchHclkSrc)
+    SystemGetHClkFreq                        0x10003e09   Thumb Code    84  system_tcasxxx.o(i.SystemGetHClkFreq)
+    SystemInit                               0x10003e7d   Thumb Code    96  system_tcasxxx.o(i.SystemInit)
+    TCmain                                   0x10003ee9   Thumb Code    42  main.o(i.TCmain)
+    Tia_Enable                               0x10003f1d   Thumb Code    12  tia.o(i.Tia_Enable)
+    Tia_Init                                 0x10003f2d   Thumb Code   232  tia.o(i.Tia_Init)
+    TriggerSARAdcStart                       0x10004019   Thumb Code    26  saradc.o(i.TriggerSARAdcStart)
+    UG2864_ClearRegion                       0x10004039   Thumb Code   138  ug2864driver.o(i.UG2864_ClearRegion)
+    UG2864_Display                           0x100040c5   Thumb Code   154  ug2864driver.o(i.UG2864_Display)
+    UG2864_Fill_RAM                          0x10004165   Thumb Code    44  ug2864driver.o(i.UG2864_Fill_RAM)
+    UG2864_OLED_Init                         0x10004191   Thumb Code   112  ug2864driver.o(i.UG2864_OLED_Init)
+    UG2864_Set_Addressing_Mode               0x10004209   Thumb Code    12  ug2864driver.o(i.UG2864_Set_Addressing_Mode)
+    UG2864_Set_Common_Config                 0x10004215   Thumb Code    20  ug2864driver.o(i.UG2864_Set_Common_Config)
+    UG2864_Set_Common_Remap                  0x10004229   Thumb Code    12  ug2864driver.o(i.UG2864_Set_Common_Remap)
+    UG2864_Set_Contrast_Control              0x10004235   Thumb Code    18  ug2864driver.o(i.UG2864_Set_Contrast_Control)
+    UG2864_Set_Display_Clock                 0x10004247   Thumb Code    18  ug2864driver.o(i.UG2864_Set_Display_Clock)
+    UG2864_Set_Display_Offset                0x10004259   Thumb Code    18  ug2864driver.o(i.UG2864_Set_Display_Offset)
+    UG2864_Set_Display_On_Off                0x1000426b   Thumb Code    12  ug2864driver.o(i.UG2864_Set_Display_On_Off)
+    UG2864_Set_Entire_Display                0x10004277   Thumb Code    12  ug2864driver.o(i.UG2864_Set_Entire_Display)
+    UG2864_Set_Inverse_Display               0x10004283   Thumb Code    12  ug2864driver.o(i.UG2864_Set_Inverse_Display)
+    UG2864_Set_Multiplex_Ratio               0x1000428f   Thumb Code    18  ug2864driver.o(i.UG2864_Set_Multiplex_Ratio)
+    UG2864_Set_Precharge_Period              0x100042a1   Thumb Code    18  ug2864driver.o(i.UG2864_Set_Precharge_Period)
+    UG2864_Set_Pump                          0x100042b3   Thumb Code    18  ug2864driver.o(i.UG2864_Set_Pump)
+    UG2864_Set_Segment_Remap                 0x100042c5   Thumb Code    12  ug2864driver.o(i.UG2864_Set_Segment_Remap)
+    UG2864_Set_Start_Column                  0x100042d1   Thumb Code    22  ug2864driver.o(i.UG2864_Set_Start_Column)
+    UG2864_Set_Start_Line                    0x100042e7   Thumb Code    12  ug2864driver.o(i.UG2864_Set_Start_Line)
+    UG2864_Set_Start_Page                    0x100042f3   Thumb Code    12  ug2864driver.o(i.UG2864_Set_Start_Page)
+    UG2864_Set_VCOMH                         0x100042ff   Thumb Code    18  ug2864driver.o(i.UG2864_Set_VCOMH)
+    WriteFlashCfg                            0x10004361   Thumb Code    70  defaultsetup.o(i.WriteFlashCfg)
+    __ARM_clz                                0x100046eb   Thumb Code    46  depilogue.o(i.__ARM_clz)
+    __ARM_common_switch8                     0x10004719   Thumb Code    26  lpm.o(i.__ARM_common_switch8)
+    aic_IRQHandler                           0x100047c1   Thumb Code   178  interrupt.o(i.aic_IRQHandler)
+    delay1ms                                 0x10004889   Thumb Code    66  delay.o(i.delay1ms)
+    fic_IRQHandler                           0x100048d9   Thumb Code   516  interrupt.o(i.fic_IRQHandler)
+    lic_IRQHandler                           0x10004b15   Thumb Code    42  interrupt.o(i.lic_IRQHandler)
+    gSampleFIR                               0x10004b80   Data          96  preprocess.o(.constdata)
+    gDirMapping                              0x10004be0   Data           4  displaydriver.o(.constdata)
+    gDirMappingBigFont                       0x10004be4   Data           4  displaydriver.o(.constdata)
+    gLogoNarigmed                            0x10004c08   Data         436  fontlibs.o(.constdata)
+    gAlarmFont                               0x10004dbc   Data         562  fontlibs.o(.constdata)
+    gAlarmDigit                              0x10004fee   Data         368  fontlibs.o(.constdata)
+    gHorSpO2                                 0x1000515e   Data         752  fontlibs.o(.constdata)
+    gVerSpO2                                 0x1000544e   Data         484  fontlibs.o(.constdata)
+    gHorPluse                                0x10005632   Data         429  fontlibs.o(.constdata)
+    gVerPluse                                0x100057df   Data         396  fontlibs.o(.constdata)
+    gHorParamPI                              0x1000596b   Data         206  fontlibs.o(.constdata)
+    gVerParamPI                              0x10005a39   Data         156  fontlibs.o(.constdata)
+    gHorCaptionSat                           0x10005ad5   Data          70  fontlibs.o(.constdata)
+    gVerCaptionSat                           0x10005b1b   Data          60  fontlibs.o(.constdata)
+    gHorCaptionPR                            0x10005b57   Data          78  fontlibs.o(.constdata)
+    gVerCaptionPR                            0x10005ba5   Data          45  fontlibs.o(.constdata)
+    gHorCaptionPI                            0x10005bd2   Data          21  fontlibs.o(.constdata)
+    gVerCaptionPI                            0x10005be7   Data          21  fontlibs.o(.constdata)
+    gAllBattery                              0x10005bfc   Data          14  fontlibs.o(.constdata)
+    gHorBluetoothLogo                        0x10005c0a   Data          44  fontlibs.o(.constdata)
+    gHorHw                                   0x10005c36   Data          18  fontlibs.o(.constdata)
+    gHorSw                                   0x10005c48   Data          18  fontlibs.o(.constdata)
+    gHorBarGrid_15                           0x10005c5a   Data           6  fontlibs.o(.constdata)
+    gHorBarGrid_16                           0x10005c60   Data           6  fontlibs.o(.constdata)
+    gHorBarGrid_27                           0x10005c66   Data          16  fontlibs.o(.constdata)
+    gHorBarGrid_28                           0x10005c76   Data          16  fontlibs.o(.constdata)
+    gHorBarGrid_39                           0x10005c86   Data          30  fontlibs.o(.constdata)
+    gHorBarGrid_3A                           0x10005ca4   Data          30  fontlibs.o(.constdata)
+    gHorBarGrid_4B                           0x10005cc2   Data          48  fontlibs.o(.constdata)
+    gHorBarGrid_4C                           0x10005cf2   Data          48  fontlibs.o(.constdata)
+    gVerBarGrid                              0x10005d22   Data          64  fontlibs.o(.constdata)
+    gProbeOff                                0x10005d62   Data         168  fontlibs.o(.constdata)
+    gDepletePWR                              0x10005e0a   Data          62  fontlibs.o(.constdata)
+    gBrightnessTab                           0x10005e48   Data           6  ug2864driver.o(.constdata)
+    gInvertMap                               0x10005e4e   Data         256  ug2864driver.o(.constdata)
+    Load$$RW_IRAM1$$Base                     0x10005f80   Number         0  anon$$obj.o ABSOLUTE
+
+
+
+==============================================================================
+
+Memory Map of the image
+
+  Image Entry point : 0x1000004d
+
+  Load Region LR_IROM1 (Base: 0x10000000, Size: 0x000060c8, Max: 0x00010000, ABSOLUTE)
+
+    Execution Region JUMP_TABLE (Exec base: 0x00004000, Load base: 0x10005f60, Size: 0x00000020, Max: 0x00000020, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x00004000   0x10005f60   0x00000020   Data   RW         1282    .jump_table_mem_area  interrupt.o
+
+
+    Execution Region RW_IRAM1 (Exec base: 0x00004020, Load base: 0x10005f80, Size: 0x00001068, Max: 0x00001fe0, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x00004020   0x10005f80   0x000000f4   Code   RO         1164    RAMCODE             flash.o
+    0x00004114   0x10006074   0x00000024   Data   RW         1281    .data               interrupt.o
+    0x00004138   0x10006098   0x00000004   Data   RW         2020    .data               system_tcasxxx.o
+    0x0000413c   0x1000609c   0x00000002   Data   RW         2088    .data               defaultsetup.o
+    0x0000413e   0x1000609e   0x00000002   PAD
+    0x00004140   0x100060a0   0x00000004   Data   RW         2089    .data               defaultsetup.o
+    0x00004144   0x100060a4   0x00000006   Data   RW         2145    .data               lightdriver.o
+    0x0000414a   0x100060aa   0x00000004   Data   RW         2205    .data               preprocess.o
+    0x0000414e   0x100060ae   0x00000014   Data   RW         2295    .data               displaydriver.o
+    0x00004162   0x100060c2   0x00000006   Data   RW         2729    .data               buzzdriver.o
+    0x00004168        -       0x00000018   Zero   RW         2087    .bss                defaultsetup.o
+    0x00004180        -       0x0000006c   Zero   RW         2143    .bss                lightdriver.o
+    0x000041ec        -       0x00000020   Zero   RW         2202    .bss                preprocess.o
+    0x0000420c        -       0x0000040c   Zero   RW         2203    .bss                preprocess.o
+    0x00004618        -       0x000000aa   Zero   RW         2292    .bss                displaydriver.o
+    0x000046c2        -       0x00000010   Zero   RW         2293    .bss                displaydriver.o
+    0x000046d2   0x100060c8   0x0000012e   PAD
+    0x00004800        -       0x00000078   Zero   RW         2777    .ARM.__AT_0x00004800  segger_rtt.o
+    0x00004878        -       0x00000410   Zero   RW         2778    .bss                segger_rtt.o
+    0x00004c88        -       0x00000400   Zero   RW         2003    STACK               startup_tcasxxx.o
+
+
+    Execution Region ER_IROM1 (Exec base: 0x10000000, Load base: 0x10000000, Size: 0x00005f60, Max: 0x00010000, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x10000000   0x10000000   0x0000004c   Data   RO         2005    RESET               startup_tcasxxx.o
+    0x1000004c   0x1000004c   0x00000048   Code   RO         2006  * .text               startup_tcasxxx.o
+    0x10000094   0x10000094   0x0000002c   Code   RO         3126    .text               mc_p.l(uidiv.o)
+    0x100000c0   0x100000c0   0x00000028   Code   RO         3128    .text               mc_p.l(idiv.o)
+    0x100000e8   0x100000e8   0x00000040   Code   RO         3132    .text               mc_p.l(memmovea.o)
+    0x10000128   0x10000128   0x00000024   Code   RO         3134    .text               mc_p.l(memseta.o)
+    0x1000014c   0x1000014c   0x00000012   Code   RO         3140    .text               mc_p.l(strcpy.o)
+    0x1000015e   0x1000015e   0x000000b2   Code   RO         3406    .text               mf_p.l(fadd.o)
+    0x10000210   0x10000210   0x0000007a   Code   RO         3408    .text               mf_p.l(fmul.o)
+    0x1000028a   0x1000028a   0x00000002   PAD
+    0x1000028c   0x1000028c   0x000000d0   Code   RO         3412    .text               mf_p.l(dmul.o)
+    0x1000035c   0x1000035c   0x000000f0   Code   RO         3414    .text               mf_p.l(ddiv.o)
+    0x1000044c   0x1000044c   0x00000016   Code   RO         3416    .text               mf_p.l(fflti.o)
+    0x10000462   0x10000462   0x00000002   PAD
+    0x10000464   0x10000464   0x00000028   Code   RO         3420    .text               mf_p.l(dflti.o)
+    0x1000048c   0x1000048c   0x00000032   Code   RO         3422    .text               mf_p.l(ffixi.o)
+    0x100004be   0x100004be   0x00000002   PAD
+    0x100004c0   0x100004c0   0x00000048   Code   RO         3426    .text               mf_p.l(dfixi.o)
+    0x10000508   0x10000508   0x00000022   Code   RO         3430    .text               mc_p.l(llushr.o)
+    0x1000052a   0x1000052a   0x00000000   Code   RO         3432    .text               mc_p.l(iusefp.o)
+    0x1000052a   0x1000052a   0x00000082   Code   RO         3433    .text               mf_p.l(fepilogue.o)
+    0x100005ac   0x100005ac   0x000000be   Code   RO         3435    .text               mf_p.l(depilogue.o)
+    0x1000066a   0x1000066a   0x00000020   Code   RO         3445    .text               mc_p.l(llshl.o)
+    0x1000068a   0x1000068a   0x00000002   PAD
+    0x1000068c   0x1000068c   0x0000000c   Ven    RO         3450    Veneer$$Code        anon$$obj.o
+    0x10000698   0x10000698   0x0000000c   Ven    RO         3451    Veneer$$Code        anon$$obj.o
+    0x100006a4   0x100006a4   0x0000000c   Ven    RO         3452    Veneer$$Code        anon$$obj.o
+    0x100006b0   0x100006b0   0x0000000c   Code   RO         1031    i.ADT_StartTimer    timer.o
+    0x100006bc   0x100006bc   0x00000070   Code   RO         2728    i.Buzz_Speaker      buzzdriver.o
+    0x1000072c   0x1000072c   0x0000005c   Code   RO          975    i.Cmp_CLKConfig     cmp.o
+    0x10000788   0x10000788   0x00000020   Code   RO          978    i.Cmp_Enable        cmp.o
+    0x100007a8   0x100007a8   0x000001b8   Code   RO          979    i.Cmp_Init          cmp.o
+    0x10000960   0x10000960   0x000000ac   Code   RO          981    i.Cmp_VrefConfig    cmp.o
+    0x10000a0c   0x10000a0c   0x0000002c   Code   RO         2012    i.CopyDataRWtoImage  system_tcasxxx.o
+    0x10000a38   0x10000a38   0x00000048   Code   RO          401    i.DMA_Init          dma.o
+    0x10000a80   0x10000a80   0x00000018   Code   RO          403    i.DMA_StartChannel  dma.o
+    0x10000a98   0x10000a98   0x00000022   Code   RO          357    i.DelayForCommandExeDone  delay.o
+    0x10000aba   0x10000aba   0x00000002   PAD
+    0x10000abc   0x10000abc   0x000000c4   Code   RO         2274    i.Display_AlarmMenu  displaydriver.o
+    0x10000b80   0x10000b80   0x00000334   Code   RO         2275    i.Display_AlarmThrd  displaydriver.o
+    0x10000eb4   0x10000eb4   0x00000110   Code   RO         2276    i.Display_Bargraph  displaydriver.o
+    0x10000fc4   0x10000fc4   0x000001a0   Code   RO         2277    i.Display_Battery   displaydriver.o
+    0x10001164   0x10001164   0x00000044   Code   RO         2278    i.Display_Ble       displaydriver.o
+    0x100011a8   0x100011a8   0x00000164   Code   RO         2279    i.Display_BlinkSelection  displaydriver.o
+    0x1000130c   0x1000130c   0x000000bc   Code   RO         2280    i.Display_Caption   displaydriver.o
+    0x100013c8   0x100013c8   0x00000518   Code   RO         2281    i.Display_GUI       displaydriver.o
+    0x100018e0   0x100018e0   0x00000030   Code   RO         2282    i.Display_Init      displaydriver.o
+    0x10001910   0x10001910   0x00000038   Code   RO         2283    i.Display_Logo      displaydriver.o
+    0x10001948   0x10001948   0x000003b8   Code   RO         2284    i.Display_Perfusion  displaydriver.o
+    0x10001d00   0x10001d00   0x00000120   Code   RO         2285    i.Display_Pleth     displaydriver.o
+    0x10001e20   0x10001e20   0x0000005c   Code   RO         2286    i.Display_ProbeOff  displaydriver.o
+    0x10001e7c   0x10001e7c   0x000001fc   Code   RO         2287    i.Display_Pulse     displaydriver.o
+    0x10002078   0x10002078   0x00000230   Code   RO         2288    i.Display_SpO2      displaydriver.o
+    0x100022a8   0x100022a8   0x000001a8   Code   RO         2289    i.Display_Version   displaydriver.o
+    0x10002450   0x10002450   0x0000000a   Code   RO         2081    i.ErasePage         defaultsetup.o
+    0x1000245a   0x1000245a   0x00000002   PAD
+    0x1000245c   0x1000245c   0x0000000c   Code   RO         1165    i.Flash_DeInit      flash.o
+    0x10002468   0x10002468   0x00000018   Code   RO         1166    i.Flash_Init        flash.o
+    0x10002480   0x10002480   0x0000002c   Code   RO          241    i.GPIO_ClearBits    gpio.o
+    0x100024ac   0x100024ac   0x0000001c   Code   RO          243    i.GPIO_ClrAFMode    gpio.o
+    0x100024c8   0x100024c8   0x000000f8   Code   RO          250    i.GPIO_Init         gpio.o
+    0x100025c0   0x100025c0   0x0000006c   Code   RO          251    i.GPIO_PinMuxAdrMap  gpio.o
+    0x1000262c   0x1000262c   0x00000068   Code   RO          252    i.GPIO_RegisterMap  gpio.o
+    0x10002694   0x10002694   0x0000003a   Code   RO          253    i.GPIO_SetAFMode    gpio.o
+    0x100026ce   0x100026ce   0x0000002c   Code   RO          254    i.GPIO_SetBits      gpio.o
+    0x100026fa   0x100026fa   0x00000006   Code   RO         2290    i.GetHardwareVer    displaydriver.o
+    0x10002700   0x10002700   0x00000008   Code   RO         2291    i.GetSoftwareVer    displaydriver.o
+    0x10002708   0x10002708   0x00000002   Code   RO         1261    i.HardFault_Handler  interrupt.o
+    0x1000270a   0x1000270a   0x00000002   PAD
+    0x1000270c   0x1000270c   0x00000048   Code   RO         1265    i.IC_PowupInit      interrupt.o
+    0x10002754   0x10002754   0x00000030   Code   RO         1865    i.IWDG_ClearITPending  wdg.o
+    0x10002784   0x10002784   0x00000010   Code   RO         1867    i.IWDG_Enable       wdg.o
+    0x10002794   0x10002794   0x00000030   Code   RO         1868    i.IWDG_GetITFlag    wdg.o
+    0x100027c4   0x100027c4   0x00000038   Code   RO            3    i.IwdgCallback      systemdriver.o
+    0x100027fc   0x100027fc   0x00000100   Code   RO         2139    i.Light_AdaptBaselineSet  lightdriver.o
+    0x100028fc   0x100028fc   0x00000154   Code   RO         2140    i.Light_AdjustDrive  lightdriver.o
+    0x10002a50   0x10002a50   0x00000110   Code   RO         2141    i.Light_ProbeDriveAdjust  lightdriver.o
+    0x10002b60   0x10002b60   0x00000274   Code   RO         2142    i.Light_StatSampleACVariety  lightdriver.o
+    0x10002dd4   0x10002dd4   0x00000002   Code   RO         1266    i.NMI_Handler       interrupt.o
+    0x10002dd6   0x10002dd6   0x00000002   PAD
+    0x10002dd8   0x10002dd8   0x00000018   Code   RO          718    i.OP2_OutPadConfig  op.o
+    0x10002df0   0x10002df0   0x00000018   Code   RO          719    i.OP2_VinPadConfig  op.o
+    0x10002e08   0x10002e08   0x00000018   Code   RO          720    i.OP2_VipPadConfig  op.o
+    0x10002e20   0x10002e20   0x00000024   Code   RO          722    i.OPA_Enable        op.o
+    0x10002e44   0x10002e44   0x00000110   Code   RO          724    i.OPA_Init          op.o
+    0x10002f54   0x10002f54   0x00000002   Code   RO         1267    i.PendSV_Handler    interrupt.o
+    0x10002f56   0x10002f56   0x00000002   PAD
+    0x10002f58   0x10002f58   0x00000078   Code   RO          405    i.PeripheralsRxDmaConfig  dma.o
+    0x10002fd0   0x10002fd0   0x00000002   Code   RO         3047    i.PrintInit         trace.o
+    0x10002fd2   0x10002fd2   0x00000002   PAD
+    0x10002fd4   0x10002fd4   0x00000124   Code   RO         2198    i.Process_FixedSmoothFilter  preprocess.o
+    0x100030f8   0x100030f8   0x000000c4   Code   RO         2199    i.Process_LowPassFiltFIR  preprocess.o
+    0x100031bc   0x100031bc   0x000000cc   Code   RO         2200    i.Process_ResampleSignal  preprocess.o
+    0x10003288   0x10003288   0x000000cc   Code   RO         2201    i.Process_SampleData  preprocess.o
+    0x10003354   0x10003354   0x00000070   Code   RO         2082    i.ReadFlashCfg      defaultsetup.o
+    0x100033c4   0x100033c4   0x00000034   Code   RO         2767    i.SEGGER_RTT_Write  segger_rtt.o
+    0x100033f8   0x100033f8   0x00000068   Code   RO         2768    i.SEGGER_RTT_WriteNoLock  segger_rtt.o
+    0x10003460   0x10003460   0x00000018   Code   RO         2911    i.SEGGER_RTT_printf  segger_rtt_printf.o
+    0x10003478   0x10003478   0x0000019e   Code   RO         2912    i.SEGGER_RTT_vprintf  segger_rtt_printf.o
+    0x10003616   0x10003616   0x00000098   Code   RO         1688    i.SPI_Init          spi.o
+    0x100036ae   0x100036ae   0x00000022   Code   RO         1692    i.SPI_SendData_Host  spi.o
+    0x100036d0   0x100036d0   0x00000018   Code   RO         1695    i.SPI_SetCpolCpha   spi.o
+    0x100036e8   0x100036e8   0x00000028   Code   RO         1696    i.SPI_SetFrameSize  spi.o
+    0x10003710   0x10003710   0x00000014   Code   RO         1698    i.SPI_SetRfr        spi.o
+    0x10003724   0x10003724   0x00000002   Code   RO         1268    i.SVC_Handler       interrupt.o
+    0x10003726   0x10003726   0x00000002   PAD
+    0x10003728   0x10003728   0x000000fc   Code   RO            4    i.SYS_ADC_Init      systemdriver.o
+    0x10003824   0x10003824   0x00000040   Code   RO            5    i.SYS_Buzz_Init     systemdriver.o
+    0x10003864   0x10003864   0x0000020c   Code   RO            6    i.SYS_GPIO_Init     systemdriver.o
+    0x10003a70   0x10003a70   0x00000024   Code   RO            7    i.SYS_Hardware_Init  systemdriver.o
+    0x10003a94   0x10003a94   0x00000058   Code   RO            8    i.SYS_Interrupt_Enable  systemdriver.o
+    0x10003aec   0x10003aec   0x0000000c   Code   RO            9    i.SYS_ModuleDrive_Init  systemdriver.o
+    0x10003af8   0x10003af8   0x00000088   Code   RO           10    i.SYS_OPA_Init      systemdriver.o
+    0x10003b80   0x10003b80   0x00000040   Code   RO           11    i.SYS_PressKey_Init  systemdriver.o
+    0x10003bc0   0x10003bc0   0x00000028   Code   RO           12    i.SYS_SPI0_Init     systemdriver.o
+    0x10003be8   0x10003be8   0x0000001c   Code   RO           13    i.SYS_TIMER_Init    systemdriver.o
+    0x10003c04   0x10003c04   0x0000003c   Code   RO           14    i.SYS_TIMER_PWM_Init  systemdriver.o
+    0x10003c40   0x10003c40   0x00000078   Code   RO         1041    i.SetTimer          timer.o
+    0x10003cb8   0x10003cb8   0x00000030   Code   RO         2084    i.Setup_RestoreDevice  defaultsetup.o
+    0x10003ce8   0x10003ce8   0x00000030   Code   RO         2085    i.Setup_UpdateDevice  defaultsetup.o
+    0x10003d18   0x10003d18   0x00000054   Code   RO         2013    i.SysCheckTrimValid  system_tcasxxx.o
+    0x10003d6c   0x10003d6c   0x00000002   Code   RO         1269    i.SysTick_Handler   interrupt.o
+    0x10003d6e   0x10003d6e   0x00000002   Code   RO         2014    i.SystemAnlogTrim   system_tcasxxx.o
+    0x10003d70   0x10003d70   0x00000024   Code   RO         2015    i.SystemConfigFlash  system_tcasxxx.o
+    0x10003d94   0x10003d94   0x00000010   Code   RO         2016    i.SystemCoreClockUpdate  system_tcasxxx.o
+    0x10003da4   0x10003da4   0x00000064   Code   RO         2017    i.SystemCoreSwitchHclkSrc  system_tcasxxx.o
+    0x10003e08   0x10003e08   0x00000074   Code   RO         2018    i.SystemGetHClkFreq  system_tcasxxx.o
+    0x10003e7c   0x10003e7c   0x0000006c   Code   RO         2019    i.SystemInit        system_tcasxxx.o
+    0x10003ee8   0x10003ee8   0x00000034   Code   RO          208    i.TCmain            main.o
+    0x10003f1c   0x10003f1c   0x00000010   Code   RO          797    i.Tia_Enable        tia.o
+    0x10003f2c   0x10003f2c   0x000000ec   Code   RO          798    i.Tia_Init          tia.o
+    0x10004018   0x10004018   0x00000020   Code   RO          853    i.TriggerSARAdcStart  saradc.o
+    0x10004038   0x10004038   0x0000008a   Code   RO         2452    i.UG2864_ClearRegion  ug2864driver.o
+    0x100040c2   0x100040c2   0x00000002   PAD
+    0x100040c4   0x100040c4   0x000000a0   Code   RO         2456    i.UG2864_Display    ug2864driver.o
+    0x10004164   0x10004164   0x0000002c   Code   RO         2457    i.UG2864_Fill_RAM   ug2864driver.o
+    0x10004190   0x10004190   0x00000078   Code   RO         2459    i.UG2864_OLED_Init  ug2864driver.o
+    0x10004208   0x10004208   0x0000000c   Code   RO         2461    i.UG2864_Set_Addressing_Mode  ug2864driver.o
+    0x10004214   0x10004214   0x00000014   Code   RO         2465    i.UG2864_Set_Common_Config  ug2864driver.o
+    0x10004228   0x10004228   0x0000000c   Code   RO         2466    i.UG2864_Set_Common_Remap  ug2864driver.o
+    0x10004234   0x10004234   0x00000012   Code   RO         2467    i.UG2864_Set_Contrast_Control  ug2864driver.o
+    0x10004246   0x10004246   0x00000012   Code   RO         2469    i.UG2864_Set_Display_Clock  ug2864driver.o
+    0x10004258   0x10004258   0x00000012   Code   RO         2470    i.UG2864_Set_Display_Offset  ug2864driver.o
+    0x1000426a   0x1000426a   0x0000000c   Code   RO         2471    i.UG2864_Set_Display_On_Off  ug2864driver.o
+    0x10004276   0x10004276   0x0000000c   Code   RO         2472    i.UG2864_Set_Entire_Display  ug2864driver.o
+    0x10004282   0x10004282   0x0000000c   Code   RO         2473    i.UG2864_Set_Inverse_Display  ug2864driver.o
+    0x1000428e   0x1000428e   0x00000012   Code   RO         2475    i.UG2864_Set_Multiplex_Ratio  ug2864driver.o
+    0x100042a0   0x100042a0   0x00000012   Code   RO         2478    i.UG2864_Set_Precharge_Period  ug2864driver.o
+    0x100042b2   0x100042b2   0x00000012   Code   RO         2479    i.UG2864_Set_Pump   ug2864driver.o
+    0x100042c4   0x100042c4   0x0000000c   Code   RO         2481    i.UG2864_Set_Segment_Remap  ug2864driver.o
+    0x100042d0   0x100042d0   0x00000016   Code   RO         2482    i.UG2864_Set_Start_Column  ug2864driver.o
+    0x100042e6   0x100042e6   0x0000000c   Code   RO         2483    i.UG2864_Set_Start_Line  ug2864driver.o
+    0x100042f2   0x100042f2   0x0000000c   Code   RO         2484    i.UG2864_Set_Start_Page  ug2864driver.o
+    0x100042fe   0x100042fe   0x00000012   Code   RO         2485    i.UG2864_Set_VCOMH  ug2864driver.o
+    0x10004310   0x10004310   0x00000028   Code   RO         2488    i.UG2864_Write_Command  ug2864driver.o
+    0x10004338   0x10004338   0x00000028   Code   RO         2489    i.UG2864_Write_Data  ug2864driver.o
+    0x10004360   0x10004360   0x00000058   Code   RO         2086    i.WriteFlashCfg     defaultsetup.o
+    0x100043b8   0x100043b8   0x0000006c   Code   RO         2772    i._DoInit           segger_rtt.o
+    0x10004424   0x10004424   0x00000018   Code   RO         2773    i._GetAvailWriteSpace  segger_rtt.o
+    0x1000443c   0x1000443c   0x000000e6   Code   RO         2913    i._PrintInt         segger_rtt_printf.o
+    0x10004522   0x10004522   0x00000002   PAD
+    0x10004524   0x10004524   0x000000e8   Code   RO         2914    i._PrintUnsigned    segger_rtt_printf.o
+    0x1000460c   0x1000460c   0x0000003e   Code   RO         2915    i._StoreChar        segger_rtt_printf.o
+    0x1000464a   0x1000464a   0x00000062   Code   RO         2775    i._WriteBlocking    segger_rtt.o
+    0x100046ac   0x100046ac   0x0000003e   Code   RO         2776    i._WriteNoCheck     segger_rtt.o
+    0x100046ea   0x100046ea   0x0000002e   Code   RO         3437    i.__ARM_clz         mf_p.l(depilogue.o)
+    0x10004718   0x10004718   0x0000001a   Code   RO         1475    i.__ARM_common_switch8  lpm.o
+    0x10004732   0x10004732   0x00000002   PAD
+    0x10004734   0x10004734   0x00000018   Code   RO         1275    i.__NVIC_ClearPendingIRQ  interrupt.o
+    0x1000474c   0x1000474c   0x00000018   Code   RO           15    i.__NVIC_EnableIRQ  systemdriver.o
+    0x10004764   0x10004764   0x00000018   Code   RO         1276    i.__NVIC_SetPendingIRQ  interrupt.o
+    0x1000477c   0x1000477c   0x00000044   Code   RO           16    i.__NVIC_SetPriority  systemdriver.o
+    0x100047c0   0x100047c0   0x000000c8   Code   RO         1277    i.aic_IRQHandler    interrupt.o
+    0x10004888   0x10004888   0x00000050   Code   RO          360    i.delay1ms          delay.o
+    0x100048d8   0x100048d8   0x0000023c   Code   RO         1279    i.fic_IRQHandler    interrupt.o
+    0x10004b14   0x10004b14   0x00000030   Code   RO         1280    i.lic_IRQHandler    interrupt.o
+    0x10004b44   0x10004b44   0x0000001c   Data   RO           17    .constdata          systemdriver.o
+    0x10004b60   0x10004b60   0x00000020   Data   RO          728    .constdata          op.o
+    0x10004b80   0x10004b80   0x00000060   Data   RO         2204    .constdata          preprocess.o
+    0x10004be0   0x10004be0   0x00000028   Data   RO         2294    .constdata          displaydriver.o
+    0x10004c08   0x10004c08   0x000001b4   Data   RO         2408    .constdata          fontlibs.o
+    0x10004dbc   0x10004dbc   0x00000232   Data   RO         2410    .constdata          fontlibs.o
+    0x10004fee   0x10004fee   0x00000170   Data   RO         2411    .constdata          fontlibs.o
+    0x1000515e   0x1000515e   0x000002f0   Data   RO         2412    .constdata          fontlibs.o
+    0x1000544e   0x1000544e   0x000001e4   Data   RO         2413    .constdata          fontlibs.o
+    0x10005632   0x10005632   0x000001ad   Data   RO         2414    .constdata          fontlibs.o
+    0x100057df   0x100057df   0x0000018c   Data   RO         2415    .constdata          fontlibs.o
+    0x1000596b   0x1000596b   0x000000ce   Data   RO         2416    .constdata          fontlibs.o
+    0x10005a39   0x10005a39   0x0000009c   Data   RO         2417    .constdata          fontlibs.o
+    0x10005ad5   0x10005ad5   0x00000046   Data   RO         2418    .constdata          fontlibs.o
+    0x10005b1b   0x10005b1b   0x0000003c   Data   RO         2419    .constdata          fontlibs.o
+    0x10005b57   0x10005b57   0x0000004e   Data   RO         2420    .constdata          fontlibs.o
+    0x10005ba5   0x10005ba5   0x0000002d   Data   RO         2421    .constdata          fontlibs.o
+    0x10005bd2   0x10005bd2   0x00000015   Data   RO         2422    .constdata          fontlibs.o
+    0x10005be7   0x10005be7   0x00000015   Data   RO         2423    .constdata          fontlibs.o
+    0x10005bfc   0x10005bfc   0x0000000e   Data   RO         2424    .constdata          fontlibs.o
+    0x10005c0a   0x10005c0a   0x0000002c   Data   RO         2425    .constdata          fontlibs.o
+    0x10005c36   0x10005c36   0x00000012   Data   RO         2426    .constdata          fontlibs.o
+    0x10005c48   0x10005c48   0x00000012   Data   RO         2427    .constdata          fontlibs.o
+    0x10005c5a   0x10005c5a   0x00000006   Data   RO         2428    .constdata          fontlibs.o
+    0x10005c60   0x10005c60   0x00000006   Data   RO         2429    .constdata          fontlibs.o
+    0x10005c66   0x10005c66   0x00000010   Data   RO         2430    .constdata          fontlibs.o
+    0x10005c76   0x10005c76   0x00000010   Data   RO         2431    .constdata          fontlibs.o
+    0x10005c86   0x10005c86   0x0000001e   Data   RO         2432    .constdata          fontlibs.o
+    0x10005ca4   0x10005ca4   0x0000001e   Data   RO         2433    .constdata          fontlibs.o
+    0x10005cc2   0x10005cc2   0x00000030   Data   RO         2434    .constdata          fontlibs.o
+    0x10005cf2   0x10005cf2   0x00000030   Data   RO         2435    .constdata          fontlibs.o
+    0x10005d22   0x10005d22   0x00000040   Data   RO         2436    .constdata          fontlibs.o
+    0x10005d62   0x10005d62   0x000000a8   Data   RO         2437    .constdata          fontlibs.o
+    0x10005e0a   0x10005e0a   0x0000003e   Data   RO         2438    .constdata          fontlibs.o
+    0x10005e48   0x10005e48   0x00000106   Data   RO         2491    .constdata          ug2864driver.o
+    0x10005f4e   0x10005f4e   0x00000010   Data   RO         2916    .constdata          segger_rtt_printf.o
+
+
+==============================================================================
+
+Image component sizes
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
+
+       112         10          0          6          0       1311   buzzdriver.o
+       736         30          0          0          0       2717   cmp.o
+       306         48          0          6         24       4422   defaultsetup.o
+       114         14          0          0          0        988   delay.o
+      6562        296         40         20        186      21682   displaydriver.o
+       216         36          0          0          0       2119   dma.o
+       280         22          0          0          0       2203   flash.o
+         0          0       4672          0          0       2088   fontlibs.o
+       634         18          0          0          0       5642   gpio.o
+       950        132          0         68          0      15957   interrupt.o
+      1496         58          0          6        108       6674   lightdriver.o
+        26          0          0          0          0         72   lpm.o
+        52         10          0          0          0       1365   main.o
+       380         30         32          0          0       2837   op.o
+       896         46         96          4       1068       5610   preprocess.o
+        32          6          0          0          0        445   saradc.o
+       448         44          0          0       1160       7546   segger_rtt.o
+       962          6         16          0          0       6513   segger_rtt_printf.o
+       270          0          0          0          0       3181   spi.o
+        72         26         76          0       1024        736   startup_tcasxxx.o
+       506        104          0          4          0       6025   system_tcasxxx.o
+      1452         94         28          0          0      68906   systemdriver.o
+       252          8          0          0          0       1380   tia.o
+       132          0          0          0          0       1248   timer.o
+         2          0          0          0          0        388   trace.o
+       806         24        262          0          0      13988   ug2864driver.o
+       112         14          0          0          0       1545   wdg.o
+
+    ----------------------------------------------------------------------
+     17862       1088       5224        116       3872     187588   Object Totals
+        36         12          0          0          0          0   (incl. Generated)
+        20          0          2          2        302          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Member Name
+
+        40          0          0          0          0         72   idiv.o
+         0          0          0          0          0          0   iusefp.o
+        32          0          0          0          0         68   llshl.o
+        34          0          0          0          0         68   llushr.o
+        64          0          0          0          0         68   memmovea.o
+        36          0          0          0          0        100   memseta.o
+        18          0          0          0          0         60   strcpy.o
+        44          0          0          0          0         72   uidiv.o
+       240          6          0          0          0         84   ddiv.o
+       236          0          0          0          0        216   depilogue.o
+        72         10          0          0          0         72   dfixi.o
+        40          6          0          0          0         68   dflti.o
+       208          6          0          0          0         88   dmul.o
+       178          0          0          0          0        108   fadd.o
+       130          0          0          0          0        144   fepilogue.o
+        50          0          0          0          0         60   ffixi.o
+        22          0          0          0          0         68   fflti.o
+       122          0          0          0          0         72   fmul.o
+
+    ----------------------------------------------------------------------
+      1574         28          0          0          0       1488   Library Totals
+         8          0          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Name
+
+       268          0          0          0          0        508   mc_p.l
+      1298         28          0          0          0        980   mf_p.l
+
+    ----------------------------------------------------------------------
+      1574         28          0          0          0       1488   Library Totals
+
+    ----------------------------------------------------------------------
+
+==============================================================================
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
+
+     19436       1116       5224        116       3872     182344   Grand Totals
+     19436       1116       5224        116       3872     182344   ELF Image Totals
+     19436       1116       5224        116          0          0   ROM Totals
+
+==============================================================================
+
+    Total RO  Size (Code + RO Data)                24660 (  24.08kB)
+    Total RW  Size (RW Data + ZI Data)              3988 (   3.89kB)
+    Total ROM Size (Code + RO Data + RW Data)      24776 (  24.20kB)
+
+==============================================================================
+

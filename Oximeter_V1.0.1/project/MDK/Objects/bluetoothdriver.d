@@ -1,0 +1,16 @@
+.\objects\bluetoothdriver.o: ..\Users\BlueToothDrivers\BluetoothDriver.c
+.\objects\bluetoothdriver.o: ..\Users\BlueToothDrivers\BluetoothDriver.h
+.\objects\bluetoothdriver.o: ..\Users\DataType.h
+.\objects\bluetoothdriver.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\bluetoothdriver.o: ..\driver\inc\gpio.h
+.\objects\bluetoothdriver.o: ..\common\inc\tcasxxx.h
+.\objects\bluetoothdriver.o: ..\common\inc\base_types.h
+.\objects\bluetoothdriver.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\bluetoothdriver.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\bluetoothdriver.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\bluetoothdriver.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
+.\objects\bluetoothdriver.o: C:\Users\longten\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm0.h
+.\objects\bluetoothdriver.o: C:\Users\longten\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_version.h
+.\objects\bluetoothdriver.o: C:\Users\longten\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_compiler.h
+.\objects\bluetoothdriver.o: C:\Users\longten\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_armcc.h
+.\objects\bluetoothdriver.o: ..\driver\inc\interrupt.h
