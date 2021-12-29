@@ -25,6 +25,8 @@
 #include "interrupt.h"
 #include "wdg.h"
 #include "delay.h"
+#include "LightDriver.h"
+#include "SegDriver.h"
 
 
 /*******************************************************************************
@@ -40,34 +42,27 @@ int main(void)
 int TCmain(void)
 #endif
 {
+	  delay1ms(3000);
 #ifdef LOG
     PrintInit();
 #endif
     //Init Interrupt Vector Table
     IC_PowupInit();
-
     SYS_Hardware_Init();
+	  segSetUp();
     SYS_ModuleDrive_Init();
-
-//    IWDG_Init(WDG_PRESCALER_32, 0xFFF, 0);  //4√Î
-//    IWDG_ClearITPending(WDG_IOVF_FLAG);
-
+    gSatParam.sysParam.mPulse = 62;
+    gSatParam.sysParam.mSpO2 = 98;
+    gSatParam.sysParam.mPerfuse = 144;
+    
     SYS_Interrupt_Enable();
 
     while (1)
-    {
-        //SpO2 Frequency procedure
-        //SatSpectrumThread(&gSatCfg);
-        /* Œππ∑ */
-//        IWDG_ResetCnt();
-			  
+    {		 			
+//			seg_show_thread(&PT_SpO2);
         /* º∆À„–ƒ¬  */
-//        heartbeat_algorithm();
-        /* Œππ∑ */
-//        IWDG_ResetCnt();
-        /* º∆À„—™—ı */
-//        SpO2_algorithm();
-			printf("%d\n",gSatSamp.RedAC);
-			delay1ms(1);
+        // heartbeat_algorithm();
+        // /* º∆À„—™—ı */
+        // SpO2_algorithm();
     }
 }

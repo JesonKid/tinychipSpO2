@@ -4,6 +4,7 @@
 .\objects\buzzdriver.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\buzzdriver.o: ..\Users\OledDrivers\DisplayDriver.h
 .\objects\buzzdriver.o: ..\Users\OledDrivers\UG2864Driver.h
+.\objects\buzzdriver.o: ..\Users\Algorithm\Spo2Interface.h
 .\objects\buzzdriver.o: ..\common\inc\tcasxxx.h
 .\objects\buzzdriver.o: ..\common\inc\base_types.h
 .\objects\buzzdriver.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h

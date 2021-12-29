@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "datatype.h": "c",
+        "displaydriver.h": "c"
+    }
+}

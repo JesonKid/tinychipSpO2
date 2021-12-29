@@ -3,6 +3,7 @@
 
 #include "DataType.h"
 #include "UG2864Driver.h"
+#include "Spo2Interface.h"
 
 //----------------------------------------------------------------------------------------------------
 
@@ -160,6 +161,7 @@ gDirMapping[];                         //Display Direction Change Mapping
 extern const UCHAR
 gDirMappingBigFont[];                  //Display Direction Change Mapping when bigFont
 extern UCHAR gMemuPageNo;                                 //Menu Page No.
+extern SAT_SAMP_T   gSatSamp;        //SpO2 samples
 
 
 //----------------------------------------------------------------------------------------------------

@@ -3,8 +3,8 @@
 .\objects\displaydriver.o: ..\Users\DataType.h
 .\objects\displaydriver.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\displaydriver.o: ..\Users\OledDrivers\UG2864Driver.h
-.\objects\displaydriver.o: ..\Users\OledDrivers\fontlibs.h
 .\objects\displaydriver.o: ..\Users\Algorithm\Spo2Interface.h
+.\objects\displaydriver.o: ..\Users\OledDrivers\fontlibs.h
 .\objects\displaydriver.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\objects\displaydriver.o: ..\Users\FuncDrivers\DefaultSetup.h
 .\objects\displaydriver.o: ..\common\inc\tcasxxx.h

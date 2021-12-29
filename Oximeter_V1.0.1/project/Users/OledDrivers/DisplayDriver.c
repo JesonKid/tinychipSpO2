@@ -1677,14 +1677,14 @@ void Display_GUI(void)
     }
 
     if (GUI_SHOW_LOGO != gGuiCtrl.guiType &&
-        oldKeyVal != ((GPIO_PIN_0_15->data >> 1) & 0x01))
+        oldKeyVal != ((GPIO_PIN_16_25->data >> 7) & 0x01)) //PC7
     {
         oldKeyVal = !oldKeyVal;
 
         //Key error precaution (Automatic power on or key press for power on)
         gKeyCtrl.bTrgKey = !gKeyCtrl.bTrgKey;
 
-        if (FALSE == gKeyCtrl.bTrgKey && (GPIO_PIN_0_15->data >> 1) & 0x01)
+        if (FALSE == gKeyCtrl.bTrgKey && (GPIO_PIN_16_25->data >> 7) & 0x01)  //PC7
         {
             gKeyCtrl.bTrgKey = TRUE;
             gKeyCtrl.tmKeyOn = 0;
@@ -2098,7 +2098,7 @@ void Display_GUI(void)
             if (KEY_AUTO_OFF1 < gGuiCtrl.tmProbe)
             {
                 UG2864_Set_Display_On_Off(0x00);
-                GPIO_ClearBits(GPIOPortA, GPIOPin7); // power off
+                GPIO_ClearBits(GPIOPortA, GPIOPin4); // power off
             }
             //Return normal detect if probe on during power off tips span
             else if (FALSE == gSatParam.sysAlarm.ProbeOff && 0 != gCellVolt && 0 == sOffCnt)
@@ -2147,15 +2147,16 @@ void Display_GUI(void)
  */
 void Display_Init(void)
 {
-    //Reset relevant controller
-    memset(&gGuiCtrl, 0, sizeof(gGuiCtrl));
-    memset(&gKeyCtrl, 0, sizeof(gKeyCtrl));
-    //Reset counter
-    gGuiCtrl.tmCount = GUI_UPDATE_RATE;
-    //OLED configuration
-    UG2864_OLED_Init();
-    //Set Display Orientation
-    gGuiCtrl.mDirect = gCfgCtrl.dispDir;
+//    //Reset relevant controller
+//    memset(&gGuiCtrl, 0, sizeof(gGuiCtrl));
+//    memset(&gKeyCtrl, 0, sizeof(gKeyCtrl));
+//    //Reset counter
+//    gGuiCtrl.tmCount = GUI_UPDATE_RATE;
+//    //OLED configuration
+//    UG2864_OLED_Init();
+//    //Set Display Orientation
+//    gGuiCtrl.mDirect = gCfgCtrl.dispDir;
+	
 }
 
 

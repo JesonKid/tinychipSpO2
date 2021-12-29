@@ -49,6 +49,7 @@ static void SYS_GPIO_Init(void)
     SYSCTL->LPGPT_CLKRST_CTRL_f.sw_fclk_en_lpgpt = DISABLE;
     SYSCTL->I2C0_CLKRST_CTRL_f.sw_fclk_en_i2c = DISABLE;
     SYSCTL->I2C1_CLKRST_CTRL_f.sw_fclk_en_i2c = DISABLE;
+	  SYSCTL->SPI0_CLKRST_CTRL_f.sw_fclk_en_spi = DISABLE;
     SYSCTL->SPI1_CLKRST_CTRL_f.sw_fclk_en_spi = DISABLE;
     SYSCTL->UART0_CLKRST_CTRL_f.sw_fclk_en_uart = DISABLE;
     SYSCTL->UART2_CLKRST_CTRL_f.sw_fclk_en_uart = DISABLE;
@@ -56,21 +57,21 @@ static void SYS_GPIO_Init(void)
     SYSCTL->WDG_CLKRST_CTRL_f.sw_fclk_en_wdg = DISABLE;
 
     /*************** BOOST EN GPIOÅäÖÃ **************************/
-    // PWR_C (PA.7)
-    GPIO_ClrAFMode(GPIOPortA, GPIOPin7);
-    GPIO_SetBits(GPIOPortA, GPIOPin7);
+    // PWR_C (PA.4)
+    GPIO_ClrAFMode(GPIOPortA, GPIOPin4);
+    GPIO_SetBits(GPIOPortA, GPIOPin4);
     gpio_init.GPIO_Port = GPIOPortA;
-    gpio_init.GPIO_Pin  = GPIOPin7;
+    gpio_init.GPIO_Pin  = GPIOPin4;
     gpio_init.GPIO_Mode = GPIO_OUTPUT_MODE;
     gpio_init.GPIO_Ext_Mode = GPIO_PIN_PUSH_PULL;
     gpio_init.GPIO_Pull_Mode = GPIO_PULL_NONE;
     GPIO_Init(&gpio_init);
 
     /**************** BOOST Êä³öµçÑ¹¼ì²âÏà¹ØGPIOÅäÖÃ ***********/
-    // KEY_IN (PA.1)
-    GPIO_ClrAFMode(GPIOPortA, GPIOPin1);
-    gpio_init.GPIO_Port = GPIOPortA;
-    gpio_init.GPIO_Pin  = GPIOPin1;
+    // KEY_IN (PC.7)
+    GPIO_ClrAFMode(GPIOPortC, GPIOPin7);
+    gpio_init.GPIO_Port = GPIOPortC;
+    gpio_init.GPIO_Pin  = GPIOPin7;
     gpio_init.GPIO_Mode = GPIO_INPUT_MODE;
     gpio_init.GPIO_Ext_Mode = GPIO_PIN_OPEN_DRAIN;
     gpio_init.GPIO_Pull_Mode = GPIO_PULL_NONE;
@@ -90,11 +91,11 @@ static void SYS_GPIO_Init(void)
     gpio_init.GPIO_Ext_Mode = GPIO_PIN_PUSH_PULL;
     gpio_init.GPIO_Pull_Mode = GPIO_PULL_NONE;
     GPIO_Init(&gpio_init);
-    // Infrared (PC.1)
-    GPIO_ClrAFMode(GPIOPortC, GPIOPin1);
-    GPIO_ClearBits(GPIOPortC, GPIOPin1);
-    gpio_init.GPIO_Port = GPIOPortC;
-    gpio_init.GPIO_Pin  = GPIOPin1;
+    // Infrared (PB.4)
+    GPIO_SetAFMode(GPIOPortB, GPIOPin4, AF0); //¸´ÓÃÎªIO
+    GPIO_ClearBits(GPIOPortB, GPIOPin4);
+    gpio_init.GPIO_Port = GPIOPortB;
+    gpio_init.GPIO_Pin  = GPIOPin4;
     gpio_init.GPIO_Mode = GPIO_OUTPUT_MODE;
     gpio_init.GPIO_Ext_Mode = GPIO_PIN_PUSH_PULL;
     gpio_init.GPIO_Pull_Mode = GPIO_PULL_NONE;
@@ -107,58 +108,20 @@ static void SYS_GPIO_Init(void)
     GPIO_SetAFMode(GPIOPortC, GPIOPin4, AF_ANALOG);
     GPIO_SetAFMode(GPIOPortC, GPIOPin5, AF_ANALOG);
 
-    /**************** OLED¿ØÖÆGPIOÅäÖÃ *******************************/
-    // OLED CS (PB.6)
-    GPIO_ClrAFMode(GPIOPortB, GPIOPin6);
-    GPIO_SetBits(GPIOPortB, GPIOPin6);
-    gpio_init.GPIO_Port = GPIOPortB;
-    gpio_init.GPIO_Pin  = GPIOPin6;
-    gpio_init.GPIO_Mode = GPIO_OUTPUT_MODE;
-    gpio_init.GPIO_Ext_Mode = GPIO_PIN_PUSH_PULL;
-    gpio_init.GPIO_Pull_Mode = GPIO_PULL_NONE;
-    GPIO_Init(&gpio_init);
-    // OLED D/C (PB.7)
-    GPIO_ClrAFMode(GPIOPortB, GPIOPin7);
-    GPIO_SetBits(GPIOPortB, GPIOPin7);
-    gpio_init.GPIO_Port = GPIOPortB;
-    gpio_init.GPIO_Pin  = GPIOPin7;
-    gpio_init.GPIO_Mode = GPIO_OUTPUT_MODE;
-    gpio_init.GPIO_Ext_Mode = GPIO_PIN_PUSH_PULL;
-    gpio_init.GPIO_Pull_Mode = GPIO_PULL_NONE;
-    GPIO_Init(&gpio_init);
-    // SPI0 GPIO config SCLK (PB.2)
-    GPIO_SetAFMode(GPIOPortB, GPIOPin2, AF0);
-    // SPI0 GPIO config SDIN (PC.0)
-    GPIO_SetAFMode(GPIOPortC, GPIOPin0, AF2);
+
 
     /****************ºìÍâ¹â½ÓÊÕGPIOÅäÖÃ *******************************/
     // OP0 INP & OP0 INN & OP0 OUT(PC.6)
     GPIO_SetAFMode(GPIOPortC, GPIOPin6, AF_ANALOG);
     // OP2 INP(PD.0) & OP2 OUT(PD.1)
-    //GPIO_SetAFMode(GPIOPortC, GPIOPin7, AF_ANALOG);
     GPIO_SetAFMode(GPIOPortD, GPIOPin0, AF_ANALOG);
     GPIO_SetAFMode(GPIOPortD, GPIOPin1, AF_ANALOG);
-    // ADC sample for SPO2 (PA.0)
-    GPIO_SetAFMode(GPIOPortA, GPIOPin0, AF_ANALOG);
-
-    /**************** µç³ØµçÁ¿¼ì²âGPIOÅäÖÃ *******************************/
-    // ADC sample for battery (PA.3)
+    // ADC sample for SPO2 (PA.3)
     GPIO_SetAFMode(GPIOPortA, GPIOPin3, AF_ANALOG);
 
-    /**************** ·äÃùÆ÷GPIOÅäÖÃ *******************************/
-    // PWM for buzz (PB.3)
-    GPIO_SetAFMode(GPIOPortB, GPIOPin3, AF3);
-
-    /****************BLE GPIOÅäÖÃ *******************************/
-    // BLE_RX_EN
-    GPIO_SetBits(GPIOPortA, GPIOPin2);
-    GPIO_ClrAFMode(GPIOPortA, GPIOPin2);
-    gpio_init.GPIO_Port = GPIOPortA;
-    gpio_init.GPIO_Pin  = GPIOPin2;
-    gpio_init.GPIO_Mode = GPIO_OUTPUT_MODE;
-    gpio_init.GPIO_Ext_Mode = GPIO_PIN_PUSH_PULL;
-    gpio_init.GPIO_Pull_Mode = GPIO_PULL_NONE;
-    GPIO_Init(&gpio_init);
+    /**************** µç³ØµçÁ¿¼ì²âGPIOÅäÖÃ *******************************/
+    // ADC sample for battery (PA.7)
+    GPIO_SetAFMode(GPIOPortA, GPIOPin7, AF_ANALOG);
 }
 
 /**
@@ -290,7 +253,7 @@ static void SYS_TIMER_Init(void)
     TIMER2->sw_force_con = 1;
     TIMER2->latched_cnt = 0;
     TIMER2->prescale = 0;
-    TIMER2->period = 965;
+    TIMER2->period = 965;  //965
     TIMER2->repeat_value = 0;
 }
 
@@ -429,8 +392,6 @@ void SYS_Hardware_Init(void)
 
     SYS_TIMER_Init();
     SYS_TIMER_PWM_Init();
-    SYS_SPI0_Init();
-    SYS_Buzz_Init();
 
     SYS_PressKey_Init();
     SYS_OPA_Init();

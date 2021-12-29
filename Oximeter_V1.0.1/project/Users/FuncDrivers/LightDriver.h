@@ -35,7 +35,7 @@
 //3.3V * 14.7k / (80k + 14.7k) / 5 ~= 102.5mA
 #define DRV_EXTRA          (3584)                        //80.0mA = 102.5mA(current) * 3200 / 4096(span)
 #define DRV_MAX            (3200)                        //80mA = 102.5mA(current) * 3200 / 4096(span)
-#define DRV_MIN            (512)                         //3.375mA = 108mA(current) * 128 / 4096(span)
+#define DRV_MIN            (320)                         //3.375mA = 108mA(current) * 128 / 4096(span)
 
 //Light adjust period
 #define ADJUST_WORK        (16)                          //0.16ms for automatic probe detect during 1s period

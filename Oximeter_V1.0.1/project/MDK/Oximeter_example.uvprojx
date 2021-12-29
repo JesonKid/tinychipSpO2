@@ -51,7 +51,7 @@
           <OutputName>Oximeter_example</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
-          <CreateHexFile>0</CreateHexFile>
+          <CreateHexFile>1</CreateHexFile>
           <DebugInformation>1</DebugInformation>
           <BrowseInformation>1</BrowseInformation>
           <ListingPath>.\Listings\</ListingPath>
@@ -337,7 +337,7 @@
               <MiscControls></MiscControls>
               <Define>FUNC_RESP, FUNC_DIAGNOSE</Define>
               <Undefine></Undefine>
-              <IncludePath>..\common\inc;..\driver\inc;..\midware\inc;..\Users;..\Users\Algorithm;..\Users\FuncDrivers;..\Users\BlueToothDrivers;..\Users\BuzzDrivers;..\Users\OledDrivers;..\midware\RTT</IncludePath>
+              <IncludePath>..\common\inc;..\driver\inc;..\midware\inc;..\Users;..\Users\Algorithm;..\Users\FuncDrivers;..\Users\BlueToothDrivers;..\Users\BuzzDrivers;..\Users\OledDrivers;..\midware\RTT;..\Users\SegDrivers;..\midware\pt-1.4\pt-1.4</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -748,6 +748,16 @@
               <FileName>trace.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\midware\src\trace.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>SegDrivers</GroupName>
+          <Files>
+            <File>
+              <FileName>SegDriver.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Users\SegDrivers\SegDriver.c</FilePath>
             </File>
           </Files>
         </Group>

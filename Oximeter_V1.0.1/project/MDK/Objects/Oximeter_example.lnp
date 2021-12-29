@@ -38,6 +38,7 @@
 ".\objects\segger_rtt_printf.o"
 ".\objects\segger_rtt_syscalls_keil.o"
 ".\objects\trace.o"
+".\objects\segdriver.o"
 ".\objects\retarget_io.o"
 --library_type=microlib --strict --scatter ".\Scripts\oximeter_example.sct"
 --entry Reset_Handler --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols

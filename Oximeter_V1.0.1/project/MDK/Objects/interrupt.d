@@ -26,3 +26,9 @@
 .\objects\interrupt.o: ..\driver\inc\uart.h
 .\objects\interrupt.o: ..\common\inc\system_tcasxxx.h
 .\objects\interrupt.o: ..\Users\BlueToothDrivers\BluetoothDriver.h
+.\objects\interrupt.o: ..\Users\SegDrivers\SegDriver.h
+.\objects\interrupt.o: ..\midware\pt-1.4\pt-1.4\pt.h
+.\objects\interrupt.o: ..\midware\pt-1.4\pt-1.4\lc.h
+.\objects\interrupt.o: ..\midware\pt-1.4\pt-1.4\lc-switch.h
+.\objects\interrupt.o: ..\midware\pt-1.4\pt-1.4\pt-sem.h
+.\objects\interrupt.o: ..\driver\inc\gpio.h

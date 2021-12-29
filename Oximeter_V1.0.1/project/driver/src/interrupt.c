@@ -32,6 +32,7 @@
 #include "dma.h"
 #include "uart.h"
 #include "BluetoothDriver.h"
+#include "SegDriver.h"
 
 
 //----------------------------------------------------------------------------------------------------
@@ -47,35 +48,35 @@ ISRFunc_T  jump_table_base[8] __attribute__((__section__(".jump_table_mem_area")
     0, 0, 0, 0, 0, 0, 0, 0,
 };
 #elif defined (__ICCARM__)  /* IAR Ewarm  8.32.3 */
- volatile ISRFunc_T  jump_table_base[8]@".jump_table_mem_area" =
+volatile ISRFunc_T  jump_table_base[8]@".jump_table_mem_area" =
 {
-    0, 0, 0, 0, 0, 0, 0, 0,  
+    0, 0, 0, 0, 0, 0, 0, 0,
 };
 #endif
 
 
 void NMI_Handler(void)
 {
-    while(1);
+    while (1);
 }
 
 void HardFault_Handler(void)
 {
-    while(1);
+    while (1);
 }
 
 void SVC_Handler(void)
 {
-    while(1);
+    while (1);
 }
 #ifndef __FREERTOS__
 void PendSV_Handler(void)
 {
-    while(1);
+    while (1);
 }
 void SysTick_Handler(void)
 {
-    while(1);
+    while (1);
 }
 #endif
 
@@ -100,7 +101,7 @@ void SysTick_Handler(void)
 __STATIC_INLINE UINT32 ADC_GetDmaValue(void)
 #elif defined ( __CC_ARM )     /* keil */
 __attribute__((always_inline)) __inline UINT32 ADC_GetDmaValue(void)
-#endif 
+#endif
 {
     UINT32 i;
     UINT32 mSumVal = 0;
@@ -133,7 +134,7 @@ __attribute__((always_inline)) __inline UINT32 ADC_GetDmaValue(void)
 __STATIC_INLINE void PwmToDacDrive(INT16 mValue)
 #elif defined ( __CC_ARM )     /* keil */
 __attribute__((always_inline)) __inline void PwmToDacDrive(INT16 mValue)
-#endif 
+#endif
 {
     UCHAR mDuty = mValue >> 6;           //Accord to PWM_GAP_DRV
 
@@ -148,7 +149,7 @@ __attribute__((always_inline)) __inline void PwmToDacDrive(INT16 mValue)
     }
 }
 
-
+static uint8_t cnt = 0;
 
 void fic_IRQHandler(void)
 {
@@ -166,6 +167,13 @@ void fic_IRQHandler(void)
     static UINT32 gSampVolt    = 0;
     static UINT16 gDrvCur = 0;
     UINT32 mSampDat;
+    static uint8_t ms_count = 0;
+    if (ms_count++ > 30)
+    {
+        ms_count = 0;
+        PT_SEM_SIGNAL(&PT_SpO2, &SEM_POLL);
+        seg_show_thread(&PT_SpO2);
+    }
 
     if (84 >= sSpo2Span)
     {
@@ -191,37 +199,40 @@ void fic_IRQHandler(void)
 
     switch (sSpo2Span)
     {
-        case 0:
-            gDrvCur = PWM_GAP_DRV;
-            //gDrvCur = 0;
-            gSrtCnt = 0;
-            (GPIO_PIN_16_25->data_out) |= 0x00000004;        //Red  PC02 HIGH 开启红光通道
-            break;
-        case 24:
-            gDrvCur = gDriveRed;
-            if (!gDrvCur)
-            {
-                (GPIO_PIN_16_25->data_out) &= 0xFFFFFFFB;    //Red  PC02 LOW    关闭红光通道
-            }
-            break;
-        case 36:
-            gDrvCur = PWM_GAP_DRV;
-            (GPIO_PIN_16_25->data_out) &= 0xFFFFFFFB;        //Red          PC02 LOW    关闭红光通道
-            (GPIO_PIN_16_25->data_out) |= 0x00000002;        //Infrard  PC01 HIGH 开启红外光通道
-            break;
-        case 60:
-            gDrvCur = gDriveIrd;
-            if (!gDrvCur)
-            {
-                (GPIO_PIN_16_25->data_out) &= 0xFFFFFFFD;        //Infrard  PC01 LOW    关闭红外光通道
-            }
-            break;
-        case 72:
-            gDrvCur = 0;
-            (GPIO_PIN_16_25->data_out) &= 0xFFFFFFFD;                       //Infrard   PC01 LOW    关闭红外光通道
-            break;
+    case 0:
+        gDrvCur = PWM_GAP_DRV;
+        //gDrvCur = 0;
+        gSrtCnt = 0;
+        (GPIO_PIN_16_25->data_out) |= 0x00000004;        //Red  PC02 HIGH 开启红光通道
+        break;
+    case 24:
+        gDrvCur = gDriveRed;
+//                  gDrvCur = 512;
+        if (!gDrvCur)
+        {
+            (GPIO_PIN_16_25->data_out) &= 0xFFFFFFFB;    //Red  PC02 LOW    关闭红光通道
+        }
+        break;
+    case 36:
+        gDrvCur = PWM_GAP_DRV;
+        (GPIO_PIN_16_25->data_out) &= 0xFFFFFFFB;        //Red          PC02 LOW    关闭红光通道
+        (GPIO_PIN_0_15->data_out) |= 1 << (8 + 4);        //Infrard  PB04 HIGH 开启红外光通道
+        break;
+    case 60:
+        gDrvCur = gDriveIrd;
+//              gDrvCur = 128;
+        if (!gDrvCur)
+        {
+            (GPIO_PIN_0_15->data_out) &= ~(1 << (8 + 4));        //Infrard  PB04 LOW    关闭红外光通道
+        }
+        break;
+    case 72:
+        gDrvCur = 0;
+        (GPIO_PIN_0_15->data_out) &= ~(1 << (8 + 4));                       //Infrard   PB04 LOW    关闭红外光通道
+        break;
     }
-
+//gDrvCur=0;
+//      gSrtCnt = 1;
     if (gCfgCtrl.swDemo || 0 == gDrvCur)
     {
         PwmToDacDrive(0);           //关闭恒流控制
@@ -230,6 +241,7 @@ void fic_IRQHandler(void)
     {
         //Add triangle signal to light pulse
         PwmToDacDrive(gDrvCur + fabStep[gSrtCnt]);  //红外光恒流控制
+//          PwmToDacDrive((64*4));  //64*1~64*63调光范围实测0~480mV
     }
 
     //Counter
@@ -288,7 +300,7 @@ void fic_IRQHandler(void)
         if (74 == sSpo2Span)
         {
             //Select and start battery channel sample
-            ANAREG_1->reg_adsar_mux_in_f.adc_ext_input_p = SARADC_AIN3_PA03; // VBAT Sample pin，SARADC切换至PA03，电池电量检测
+            ANAREG_1->reg_adsar_mux_in_f.adc_ext_input_p = SARADC_AIN7_PA07; // VBAT Sample pin，SARADC切换至PA07，电池电量检测
         }
         //4 Times average for battery volume sample
         else if (76 < sSpo2Span && 84 >= sSpo2Span)
@@ -308,13 +320,13 @@ void fic_IRQHandler(void)
                 }
                 if (0 > gCellVolt)
                 {
-                    GPIO_ClearBits(GPIOPortA, GPIOPin7);   // power off，电池电量低于阈值，系统断电
+                    GPIO_ClearBits(GPIOPortA, GPIOPin4);   // power off，电池电量低于阈值，系统断电
                 }
                 //Reset and switch to normal sample
                 gSampVolt = 0;
 
                 //Restore normal spo2 sample
-                ANAREG_1->reg_adsar_mux_in_f.adc_ext_input_p = SARADC_AIN0_PA00;    //SARADC切换至PA00，spo2检测
+                ANAREG_1->reg_adsar_mux_in_f.adc_ext_input_p = SARADC_AIN3_PA03;    //SARADC切换至PA03，spo2检测
             }
         }
     }
@@ -345,12 +357,26 @@ void lic_IRQHandler(void)
     {
         return;
     }
-
+    cnt++;
+    if (cnt > 6 && cnt <= 14)state = LEVEL2;
+    if (cnt > 14 && cnt <= 19)state = LEVEL3;
+    if (cnt > 19 && cnt < 24)state = LEVEL4;
+    if (cnt == 24)isShowHeartSign = !isShowHeartSign;
+    if (cnt > 24 && cnt <= 30)state = LEVEL5;
+    if (cnt > 30 && cnt <= 37)state = LEVEL4;
+    if (cnt > 37 && cnt <= 42)state = LEVEL3;
+    if (cnt > 42 && cnt <= 45)state = LEVEL2;
+    if (cnt > 45)
+    {
+        cnt = 0;
+        state = LEVEL1;
+        isShowHeartSign = TRUE;
+    }
     //Sensor status judge (Sensor off)
     gSatParam.sysAlarm.ProbeOff = !Light_ProbeDriveAdjust();
 
     //Aic_IRQn for GUI display and COM communication
-    NVIC_SetPendingIRQ(Aic_IRQn);       //触发AIC中断，显示各指标信息，警告，蜂鸣器等
+//    NVIC_SetPendingIRQ(Aic_IRQn);       //触发AIC中断，显示各指标信息，警告，蜂鸣器等
 }
 
 
@@ -366,9 +392,9 @@ void aic_IRQHandler(void)
     AIC->latch_irq = 0;
     intStatus = AIC->irq_status1;
 
-    if(intStatus)
+    if (intStatus)
     {
-        if(intStatus & AIC_IWDG_MASK)
+        if (intStatus & AIC_IWDG_MASK)
         {
             AIC->clr_irq1 |= AIC_IWDG_MASK;
             AIC->clr_irq1 &= ~AIC_IWDG_MASK;
@@ -376,7 +402,6 @@ void aic_IRQHandler(void)
             IwdgCallback();
         }
     }
-
     //Single buzz when power on
     if (TRUE == sBuzzSet)
     {
@@ -391,6 +416,8 @@ void aic_IRQHandler(void)
     }
     else
     {
+        gAlmCtrl.swAlarm = TRUE;
+        gSatParam.sysParam.mSpO2 = 1;
         if (gAlmCtrl.swAlarm) // Alarm switch on
         {
             // Single buzz
@@ -404,8 +431,9 @@ void aic_IRQHandler(void)
                     gBeepCtrl.mType = BUZZ_SIGNLE_BEEP;
                 }
             }
+
             // Double buzz
-            else if(0 != gSatParam.sysParam.mSpO2)
+            else if (0 != gSatParam.sysParam.mSpO2)
             {
                 sSecCnt++;
                 if (SAT_SAMPLE_RATE <= sSecCnt)
@@ -415,7 +443,7 @@ void aic_IRQHandler(void)
                 }
             }
         }
-        else if(gAlmCtrl.swBeep) // Alarm switch off and Beep switch on
+        else if (gAlmCtrl.swBeep) // Alarm switch off and Beep switch on
         {
             if (TRUE == gSatParam.sysParam.mBeep)
             {
@@ -424,18 +452,18 @@ void aic_IRQHandler(void)
         }
     }
 
-    Display_GUI();
+//    Display_GUI();
 
-    Buzz_Speaker();
+//    Buzz_Speaker();
 }
 
 
 
 static int32_t XIC_GetVectIdx(IRQn_Type IRQn)
 {
-    int32_t idx = (int32_t)IRQn-FIC_Ovf_IRQn;
+    int32_t idx = (int32_t)IRQn - FIC_Ovf_IRQn;
     /* validity check */
-    if (idx<0)
+    if (idx < 0)
     {
         /*!!! add assert code later */
         while (1);
@@ -443,15 +471,15 @@ static int32_t XIC_GetVectIdx(IRQn_Type IRQn)
     return idx;
 }
 
-static void* XIC_GetModule(int32_t vectIdx)
+static void *XIC_GetModule(int32_t vectIdx)
 {
-    return (vectIdx >= NUM_FIC_INT) ? ((vectIdx >=(NUM_LIC_INT+NUM_FIC_INT))?(void*)AIC:(void*)LIC): (void*)FIC;
+    return (vectIdx >= NUM_FIC_INT) ? ((vectIdx >= (NUM_LIC_INT + NUM_FIC_INT)) ? (void *)AIC : (void *)LIC) : (void *)FIC;
 }
 
 void XIC_SetVector(IRQn_Type IRQn, ISRFunc_T vector)
 {
     // first 5 is for nmi etc. handlers
-    int32_t idx=(int32_t)IRQn;
+    int32_t idx = (int32_t)IRQn;
 
     if (idx < 0)
     {
@@ -480,21 +508,21 @@ void XIC_SetVector(IRQn_Type IRQn, ISRFunc_T vector)
 void XIC_EnableIRQ(IRQn_Type IRQn, ISRFunc_T vector)
 {
     int32_t idx = XIC_GetVectIdx(IRQn);
-    void* xic = XIC_GetModule(idx);
-    jump_table_base[8+idx] = vector;
+    void *xic = XIC_GetModule(idx);
+    jump_table_base[8 + idx] = vector;
     /* read current interrupt mask register and unmask the corresponding bit */
     if (xic == FIC)
     {
-        FIC->mask1 &= ~( 1<<(idx&0x1FUL) );
+        FIC->mask1 &= ~( 1 << (idx & 0x1FUL) );
     }
     else if (xic == LIC)
     {
-        LIC->mask1 &= ~( 1<<((idx-NUM_FIC_INT)&0x1FUL) );
+        LIC->mask1 &= ~( 1 << ((idx - NUM_FIC_INT) & 0x1FUL) );
     }
     else if (xic == AIC)
     {
         //printf("enable AIC 0x%x\r\n", idx);
-        AIC->mask1 &= ~( 1<<((idx-NUM_FIC_INT-NUM_LIC_INT)&0x1FUL) );
+        AIC->mask1 &= ~( 1 << ((idx - NUM_FIC_INT - NUM_LIC_INT) & 0x1FUL) );
     }
 }
 
@@ -502,23 +530,23 @@ void XIC_EnableIRQ(IRQn_Type IRQn, ISRFunc_T vector)
 void XIC_DisableIRQ(IRQn_Type IRQn)
 {
     int32_t idx = XIC_GetVectIdx(IRQn);
-    void* xic = XIC_GetModule(idx);
+    void *xic = XIC_GetModule(idx);
     /* read current interrupt mask register and mask the corresponding bit */
     if (xic == FIC)
     {
-        FIC->mask1 |= (1<<(idx&0x1FUL));
+        FIC->mask1 |= (1 << (idx & 0x1FUL));
     }
     else if (xic == LIC)
     {
-        LIC->mask1 |= ( 1<<((idx-NUM_FIC_INT)&0x1FUL) );
+        LIC->mask1 |= ( 1 << ((idx - NUM_FIC_INT) & 0x1FUL) );
     }
     else if (xic == AIC)
     {
-        AIC->mask1 |= ( 1<<((idx-NUM_FIC_INT-NUM_LIC_INT)&0x1FUL) );
+        AIC->mask1 |= ( 1 << ((idx - NUM_FIC_INT - NUM_LIC_INT) & 0x1FUL) );
     }
 }
 
-int calculate_CLZ(unsigned int* num)
+int calculate_CLZ(unsigned int *num)
 {
     unsigned int value = 0x80000000;
     int i = 0;
@@ -528,9 +556,9 @@ int calculate_CLZ(unsigned int* num)
 
     while (value != 0)
     {
-        if (*num & (value>>i))
+        if (*num & (value >> i))
         {
-            *num &= ~(value>>i);
+            *num &= ~(value >> i);
             return i;
         }
         i++;
@@ -541,7 +569,7 @@ int calculate_CLZ(unsigned int* num)
 void IC_PowupInit(void)
 {
     // init FIC/LIC/AIC interrupt vector table
-    memset((void*)jump_table_base, 0, sizeof((void*)jump_table_base));
+    memset((void *)jump_table_base, 0, sizeof((void *)jump_table_base));
 
     jump_table_base[0] = NMI_Handler;
     jump_table_base[1] = HardFault_Handler;
@@ -556,7 +584,7 @@ void IC_PowupInit(void)
 void IC_PowupDeinit(void)
 {
     /* init FIC/AIC/LIC interrupt vector table*/
-    memset((void*)jump_table_base, 0, sizeof((void*)jump_table_base));
+    memset((void *)jump_table_base, 0, sizeof((void *)jump_table_base));
 }
 
 void IC_EnableNVIC(void)

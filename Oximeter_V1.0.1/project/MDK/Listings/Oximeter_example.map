@@ -11,8 +11,6 @@ Section Cross References
     systemdriver.o(i.SYS_ADC_Init) refers to dma.o(i.PeripheralsRxDmaConfig) for PeripheralsRxDmaConfig
     systemdriver.o(i.SYS_ADC_Init) refers to saradc.o(i.TriggerSARAdcStart) for TriggerSARAdcStart
     systemdriver.o(i.SYS_ADC_Init) refers to preprocess.o(.bss) for gDmaAdcBuf
-    systemdriver.o(i.SYS_Buzz_Init) refers to timer.o(i.SetTimer) for SetTimer
-    systemdriver.o(i.SYS_Buzz_Init) refers to timer.o(i.ADT_StartTimer) for ADT_StartTimer
     systemdriver.o(i.SYS_GPIO_Init) refers to gpio.o(i.GPIO_ClrAFMode) for GPIO_ClrAFMode
     systemdriver.o(i.SYS_GPIO_Init) refers to gpio.o(i.GPIO_SetBits) for GPIO_SetBits
     systemdriver.o(i.SYS_GPIO_Init) refers to gpio.o(i.GPIO_Init) for GPIO_Init
@@ -21,8 +19,6 @@ Section Cross References
     systemdriver.o(i.SYS_Hardware_Init) refers to systemdriver.o(i.SYS_GPIO_Init) for SYS_GPIO_Init
     systemdriver.o(i.SYS_Hardware_Init) refers to systemdriver.o(i.SYS_TIMER_Init) for SYS_TIMER_Init
     systemdriver.o(i.SYS_Hardware_Init) refers to systemdriver.o(i.SYS_TIMER_PWM_Init) for SYS_TIMER_PWM_Init
-    systemdriver.o(i.SYS_Hardware_Init) refers to systemdriver.o(i.SYS_SPI0_Init) for SYS_SPI0_Init
-    systemdriver.o(i.SYS_Hardware_Init) refers to systemdriver.o(i.SYS_Buzz_Init) for SYS_Buzz_Init
     systemdriver.o(i.SYS_Hardware_Init) refers to systemdriver.o(i.SYS_PressKey_Init) for SYS_PressKey_Init
     systemdriver.o(i.SYS_Hardware_Init) refers to systemdriver.o(i.SYS_OPA_Init) for SYS_OPA_Init
     systemdriver.o(i.SYS_Hardware_Init) refers to systemdriver.o(i.SYS_ADC_Init) for SYS_ADC_Init
@@ -42,19 +38,16 @@ Section Cross References
     systemdriver.o(i.SYS_PressKey_Init) refers to cmp.o(i.Cmp_Init) for Cmp_Init
     systemdriver.o(i.SYS_PressKey_Init) refers to cmp.o(i.Cmp_VrefConfig) for Cmp_VrefConfig
     systemdriver.o(i.SYS_PressKey_Init) refers to cmp.o(i.Cmp_Enable) for Cmp_Enable
-    systemdriver.o(i.SYS_SPI0_Init) refers to memmovea.o(.text) for __aeabi_memcpy4
-    systemdriver.o(i.SYS_SPI0_Init) refers to spi.o(i.SPI_Init) for SPI_Init
-    systemdriver.o(i.SYS_SPI0_Init) refers to systemdriver.o(.constdata) for .constdata
     systemdriver.o(i.SYS_TIMER_PWM_Init) refers to timer.o(i.SetTimer) for SetTimer
     systemdriver.o(i.SYS_TIMER_PWM_Init) refers to timer.o(i.ADT_StartTimer) for ADT_StartTimer
+    main.o(i.TCmain) refers to delay.o(i.delay1ms) for delay1ms
     main.o(i.TCmain) refers to trace.o(i.PrintInit) for PrintInit
     main.o(i.TCmain) refers to interrupt.o(i.IC_PowupInit) for IC_PowupInit
     main.o(i.TCmain) refers to systemdriver.o(i.SYS_Hardware_Init) for SYS_Hardware_Init
+    main.o(i.TCmain) refers to segdriver.o(i.segSetUp) for segSetUp
     main.o(i.TCmain) refers to systemdriver.o(i.SYS_ModuleDrive_Init) for SYS_ModuleDrive_Init
     main.o(i.TCmain) refers to systemdriver.o(i.SYS_Interrupt_Enable) for SYS_Interrupt_Enable
-    main.o(i.TCmain) refers to segger_rtt_printf.o(i.SEGGER_RTT_printf) for SEGGER_RTT_printf
-    main.o(i.TCmain) refers to delay.o(i.delay1ms) for delay1ms
-    main.o(i.TCmain) refers to displaydriver.o(.bss) for gSatSamp
+    main.o(i.TCmain) refers to displaydriver.o(.bss) for gSatParam
     gpio.o(i.GPIO_ClearBits) refers to gpio.o(i.GPIO_RegisterMap) for GPIO_RegisterMap
     gpio.o(i.GPIO_ClearITBit) refers to gpio.o(i.GPIO_RegisterMap) for GPIO_RegisterMap
     gpio.o(i.GPIO_ClrAFMode) refers to gpio.o(i.GPIO_PinMuxAdrMap) for GPIO_PinMuxAdrMap
@@ -170,14 +163,13 @@ Section Cross References
     interrupt.o(i.XIC_SetVector) refers to interrupt.o(.jump_table_mem_area) for .jump_table_mem_area
     interrupt.o(i.aic_IRQHandler) refers to interrupt.o(i.__NVIC_ClearPendingIRQ) for __NVIC_ClearPendingIRQ
     interrupt.o(i.aic_IRQHandler) refers to systemdriver.o(i.IwdgCallback) for IwdgCallback
-    interrupt.o(i.aic_IRQHandler) refers to displaydriver.o(i.Display_GUI) for Display_GUI
-    interrupt.o(i.aic_IRQHandler) refers to buzzdriver.o(i.Buzz_Speaker) for Buzz_Speaker
     interrupt.o(i.aic_IRQHandler) refers to interrupt.o(.data) for .data
     interrupt.o(i.aic_IRQHandler) refers to buzzdriver.o(.data) for gBeepCtrl
     interrupt.o(i.aic_IRQHandler) refers to displaydriver.o(.bss) for gAlmCtrl
-    interrupt.o(i.fic_IRQHandler) refers to interrupt.o(i.__NVIC_SetPendingIRQ) for __NVIC_SetPendingIRQ
+    interrupt.o(i.fic_IRQHandler) refers to segdriver.o(i.seg_show_thread) for seg_show_thread
     interrupt.o(i.fic_IRQHandler) refers to gpio.o(i.GPIO_ClearBits) for GPIO_ClearBits
     interrupt.o(i.fic_IRQHandler) refers to interrupt.o(.data) for .data
+    interrupt.o(i.fic_IRQHandler) refers to segdriver.o(.data) for SEM_POLL
     interrupt.o(i.fic_IRQHandler) refers to preprocess.o(.bss) for gDmaAdcBuf
     interrupt.o(i.fic_IRQHandler) refers to lightdriver.o(.data) for gDriveRed
     interrupt.o(i.fic_IRQHandler) refers to defaultsetup.o(.bss) for gCfgCtrl
@@ -186,7 +178,8 @@ Section Cross References
     interrupt.o(i.lic_IRQHandler) refers to interrupt.o(i.__NVIC_ClearPendingIRQ) for __NVIC_ClearPendingIRQ
     interrupt.o(i.lic_IRQHandler) refers to preprocess.o(i.Process_SampleData) for Process_SampleData
     interrupt.o(i.lic_IRQHandler) refers to lightdriver.o(i.Light_ProbeDriveAdjust) for Light_ProbeDriveAdjust
-    interrupt.o(i.lic_IRQHandler) refers to interrupt.o(i.__NVIC_SetPendingIRQ) for __NVIC_SetPendingIRQ
+    interrupt.o(i.lic_IRQHandler) refers to interrupt.o(.data) for .data
+    interrupt.o(i.lic_IRQHandler) refers to segdriver.o(.data) for state
     interrupt.o(i.lic_IRQHandler) refers to displaydriver.o(.bss) for gSatParam
     lpm.o(i.EnterLpmPmuState) refers to lpm.o(i.__ARM_common_switch8) for __ARM_common_switch8
     lpm.o(i.EnterLpmPmuState) refers to lpm.o(i.EnterLpmNormalSleep) for EnterLpmNormalSleep
@@ -375,11 +368,6 @@ Section Cross References
     displaydriver.o(i.Display_GUI) refers to ug2864driver.o(i.UG2864_Set_Display_On_Off) for UG2864_Set_Display_On_Off
     displaydriver.o(i.Display_GUI) refers to gpio.o(i.GPIO_ClearBits) for GPIO_ClearBits
     displaydriver.o(i.Display_GUI) refers to defaultsetup.o(.data) for gChkFunc
-    displaydriver.o(i.Display_Init) refers to memseta.o(.text) for __aeabi_memclr
-    displaydriver.o(i.Display_Init) refers to ug2864driver.o(i.UG2864_OLED_Init) for UG2864_OLED_Init
-    displaydriver.o(i.Display_Init) refers to displaydriver.o(.bss) for .bss
-    displaydriver.o(i.Display_Init) refers to displaydriver.o(.data) for .data
-    displaydriver.o(i.Display_Init) refers to defaultsetup.o(.bss) for gCfgCtrl
     displaydriver.o(i.Display_Logo) refers to ug2864driver.o(i.UG2864_Display) for UG2864_Display
     displaydriver.o(i.Display_Logo) refers to fontlibs.o(.constdata) for gLogoNarigmed
     displaydriver.o(i.Display_Perfusion) refers to idiv.o(.text) for __aeabi_idivmod
@@ -566,6 +554,79 @@ Section Cross References
     segger_rtt_syscalls_keil.o(i._sys_write) refers to segger_rtt.o(i.SEGGER_RTT_Write) for SEGGER_RTT_Write
     segger_rtt_syscalls_keil.o(i._ttywrch) refers to retarget_io.o(i.fputc) for fputc
     segger_rtt_syscalls_keil.o(i._ttywrch) refers to stdout.o(.data) for __stdout
+    segdriver.o(i.lowLevelInit) refers to gpio.o(i.GPIO_ClrAFMode) for GPIO_ClrAFMode
+    segdriver.o(i.lowLevelInit) refers to gpio.o(i.GPIO_ExtModeConfig) for GPIO_ExtModeConfig
+    segdriver.o(i.lowLevelInit) refers to gpio.o(i.GPIO_Config) for GPIO_Config
+    segdriver.o(i.lowLevelInit) refers to gpio.o(i.GPIO_SetAFMode) for GPIO_SetAFMode
+    segdriver.o(i.seg1_num_load) refers to lpm.o(i.__ARM_common_switch8) for __ARM_common_switch8
+    segdriver.o(i.seg1_num_load) refers to gpio.o(i.GPIO_Config) for GPIO_Config
+    segdriver.o(i.seg1_num_load) refers to gpio.o(i.GPIO_ClearBits) for GPIO_ClearBits
+    segdriver.o(i.seg1_show) refers to gpio.o(i.GPIO_Config) for GPIO_Config
+    segdriver.o(i.seg1_show) refers to gpio.o(i.GPIO_SetBits) for GPIO_SetBits
+    segdriver.o(i.seg2_num_load) refers to lpm.o(i.__ARM_common_switch8) for __ARM_common_switch8
+    segdriver.o(i.seg2_num_load) refers to gpio.o(i.GPIO_Config) for GPIO_Config
+    segdriver.o(i.seg2_num_load) refers to gpio.o(i.GPIO_ClearBits) for GPIO_ClearBits
+    segdriver.o(i.seg2_show) refers to gpio.o(i.GPIO_Config) for GPIO_Config
+    segdriver.o(i.seg2_show) refers to gpio.o(i.GPIO_SetBits) for GPIO_SetBits
+    segdriver.o(i.seg3_num_load) refers to lpm.o(i.__ARM_common_switch8) for __ARM_common_switch8
+    segdriver.o(i.seg3_num_load) refers to gpio.o(i.GPIO_Config) for GPIO_Config
+    segdriver.o(i.seg3_num_load) refers to gpio.o(i.GPIO_ClearBits) for GPIO_ClearBits
+    segdriver.o(i.seg3_show) refers to gpio.o(i.GPIO_Config) for GPIO_Config
+    segdriver.o(i.seg3_show) refers to gpio.o(i.GPIO_SetBits) for GPIO_SetBits
+    segdriver.o(i.seg4_num_load) refers to lpm.o(i.__ARM_common_switch8) for __ARM_common_switch8
+    segdriver.o(i.seg4_num_load) refers to gpio.o(i.GPIO_Config) for GPIO_Config
+    segdriver.o(i.seg4_num_load) refers to gpio.o(i.GPIO_ClearBits) for GPIO_ClearBits
+    segdriver.o(i.seg4_show) refers to gpio.o(i.GPIO_Config) for GPIO_Config
+    segdriver.o(i.seg4_show) refers to gpio.o(i.GPIO_SetBits) for GPIO_SetBits
+    segdriver.o(i.seg5_num_load) refers to lpm.o(i.__ARM_common_switch8) for __ARM_common_switch8
+    segdriver.o(i.seg5_num_load) refers to gpio.o(i.GPIO_Config) for GPIO_Config
+    segdriver.o(i.seg5_num_load) refers to gpio.o(i.GPIO_ClearBits) for GPIO_ClearBits
+    segdriver.o(i.seg5_show) refers to gpio.o(i.GPIO_Config) for GPIO_Config
+    segdriver.o(i.seg5_show) refers to gpio.o(i.GPIO_SetBits) for GPIO_SetBits
+    segdriver.o(i.seg6_num_load) refers to lpm.o(i.__ARM_common_switch8) for __ARM_common_switch8
+    segdriver.o(i.seg6_num_load) refers to gpio.o(i.GPIO_Config) for GPIO_Config
+    segdriver.o(i.seg6_num_load) refers to gpio.o(i.GPIO_ClearBits) for GPIO_ClearBits
+    segdriver.o(i.seg6_show) refers to gpio.o(i.GPIO_Config) for GPIO_Config
+    segdriver.o(i.seg6_show) refers to gpio.o(i.GPIO_SetBits) for GPIO_SetBits
+    segdriver.o(i.seg7_num_load) refers to lpm.o(i.__ARM_common_switch8) for __ARM_common_switch8
+    segdriver.o(i.seg7_num_load) refers to gpio.o(i.GPIO_Config) for GPIO_Config
+    segdriver.o(i.seg7_num_load) refers to gpio.o(i.GPIO_ClearBits) for GPIO_ClearBits
+    segdriver.o(i.seg7_show) refers to gpio.o(i.GPIO_Config) for GPIO_Config
+    segdriver.o(i.seg7_show) refers to gpio.o(i.GPIO_SetBits) for GPIO_SetBits
+    segdriver.o(i.seg8_num_load) refers to lpm.o(i.__ARM_common_switch8) for __ARM_common_switch8
+    segdriver.o(i.seg8_num_load) refers to gpio.o(i.GPIO_Config) for GPIO_Config
+    segdriver.o(i.seg8_num_load) refers to gpio.o(i.GPIO_ClearBits) for GPIO_ClearBits
+    segdriver.o(i.seg8_show) refers to gpio.o(i.GPIO_Config) for GPIO_Config
+    segdriver.o(i.seg8_show) refers to gpio.o(i.GPIO_SetBits) for GPIO_SetBits
+    segdriver.o(i.segSetUp) refers to segdriver.o(i.lowLevelInit) for lowLevelInit
+    segdriver.o(i.segSetUp) refers to segdriver.o(.data) for .data
+    segdriver.o(i.segShow) refers to lpm.o(i.__ARM_common_switch8) for __ARM_common_switch8
+    segdriver.o(i.segShow) refers to segdriver.o(i.seg1_num_load) for seg1_num_load
+    segdriver.o(i.segShow) refers to segdriver.o(i.seg1_show) for seg1_show
+    segdriver.o(i.segShow) refers to segdriver.o(i.seg2_num_load) for seg2_num_load
+    segdriver.o(i.segShow) refers to segdriver.o(i.seg2_show) for seg2_show
+    segdriver.o(i.segShow) refers to segdriver.o(i.seg3_num_load) for seg3_num_load
+    segdriver.o(i.segShow) refers to segdriver.o(i.seg3_show) for seg3_show
+    segdriver.o(i.segShow) refers to segdriver.o(i.seg4_num_load) for seg4_num_load
+    segdriver.o(i.segShow) refers to segdriver.o(i.seg4_show) for seg4_show
+    segdriver.o(i.segShow) refers to segdriver.o(i.seg5_num_load) for seg5_num_load
+    segdriver.o(i.segShow) refers to segdriver.o(i.seg5_show) for seg5_show
+    segdriver.o(i.segShow) refers to segdriver.o(i.seg6_num_load) for seg6_num_load
+    segdriver.o(i.segShow) refers to segdriver.o(i.seg6_show) for seg6_show
+    segdriver.o(i.segShow) refers to segdriver.o(i.seg7_num_load) for seg7_num_load
+    segdriver.o(i.segShow) refers to segdriver.o(i.seg7_show) for seg7_show
+    segdriver.o(i.segShow) refers to segdriver.o(i.seg8_num_load) for seg8_num_load
+    segdriver.o(i.segShow) refers to segdriver.o(i.seg8_show) for seg8_show
+    segdriver.o(i.segShow) refers to segdriver.o(.data) for .data
+    segdriver.o(i.seg_show_thread) refers to idiv.o(.text) for __aeabi_idivmod
+    segdriver.o(i.seg_show_thread) refers to segdriver.o(i.segShow) for segShow
+    segdriver.o(i.seg_show_thread) refers to segdriver.o(i.stateShow) for stateShow
+    segdriver.o(i.seg_show_thread) refers to displaydriver.o(.bss) for gSatParam
+    segdriver.o(i.seg_show_thread) refers to segdriver.o(.data) for .data
+    segdriver.o(i.stateShow) refers to lpm.o(i.__ARM_common_switch8) for __ARM_common_switch8
+    segdriver.o(i.stateShow) refers to gpio.o(i.GPIO_Config) for GPIO_Config
+    segdriver.o(i.stateShow) refers to gpio.o(i.GPIO_ClearBits) for GPIO_ClearBits
+    segdriver.o(i.stateShow) refers to gpio.o(i.GPIO_SetBits) for GPIO_SetBits
     retarget_io.o(i.__aeabi_assert) refers to fputs.o(i.fputs) for fputs
     retarget_io.o(i.__aeabi_assert) refers to idiv.o(.text) for __aeabi_idivmod
     retarget_io.o(i.__aeabi_assert) refers to retarget_io.o(i.abort) for abort
@@ -854,8 +915,6 @@ Removing Unused input sections from the image.
     Removing gpio.o(.revsh_text), (4 bytes).
     Removing gpio.o(i.GPIO_20mA_Mode), (108 bytes).
     Removing gpio.o(i.GPIO_ClearITBit), (44 bytes).
-    Removing gpio.o(i.GPIO_Config), (52 bytes).
-    Removing gpio.o(i.GPIO_ExtModeConfig), (210 bytes).
     Removing gpio.o(i.GPIO_GetAFMode), (22 bytes).
     Removing gpio.o(i.GPIO_GetBit), (36 bytes).
     Removing gpio.o(i.GPIO_GetITStatus), (44 bytes).
@@ -1040,12 +1099,17 @@ Removing Unused input sections from the image.
     Removing spi.o(.rev16_text), (4 bytes).
     Removing spi.o(.revsh_text), (4 bytes).
     Removing spi.o(i.SPI_GetFlagStatus), (14 bytes).
+    Removing spi.o(i.SPI_Init), (152 bytes).
     Removing spi.o(i.SPI_ReceiveData_Host), (38 bytes).
     Removing spi.o(i.SPI_ReceiveData_Slave), (24 bytes).
     Removing spi.o(i.SPI_Receive_DMAConfig), (42 bytes).
+    Removing spi.o(i.SPI_SendData_Host), (34 bytes).
     Removing spi.o(i.SPI_SendData_Slave), (38 bytes).
     Removing spi.o(i.SPI_Send_DMAConfig), (38 bytes).
+    Removing spi.o(i.SPI_SetCpolCpha), (24 bytes).
+    Removing spi.o(i.SPI_SetFrameSize), (40 bytes).
     Removing spi.o(i.SPI_SetRate), (24 bytes).
+    Removing spi.o(i.SPI_SetRfr), (20 bytes).
     Removing spi.o(i.SpiIOConfig), (108 bytes).
     Removing trim.o(.rev16_text), (4 bytes).
     Removing trim.o(.revsh_text), (4 bytes).
@@ -1087,6 +1151,8 @@ Removing Unused input sections from the image.
     Removing defaultsetup.o(.rev16_text), (4 bytes).
     Removing defaultsetup.o(.revsh_text), (4 bytes).
     Removing defaultsetup.o(i.Setup_IsRestoreValue), (128 bytes).
+    Removing defaultsetup.o(i.Setup_UpdateDevice), (48 bytes).
+    Removing defaultsetup.o(.data), (2 bytes).
     Removing lightdriver.o(.rev16_text), (4 bytes).
     Removing lightdriver.o(.revsh_text), (4 bytes).
     Removing lightdriver.o(.bss), (20 bytes).
@@ -1099,33 +1165,106 @@ Removing Unused input sections from the image.
     Removing spo2interface.o(.data), (30 bytes).
     Removing displaydriver.o(.rev16_text), (4 bytes).
     Removing displaydriver.o(.revsh_text), (4 bytes).
+    Removing displaydriver.o(i.Display_AlarmMenu), (196 bytes).
+    Removing displaydriver.o(i.Display_AlarmThrd), (820 bytes).
+    Removing displaydriver.o(i.Display_Bargraph), (272 bytes).
+    Removing displaydriver.o(i.Display_Battery), (416 bytes).
+    Removing displaydriver.o(i.Display_Ble), (68 bytes).
+    Removing displaydriver.o(i.Display_BlinkSelection), (356 bytes).
+    Removing displaydriver.o(i.Display_Caption), (188 bytes).
+    Removing displaydriver.o(i.Display_GUI), (1308 bytes).
+    Removing displaydriver.o(i.Display_Logo), (56 bytes).
+    Removing displaydriver.o(i.Display_Perfusion), (952 bytes).
+    Removing displaydriver.o(i.Display_Pleth), (288 bytes).
+    Removing displaydriver.o(i.Display_ProbeOff), (92 bytes).
+    Removing displaydriver.o(i.Display_Pulse), (508 bytes).
+    Removing displaydriver.o(i.Display_SpO2), (560 bytes).
+    Removing displaydriver.o(i.Display_Version), (424 bytes).
+    Removing displaydriver.o(i.GetHardwareVer), (6 bytes).
+    Removing displaydriver.o(i.GetSoftwareVer), (8 bytes).
+    Removing displaydriver.o(.constdata), (40 bytes).
     Removing displaydriver.o(.data), (1 bytes).
     Removing displaydriver.o(.data), (6 bytes).
+    Removing fontlibs.o(.constdata), (436 bytes).
     Removing fontlibs.o(.constdata), (196 bytes).
+    Removing fontlibs.o(.constdata), (562 bytes).
+    Removing fontlibs.o(.constdata), (368 bytes).
+    Removing fontlibs.o(.constdata), (752 bytes).
+    Removing fontlibs.o(.constdata), (484 bytes).
+    Removing fontlibs.o(.constdata), (429 bytes).
+    Removing fontlibs.o(.constdata), (396 bytes).
+    Removing fontlibs.o(.constdata), (206 bytes).
+    Removing fontlibs.o(.constdata), (156 bytes).
+    Removing fontlibs.o(.constdata), (70 bytes).
+    Removing fontlibs.o(.constdata), (60 bytes).
+    Removing fontlibs.o(.constdata), (78 bytes).
+    Removing fontlibs.o(.constdata), (45 bytes).
+    Removing fontlibs.o(.constdata), (21 bytes).
+    Removing fontlibs.o(.constdata), (21 bytes).
+    Removing fontlibs.o(.constdata), (14 bytes).
+    Removing fontlibs.o(.constdata), (44 bytes).
+    Removing fontlibs.o(.constdata), (18 bytes).
+    Removing fontlibs.o(.constdata), (18 bytes).
+    Removing fontlibs.o(.constdata), (6 bytes).
+    Removing fontlibs.o(.constdata), (6 bytes).
+    Removing fontlibs.o(.constdata), (16 bytes).
+    Removing fontlibs.o(.constdata), (16 bytes).
+    Removing fontlibs.o(.constdata), (30 bytes).
+    Removing fontlibs.o(.constdata), (30 bytes).
+    Removing fontlibs.o(.constdata), (48 bytes).
+    Removing fontlibs.o(.constdata), (48 bytes).
+    Removing fontlibs.o(.constdata), (64 bytes).
+    Removing fontlibs.o(.constdata), (168 bytes).
+    Removing fontlibs.o(.constdata), (62 bytes).
     Removing ug2864driver.o(.rev16_text), (4 bytes).
     Removing ug2864driver.o(.revsh_text), (4 bytes).
+    Removing ug2864driver.o(i.UG2864_ClearRegion), (138 bytes).
     Removing ug2864driver.o(i.UG2864_Continuous_Scroll), (80 bytes).
     Removing ug2864driver.o(i.UG2864_Deactivate_Scroll), (10 bytes).
     Removing ug2864driver.o(i.UG2864_Delay), (44 bytes).
+    Removing ug2864driver.o(i.UG2864_Display), (160 bytes).
+    Removing ug2864driver.o(i.UG2864_Fill_RAM), (44 bytes).
     Removing ug2864driver.o(i.UG2864_Horizontal_Scroll), (56 bytes).
+    Removing ug2864driver.o(i.UG2864_OLED_Init), (120 bytes).
     Removing ug2864driver.o(i.UG2864_OLED_Init_Remap), (40 bytes).
+    Removing ug2864driver.o(i.UG2864_Set_Addressing_Mode), (12 bytes).
     Removing ug2864driver.o(i.UG2864_Set_Area_Brightness), (18 bytes).
     Removing ug2864driver.o(i.UG2864_Set_Area_Color), (18 bytes).
     Removing ug2864driver.o(i.UG2864_Set_Column_Address), (26 bytes).
+    Removing ug2864driver.o(i.UG2864_Set_Common_Config), (20 bytes).
+    Removing ug2864driver.o(i.UG2864_Set_Common_Remap), (12 bytes).
+    Removing ug2864driver.o(i.UG2864_Set_Contrast_Control), (18 bytes).
     Removing ug2864driver.o(i.UG2864_Set_Dim_Mode), (38 bytes).
+    Removing ug2864driver.o(i.UG2864_Set_Display_Clock), (18 bytes).
+    Removing ug2864driver.o(i.UG2864_Set_Display_Offset), (18 bytes).
+    Removing ug2864driver.o(i.UG2864_Set_Display_On_Off), (12 bytes).
+    Removing ug2864driver.o(i.UG2864_Set_Entire_Display), (12 bytes).
+    Removing ug2864driver.o(i.UG2864_Set_Inverse_Display), (12 bytes).
     Removing ug2864driver.o(i.UG2864_Set_Master_Config), (20 bytes).
+    Removing ug2864driver.o(i.UG2864_Set_Multiplex_Ratio), (18 bytes).
     Removing ug2864driver.o(i.UG2864_Set_NOP), (10 bytes).
     Removing ug2864driver.o(i.UG2864_Set_Page_Address), (26 bytes).
+    Removing ug2864driver.o(i.UG2864_Set_Precharge_Period), (18 bytes).
+    Removing ug2864driver.o(i.UG2864_Set_Pump), (18 bytes).
     Removing ug2864driver.o(i.UG2864_Set_Read_Modify_Write), (12 bytes).
+    Removing ug2864driver.o(i.UG2864_Set_Segment_Remap), (12 bytes).
+    Removing ug2864driver.o(i.UG2864_Set_Start_Column), (22 bytes).
+    Removing ug2864driver.o(i.UG2864_Set_Start_Line), (12 bytes).
+    Removing ug2864driver.o(i.UG2864_Set_Start_Page), (12 bytes).
+    Removing ug2864driver.o(i.UG2864_Set_VCOMH), (18 bytes).
     Removing ug2864driver.o(i.UG2864_Show_ASCII), (58 bytes).
     Removing ug2864driver.o(i.UG2864_Show_Pattern), (58 bytes).
+    Removing ug2864driver.o(i.UG2864_Write_Command), (40 bytes).
+    Removing ug2864driver.o(i.UG2864_Write_Data), (40 bytes).
     Removing ug2864driver.o(i.UG2864_uDelay), (12 bytes).
+    Removing ug2864driver.o(.constdata), (262 bytes).
     Removing bluetoothdriver.o(.rev16_text), (4 bytes).
     Removing bluetoothdriver.o(.revsh_text), (4 bytes).
     Removing bluetoothdriver.o(i.BLE_IsConnect), (12 bytes).
     Removing bluetoothdriver.o(i.BLE_SetRxState), (26 bytes).
     Removing buzzdriver.o(.rev16_text), (4 bytes).
     Removing buzzdriver.o(.revsh_text), (4 bytes).
+    Removing buzzdriver.o(i.Buzz_Speaker), (112 bytes).
     Removing segger_rtt.o(i.SEGGER_RTT_AllocDownBuffer), (100 bytes).
     Removing segger_rtt.o(i.SEGGER_RTT_AllocUpBuffer), (100 bytes).
     Removing segger_rtt.o(i.SEGGER_RTT_ConfigDownBuffer), (92 bytes).
@@ -1141,11 +1280,24 @@ Removing Unused input sections from the image.
     Removing segger_rtt.o(i.SEGGER_RTT_SetTerminal), (132 bytes).
     Removing segger_rtt.o(i.SEGGER_RTT_TerminalOut), (224 bytes).
     Removing segger_rtt.o(i.SEGGER_RTT_WaitKey), (12 bytes).
+    Removing segger_rtt.o(i.SEGGER_RTT_Write), (52 bytes).
+    Removing segger_rtt.o(i.SEGGER_RTT_WriteNoLock), (104 bytes).
     Removing segger_rtt.o(i.SEGGER_RTT_WriteSkipNoLock), (160 bytes).
     Removing segger_rtt.o(i.SEGGER_RTT_WriteString), (24 bytes).
     Removing segger_rtt.o(i.SEGGER_RTT_WriteWithOverwriteNoLock), (152 bytes).
+    Removing segger_rtt.o(i._DoInit), (108 bytes).
+    Removing segger_rtt.o(i._GetAvailWriteSpace), (24 bytes).
     Removing segger_rtt.o(i._PostTerminalSwitch), (28 bytes).
+    Removing segger_rtt.o(i._WriteBlocking), (98 bytes).
+    Removing segger_rtt.o(i._WriteNoCheck), (62 bytes).
+    Removing segger_rtt.o(.bss), (1040 bytes).
     Removing segger_rtt.o(.data), (17 bytes).
+    Removing segger_rtt_printf.o(i.SEGGER_RTT_printf), (24 bytes).
+    Removing segger_rtt_printf.o(i.SEGGER_RTT_vprintf), (414 bytes).
+    Removing segger_rtt_printf.o(i._PrintInt), (230 bytes).
+    Removing segger_rtt_printf.o(i._PrintUnsigned), (232 bytes).
+    Removing segger_rtt_printf.o(i._StoreChar), (62 bytes).
+    Removing segger_rtt_printf.o(.constdata), (16 bytes).
     Removing segger_rtt_syscalls_keil.o(i._sys_close), (4 bytes).
     Removing segger_rtt_syscalls_keil.o(i._sys_command_string), (2 bytes).
     Removing segger_rtt_syscalls_keil.o(i._sys_ensure), (6 bytes).
@@ -1161,6 +1313,8 @@ Removing Unused input sections from the image.
     Removing segger_rtt_syscalls_keil.o(.constdata), (14 bytes).
     Removing trace.o(.rev16_text), (4 bytes).
     Removing trace.o(.revsh_text), (4 bytes).
+    Removing segdriver.o(.rev16_text), (4 bytes).
+    Removing segdriver.o(.revsh_text), (4 bytes).
     Removing retarget_io.o(i.__aeabi_assert), (140 bytes).
     Removing retarget_io.o(i.__backspace), (6 bytes).
     Removing retarget_io.o(i.abort), (2 bytes).
@@ -1174,7 +1328,7 @@ Removing Unused input sections from the image.
     Removing dfixul.o(.text), (64 bytes).
     Removing cdrcmple.o(.text), (40 bytes).
 
-327 unused section(s) (total 14384 bytes) removed from the image.
+420 unused section(s) (total 29326 bytes) removed from the image.
 
 ==============================================================================
 
@@ -1194,32 +1348,32 @@ Image Symbol Table
 
     Symbol Name                              Value     Ov Type        Size  Object(Section)
 
-    ../clib/microlib/division.c              0x00000000   Number         0  uldiv.o ABSOLUTE
-    ../clib/microlib/division.c              0x00000000   Number         0  idiv.o ABSOLUTE
     ../clib/microlib/division.c              0x00000000   Number         0  uidiv.o ABSOLUTE
+    ../clib/microlib/division.c              0x00000000   Number         0  idiv.o ABSOLUTE
+    ../clib/microlib/division.c              0x00000000   Number         0  uldiv.o ABSOLUTE
     ../clib/microlib/longlong.c              0x00000000   Number         0  llsshr.o ABSOLUTE
-    ../clib/microlib/longlong.c              0x00000000   Number         0  llushr.o ABSOLUTE
     ../clib/microlib/longlong.c              0x00000000   Number         0  llshl.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf2.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfa.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf8.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf7.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf6.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf5.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llushr.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf4.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf3.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf1.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf0.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf6.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf7.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf8.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfa.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf5.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfb.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf0.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf1.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf2.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf3.o ABSOLUTE
     ../clib/microlib/stdio/fflush.c          0x00000000   Number         0  fflush.o ABSOLUTE
     ../clib/microlib/stdio/fputs.c           0x00000000   Number         0  fputs_e.o ABSOLUTE
     ../clib/microlib/stdio/fputs.c           0x00000000   Number         0  fputs.o ABSOLUTE
-    ../clib/microlib/stdio/streams.c         0x00000000   Number         0  stderr.o ABSOLUTE
     ../clib/microlib/stdio/streams.c         0x00000000   Number         0  stdout.o ABSOLUTE
-    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memmovea.o ABSOLUTE
+    ../clib/microlib/stdio/streams.c         0x00000000   Number         0  stderr.o ABSOLUTE
     ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memmoveb.o ABSOLUTE
-    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpyb.o ABSOLUTE
+    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memmovea.o ABSOLUTE
     ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpya.o ABSOLUTE
+    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpyb.o ABSOLUTE
     ../clib/microlib/string/memset.c         0x00000000   Number         0  memseta.o ABSOLUTE
     ../clib/microlib/string/strcmp.c         0x00000000   Number         0  strcmp.o ABSOLUTE
     ../clib/microlib/string/strcpy.c         0x00000000   Number         0  strcpy.o ABSOLUTE
@@ -1228,14 +1382,14 @@ Image Symbol Table
     ../clib/microlib/stubs.s                 0x00000000   Number         0  iusefp.o ABSOLUTE
     ../fplib/microlib/fpadd.c                0x00000000   Number         0  fadd.o ABSOLUTE
     ../fplib/microlib/fpadd.c                0x00000000   Number         0  dadd.o ABSOLUTE
-    ../fplib/microlib/fpdiv.c                0x00000000   Number         0  ddiv.o ABSOLUTE
     ../fplib/microlib/fpdiv.c                0x00000000   Number         0  fdiv.o ABSOLUTE
-    ../fplib/microlib/fpepilogue.c           0x00000000   Number         0  fepilogue.o ABSOLUTE
+    ../fplib/microlib/fpdiv.c                0x00000000   Number         0  ddiv.o ABSOLUTE
     ../fplib/microlib/fpepilogue.c           0x00000000   Number         0  depilogue.o ABSOLUTE
-    ../fplib/microlib/fpfix.c                0x00000000   Number         0  ffixi.o ABSOLUTE
-    ../fplib/microlib/fpfix.c                0x00000000   Number         0  ffixui.o ABSOLUTE
-    ../fplib/microlib/fpfix.c                0x00000000   Number         0  dfixi.o ABSOLUTE
+    ../fplib/microlib/fpepilogue.c           0x00000000   Number         0  fepilogue.o ABSOLUTE
     ../fplib/microlib/fpfix.c                0x00000000   Number         0  dfixul.o ABSOLUTE
+    ../fplib/microlib/fpfix.c                0x00000000   Number         0  dfixi.o ABSOLUTE
+    ../fplib/microlib/fpfix.c                0x00000000   Number         0  ffixui.o ABSOLUTE
+    ../fplib/microlib/fpfix.c                0x00000000   Number         0  ffixi.o ABSOLUTE
     ../fplib/microlib/fpflt.c                0x00000000   Number         0  fflti.o ABSOLUTE
     ../fplib/microlib/fpflt.c                0x00000000   Number         0  dflti.o ABSOLUTE
     ../fplib/microlib/fpflt.c                0x00000000   Number         0  ffltui.o ABSOLUTE
@@ -1250,6 +1404,7 @@ Image Symbol Table
     ..\Users\OledDrivers\DisplayDriver.c     0x00000000   Number         0  displaydriver.o ABSOLUTE
     ..\Users\OledDrivers\UG2864Driver.c      0x00000000   Number         0  ug2864driver.o ABSOLUTE
     ..\Users\OledDrivers\fontlibs.c          0x00000000   Number         0  fontlibs.o ABSOLUTE
+    ..\Users\SegDrivers\SegDriver.c          0x00000000   Number         0  segdriver.o ABSOLUTE
     ..\Users\SystemDriver.c                  0x00000000   Number         0  systemdriver.o ABSOLUTE
     ..\Users\main.c                          0x00000000   Number         0  main.o ABSOLUTE
     ..\\Users\\Algorithm\\Spo2Interface.c    0x00000000   Number         0  spo2interface.o ABSOLUTE
@@ -1260,6 +1415,7 @@ Image Symbol Table
     ..\\Users\\FuncDrivers\\Preprocess.c     0x00000000   Number         0  preprocess.o ABSOLUTE
     ..\\Users\\OledDrivers\\DisplayDriver.c  0x00000000   Number         0  displaydriver.o ABSOLUTE
     ..\\Users\\OledDrivers\\UG2864Driver.c   0x00000000   Number         0  ug2864driver.o ABSOLUTE
+    ..\\Users\\SegDrivers\\SegDriver.c       0x00000000   Number         0  segdriver.o ABSOLUTE
     ..\\Users\\SystemDriver.c                0x00000000   Number         0  systemdriver.o ABSOLUTE
     ..\\Users\\main.c                        0x00000000   Number         0  main.o ABSOLUTE
     ..\\common\\src\\system_tcasxxx.c        0x00000000   Number         0  system_tcasxxx.o ABSOLUTE
@@ -1320,280 +1476,205 @@ Image Symbol Table
     .jump_table_mem_area                     0x00004000   Section       32  interrupt.o(.jump_table_mem_area)
     RAMCODE                                  0x00004020   Section        0  flash.o(RAMCODE)
     .data                                    0x00004114   Section       36  interrupt.o(.data)
-    gSrtCnt                                  0x00004114   Data           1  interrupt.o(.data)
-    sBuzzSet                                 0x00004115   Data           1  interrupt.o(.data)
-    sSecCnt                                  0x00004116   Data           1  interrupt.o(.data)
-    sCellSpan                                0x00004118   Data           2  interrupt.o(.data)
-    sSpo2Span                                0x0000411a   Data           2  interrupt.o(.data)
-    gDrvCur                                  0x0000411c   Data           2  interrupt.o(.data)
+    cnt                                      0x00004114   Data           1  interrupt.o(.data)
+    gSrtCnt                                  0x00004115   Data           1  interrupt.o(.data)
+    ms_count                                 0x00004116   Data           1  interrupt.o(.data)
+    sBuzzSet                                 0x00004117   Data           1  interrupt.o(.data)
+    sSecCnt                                  0x00004118   Data           1  interrupt.o(.data)
+    sCellSpan                                0x0000411a   Data           2  interrupt.o(.data)
+    sSpo2Span                                0x0000411c   Data           2  interrupt.o(.data)
+    gDrvCur                                  0x0000411e   Data           2  interrupt.o(.data)
     gSampRedAmb                              0x00004124   Data           4  interrupt.o(.data)
     gSampRedSamp                             0x00004128   Data           4  interrupt.o(.data)
     gSampIrdAmb                              0x0000412c   Data           4  interrupt.o(.data)
     gSampIrdSamp                             0x00004130   Data           4  interrupt.o(.data)
     gSampVolt                                0x00004134   Data           4  interrupt.o(.data)
     .data                                    0x00004138   Section        4  system_tcasxxx.o(.data)
-    .data                                    0x0000413c   Section        2  defaultsetup.o(.data)
-    .data                                    0x00004140   Section        4  defaultsetup.o(.data)
-    gBaseAddr                                0x00004140   Data           4  defaultsetup.o(.data)
-    .data                                    0x00004144   Section        6  lightdriver.o(.data)
-    sProbeFlag                               0x00004144   Data           1  lightdriver.o(.data)
-    sOffDelay                                0x00004145   Data           1  lightdriver.o(.data)
-    .data                                    0x0000414a   Section        4  preprocess.o(.data)
-    sOriPos                                  0x0000414c   Data           2  preprocess.o(.data)
-    .data                                    0x0000414e   Section       20  displaydriver.o(.data)
+    .data                                    0x0000413c   Section        4  defaultsetup.o(.data)
+    gBaseAddr                                0x0000413c   Data           4  defaultsetup.o(.data)
+    .data                                    0x00004140   Section        6  lightdriver.o(.data)
+    sProbeFlag                               0x00004140   Data           1  lightdriver.o(.data)
+    sOffDelay                                0x00004141   Data           1  lightdriver.o(.data)
+    .data                                    0x00004146   Section        4  preprocess.o(.data)
+    sOriPos                                  0x00004148   Data           2  preprocess.o(.data)
+    .data                                    0x0000414a   Section       20  displaydriver.o(.data)
+    sBlink                                   0x0000414a   Data           1  displaydriver.o(.data)
+    sPreIndex                                0x0000414b   Data           1  displaydriver.o(.data)
+    sUpdatePos                               0x0000414c   Data           1  displaydriver.o(.data)
+    sDelay                                   0x0000414d   Data           1  displaydriver.o(.data)
     sBlink                                   0x0000414e   Data           1  displaydriver.o(.data)
-    sPreIndex                                0x0000414f   Data           1  displaydriver.o(.data)
-    sUpdatePos                               0x00004150   Data           1  displaydriver.o(.data)
-    sDelay                                   0x00004151   Data           1  displaydriver.o(.data)
-    sBlink                                   0x00004152   Data           1  displaydriver.o(.data)
-    sOffCnt                                  0x00004153   Data           1  displaydriver.o(.data)
-    oldProbeOff                              0x00004154   Data           1  displaydriver.o(.data)
-    showBleLogo                              0x00004155   Data           1  displaydriver.o(.data)
-    oldKeyVal                                0x00004156   Data           1  displaydriver.o(.data)
-    .data                                    0x00004162   Section        6  buzzdriver.o(.data)
-    .bss                                     0x00004168   Section       24  defaultsetup.o(.bss)
-    .bss                                     0x00004180   Section      108  lightdriver.o(.bss)
-    .bss                                     0x000041ec   Section       32  preprocess.o(.bss)
-    .bss                                     0x0000420c   Section     1036  preprocess.o(.bss)
-    sDatBuf                                  0x000045f8   Data          32  preprocess.o(.bss)
-    .bss                                     0x00004618   Section      170  displaydriver.o(.bss)
-    .bss                                     0x000046c2   Section       16  displaydriver.o(.bss)
+    sOffCnt                                  0x0000414f   Data           1  displaydriver.o(.data)
+    oldProbeOff                              0x00004150   Data           1  displaydriver.o(.data)
+    showBleLogo                              0x00004151   Data           1  displaydriver.o(.data)
+    oldKeyVal                                0x00004152   Data           1  displaydriver.o(.data)
+    .data                                    0x0000415e   Section        6  buzzdriver.o(.data)
+    .data                                    0x00004164   Section       28  segdriver.o(.data)
+    hrd                                      0x00004165   Data           1  segdriver.o(.data)
+    ten                                      0x00004166   Data           1  segdriver.o(.data)
+    one                                      0x00004167   Data           1  segdriver.o(.data)
+    .bss                                     0x00004180   Section       24  defaultsetup.o(.bss)
+    .bss                                     0x00004198   Section      108  lightdriver.o(.bss)
+    .bss                                     0x00004204   Section       32  preprocess.o(.bss)
+    .bss                                     0x00004224   Section     1036  preprocess.o(.bss)
+    sDatBuf                                  0x00004610   Data          32  preprocess.o(.bss)
+    .bss                                     0x00004630   Section      170  displaydriver.o(.bss)
+    .bss                                     0x000046da   Section       16  displaydriver.o(.bss)
     .ARM.__AT_0x00004800                     0x00004800   Section      120  segger_rtt.o(.ARM.__AT_0x00004800)
-    .bss                                     0x00004878   Section     1040  segger_rtt.o(.bss)
-    _acUpBuffer                              0x00004878   Data        1024  segger_rtt.o(.bss)
-    _acDownBuffer                            0x00004c78   Data          16  segger_rtt.o(.bss)
-    STACK                                    0x00004c88   Section     1024  startup_tcasxxx.o(STACK)
+    STACK                                    0x00004878   Section     1024  startup_tcasxxx.o(STACK)
     RESET                                    0x10000000   Section       76  startup_tcasxxx.o(RESET)
     .text                                    0x1000004c   Section       72  startup_tcasxxx.o(.text)
     .text                                    0x10000094   Section        0  uidiv.o(.text)
     .text                                    0x100000c0   Section        0  idiv.o(.text)
     .text                                    0x100000e8   Section        0  memmovea.o(.text)
     .text                                    0x10000128   Section        0  memseta.o(.text)
-    .text                                    0x1000014c   Section        0  strcpy.o(.text)
-    .text                                    0x1000015e   Section        0  fadd.o(.text)
-    .text                                    0x10000210   Section        0  fmul.o(.text)
-    .text                                    0x1000028c   Section        0  dmul.o(.text)
-    .text                                    0x1000035c   Section        0  ddiv.o(.text)
-    .text                                    0x1000044c   Section        0  fflti.o(.text)
-    .text                                    0x10000464   Section        0  dflti.o(.text)
-    .text                                    0x1000048c   Section        0  ffixi.o(.text)
-    .text                                    0x100004c0   Section        0  dfixi.o(.text)
-    .text                                    0x10000508   Section        0  llushr.o(.text)
-    .text                                    0x1000052a   Section        0  iusefp.o(.text)
-    .text                                    0x1000052a   Section        0  fepilogue.o(.text)
-    .text                                    0x100005ac   Section        0  depilogue.o(.text)
-    .text                                    0x1000066a   Section        0  llshl.o(.text)
-    i.ADT_StartTimer                         0x100006b0   Section        0  timer.o(i.ADT_StartTimer)
-    i.Buzz_Speaker                           0x100006bc   Section        0  buzzdriver.o(i.Buzz_Speaker)
-    i.Cmp_CLKConfig                          0x1000072c   Section        0  cmp.o(i.Cmp_CLKConfig)
-    i.Cmp_Enable                             0x10000788   Section        0  cmp.o(i.Cmp_Enable)
-    i.Cmp_Init                               0x100007a8   Section        0  cmp.o(i.Cmp_Init)
-    i.Cmp_VrefConfig                         0x10000960   Section        0  cmp.o(i.Cmp_VrefConfig)
-    i.CopyDataRWtoImage                      0x10000a0c   Section        0  system_tcasxxx.o(i.CopyDataRWtoImage)
-    i.DMA_Init                               0x10000a38   Section        0  dma.o(i.DMA_Init)
-    i.DMA_StartChannel                       0x10000a80   Section        0  dma.o(i.DMA_StartChannel)
-    i.DelayForCommandExeDone                 0x10000a98   Section        0  delay.o(i.DelayForCommandExeDone)
-    i.Display_AlarmMenu                      0x10000abc   Section        0  displaydriver.o(i.Display_AlarmMenu)
-    i.Display_AlarmThrd                      0x10000b80   Section        0  displaydriver.o(i.Display_AlarmThrd)
-    i.Display_Bargraph                       0x10000eb4   Section        0  displaydriver.o(i.Display_Bargraph)
-    i.Display_Battery                        0x10000fc4   Section        0  displaydriver.o(i.Display_Battery)
-    Display_Battery                          0x10000fc5   Thumb Code   406  displaydriver.o(i.Display_Battery)
-    i.Display_Ble                            0x10001164   Section        0  displaydriver.o(i.Display_Ble)
-    Display_Ble                              0x10001165   Thumb Code    64  displaydriver.o(i.Display_Ble)
-    i.Display_BlinkSelection                 0x100011a8   Section        0  displaydriver.o(i.Display_BlinkSelection)
-    i.Display_Caption                        0x1000130c   Section        0  displaydriver.o(i.Display_Caption)
-    Display_Caption                          0x1000130d   Thumb Code   162  displaydriver.o(i.Display_Caption)
-    i.Display_GUI                            0x100013c8   Section        0  displaydriver.o(i.Display_GUI)
-    i.Display_Init                           0x100018e0   Section        0  displaydriver.o(i.Display_Init)
-    i.Display_Logo                           0x10001910   Section        0  displaydriver.o(i.Display_Logo)
-    Display_Logo                             0x10001911   Thumb Code    52  displaydriver.o(i.Display_Logo)
-    i.Display_Perfusion                      0x10001948   Section        0  displaydriver.o(i.Display_Perfusion)
-    Display_Perfusion                        0x10001949   Thumb Code   940  displaydriver.o(i.Display_Perfusion)
-    i.Display_Pleth                          0x10001d00   Section        0  displaydriver.o(i.Display_Pleth)
-    i.Display_ProbeOff                       0x10001e20   Section        0  displaydriver.o(i.Display_ProbeOff)
-    i.Display_Pulse                          0x10001e7c   Section        0  displaydriver.o(i.Display_Pulse)
-    i.Display_SpO2                           0x10002078   Section        0  displaydriver.o(i.Display_SpO2)
-    i.Display_Version                        0x100022a8   Section        0  displaydriver.o(i.Display_Version)
-    Display_Version                          0x100022a9   Thumb Code   408  displaydriver.o(i.Display_Version)
-    i.ErasePage                              0x10002450   Section        0  defaultsetup.o(i.ErasePage)
-    i.Flash_DeInit                           0x1000245c   Section        0  flash.o(i.Flash_DeInit)
-    i.Flash_Init                             0x10002468   Section        0  flash.o(i.Flash_Init)
-    i.GPIO_ClearBits                         0x10002480   Section        0  gpio.o(i.GPIO_ClearBits)
-    i.GPIO_ClrAFMode                         0x100024ac   Section        0  gpio.o(i.GPIO_ClrAFMode)
-    i.GPIO_Init                              0x100024c8   Section        0  gpio.o(i.GPIO_Init)
-    i.GPIO_PinMuxAdrMap                      0x100025c0   Section        0  gpio.o(i.GPIO_PinMuxAdrMap)
-    GPIO_PinMuxAdrMap                        0x100025c1   Thumb Code    98  gpio.o(i.GPIO_PinMuxAdrMap)
-    i.GPIO_RegisterMap                       0x1000262c   Section        0  gpio.o(i.GPIO_RegisterMap)
-    GPIO_RegisterMap                         0x1000262d   Thumb Code    96  gpio.o(i.GPIO_RegisterMap)
-    i.GPIO_SetAFMode                         0x10002694   Section        0  gpio.o(i.GPIO_SetAFMode)
-    i.GPIO_SetBits                           0x100026ce   Section        0  gpio.o(i.GPIO_SetBits)
-    i.GetHardwareVer                         0x100026fa   Section        0  displaydriver.o(i.GetHardwareVer)
-    GetHardwareVer                           0x100026fb   Thumb Code     6  displaydriver.o(i.GetHardwareVer)
-    i.GetSoftwareVer                         0x10002700   Section        0  displaydriver.o(i.GetSoftwareVer)
-    GetSoftwareVer                           0x10002701   Thumb Code     4  displaydriver.o(i.GetSoftwareVer)
-    i.HardFault_Handler                      0x10002708   Section        0  interrupt.o(i.HardFault_Handler)
-    i.IC_PowupInit                           0x1000270c   Section        0  interrupt.o(i.IC_PowupInit)
-    i.IWDG_ClearITPending                    0x10002754   Section        0  wdg.o(i.IWDG_ClearITPending)
-    i.IWDG_Enable                            0x10002784   Section        0  wdg.o(i.IWDG_Enable)
-    i.IWDG_GetITFlag                         0x10002794   Section        0  wdg.o(i.IWDG_GetITFlag)
-    i.IwdgCallback                           0x100027c4   Section        0  systemdriver.o(i.IwdgCallback)
-    i.Light_AdaptBaselineSet                 0x100027fc   Section        0  lightdriver.o(i.Light_AdaptBaselineSet)
-    i.Light_AdjustDrive                      0x100028fc   Section        0  lightdriver.o(i.Light_AdjustDrive)
-    i.Light_ProbeDriveAdjust                 0x10002a50   Section        0  lightdriver.o(i.Light_ProbeDriveAdjust)
-    i.Light_StatSampleACVariety              0x10002b60   Section        0  lightdriver.o(i.Light_StatSampleACVariety)
-    Light_StatSampleACVariety                0x10002b61   Thumb Code   616  lightdriver.o(i.Light_StatSampleACVariety)
-    i.NMI_Handler                            0x10002dd4   Section        0  interrupt.o(i.NMI_Handler)
-    i.OP2_OutPadConfig                       0x10002dd8   Section        0  op.o(i.OP2_OutPadConfig)
-    i.OP2_VinPadConfig                       0x10002df0   Section        0  op.o(i.OP2_VinPadConfig)
-    i.OP2_VipPadConfig                       0x10002e08   Section        0  op.o(i.OP2_VipPadConfig)
-    i.OPA_Enable                             0x10002e20   Section        0  op.o(i.OPA_Enable)
-    i.OPA_Init                               0x10002e44   Section        0  op.o(i.OPA_Init)
-    i.PendSV_Handler                         0x10002f54   Section        0  interrupt.o(i.PendSV_Handler)
-    i.PeripheralsRxDmaConfig                 0x10002f58   Section        0  dma.o(i.PeripheralsRxDmaConfig)
-    i.PrintInit                              0x10002fd0   Section        0  trace.o(i.PrintInit)
-    i.Process_FixedSmoothFilter              0x10002fd4   Section        0  preprocess.o(i.Process_FixedSmoothFilter)
-    Process_FixedSmoothFilter                0x10002fd5   Thumb Code   280  preprocess.o(i.Process_FixedSmoothFilter)
-    i.Process_LowPassFiltFIR                 0x100030f8   Section        0  preprocess.o(i.Process_LowPassFiltFIR)
-    Process_LowPassFiltFIR                   0x100030f9   Thumb Code   188  preprocess.o(i.Process_LowPassFiltFIR)
-    i.Process_ResampleSignal                 0x100031bc   Section        0  preprocess.o(i.Process_ResampleSignal)
-    Process_ResampleSignal                   0x100031bd   Thumb Code   192  preprocess.o(i.Process_ResampleSignal)
-    i.Process_SampleData                     0x10003288   Section        0  preprocess.o(i.Process_SampleData)
-    i.ReadFlashCfg                           0x10003354   Section        0  defaultsetup.o(i.ReadFlashCfg)
-    i.SEGGER_RTT_Write                       0x100033c4   Section        0  segger_rtt.o(i.SEGGER_RTT_Write)
-    i.SEGGER_RTT_WriteNoLock                 0x100033f8   Section        0  segger_rtt.o(i.SEGGER_RTT_WriteNoLock)
-    i.SEGGER_RTT_printf                      0x10003460   Section        0  segger_rtt_printf.o(i.SEGGER_RTT_printf)
-    i.SEGGER_RTT_vprintf                     0x10003478   Section        0  segger_rtt_printf.o(i.SEGGER_RTT_vprintf)
-    i.SPI_Init                               0x10003616   Section        0  spi.o(i.SPI_Init)
-    i.SPI_SendData_Host                      0x100036ae   Section        0  spi.o(i.SPI_SendData_Host)
-    i.SPI_SetCpolCpha                        0x100036d0   Section        0  spi.o(i.SPI_SetCpolCpha)
-    i.SPI_SetFrameSize                       0x100036e8   Section        0  spi.o(i.SPI_SetFrameSize)
-    i.SPI_SetRfr                             0x10003710   Section        0  spi.o(i.SPI_SetRfr)
-    i.SVC_Handler                            0x10003724   Section        0  interrupt.o(i.SVC_Handler)
-    i.SYS_ADC_Init                           0x10003728   Section        0  systemdriver.o(i.SYS_ADC_Init)
-    SYS_ADC_Init                             0x10003729   Thumb Code   232  systemdriver.o(i.SYS_ADC_Init)
-    i.SYS_Buzz_Init                          0x10003824   Section        0  systemdriver.o(i.SYS_Buzz_Init)
-    SYS_Buzz_Init                            0x10003825   Thumb Code    60  systemdriver.o(i.SYS_Buzz_Init)
-    i.SYS_GPIO_Init                          0x10003864   Section        0  systemdriver.o(i.SYS_GPIO_Init)
-    SYS_GPIO_Init                            0x10003865   Thumb Code   512  systemdriver.o(i.SYS_GPIO_Init)
-    i.SYS_Hardware_Init                      0x10003a70   Section        0  systemdriver.o(i.SYS_Hardware_Init)
-    i.SYS_Interrupt_Enable                   0x10003a94   Section        0  systemdriver.o(i.SYS_Interrupt_Enable)
-    i.SYS_ModuleDrive_Init                   0x10003aec   Section        0  systemdriver.o(i.SYS_ModuleDrive_Init)
-    i.SYS_OPA_Init                           0x10003af8   Section        0  systemdriver.o(i.SYS_OPA_Init)
-    SYS_OPA_Init                             0x10003af9   Thumb Code   136  systemdriver.o(i.SYS_OPA_Init)
-    i.SYS_PressKey_Init                      0x10003b80   Section        0  systemdriver.o(i.SYS_PressKey_Init)
-    SYS_PressKey_Init                        0x10003b81   Thumb Code    64  systemdriver.o(i.SYS_PressKey_Init)
-    i.SYS_SPI0_Init                          0x10003bc0   Section        0  systemdriver.o(i.SYS_SPI0_Init)
-    SYS_SPI0_Init                            0x10003bc1   Thumb Code    34  systemdriver.o(i.SYS_SPI0_Init)
-    i.SYS_TIMER_Init                         0x10003be8   Section        0  systemdriver.o(i.SYS_TIMER_Init)
-    SYS_TIMER_Init                           0x10003be9   Thumb Code    20  systemdriver.o(i.SYS_TIMER_Init)
-    i.SYS_TIMER_PWM_Init                     0x10003c04   Section        0  systemdriver.o(i.SYS_TIMER_PWM_Init)
-    SYS_TIMER_PWM_Init                       0x10003c05   Thumb Code    56  systemdriver.o(i.SYS_TIMER_PWM_Init)
-    i.SetTimer                               0x10003c40   Section        0  timer.o(i.SetTimer)
-    i.Setup_RestoreDevice                    0x10003cb8   Section        0  defaultsetup.o(i.Setup_RestoreDevice)
-    i.Setup_UpdateDevice                     0x10003ce8   Section        0  defaultsetup.o(i.Setup_UpdateDevice)
-    i.SysCheckTrimValid                      0x10003d18   Section        0  system_tcasxxx.o(i.SysCheckTrimValid)
-    i.SysTick_Handler                        0x10003d6c   Section        0  interrupt.o(i.SysTick_Handler)
-    i.SystemAnlogTrim                        0x10003d6e   Section        0  system_tcasxxx.o(i.SystemAnlogTrim)
-    i.SystemConfigFlash                      0x10003d70   Section        0  system_tcasxxx.o(i.SystemConfigFlash)
-    i.SystemCoreClockUpdate                  0x10003d94   Section        0  system_tcasxxx.o(i.SystemCoreClockUpdate)
-    i.SystemCoreSwitchHclkSrc                0x10003da4   Section        0  system_tcasxxx.o(i.SystemCoreSwitchHclkSrc)
-    i.SystemGetHClkFreq                      0x10003e08   Section        0  system_tcasxxx.o(i.SystemGetHClkFreq)
-    i.SystemInit                             0x10003e7c   Section        0  system_tcasxxx.o(i.SystemInit)
-    i.TCmain                                 0x10003ee8   Section        0  main.o(i.TCmain)
-    i.Tia_Enable                             0x10003f1c   Section        0  tia.o(i.Tia_Enable)
-    i.Tia_Init                               0x10003f2c   Section        0  tia.o(i.Tia_Init)
-    i.TriggerSARAdcStart                     0x10004018   Section        0  saradc.o(i.TriggerSARAdcStart)
-    i.UG2864_ClearRegion                     0x10004038   Section        0  ug2864driver.o(i.UG2864_ClearRegion)
-    i.UG2864_Display                         0x100040c4   Section        0  ug2864driver.o(i.UG2864_Display)
-    i.UG2864_Fill_RAM                        0x10004164   Section        0  ug2864driver.o(i.UG2864_Fill_RAM)
-    i.UG2864_OLED_Init                       0x10004190   Section        0  ug2864driver.o(i.UG2864_OLED_Init)
-    i.UG2864_Set_Addressing_Mode             0x10004208   Section        0  ug2864driver.o(i.UG2864_Set_Addressing_Mode)
-    i.UG2864_Set_Common_Config               0x10004214   Section        0  ug2864driver.o(i.UG2864_Set_Common_Config)
-    i.UG2864_Set_Common_Remap                0x10004228   Section        0  ug2864driver.o(i.UG2864_Set_Common_Remap)
-    i.UG2864_Set_Contrast_Control            0x10004234   Section        0  ug2864driver.o(i.UG2864_Set_Contrast_Control)
-    i.UG2864_Set_Display_Clock               0x10004246   Section        0  ug2864driver.o(i.UG2864_Set_Display_Clock)
-    i.UG2864_Set_Display_Offset              0x10004258   Section        0  ug2864driver.o(i.UG2864_Set_Display_Offset)
-    i.UG2864_Set_Display_On_Off              0x1000426a   Section        0  ug2864driver.o(i.UG2864_Set_Display_On_Off)
-    i.UG2864_Set_Entire_Display              0x10004276   Section        0  ug2864driver.o(i.UG2864_Set_Entire_Display)
-    i.UG2864_Set_Inverse_Display             0x10004282   Section        0  ug2864driver.o(i.UG2864_Set_Inverse_Display)
-    i.UG2864_Set_Multiplex_Ratio             0x1000428e   Section        0  ug2864driver.o(i.UG2864_Set_Multiplex_Ratio)
-    i.UG2864_Set_Precharge_Period            0x100042a0   Section        0  ug2864driver.o(i.UG2864_Set_Precharge_Period)
-    i.UG2864_Set_Pump                        0x100042b2   Section        0  ug2864driver.o(i.UG2864_Set_Pump)
-    i.UG2864_Set_Segment_Remap               0x100042c4   Section        0  ug2864driver.o(i.UG2864_Set_Segment_Remap)
-    i.UG2864_Set_Start_Column                0x100042d0   Section        0  ug2864driver.o(i.UG2864_Set_Start_Column)
-    i.UG2864_Set_Start_Line                  0x100042e6   Section        0  ug2864driver.o(i.UG2864_Set_Start_Line)
-    i.UG2864_Set_Start_Page                  0x100042f2   Section        0  ug2864driver.o(i.UG2864_Set_Start_Page)
-    i.UG2864_Set_VCOMH                       0x100042fe   Section        0  ug2864driver.o(i.UG2864_Set_VCOMH)
-    i.UG2864_Write_Command                   0x10004310   Section        0  ug2864driver.o(i.UG2864_Write_Command)
-    UG2864_Write_Command                     0x10004311   Thumb Code    36  ug2864driver.o(i.UG2864_Write_Command)
-    i.UG2864_Write_Data                      0x10004338   Section        0  ug2864driver.o(i.UG2864_Write_Data)
-    UG2864_Write_Data                        0x10004339   Thumb Code    34  ug2864driver.o(i.UG2864_Write_Data)
-    i.WriteFlashCfg                          0x10004360   Section        0  defaultsetup.o(i.WriteFlashCfg)
-    i._DoInit                                0x100043b8   Section        0  segger_rtt.o(i._DoInit)
-    _DoInit                                  0x100043b9   Thumb Code    72  segger_rtt.o(i._DoInit)
-    i._GetAvailWriteSpace                    0x10004424   Section        0  segger_rtt.o(i._GetAvailWriteSpace)
-    _GetAvailWriteSpace                      0x10004425   Thumb Code    24  segger_rtt.o(i._GetAvailWriteSpace)
-    i._PrintInt                              0x1000443c   Section        0  segger_rtt_printf.o(i._PrintInt)
-    _PrintInt                                0x1000443d   Thumb Code   230  segger_rtt_printf.o(i._PrintInt)
-    i._PrintUnsigned                         0x10004524   Section        0  segger_rtt_printf.o(i._PrintUnsigned)
-    _PrintUnsigned                           0x10004525   Thumb Code   226  segger_rtt_printf.o(i._PrintUnsigned)
-    i._StoreChar                             0x1000460c   Section        0  segger_rtt_printf.o(i._StoreChar)
-    _StoreChar                               0x1000460d   Thumb Code    62  segger_rtt_printf.o(i._StoreChar)
-    i._WriteBlocking                         0x1000464a   Section        0  segger_rtt.o(i._WriteBlocking)
-    _WriteBlocking                           0x1000464b   Thumb Code    98  segger_rtt.o(i._WriteBlocking)
-    i._WriteNoCheck                          0x100046ac   Section        0  segger_rtt.o(i._WriteNoCheck)
-    _WriteNoCheck                            0x100046ad   Thumb Code    62  segger_rtt.o(i._WriteNoCheck)
-    i.__ARM_clz                              0x100046ea   Section        0  depilogue.o(i.__ARM_clz)
-    i.__ARM_common_switch8                   0x10004718   Section        0  lpm.o(i.__ARM_common_switch8)
-    i.__NVIC_ClearPendingIRQ                 0x10004734   Section        0  interrupt.o(i.__NVIC_ClearPendingIRQ)
-    __NVIC_ClearPendingIRQ                   0x10004735   Thumb Code    18  interrupt.o(i.__NVIC_ClearPendingIRQ)
-    i.__NVIC_EnableIRQ                       0x1000474c   Section        0  systemdriver.o(i.__NVIC_EnableIRQ)
-    __NVIC_EnableIRQ                         0x1000474d   Thumb Code    18  systemdriver.o(i.__NVIC_EnableIRQ)
-    i.__NVIC_SetPendingIRQ                   0x10004764   Section        0  interrupt.o(i.__NVIC_SetPendingIRQ)
-    __NVIC_SetPendingIRQ                     0x10004765   Thumb Code    18  interrupt.o(i.__NVIC_SetPendingIRQ)
-    i.__NVIC_SetPriority                     0x1000477c   Section        0  systemdriver.o(i.__NVIC_SetPriority)
-    __NVIC_SetPriority                       0x1000477d   Thumb Code    60  systemdriver.o(i.__NVIC_SetPriority)
-    i.aic_IRQHandler                         0x100047c0   Section        0  interrupt.o(i.aic_IRQHandler)
-    i.delay1ms                               0x10004888   Section        0  delay.o(i.delay1ms)
-    i.fic_IRQHandler                         0x100048d8   Section        0  interrupt.o(i.fic_IRQHandler)
-    i.lic_IRQHandler                         0x10004b14   Section        0  interrupt.o(i.lic_IRQHandler)
-    .constdata                               0x10004b44   Section       28  systemdriver.o(.constdata)
-    .constdata                               0x10004b60   Section       32  op.o(.constdata)
-    .constdata                               0x10004b80   Section       96  preprocess.o(.constdata)
-    .constdata                               0x10004be0   Section       40  displaydriver.o(.constdata)
-    .constdata                               0x10004c08   Section      436  fontlibs.o(.constdata)
-    .constdata                               0x10004dbc   Section      562  fontlibs.o(.constdata)
-    .constdata                               0x10004fee   Section      368  fontlibs.o(.constdata)
-    .constdata                               0x1000515e   Section      752  fontlibs.o(.constdata)
-    .constdata                               0x1000544e   Section      484  fontlibs.o(.constdata)
-    .constdata                               0x10005632   Section      429  fontlibs.o(.constdata)
-    .constdata                               0x100057df   Section      396  fontlibs.o(.constdata)
-    .constdata                               0x1000596b   Section      206  fontlibs.o(.constdata)
-    .constdata                               0x10005a39   Section      156  fontlibs.o(.constdata)
-    .constdata                               0x10005ad5   Section       70  fontlibs.o(.constdata)
-    .constdata                               0x10005b1b   Section       60  fontlibs.o(.constdata)
-    .constdata                               0x10005b57   Section       78  fontlibs.o(.constdata)
-    .constdata                               0x10005ba5   Section       45  fontlibs.o(.constdata)
-    .constdata                               0x10005bd2   Section       21  fontlibs.o(.constdata)
-    .constdata                               0x10005be7   Section       21  fontlibs.o(.constdata)
-    .constdata                               0x10005bfc   Section       14  fontlibs.o(.constdata)
-    .constdata                               0x10005c0a   Section       44  fontlibs.o(.constdata)
-    .constdata                               0x10005c36   Section       18  fontlibs.o(.constdata)
-    .constdata                               0x10005c48   Section       18  fontlibs.o(.constdata)
-    .constdata                               0x10005c5a   Section        6  fontlibs.o(.constdata)
-    .constdata                               0x10005c60   Section        6  fontlibs.o(.constdata)
-    .constdata                               0x10005c66   Section       16  fontlibs.o(.constdata)
-    .constdata                               0x10005c76   Section       16  fontlibs.o(.constdata)
-    .constdata                               0x10005c86   Section       30  fontlibs.o(.constdata)
-    .constdata                               0x10005ca4   Section       30  fontlibs.o(.constdata)
-    .constdata                               0x10005cc2   Section       48  fontlibs.o(.constdata)
-    .constdata                               0x10005cf2   Section       48  fontlibs.o(.constdata)
-    .constdata                               0x10005d22   Section       64  fontlibs.o(.constdata)
-    .constdata                               0x10005d62   Section      168  fontlibs.o(.constdata)
-    .constdata                               0x10005e0a   Section       62  fontlibs.o(.constdata)
-    .constdata                               0x10005e48   Section      262  ug2864driver.o(.constdata)
-    .constdata                               0x10005f4e   Section       16  segger_rtt_printf.o(.constdata)
-    _aV2C                                    0x10005f4e   Data          16  segger_rtt_printf.o(.constdata)
+    .text                                    0x1000014c   Section        0  fadd.o(.text)
+    .text                                    0x100001fe   Section        0  fmul.o(.text)
+    .text                                    0x10000278   Section        0  dmul.o(.text)
+    .text                                    0x10000348   Section        0  ddiv.o(.text)
+    .text                                    0x10000438   Section        0  fflti.o(.text)
+    .text                                    0x10000450   Section        0  dflti.o(.text)
+    .text                                    0x10000478   Section        0  ffixi.o(.text)
+    .text                                    0x100004ac   Section        0  dfixi.o(.text)
+    .text                                    0x100004f4   Section        0  llushr.o(.text)
+    .text                                    0x10000516   Section        0  fepilogue.o(.text)
+    .text                                    0x10000516   Section        0  iusefp.o(.text)
+    .text                                    0x10000598   Section        0  depilogue.o(.text)
+    .text                                    0x10000656   Section        0  llshl.o(.text)
+    i.ADT_StartTimer                         0x1000069c   Section        0  timer.o(i.ADT_StartTimer)
+    i.Cmp_CLKConfig                          0x100006a8   Section        0  cmp.o(i.Cmp_CLKConfig)
+    i.Cmp_Enable                             0x10000704   Section        0  cmp.o(i.Cmp_Enable)
+    i.Cmp_Init                               0x10000724   Section        0  cmp.o(i.Cmp_Init)
+    i.Cmp_VrefConfig                         0x100008dc   Section        0  cmp.o(i.Cmp_VrefConfig)
+    i.CopyDataRWtoImage                      0x10000988   Section        0  system_tcasxxx.o(i.CopyDataRWtoImage)
+    i.DMA_Init                               0x100009b4   Section        0  dma.o(i.DMA_Init)
+    i.DMA_StartChannel                       0x100009fc   Section        0  dma.o(i.DMA_StartChannel)
+    i.DelayForCommandExeDone                 0x10000a14   Section        0  delay.o(i.DelayForCommandExeDone)
+    i.Display_Init                           0x10000a36   Section        0  displaydriver.o(i.Display_Init)
+    i.ErasePage                              0x10000a38   Section        0  defaultsetup.o(i.ErasePage)
+    i.Flash_DeInit                           0x10000a44   Section        0  flash.o(i.Flash_DeInit)
+    i.Flash_Init                             0x10000a50   Section        0  flash.o(i.Flash_Init)
+    i.GPIO_ClearBits                         0x10000a68   Section        0  gpio.o(i.GPIO_ClearBits)
+    i.GPIO_ClrAFMode                         0x10000a94   Section        0  gpio.o(i.GPIO_ClrAFMode)
+    i.GPIO_Config                            0x10000ab0   Section        0  gpio.o(i.GPIO_Config)
+    i.GPIO_ExtModeConfig                     0x10000ae4   Section        0  gpio.o(i.GPIO_ExtModeConfig)
+    i.GPIO_Init                              0x10000bb6   Section        0  gpio.o(i.GPIO_Init)
+    i.GPIO_PinMuxAdrMap                      0x10000cb0   Section        0  gpio.o(i.GPIO_PinMuxAdrMap)
+    GPIO_PinMuxAdrMap                        0x10000cb1   Thumb Code    98  gpio.o(i.GPIO_PinMuxAdrMap)
+    i.GPIO_RegisterMap                       0x10000d1c   Section        0  gpio.o(i.GPIO_RegisterMap)
+    GPIO_RegisterMap                         0x10000d1d   Thumb Code    96  gpio.o(i.GPIO_RegisterMap)
+    i.GPIO_SetAFMode                         0x10000d84   Section        0  gpio.o(i.GPIO_SetAFMode)
+    i.GPIO_SetBits                           0x10000dbe   Section        0  gpio.o(i.GPIO_SetBits)
+    i.HardFault_Handler                      0x10000dea   Section        0  interrupt.o(i.HardFault_Handler)
+    i.IC_PowupInit                           0x10000dec   Section        0  interrupt.o(i.IC_PowupInit)
+    i.IWDG_ClearITPending                    0x10000e34   Section        0  wdg.o(i.IWDG_ClearITPending)
+    i.IWDG_Enable                            0x10000e64   Section        0  wdg.o(i.IWDG_Enable)
+    i.IWDG_GetITFlag                         0x10000e74   Section        0  wdg.o(i.IWDG_GetITFlag)
+    i.IwdgCallback                           0x10000ea4   Section        0  systemdriver.o(i.IwdgCallback)
+    i.Light_AdaptBaselineSet                 0x10000edc   Section        0  lightdriver.o(i.Light_AdaptBaselineSet)
+    i.Light_AdjustDrive                      0x10000fdc   Section        0  lightdriver.o(i.Light_AdjustDrive)
+    i.Light_ProbeDriveAdjust                 0x10001130   Section        0  lightdriver.o(i.Light_ProbeDriveAdjust)
+    i.Light_StatSampleACVariety              0x10001240   Section        0  lightdriver.o(i.Light_StatSampleACVariety)
+    Light_StatSampleACVariety                0x10001241   Thumb Code   616  lightdriver.o(i.Light_StatSampleACVariety)
+    i.NMI_Handler                            0x100014b4   Section        0  interrupt.o(i.NMI_Handler)
+    i.OP2_OutPadConfig                       0x100014b8   Section        0  op.o(i.OP2_OutPadConfig)
+    i.OP2_VinPadConfig                       0x100014d0   Section        0  op.o(i.OP2_VinPadConfig)
+    i.OP2_VipPadConfig                       0x100014e8   Section        0  op.o(i.OP2_VipPadConfig)
+    i.OPA_Enable                             0x10001500   Section        0  op.o(i.OPA_Enable)
+    i.OPA_Init                               0x10001524   Section        0  op.o(i.OPA_Init)
+    i.PendSV_Handler                         0x10001634   Section        0  interrupt.o(i.PendSV_Handler)
+    i.PeripheralsRxDmaConfig                 0x10001638   Section        0  dma.o(i.PeripheralsRxDmaConfig)
+    i.PrintInit                              0x100016b0   Section        0  trace.o(i.PrintInit)
+    i.Process_FixedSmoothFilter              0x100016b4   Section        0  preprocess.o(i.Process_FixedSmoothFilter)
+    Process_FixedSmoothFilter                0x100016b5   Thumb Code   280  preprocess.o(i.Process_FixedSmoothFilter)
+    i.Process_LowPassFiltFIR                 0x100017d8   Section        0  preprocess.o(i.Process_LowPassFiltFIR)
+    Process_LowPassFiltFIR                   0x100017d9   Thumb Code   188  preprocess.o(i.Process_LowPassFiltFIR)
+    i.Process_ResampleSignal                 0x1000189c   Section        0  preprocess.o(i.Process_ResampleSignal)
+    Process_ResampleSignal                   0x1000189d   Thumb Code   192  preprocess.o(i.Process_ResampleSignal)
+    i.Process_SampleData                     0x10001968   Section        0  preprocess.o(i.Process_SampleData)
+    i.ReadFlashCfg                           0x10001a34   Section        0  defaultsetup.o(i.ReadFlashCfg)
+    i.SVC_Handler                            0x10001aa4   Section        0  interrupt.o(i.SVC_Handler)
+    i.SYS_ADC_Init                           0x10001aa8   Section        0  systemdriver.o(i.SYS_ADC_Init)
+    SYS_ADC_Init                             0x10001aa9   Thumb Code   232  systemdriver.o(i.SYS_ADC_Init)
+    i.SYS_GPIO_Init                          0x10001ba4   Section        0  systemdriver.o(i.SYS_GPIO_Init)
+    SYS_GPIO_Init                            0x10001ba5   Thumb Code   392  systemdriver.o(i.SYS_GPIO_Init)
+    i.SYS_Hardware_Init                      0x10001d38   Section        0  systemdriver.o(i.SYS_Hardware_Init)
+    i.SYS_Interrupt_Enable                   0x10001d54   Section        0  systemdriver.o(i.SYS_Interrupt_Enable)
+    i.SYS_ModuleDrive_Init                   0x10001dac   Section        0  systemdriver.o(i.SYS_ModuleDrive_Init)
+    i.SYS_OPA_Init                           0x10001db8   Section        0  systemdriver.o(i.SYS_OPA_Init)
+    SYS_OPA_Init                             0x10001db9   Thumb Code   136  systemdriver.o(i.SYS_OPA_Init)
+    i.SYS_PressKey_Init                      0x10001e40   Section        0  systemdriver.o(i.SYS_PressKey_Init)
+    SYS_PressKey_Init                        0x10001e41   Thumb Code    64  systemdriver.o(i.SYS_PressKey_Init)
+    i.SYS_TIMER_Init                         0x10001e80   Section        0  systemdriver.o(i.SYS_TIMER_Init)
+    SYS_TIMER_Init                           0x10001e81   Thumb Code    20  systemdriver.o(i.SYS_TIMER_Init)
+    i.SYS_TIMER_PWM_Init                     0x10001e9c   Section        0  systemdriver.o(i.SYS_TIMER_PWM_Init)
+    SYS_TIMER_PWM_Init                       0x10001e9d   Thumb Code    56  systemdriver.o(i.SYS_TIMER_PWM_Init)
+    i.SetTimer                               0x10001ed8   Section        0  timer.o(i.SetTimer)
+    i.Setup_RestoreDevice                    0x10001f50   Section        0  defaultsetup.o(i.Setup_RestoreDevice)
+    i.SysCheckTrimValid                      0x10001f80   Section        0  system_tcasxxx.o(i.SysCheckTrimValid)
+    i.SysTick_Handler                        0x10001fd4   Section        0  interrupt.o(i.SysTick_Handler)
+    i.SystemAnlogTrim                        0x10001fd6   Section        0  system_tcasxxx.o(i.SystemAnlogTrim)
+    i.SystemConfigFlash                      0x10001fd8   Section        0  system_tcasxxx.o(i.SystemConfigFlash)
+    i.SystemCoreClockUpdate                  0x10001ffc   Section        0  system_tcasxxx.o(i.SystemCoreClockUpdate)
+    i.SystemCoreSwitchHclkSrc                0x1000200c   Section        0  system_tcasxxx.o(i.SystemCoreSwitchHclkSrc)
+    i.SystemGetHClkFreq                      0x10002070   Section        0  system_tcasxxx.o(i.SystemGetHClkFreq)
+    i.SystemInit                             0x100020e4   Section        0  system_tcasxxx.o(i.SystemInit)
+    i.TCmain                                 0x10002150   Section        0  main.o(i.TCmain)
+    i.Tia_Enable                             0x10002188   Section        0  tia.o(i.Tia_Enable)
+    i.Tia_Init                               0x10002198   Section        0  tia.o(i.Tia_Init)
+    i.TriggerSARAdcStart                     0x10002284   Section        0  saradc.o(i.TriggerSARAdcStart)
+    i.WriteFlashCfg                          0x100022a4   Section        0  defaultsetup.o(i.WriteFlashCfg)
+    i.__ARM_clz                              0x100022fc   Section        0  depilogue.o(i.__ARM_clz)
+    i.__ARM_common_switch8                   0x1000232a   Section        0  lpm.o(i.__ARM_common_switch8)
+    i.__NVIC_ClearPendingIRQ                 0x10002344   Section        0  interrupt.o(i.__NVIC_ClearPendingIRQ)
+    __NVIC_ClearPendingIRQ                   0x10002345   Thumb Code    18  interrupt.o(i.__NVIC_ClearPendingIRQ)
+    i.__NVIC_EnableIRQ                       0x1000235c   Section        0  systemdriver.o(i.__NVIC_EnableIRQ)
+    __NVIC_EnableIRQ                         0x1000235d   Thumb Code    18  systemdriver.o(i.__NVIC_EnableIRQ)
+    i.__NVIC_SetPriority                     0x10002374   Section        0  systemdriver.o(i.__NVIC_SetPriority)
+    __NVIC_SetPriority                       0x10002375   Thumb Code    60  systemdriver.o(i.__NVIC_SetPriority)
+    i.aic_IRQHandler                         0x100023b8   Section        0  interrupt.o(i.aic_IRQHandler)
+    i.delay1ms                               0x1000245c   Section        0  delay.o(i.delay1ms)
+    i.fic_IRQHandler                         0x100024ac   Section        0  interrupt.o(i.fic_IRQHandler)
+    i.lic_IRQHandler                         0x10002718   Section        0  interrupt.o(i.lic_IRQHandler)
+    i.lowLevelInit                           0x100027c8   Section        0  segdriver.o(i.lowLevelInit)
+    lowLevelInit                             0x100027c9   Thumb Code   246  segdriver.o(i.lowLevelInit)
+    i.seg1_num_load                          0x100028be   Section        0  segdriver.o(i.seg1_num_load)
+    seg1_num_load                            0x100028bf   Thumb Code   320  segdriver.o(i.seg1_num_load)
+    i.seg1_show                              0x100029fe   Section        0  segdriver.o(i.seg1_show)
+    seg1_show                                0x100029ff   Thumb Code    22  segdriver.o(i.seg1_show)
+    i.seg2_num_load                          0x10002a14   Section        0  segdriver.o(i.seg2_num_load)
+    seg2_num_load                            0x10002a15   Thumb Code   320  segdriver.o(i.seg2_num_load)
+    i.seg2_show                              0x10002b54   Section        0  segdriver.o(i.seg2_show)
+    seg2_show                                0x10002b55   Thumb Code    22  segdriver.o(i.seg2_show)
+    i.seg3_num_load                          0x10002b6a   Section        0  segdriver.o(i.seg3_num_load)
+    seg3_num_load                            0x10002b6b   Thumb Code   320  segdriver.o(i.seg3_num_load)
+    i.seg3_show                              0x10002caa   Section        0  segdriver.o(i.seg3_show)
+    seg3_show                                0x10002cab   Thumb Code    22  segdriver.o(i.seg3_show)
+    i.seg4_num_load                          0x10002cc0   Section        0  segdriver.o(i.seg4_num_load)
+    seg4_num_load                            0x10002cc1   Thumb Code   320  segdriver.o(i.seg4_num_load)
+    i.seg4_show                              0x10002e00   Section        0  segdriver.o(i.seg4_show)
+    seg4_show                                0x10002e01   Thumb Code    22  segdriver.o(i.seg4_show)
+    i.seg5_num_load                          0x10002e16   Section        0  segdriver.o(i.seg5_num_load)
+    seg5_num_load                            0x10002e17   Thumb Code   320  segdriver.o(i.seg5_num_load)
+    i.seg5_show                              0x10002f56   Section        0  segdriver.o(i.seg5_show)
+    seg5_show                                0x10002f57   Thumb Code    22  segdriver.o(i.seg5_show)
+    i.seg6_num_load                          0x10002f6c   Section        0  segdriver.o(i.seg6_num_load)
+    seg6_num_load                            0x10002f6d   Thumb Code   320  segdriver.o(i.seg6_num_load)
+    i.seg6_show                              0x100030ac   Section        0  segdriver.o(i.seg6_show)
+    seg6_show                                0x100030ad   Thumb Code    22  segdriver.o(i.seg6_show)
+    i.seg7_num_load                          0x100030c2   Section        0  segdriver.o(i.seg7_num_load)
+    seg7_num_load                            0x100030c3   Thumb Code   320  segdriver.o(i.seg7_num_load)
+    i.seg7_show                              0x10003202   Section        0  segdriver.o(i.seg7_show)
+    seg7_show                                0x10003203   Thumb Code    22  segdriver.o(i.seg7_show)
+    i.seg8_num_load                          0x10003218   Section        0  segdriver.o(i.seg8_num_load)
+    seg8_num_load                            0x10003219   Thumb Code   320  segdriver.o(i.seg8_num_load)
+    i.seg8_show                              0x10003358   Section        0  segdriver.o(i.seg8_show)
+    seg8_show                                0x10003359   Thumb Code    22  segdriver.o(i.seg8_show)
+    i.segSetUp                               0x10003370   Section        0  segdriver.o(i.segSetUp)
+    i.segShow                                0x10003388   Section        0  segdriver.o(i.segShow)
+    i.seg_show_thread                        0x10003480   Section        0  segdriver.o(i.seg_show_thread)
+    i.stateShow                              0x100036d0   Section        0  segdriver.o(i.stateShow)
+    .constdata                               0x100039f8   Section       32  op.o(.constdata)
+    .constdata                               0x10003a18   Section       96  preprocess.o(.constdata)
 
     Global Symbols
 
@@ -1609,7 +1690,7 @@ Image Symbol Table
     __use_no_semihosting_swi                 0x00000000   Number         0  useno.o ABSOLUTE
     __use_no_signal_handling                 0x00000000   Number         0  useno.o ABSOLUTE
     __Vectors_Size                           0x0000004c   Number         0  startup_tcasxxx.o ABSOLUTE
-    Image$$RW_IRAM1$$Length                  0x00000148   Number         0  anon$$obj.o ABSOLUTE
+    Image$$RW_IRAM1$$Length                  0x00000160   Number         0  anon$$obj.o ABSOLUTE
     jump_table_base                          0x00004000   Data          32  interrupt.o(.jump_table_mem_area)
     Flash_ConfigRCTC                         0x00004021   Thumb Code    16  flash.o(RAMCODE)
     Image$$RW_IRAM1$$Base                    0x00004020   Number         0  anon$$obj.o ABSOLUTE
@@ -1619,33 +1700,37 @@ Image Symbol Table
     NVR_Write                                0x000040d9   Thumb Code    50  flash.o(RAMCODE)
     gSumVal                                  0x00004120   Data           4  interrupt.o(.data)
     SystemCoreClock                          0x00004138   Data           4  system_tcasxxx.o(.data)
-    gChkFunc                                 0x0000413c   Data           2  defaultsetup.o(.data)
-    gDriveRed                                0x00004146   Data           2  lightdriver.o(.data)
-    gDriveIrd                                0x00004148   Data           2  lightdriver.o(.data)
-    is_new_sample_ready                      0x0000414a   Data           1  preprocess.o(.data)
-    gInitCnt                                 0x0000414b   Data           1  preprocess.o(.data)
-    gCellVolt                                0x00004158   Data           2  displaydriver.o(.data)
-    gKeyCtrl                                 0x0000415a   Data           8  displaydriver.o(.data)
-    gBeepCtrl                                0x00004162   Data           6  buzzdriver.o(.data)
-    Image$$RW_IRAM1$$ZI$$Base                0x00004168   Number         0  anon$$obj.o ABSOLUTE
-    gCfgCtrl                                 0x00004168   Data          24  defaultsetup.o(.bss)
-    gCtrlRed                                 0x00004180   Data          16  lightdriver.o(.bss)
-    gCtrlIrd                                 0x00004190   Data          16  lightdriver.o(.bss)
-    gAdptRed                                 0x000041a0   Data          16  lightdriver.o(.bss)
-    gAdptIrd                                 0x000041b0   Data          16  lightdriver.o(.bss)
-    gFluCtrl                                 0x000041c0   Data          44  lightdriver.o(.bss)
-    gDmaAdcBuf                               0x000041ec   Data          32  preprocess.o(.bss)
-    gSampArray                               0x0000420c   Data          24  preprocess.o(.bss)
-    gFirBuf                                  0x00004224   Data         384  preprocess.o(.bss)
-    gSmoCtrl                                 0x000043a4   Data         596  preprocess.o(.bss)
-    gMenuBuf                                 0x00004618   Data         120  displaydriver.o(.bss)
-    gGuiCtrl                                 0x00004690   Data          20  displaydriver.o(.bss)
-    gAlmCtrl                                 0x000046a4   Data          12  displaydriver.o(.bss)
-    gSatParam                                0x000046b0   Data          18  displaydriver.o(.bss)
-    gSatSamp                                 0x000046c2   Data          16  displaydriver.o(.bss)
+    gDriveRed                                0x00004142   Data           2  lightdriver.o(.data)
+    gDriveIrd                                0x00004144   Data           2  lightdriver.o(.data)
+    is_new_sample_ready                      0x00004146   Data           1  preprocess.o(.data)
+    gInitCnt                                 0x00004147   Data           1  preprocess.o(.data)
+    gCellVolt                                0x00004154   Data           2  displaydriver.o(.data)
+    gKeyCtrl                                 0x00004156   Data           8  displaydriver.o(.data)
+    gBeepCtrl                                0x0000415e   Data           6  buzzdriver.o(.data)
+    isShowHeartSign                          0x00004164   Data           1  segdriver.o(.data)
+    state                                    0x00004168   Data           1  segdriver.o(.data)
+    PT_SpO2                                  0x0000416a   Data           2  segdriver.o(.data)
+    SEM_POLL                                 0x0000416c   Data           4  segdriver.o(.data)
+    anode_table                              0x00004170   Data          16  segdriver.o(.data)
+    Image$$RW_IRAM1$$ZI$$Base                0x00004180   Number         0  anon$$obj.o ABSOLUTE
+    gCfgCtrl                                 0x00004180   Data          24  defaultsetup.o(.bss)
+    gCtrlRed                                 0x00004198   Data          16  lightdriver.o(.bss)
+    gCtrlIrd                                 0x000041a8   Data          16  lightdriver.o(.bss)
+    gAdptRed                                 0x000041b8   Data          16  lightdriver.o(.bss)
+    gAdptIrd                                 0x000041c8   Data          16  lightdriver.o(.bss)
+    gFluCtrl                                 0x000041d8   Data          44  lightdriver.o(.bss)
+    gDmaAdcBuf                               0x00004204   Data          32  preprocess.o(.bss)
+    gSampArray                               0x00004224   Data          24  preprocess.o(.bss)
+    gFirBuf                                  0x0000423c   Data         384  preprocess.o(.bss)
+    gSmoCtrl                                 0x000043bc   Data         596  preprocess.o(.bss)
+    gMenuBuf                                 0x00004630   Data         120  displaydriver.o(.bss)
+    gGuiCtrl                                 0x000046a8   Data          20  displaydriver.o(.bss)
+    gAlmCtrl                                 0x000046bc   Data          12  displaydriver.o(.bss)
+    gSatParam                                0x000046c8   Data          18  displaydriver.o(.bss)
+    gSatSamp                                 0x000046da   Data          16  displaydriver.o(.bss)
     _SEGGER_RTT                              0x00004800   Data         120  segger_rtt.o(.ARM.__AT_0x00004800)
-    Image$$RW_IRAM1$$ZI$$Limit               0x00005088   Number         0  anon$$obj.o ABSOLUTE
-    __initial_sp                             0x00005088   Data           0  startup_tcasxxx.o(STACK)
+    Image$$RW_IRAM1$$ZI$$Limit               0x00004c78   Number         0  anon$$obj.o ABSOLUTE
+    __initial_sp                             0x00004c78   Data           0  startup_tcasxxx.o(STACK)
     __Vectors                                0x10000000   Data           4  startup_tcasxxx.o(RESET)
     Reset_Handler                            0x1000004d   Thumb Code    28  startup_tcasxxx.o(.text)
     __Vectors_End                            0x1000004c   Data           0  startup_tcasxxx.o(RESET)
@@ -1666,169 +1751,99 @@ Image Symbol Table
     __aeabi_memclr4                          0x10000137   Thumb Code     0  memseta.o(.text)
     __aeabi_memclr8                          0x10000137   Thumb Code     0  memseta.o(.text)
     _memset$wrapper                          0x1000013b   Thumb Code    18  memseta.o(.text)
-    strcpy                                   0x1000014d   Thumb Code    18  strcpy.o(.text)
-    __aeabi_fadd                             0x1000015f   Thumb Code   162  fadd.o(.text)
-    __aeabi_fsub                             0x10000201   Thumb Code     8  fadd.o(.text)
-    __aeabi_frsub                            0x10000209   Thumb Code     8  fadd.o(.text)
-    __aeabi_fmul                             0x10000211   Thumb Code   122  fmul.o(.text)
-    __aeabi_dmul                             0x1000028d   Thumb Code   202  dmul.o(.text)
-    __aeabi_ddiv                             0x1000035d   Thumb Code   234  ddiv.o(.text)
-    __aeabi_i2f                              0x1000044d   Thumb Code    22  fflti.o(.text)
-    __aeabi_i2d                              0x10000465   Thumb Code    34  dflti.o(.text)
-    __aeabi_f2iz                             0x1000048d   Thumb Code    50  ffixi.o(.text)
-    __aeabi_d2iz                             0x100004c1   Thumb Code    62  dfixi.o(.text)
-    __aeabi_llsr                             0x10000509   Thumb Code    34  llushr.o(.text)
-    _ll_ushift_r                             0x10000509   Thumb Code     0  llushr.o(.text)
-    __I$use$fp                               0x1000052b   Thumb Code     0  iusefp.o(.text)
-    _float_round                             0x1000052b   Thumb Code    16  fepilogue.o(.text)
-    _float_epilogue                          0x1000053b   Thumb Code   114  fepilogue.o(.text)
-    _double_round                            0x100005ad   Thumb Code    26  depilogue.o(.text)
-    _double_epilogue                         0x100005c7   Thumb Code   164  depilogue.o(.text)
-    __aeabi_llsl                             0x1000066b   Thumb Code    32  llshl.o(.text)
-    _ll_shift_l                              0x1000066b   Thumb Code     0  llshl.o(.text)
-    Long Thumb to Thumb Veneer to Flash_Erase 0x1000068d   Thumb Code    12  anon$$obj.o(Veneer$$Code)
-    Long Thumb to Thumb Veneer to Flash_ConfigRCTC 0x10000699   Thumb Code    12  anon$$obj.o(Veneer$$Code)
-    Long Thumb to Thumb Veneer to Flash_Write 0x100006a5   Thumb Code    12  anon$$obj.o(Veneer$$Code)
-    ADT_StartTimer                           0x100006b1   Thumb Code    12  timer.o(i.ADT_StartTimer)
-    Buzz_Speaker                             0x100006bd   Thumb Code   102  buzzdriver.o(i.Buzz_Speaker)
-    Cmp_CLKConfig                            0x1000072d   Thumb Code    80  cmp.o(i.Cmp_CLKConfig)
-    Cmp_Enable                               0x10000789   Thumb Code    28  cmp.o(i.Cmp_Enable)
-    Cmp_Init                                 0x100007a9   Thumb Code   432  cmp.o(i.Cmp_Init)
-    Cmp_VrefConfig                           0x10000961   Thumb Code   166  cmp.o(i.Cmp_VrefConfig)
-    CopyDataRWtoImage                        0x10000a0d   Thumb Code    32  system_tcasxxx.o(i.CopyDataRWtoImage)
-    DMA_Init                                 0x10000a39   Thumb Code    58  dma.o(i.DMA_Init)
-    DMA_StartChannel                         0x10000a81   Thumb Code    18  dma.o(i.DMA_StartChannel)
-    DelayForCommandExeDone                   0x10000a99   Thumb Code    34  delay.o(i.DelayForCommandExeDone)
-    Display_AlarmMenu                        0x10000abd   Thumb Code   184  displaydriver.o(i.Display_AlarmMenu)
-    Display_AlarmThrd                        0x10000b81   Thumb Code   808  displaydriver.o(i.Display_AlarmThrd)
-    Display_Bargraph                         0x10000eb5   Thumb Code   236  displaydriver.o(i.Display_Bargraph)
-    Display_BlinkSelection                   0x100011a9   Thumb Code   338  displaydriver.o(i.Display_BlinkSelection)
-    Display_GUI                              0x100013c9   Thumb Code  1290  displaydriver.o(i.Display_GUI)
-    Display_Init                             0x100018e1   Thumb Code    36  displaydriver.o(i.Display_Init)
-    Display_Pleth                            0x10001d01   Thumb Code   276  displaydriver.o(i.Display_Pleth)
-    Display_ProbeOff                         0x10001e21   Thumb Code    78  displaydriver.o(i.Display_ProbeOff)
-    Display_Pulse                            0x10001e7d   Thumb Code   494  displaydriver.o(i.Display_Pulse)
-    Display_SpO2                             0x10002079   Thumb Code   548  displaydriver.o(i.Display_SpO2)
-    ErasePage                                0x10002451   Thumb Code    10  defaultsetup.o(i.ErasePage)
-    Flash_DeInit                             0x1000245d   Thumb Code     8  flash.o(i.Flash_DeInit)
-    Flash_Init                               0x10002469   Thumb Code    16  flash.o(i.Flash_Init)
-    GPIO_ClearBits                           0x10002481   Thumb Code    44  gpio.o(i.GPIO_ClearBits)
-    GPIO_ClrAFMode                           0x100024ad   Thumb Code    28  gpio.o(i.GPIO_ClrAFMode)
-    GPIO_Init                                0x100024c9   Thumb Code   248  gpio.o(i.GPIO_Init)
-    GPIO_SetAFMode                           0x10002695   Thumb Code    58  gpio.o(i.GPIO_SetAFMode)
-    GPIO_SetBits                             0x100026cf   Thumb Code    44  gpio.o(i.GPIO_SetBits)
-    HardFault_Handler                        0x10002709   Thumb Code     2  interrupt.o(i.HardFault_Handler)
-    IC_PowupInit                             0x1000270d   Thumb Code    36  interrupt.o(i.IC_PowupInit)
-    IWDG_ClearITPending                      0x10002755   Thumb Code    44  wdg.o(i.IWDG_ClearITPending)
-    IWDG_Enable                              0x10002785   Thumb Code    12  wdg.o(i.IWDG_Enable)
-    IWDG_GetITFlag                           0x10002795   Thumb Code    42  wdg.o(i.IWDG_GetITFlag)
-    IwdgCallback                             0x100027c5   Thumb Code    46  systemdriver.o(i.IwdgCallback)
-    Light_AdaptBaselineSet                   0x100027fd   Thumb Code   246  lightdriver.o(i.Light_AdaptBaselineSet)
-    Light_AdjustDrive                        0x100028fd   Thumb Code   326  lightdriver.o(i.Light_AdjustDrive)
-    Light_ProbeDriveAdjust                   0x10002a51   Thumb Code   250  lightdriver.o(i.Light_ProbeDriveAdjust)
-    NMI_Handler                              0x10002dd5   Thumb Code     2  interrupt.o(i.NMI_Handler)
-    OP2_OutPadConfig                         0x10002dd9   Thumb Code    18  op.o(i.OP2_OutPadConfig)
-    OP2_VinPadConfig                         0x10002df1   Thumb Code    18  op.o(i.OP2_VinPadConfig)
-    OP2_VipPadConfig                         0x10002e09   Thumb Code    18  op.o(i.OP2_VipPadConfig)
-    OPA_Enable                               0x10002e21   Thumb Code    30  op.o(i.OPA_Enable)
-    OPA_Init                                 0x10002e45   Thumb Code   266  op.o(i.OPA_Init)
-    PendSV_Handler                           0x10002f55   Thumb Code     2  interrupt.o(i.PendSV_Handler)
-    PeripheralsRxDmaConfig                   0x10002f59   Thumb Code   104  dma.o(i.PeripheralsRxDmaConfig)
-    PrintInit                                0x10002fd1   Thumb Code     2  trace.o(i.PrintInit)
-    Process_SampleData                       0x10003289   Thumb Code   190  preprocess.o(i.Process_SampleData)
-    ReadFlashCfg                             0x10003355   Thumb Code    98  defaultsetup.o(i.ReadFlashCfg)
-    SEGGER_RTT_Write                         0x100033c5   Thumb Code    48  segger_rtt.o(i.SEGGER_RTT_Write)
-    SEGGER_RTT_WriteNoLock                   0x100033f9   Thumb Code   100  segger_rtt.o(i.SEGGER_RTT_WriteNoLock)
-    SEGGER_RTT_printf                        0x10003461   Thumb Code    24  segger_rtt_printf.o(i.SEGGER_RTT_printf)
-    SEGGER_RTT_vprintf                       0x10003479   Thumb Code   414  segger_rtt_printf.o(i.SEGGER_RTT_vprintf)
-    SPI_Init                                 0x10003617   Thumb Code   152  spi.o(i.SPI_Init)
-    SPI_SendData_Host                        0x100036af   Thumb Code    34  spi.o(i.SPI_SendData_Host)
-    SPI_SetCpolCpha                          0x100036d1   Thumb Code    24  spi.o(i.SPI_SetCpolCpha)
-    SPI_SetFrameSize                         0x100036e9   Thumb Code    40  spi.o(i.SPI_SetFrameSize)
-    SPI_SetRfr                               0x10003711   Thumb Code    20  spi.o(i.SPI_SetRfr)
-    SVC_Handler                              0x10003725   Thumb Code     2  interrupt.o(i.SVC_Handler)
-    SYS_Hardware_Init                        0x10003a71   Thumb Code    36  systemdriver.o(i.SYS_Hardware_Init)
-    SYS_Interrupt_Enable                     0x10003a95   Thumb Code    72  systemdriver.o(i.SYS_Interrupt_Enable)
-    SYS_ModuleDrive_Init                     0x10003aed   Thumb Code    12  systemdriver.o(i.SYS_ModuleDrive_Init)
-    SetTimer                                 0x10003c41   Thumb Code   120  timer.o(i.SetTimer)
-    Setup_RestoreDevice                      0x10003cb9   Thumb Code    40  defaultsetup.o(i.Setup_RestoreDevice)
-    Setup_UpdateDevice                       0x10003ce9   Thumb Code    40  defaultsetup.o(i.Setup_UpdateDevice)
-    SysCheckTrimValid                        0x10003d19   Thumb Code    74  system_tcasxxx.o(i.SysCheckTrimValid)
-    SysTick_Handler                          0x10003d6d   Thumb Code     2  interrupt.o(i.SysTick_Handler)
-    SystemAnlogTrim                          0x10003d6f   Thumb Code     2  system_tcasxxx.o(i.SystemAnlogTrim)
-    SystemConfigFlash                        0x10003d71   Thumb Code    28  system_tcasxxx.o(i.SystemConfigFlash)
-    SystemCoreClockUpdate                    0x10003d95   Thumb Code    12  system_tcasxxx.o(i.SystemCoreClockUpdate)
-    SystemCoreSwitchHclkSrc                  0x10003da5   Thumb Code    92  system_tcasxxx.o(i.SystemCoreSwitchHclkSrc)
-    SystemGetHClkFreq                        0x10003e09   Thumb Code    84  system_tcasxxx.o(i.SystemGetHClkFreq)
-    SystemInit                               0x10003e7d   Thumb Code    96  system_tcasxxx.o(i.SystemInit)
-    TCmain                                   0x10003ee9   Thumb Code    42  main.o(i.TCmain)
-    Tia_Enable                               0x10003f1d   Thumb Code    12  tia.o(i.Tia_Enable)
-    Tia_Init                                 0x10003f2d   Thumb Code   232  tia.o(i.Tia_Init)
-    TriggerSARAdcStart                       0x10004019   Thumb Code    26  saradc.o(i.TriggerSARAdcStart)
-    UG2864_ClearRegion                       0x10004039   Thumb Code   138  ug2864driver.o(i.UG2864_ClearRegion)
-    UG2864_Display                           0x100040c5   Thumb Code   154  ug2864driver.o(i.UG2864_Display)
-    UG2864_Fill_RAM                          0x10004165   Thumb Code    44  ug2864driver.o(i.UG2864_Fill_RAM)
-    UG2864_OLED_Init                         0x10004191   Thumb Code   112  ug2864driver.o(i.UG2864_OLED_Init)
-    UG2864_Set_Addressing_Mode               0x10004209   Thumb Code    12  ug2864driver.o(i.UG2864_Set_Addressing_Mode)
-    UG2864_Set_Common_Config                 0x10004215   Thumb Code    20  ug2864driver.o(i.UG2864_Set_Common_Config)
-    UG2864_Set_Common_Remap                  0x10004229   Thumb Code    12  ug2864driver.o(i.UG2864_Set_Common_Remap)
-    UG2864_Set_Contrast_Control              0x10004235   Thumb Code    18  ug2864driver.o(i.UG2864_Set_Contrast_Control)
-    UG2864_Set_Display_Clock                 0x10004247   Thumb Code    18  ug2864driver.o(i.UG2864_Set_Display_Clock)
-    UG2864_Set_Display_Offset                0x10004259   Thumb Code    18  ug2864driver.o(i.UG2864_Set_Display_Offset)
-    UG2864_Set_Display_On_Off                0x1000426b   Thumb Code    12  ug2864driver.o(i.UG2864_Set_Display_On_Off)
-    UG2864_Set_Entire_Display                0x10004277   Thumb Code    12  ug2864driver.o(i.UG2864_Set_Entire_Display)
-    UG2864_Set_Inverse_Display               0x10004283   Thumb Code    12  ug2864driver.o(i.UG2864_Set_Inverse_Display)
-    UG2864_Set_Multiplex_Ratio               0x1000428f   Thumb Code    18  ug2864driver.o(i.UG2864_Set_Multiplex_Ratio)
-    UG2864_Set_Precharge_Period              0x100042a1   Thumb Code    18  ug2864driver.o(i.UG2864_Set_Precharge_Period)
-    UG2864_Set_Pump                          0x100042b3   Thumb Code    18  ug2864driver.o(i.UG2864_Set_Pump)
-    UG2864_Set_Segment_Remap                 0x100042c5   Thumb Code    12  ug2864driver.o(i.UG2864_Set_Segment_Remap)
-    UG2864_Set_Start_Column                  0x100042d1   Thumb Code    22  ug2864driver.o(i.UG2864_Set_Start_Column)
-    UG2864_Set_Start_Line                    0x100042e7   Thumb Code    12  ug2864driver.o(i.UG2864_Set_Start_Line)
-    UG2864_Set_Start_Page                    0x100042f3   Thumb Code    12  ug2864driver.o(i.UG2864_Set_Start_Page)
-    UG2864_Set_VCOMH                         0x100042ff   Thumb Code    18  ug2864driver.o(i.UG2864_Set_VCOMH)
-    WriteFlashCfg                            0x10004361   Thumb Code    70  defaultsetup.o(i.WriteFlashCfg)
-    __ARM_clz                                0x100046eb   Thumb Code    46  depilogue.o(i.__ARM_clz)
-    __ARM_common_switch8                     0x10004719   Thumb Code    26  lpm.o(i.__ARM_common_switch8)
-    aic_IRQHandler                           0x100047c1   Thumb Code   178  interrupt.o(i.aic_IRQHandler)
-    delay1ms                                 0x10004889   Thumb Code    66  delay.o(i.delay1ms)
-    fic_IRQHandler                           0x100048d9   Thumb Code   516  interrupt.o(i.fic_IRQHandler)
-    lic_IRQHandler                           0x10004b15   Thumb Code    42  interrupt.o(i.lic_IRQHandler)
-    gSampleFIR                               0x10004b80   Data          96  preprocess.o(.constdata)
-    gDirMapping                              0x10004be0   Data           4  displaydriver.o(.constdata)
-    gDirMappingBigFont                       0x10004be4   Data           4  displaydriver.o(.constdata)
-    gLogoNarigmed                            0x10004c08   Data         436  fontlibs.o(.constdata)
-    gAlarmFont                               0x10004dbc   Data         562  fontlibs.o(.constdata)
-    gAlarmDigit                              0x10004fee   Data         368  fontlibs.o(.constdata)
-    gHorSpO2                                 0x1000515e   Data         752  fontlibs.o(.constdata)
-    gVerSpO2                                 0x1000544e   Data         484  fontlibs.o(.constdata)
-    gHorPluse                                0x10005632   Data         429  fontlibs.o(.constdata)
-    gVerPluse                                0x100057df   Data         396  fontlibs.o(.constdata)
-    gHorParamPI                              0x1000596b   Data         206  fontlibs.o(.constdata)
-    gVerParamPI                              0x10005a39   Data         156  fontlibs.o(.constdata)
-    gHorCaptionSat                           0x10005ad5   Data          70  fontlibs.o(.constdata)
-    gVerCaptionSat                           0x10005b1b   Data          60  fontlibs.o(.constdata)
-    gHorCaptionPR                            0x10005b57   Data          78  fontlibs.o(.constdata)
-    gVerCaptionPR                            0x10005ba5   Data          45  fontlibs.o(.constdata)
-    gHorCaptionPI                            0x10005bd2   Data          21  fontlibs.o(.constdata)
-    gVerCaptionPI                            0x10005be7   Data          21  fontlibs.o(.constdata)
-    gAllBattery                              0x10005bfc   Data          14  fontlibs.o(.constdata)
-    gHorBluetoothLogo                        0x10005c0a   Data          44  fontlibs.o(.constdata)
-    gHorHw                                   0x10005c36   Data          18  fontlibs.o(.constdata)
-    gHorSw                                   0x10005c48   Data          18  fontlibs.o(.constdata)
-    gHorBarGrid_15                           0x10005c5a   Data           6  fontlibs.o(.constdata)
-    gHorBarGrid_16                           0x10005c60   Data           6  fontlibs.o(.constdata)
-    gHorBarGrid_27                           0x10005c66   Data          16  fontlibs.o(.constdata)
-    gHorBarGrid_28                           0x10005c76   Data          16  fontlibs.o(.constdata)
-    gHorBarGrid_39                           0x10005c86   Data          30  fontlibs.o(.constdata)
-    gHorBarGrid_3A                           0x10005ca4   Data          30  fontlibs.o(.constdata)
-    gHorBarGrid_4B                           0x10005cc2   Data          48  fontlibs.o(.constdata)
-    gHorBarGrid_4C                           0x10005cf2   Data          48  fontlibs.o(.constdata)
-    gVerBarGrid                              0x10005d22   Data          64  fontlibs.o(.constdata)
-    gProbeOff                                0x10005d62   Data         168  fontlibs.o(.constdata)
-    gDepletePWR                              0x10005e0a   Data          62  fontlibs.o(.constdata)
-    gBrightnessTab                           0x10005e48   Data           6  ug2864driver.o(.constdata)
-    gInvertMap                               0x10005e4e   Data         256  ug2864driver.o(.constdata)
-    Load$$RW_IRAM1$$Base                     0x10005f80   Number         0  anon$$obj.o ABSOLUTE
+    __aeabi_fadd                             0x1000014d   Thumb Code   162  fadd.o(.text)
+    __aeabi_fsub                             0x100001ef   Thumb Code     8  fadd.o(.text)
+    __aeabi_frsub                            0x100001f7   Thumb Code     8  fadd.o(.text)
+    __aeabi_fmul                             0x100001ff   Thumb Code   122  fmul.o(.text)
+    __aeabi_dmul                             0x10000279   Thumb Code   202  dmul.o(.text)
+    __aeabi_ddiv                             0x10000349   Thumb Code   234  ddiv.o(.text)
+    __aeabi_i2f                              0x10000439   Thumb Code    22  fflti.o(.text)
+    __aeabi_i2d                              0x10000451   Thumb Code    34  dflti.o(.text)
+    __aeabi_f2iz                             0x10000479   Thumb Code    50  ffixi.o(.text)
+    __aeabi_d2iz                             0x100004ad   Thumb Code    62  dfixi.o(.text)
+    __aeabi_llsr                             0x100004f5   Thumb Code    34  llushr.o(.text)
+    _ll_ushift_r                             0x100004f5   Thumb Code     0  llushr.o(.text)
+    __I$use$fp                               0x10000517   Thumb Code     0  iusefp.o(.text)
+    _float_round                             0x10000517   Thumb Code    16  fepilogue.o(.text)
+    _float_epilogue                          0x10000527   Thumb Code   114  fepilogue.o(.text)
+    _double_round                            0x10000599   Thumb Code    26  depilogue.o(.text)
+    _double_epilogue                         0x100005b3   Thumb Code   164  depilogue.o(.text)
+    __aeabi_llsl                             0x10000657   Thumb Code    32  llshl.o(.text)
+    _ll_shift_l                              0x10000657   Thumb Code     0  llshl.o(.text)
+    Long Thumb to Thumb Veneer to Flash_Erase 0x10000679   Thumb Code    12  anon$$obj.o(Veneer$$Code)
+    Long Thumb to Thumb Veneer to Flash_ConfigRCTC 0x10000685   Thumb Code    12  anon$$obj.o(Veneer$$Code)
+    Long Thumb to Thumb Veneer to Flash_Write 0x10000691   Thumb Code    12  anon$$obj.o(Veneer$$Code)
+    ADT_StartTimer                           0x1000069d   Thumb Code    12  timer.o(i.ADT_StartTimer)
+    Cmp_CLKConfig                            0x100006a9   Thumb Code    80  cmp.o(i.Cmp_CLKConfig)
+    Cmp_Enable                               0x10000705   Thumb Code    28  cmp.o(i.Cmp_Enable)
+    Cmp_Init                                 0x10000725   Thumb Code   432  cmp.o(i.Cmp_Init)
+    Cmp_VrefConfig                           0x100008dd   Thumb Code   166  cmp.o(i.Cmp_VrefConfig)
+    CopyDataRWtoImage                        0x10000989   Thumb Code    32  system_tcasxxx.o(i.CopyDataRWtoImage)
+    DMA_Init                                 0x100009b5   Thumb Code    58  dma.o(i.DMA_Init)
+    DMA_StartChannel                         0x100009fd   Thumb Code    18  dma.o(i.DMA_StartChannel)
+    DelayForCommandExeDone                   0x10000a15   Thumb Code    34  delay.o(i.DelayForCommandExeDone)
+    Display_Init                             0x10000a37   Thumb Code     2  displaydriver.o(i.Display_Init)
+    ErasePage                                0x10000a39   Thumb Code    10  defaultsetup.o(i.ErasePage)
+    Flash_DeInit                             0x10000a45   Thumb Code     8  flash.o(i.Flash_DeInit)
+    Flash_Init                               0x10000a51   Thumb Code    16  flash.o(i.Flash_Init)
+    GPIO_ClearBits                           0x10000a69   Thumb Code    44  gpio.o(i.GPIO_ClearBits)
+    GPIO_ClrAFMode                           0x10000a95   Thumb Code    28  gpio.o(i.GPIO_ClrAFMode)
+    GPIO_Config                              0x10000ab1   Thumb Code    52  gpio.o(i.GPIO_Config)
+    GPIO_ExtModeConfig                       0x10000ae5   Thumb Code   210  gpio.o(i.GPIO_ExtModeConfig)
+    GPIO_Init                                0x10000bb7   Thumb Code   248  gpio.o(i.GPIO_Init)
+    GPIO_SetAFMode                           0x10000d85   Thumb Code    58  gpio.o(i.GPIO_SetAFMode)
+    GPIO_SetBits                             0x10000dbf   Thumb Code    44  gpio.o(i.GPIO_SetBits)
+    HardFault_Handler                        0x10000deb   Thumb Code     2  interrupt.o(i.HardFault_Handler)
+    IC_PowupInit                             0x10000ded   Thumb Code    36  interrupt.o(i.IC_PowupInit)
+    IWDG_ClearITPending                      0x10000e35   Thumb Code    44  wdg.o(i.IWDG_ClearITPending)
+    IWDG_Enable                              0x10000e65   Thumb Code    12  wdg.o(i.IWDG_Enable)
+    IWDG_GetITFlag                           0x10000e75   Thumb Code    42  wdg.o(i.IWDG_GetITFlag)
+    IwdgCallback                             0x10000ea5   Thumb Code    46  systemdriver.o(i.IwdgCallback)
+    Light_AdaptBaselineSet                   0x10000edd   Thumb Code   246  lightdriver.o(i.Light_AdaptBaselineSet)
+    Light_AdjustDrive                        0x10000fdd   Thumb Code   326  lightdriver.o(i.Light_AdjustDrive)
+    Light_ProbeDriveAdjust                   0x10001131   Thumb Code   250  lightdriver.o(i.Light_ProbeDriveAdjust)
+    NMI_Handler                              0x100014b5   Thumb Code     2  interrupt.o(i.NMI_Handler)
+    OP2_OutPadConfig                         0x100014b9   Thumb Code    18  op.o(i.OP2_OutPadConfig)
+    OP2_VinPadConfig                         0x100014d1   Thumb Code    18  op.o(i.OP2_VinPadConfig)
+    OP2_VipPadConfig                         0x100014e9   Thumb Code    18  op.o(i.OP2_VipPadConfig)
+    OPA_Enable                               0x10001501   Thumb Code    30  op.o(i.OPA_Enable)
+    OPA_Init                                 0x10001525   Thumb Code   266  op.o(i.OPA_Init)
+    PendSV_Handler                           0x10001635   Thumb Code     2  interrupt.o(i.PendSV_Handler)
+    PeripheralsRxDmaConfig                   0x10001639   Thumb Code   104  dma.o(i.PeripheralsRxDmaConfig)
+    PrintInit                                0x100016b1   Thumb Code     2  trace.o(i.PrintInit)
+    Process_SampleData                       0x10001969   Thumb Code   190  preprocess.o(i.Process_SampleData)
+    ReadFlashCfg                             0x10001a35   Thumb Code    98  defaultsetup.o(i.ReadFlashCfg)
+    SVC_Handler                              0x10001aa5   Thumb Code     2  interrupt.o(i.SVC_Handler)
+    SYS_Hardware_Init                        0x10001d39   Thumb Code    28  systemdriver.o(i.SYS_Hardware_Init)
+    SYS_Interrupt_Enable                     0x10001d55   Thumb Code    72  systemdriver.o(i.SYS_Interrupt_Enable)
+    SYS_ModuleDrive_Init                     0x10001dad   Thumb Code    12  systemdriver.o(i.SYS_ModuleDrive_Init)
+    SetTimer                                 0x10001ed9   Thumb Code   120  timer.o(i.SetTimer)
+    Setup_RestoreDevice                      0x10001f51   Thumb Code    40  defaultsetup.o(i.Setup_RestoreDevice)
+    SysCheckTrimValid                        0x10001f81   Thumb Code    74  system_tcasxxx.o(i.SysCheckTrimValid)
+    SysTick_Handler                          0x10001fd5   Thumb Code     2  interrupt.o(i.SysTick_Handler)
+    SystemAnlogTrim                          0x10001fd7   Thumb Code     2  system_tcasxxx.o(i.SystemAnlogTrim)
+    SystemConfigFlash                        0x10001fd9   Thumb Code    28  system_tcasxxx.o(i.SystemConfigFlash)
+    SystemCoreClockUpdate                    0x10001ffd   Thumb Code    12  system_tcasxxx.o(i.SystemCoreClockUpdate)
+    SystemCoreSwitchHclkSrc                  0x1000200d   Thumb Code    92  system_tcasxxx.o(i.SystemCoreSwitchHclkSrc)
+    SystemGetHClkFreq                        0x10002071   Thumb Code    84  system_tcasxxx.o(i.SystemGetHClkFreq)
+    SystemInit                               0x100020e5   Thumb Code    96  system_tcasxxx.o(i.SystemInit)
+    TCmain                                   0x10002151   Thumb Code    46  main.o(i.TCmain)
+    Tia_Enable                               0x10002189   Thumb Code    12  tia.o(i.Tia_Enable)
+    Tia_Init                                 0x10002199   Thumb Code   232  tia.o(i.Tia_Init)
+    TriggerSARAdcStart                       0x10002285   Thumb Code    26  saradc.o(i.TriggerSARAdcStart)
+    WriteFlashCfg                            0x100022a5   Thumb Code    70  defaultsetup.o(i.WriteFlashCfg)
+    __ARM_clz                                0x100022fd   Thumb Code    46  depilogue.o(i.__ARM_clz)
+    __ARM_common_switch8                     0x1000232b   Thumb Code    26  lpm.o(i.__ARM_common_switch8)
+    aic_IRQHandler                           0x100023b9   Thumb Code   142  interrupt.o(i.aic_IRQHandler)
+    delay1ms                                 0x1000245d   Thumb Code    66  delay.o(i.delay1ms)
+    fic_IRQHandler                           0x100024ad   Thumb Code   550  interrupt.o(i.fic_IRQHandler)
+    lic_IRQHandler                           0x10002719   Thumb Code   158  interrupt.o(i.lic_IRQHandler)
+    segSetUp                                 0x10003371   Thumb Code    18  segdriver.o(i.segSetUp)
+    segShow                                  0x10003389   Thumb Code   242  segdriver.o(i.segShow)
+    seg_show_thread                          0x10003481   Thumb Code   572  segdriver.o(i.seg_show_thread)
+    stateShow                                0x100036d1   Thumb Code   808  segdriver.o(i.stateShow)
+    gSampleFIR                               0x10003a18   Data          96  preprocess.o(.constdata)
+    Load$$RW_IRAM1$$Base                     0x10003a98   Number         0  anon$$obj.o ABSOLUTE
 
 
 
@@ -1838,257 +1853,178 @@ Memory Map of the image
 
   Image Entry point : 0x1000004d
 
-  Load Region LR_IROM1 (Base: 0x10000000, Size: 0x000060c8, Max: 0x00010000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x10000000, Size: 0x00003bf8, Max: 0x00010000, ABSOLUTE)
 
-    Execution Region JUMP_TABLE (Exec base: 0x00004000, Load base: 0x10005f60, Size: 0x00000020, Max: 0x00000020, ABSOLUTE)
-
-    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
-
-    0x00004000   0x10005f60   0x00000020   Data   RW         1282    .jump_table_mem_area  interrupt.o
-
-
-    Execution Region RW_IRAM1 (Exec base: 0x00004020, Load base: 0x10005f80, Size: 0x00001068, Max: 0x00001fe0, ABSOLUTE)
+    Execution Region JUMP_TABLE (Exec base: 0x00004000, Load base: 0x10003a78, Size: 0x00000020, Max: 0x00000020, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x00004020   0x10005f80   0x000000f4   Code   RO         1164    RAMCODE             flash.o
-    0x00004114   0x10006074   0x00000024   Data   RW         1281    .data               interrupt.o
-    0x00004138   0x10006098   0x00000004   Data   RW         2020    .data               system_tcasxxx.o
-    0x0000413c   0x1000609c   0x00000002   Data   RW         2088    .data               defaultsetup.o
-    0x0000413e   0x1000609e   0x00000002   PAD
-    0x00004140   0x100060a0   0x00000004   Data   RW         2089    .data               defaultsetup.o
-    0x00004144   0x100060a4   0x00000006   Data   RW         2145    .data               lightdriver.o
-    0x0000414a   0x100060aa   0x00000004   Data   RW         2205    .data               preprocess.o
-    0x0000414e   0x100060ae   0x00000014   Data   RW         2295    .data               displaydriver.o
-    0x00004162   0x100060c2   0x00000006   Data   RW         2729    .data               buzzdriver.o
-    0x00004168        -       0x00000018   Zero   RW         2087    .bss                defaultsetup.o
-    0x00004180        -       0x0000006c   Zero   RW         2143    .bss                lightdriver.o
-    0x000041ec        -       0x00000020   Zero   RW         2202    .bss                preprocess.o
-    0x0000420c        -       0x0000040c   Zero   RW         2203    .bss                preprocess.o
-    0x00004618        -       0x000000aa   Zero   RW         2292    .bss                displaydriver.o
-    0x000046c2        -       0x00000010   Zero   RW         2293    .bss                displaydriver.o
-    0x000046d2   0x100060c8   0x0000012e   PAD
-    0x00004800        -       0x00000078   Zero   RW         2777    .ARM.__AT_0x00004800  segger_rtt.o
-    0x00004878        -       0x00000410   Zero   RW         2778    .bss                segger_rtt.o
-    0x00004c88        -       0x00000400   Zero   RW         2003    STACK               startup_tcasxxx.o
+    0x00004000   0x10003a78   0x00000020   Data   RW         1290    .jump_table_mem_area  interrupt.o
 
 
-    Execution Region ER_IROM1 (Exec base: 0x10000000, Load base: 0x10000000, Size: 0x00005f60, Max: 0x00010000, ABSOLUTE)
+    Execution Region RW_IRAM1 (Exec base: 0x00004020, Load base: 0x10003a98, Size: 0x00000c58, Max: 0x00001fe0, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x10000000   0x10000000   0x0000004c   Data   RO         2005    RESET               startup_tcasxxx.o
-    0x1000004c   0x1000004c   0x00000048   Code   RO         2006  * .text               startup_tcasxxx.o
-    0x10000094   0x10000094   0x0000002c   Code   RO         3126    .text               mc_p.l(uidiv.o)
-    0x100000c0   0x100000c0   0x00000028   Code   RO         3128    .text               mc_p.l(idiv.o)
-    0x100000e8   0x100000e8   0x00000040   Code   RO         3132    .text               mc_p.l(memmovea.o)
-    0x10000128   0x10000128   0x00000024   Code   RO         3134    .text               mc_p.l(memseta.o)
-    0x1000014c   0x1000014c   0x00000012   Code   RO         3140    .text               mc_p.l(strcpy.o)
-    0x1000015e   0x1000015e   0x000000b2   Code   RO         3406    .text               mf_p.l(fadd.o)
-    0x10000210   0x10000210   0x0000007a   Code   RO         3408    .text               mf_p.l(fmul.o)
-    0x1000028a   0x1000028a   0x00000002   PAD
-    0x1000028c   0x1000028c   0x000000d0   Code   RO         3412    .text               mf_p.l(dmul.o)
-    0x1000035c   0x1000035c   0x000000f0   Code   RO         3414    .text               mf_p.l(ddiv.o)
-    0x1000044c   0x1000044c   0x00000016   Code   RO         3416    .text               mf_p.l(fflti.o)
-    0x10000462   0x10000462   0x00000002   PAD
-    0x10000464   0x10000464   0x00000028   Code   RO         3420    .text               mf_p.l(dflti.o)
-    0x1000048c   0x1000048c   0x00000032   Code   RO         3422    .text               mf_p.l(ffixi.o)
-    0x100004be   0x100004be   0x00000002   PAD
-    0x100004c0   0x100004c0   0x00000048   Code   RO         3426    .text               mf_p.l(dfixi.o)
-    0x10000508   0x10000508   0x00000022   Code   RO         3430    .text               mc_p.l(llushr.o)
-    0x1000052a   0x1000052a   0x00000000   Code   RO         3432    .text               mc_p.l(iusefp.o)
-    0x1000052a   0x1000052a   0x00000082   Code   RO         3433    .text               mf_p.l(fepilogue.o)
-    0x100005ac   0x100005ac   0x000000be   Code   RO         3435    .text               mf_p.l(depilogue.o)
-    0x1000066a   0x1000066a   0x00000020   Code   RO         3445    .text               mc_p.l(llshl.o)
-    0x1000068a   0x1000068a   0x00000002   PAD
-    0x1000068c   0x1000068c   0x0000000c   Ven    RO         3450    Veneer$$Code        anon$$obj.o
-    0x10000698   0x10000698   0x0000000c   Ven    RO         3451    Veneer$$Code        anon$$obj.o
-    0x100006a4   0x100006a4   0x0000000c   Ven    RO         3452    Veneer$$Code        anon$$obj.o
-    0x100006b0   0x100006b0   0x0000000c   Code   RO         1031    i.ADT_StartTimer    timer.o
-    0x100006bc   0x100006bc   0x00000070   Code   RO         2728    i.Buzz_Speaker      buzzdriver.o
-    0x1000072c   0x1000072c   0x0000005c   Code   RO          975    i.Cmp_CLKConfig     cmp.o
-    0x10000788   0x10000788   0x00000020   Code   RO          978    i.Cmp_Enable        cmp.o
-    0x100007a8   0x100007a8   0x000001b8   Code   RO          979    i.Cmp_Init          cmp.o
-    0x10000960   0x10000960   0x000000ac   Code   RO          981    i.Cmp_VrefConfig    cmp.o
-    0x10000a0c   0x10000a0c   0x0000002c   Code   RO         2012    i.CopyDataRWtoImage  system_tcasxxx.o
-    0x10000a38   0x10000a38   0x00000048   Code   RO          401    i.DMA_Init          dma.o
-    0x10000a80   0x10000a80   0x00000018   Code   RO          403    i.DMA_StartChannel  dma.o
-    0x10000a98   0x10000a98   0x00000022   Code   RO          357    i.DelayForCommandExeDone  delay.o
-    0x10000aba   0x10000aba   0x00000002   PAD
-    0x10000abc   0x10000abc   0x000000c4   Code   RO         2274    i.Display_AlarmMenu  displaydriver.o
-    0x10000b80   0x10000b80   0x00000334   Code   RO         2275    i.Display_AlarmThrd  displaydriver.o
-    0x10000eb4   0x10000eb4   0x00000110   Code   RO         2276    i.Display_Bargraph  displaydriver.o
-    0x10000fc4   0x10000fc4   0x000001a0   Code   RO         2277    i.Display_Battery   displaydriver.o
-    0x10001164   0x10001164   0x00000044   Code   RO         2278    i.Display_Ble       displaydriver.o
-    0x100011a8   0x100011a8   0x00000164   Code   RO         2279    i.Display_BlinkSelection  displaydriver.o
-    0x1000130c   0x1000130c   0x000000bc   Code   RO         2280    i.Display_Caption   displaydriver.o
-    0x100013c8   0x100013c8   0x00000518   Code   RO         2281    i.Display_GUI       displaydriver.o
-    0x100018e0   0x100018e0   0x00000030   Code   RO         2282    i.Display_Init      displaydriver.o
-    0x10001910   0x10001910   0x00000038   Code   RO         2283    i.Display_Logo      displaydriver.o
-    0x10001948   0x10001948   0x000003b8   Code   RO         2284    i.Display_Perfusion  displaydriver.o
-    0x10001d00   0x10001d00   0x00000120   Code   RO         2285    i.Display_Pleth     displaydriver.o
-    0x10001e20   0x10001e20   0x0000005c   Code   RO         2286    i.Display_ProbeOff  displaydriver.o
-    0x10001e7c   0x10001e7c   0x000001fc   Code   RO         2287    i.Display_Pulse     displaydriver.o
-    0x10002078   0x10002078   0x00000230   Code   RO         2288    i.Display_SpO2      displaydriver.o
-    0x100022a8   0x100022a8   0x000001a8   Code   RO         2289    i.Display_Version   displaydriver.o
-    0x10002450   0x10002450   0x0000000a   Code   RO         2081    i.ErasePage         defaultsetup.o
-    0x1000245a   0x1000245a   0x00000002   PAD
-    0x1000245c   0x1000245c   0x0000000c   Code   RO         1165    i.Flash_DeInit      flash.o
-    0x10002468   0x10002468   0x00000018   Code   RO         1166    i.Flash_Init        flash.o
-    0x10002480   0x10002480   0x0000002c   Code   RO          241    i.GPIO_ClearBits    gpio.o
-    0x100024ac   0x100024ac   0x0000001c   Code   RO          243    i.GPIO_ClrAFMode    gpio.o
-    0x100024c8   0x100024c8   0x000000f8   Code   RO          250    i.GPIO_Init         gpio.o
-    0x100025c0   0x100025c0   0x0000006c   Code   RO          251    i.GPIO_PinMuxAdrMap  gpio.o
-    0x1000262c   0x1000262c   0x00000068   Code   RO          252    i.GPIO_RegisterMap  gpio.o
-    0x10002694   0x10002694   0x0000003a   Code   RO          253    i.GPIO_SetAFMode    gpio.o
-    0x100026ce   0x100026ce   0x0000002c   Code   RO          254    i.GPIO_SetBits      gpio.o
-    0x100026fa   0x100026fa   0x00000006   Code   RO         2290    i.GetHardwareVer    displaydriver.o
-    0x10002700   0x10002700   0x00000008   Code   RO         2291    i.GetSoftwareVer    displaydriver.o
-    0x10002708   0x10002708   0x00000002   Code   RO         1261    i.HardFault_Handler  interrupt.o
-    0x1000270a   0x1000270a   0x00000002   PAD
-    0x1000270c   0x1000270c   0x00000048   Code   RO         1265    i.IC_PowupInit      interrupt.o
-    0x10002754   0x10002754   0x00000030   Code   RO         1865    i.IWDG_ClearITPending  wdg.o
-    0x10002784   0x10002784   0x00000010   Code   RO         1867    i.IWDG_Enable       wdg.o
-    0x10002794   0x10002794   0x00000030   Code   RO         1868    i.IWDG_GetITFlag    wdg.o
-    0x100027c4   0x100027c4   0x00000038   Code   RO            3    i.IwdgCallback      systemdriver.o
-    0x100027fc   0x100027fc   0x00000100   Code   RO         2139    i.Light_AdaptBaselineSet  lightdriver.o
-    0x100028fc   0x100028fc   0x00000154   Code   RO         2140    i.Light_AdjustDrive  lightdriver.o
-    0x10002a50   0x10002a50   0x00000110   Code   RO         2141    i.Light_ProbeDriveAdjust  lightdriver.o
-    0x10002b60   0x10002b60   0x00000274   Code   RO         2142    i.Light_StatSampleACVariety  lightdriver.o
-    0x10002dd4   0x10002dd4   0x00000002   Code   RO         1266    i.NMI_Handler       interrupt.o
-    0x10002dd6   0x10002dd6   0x00000002   PAD
-    0x10002dd8   0x10002dd8   0x00000018   Code   RO          718    i.OP2_OutPadConfig  op.o
-    0x10002df0   0x10002df0   0x00000018   Code   RO          719    i.OP2_VinPadConfig  op.o
-    0x10002e08   0x10002e08   0x00000018   Code   RO          720    i.OP2_VipPadConfig  op.o
-    0x10002e20   0x10002e20   0x00000024   Code   RO          722    i.OPA_Enable        op.o
-    0x10002e44   0x10002e44   0x00000110   Code   RO          724    i.OPA_Init          op.o
-    0x10002f54   0x10002f54   0x00000002   Code   RO         1267    i.PendSV_Handler    interrupt.o
-    0x10002f56   0x10002f56   0x00000002   PAD
-    0x10002f58   0x10002f58   0x00000078   Code   RO          405    i.PeripheralsRxDmaConfig  dma.o
-    0x10002fd0   0x10002fd0   0x00000002   Code   RO         3047    i.PrintInit         trace.o
-    0x10002fd2   0x10002fd2   0x00000002   PAD
-    0x10002fd4   0x10002fd4   0x00000124   Code   RO         2198    i.Process_FixedSmoothFilter  preprocess.o
-    0x100030f8   0x100030f8   0x000000c4   Code   RO         2199    i.Process_LowPassFiltFIR  preprocess.o
-    0x100031bc   0x100031bc   0x000000cc   Code   RO         2200    i.Process_ResampleSignal  preprocess.o
-    0x10003288   0x10003288   0x000000cc   Code   RO         2201    i.Process_SampleData  preprocess.o
-    0x10003354   0x10003354   0x00000070   Code   RO         2082    i.ReadFlashCfg      defaultsetup.o
-    0x100033c4   0x100033c4   0x00000034   Code   RO         2767    i.SEGGER_RTT_Write  segger_rtt.o
-    0x100033f8   0x100033f8   0x00000068   Code   RO         2768    i.SEGGER_RTT_WriteNoLock  segger_rtt.o
-    0x10003460   0x10003460   0x00000018   Code   RO         2911    i.SEGGER_RTT_printf  segger_rtt_printf.o
-    0x10003478   0x10003478   0x0000019e   Code   RO         2912    i.SEGGER_RTT_vprintf  segger_rtt_printf.o
-    0x10003616   0x10003616   0x00000098   Code   RO         1688    i.SPI_Init          spi.o
-    0x100036ae   0x100036ae   0x00000022   Code   RO         1692    i.SPI_SendData_Host  spi.o
-    0x100036d0   0x100036d0   0x00000018   Code   RO         1695    i.SPI_SetCpolCpha   spi.o
-    0x100036e8   0x100036e8   0x00000028   Code   RO         1696    i.SPI_SetFrameSize  spi.o
-    0x10003710   0x10003710   0x00000014   Code   RO         1698    i.SPI_SetRfr        spi.o
-    0x10003724   0x10003724   0x00000002   Code   RO         1268    i.SVC_Handler       interrupt.o
-    0x10003726   0x10003726   0x00000002   PAD
-    0x10003728   0x10003728   0x000000fc   Code   RO            4    i.SYS_ADC_Init      systemdriver.o
-    0x10003824   0x10003824   0x00000040   Code   RO            5    i.SYS_Buzz_Init     systemdriver.o
-    0x10003864   0x10003864   0x0000020c   Code   RO            6    i.SYS_GPIO_Init     systemdriver.o
-    0x10003a70   0x10003a70   0x00000024   Code   RO            7    i.SYS_Hardware_Init  systemdriver.o
-    0x10003a94   0x10003a94   0x00000058   Code   RO            8    i.SYS_Interrupt_Enable  systemdriver.o
-    0x10003aec   0x10003aec   0x0000000c   Code   RO            9    i.SYS_ModuleDrive_Init  systemdriver.o
-    0x10003af8   0x10003af8   0x00000088   Code   RO           10    i.SYS_OPA_Init      systemdriver.o
-    0x10003b80   0x10003b80   0x00000040   Code   RO           11    i.SYS_PressKey_Init  systemdriver.o
-    0x10003bc0   0x10003bc0   0x00000028   Code   RO           12    i.SYS_SPI0_Init     systemdriver.o
-    0x10003be8   0x10003be8   0x0000001c   Code   RO           13    i.SYS_TIMER_Init    systemdriver.o
-    0x10003c04   0x10003c04   0x0000003c   Code   RO           14    i.SYS_TIMER_PWM_Init  systemdriver.o
-    0x10003c40   0x10003c40   0x00000078   Code   RO         1041    i.SetTimer          timer.o
-    0x10003cb8   0x10003cb8   0x00000030   Code   RO         2084    i.Setup_RestoreDevice  defaultsetup.o
-    0x10003ce8   0x10003ce8   0x00000030   Code   RO         2085    i.Setup_UpdateDevice  defaultsetup.o
-    0x10003d18   0x10003d18   0x00000054   Code   RO         2013    i.SysCheckTrimValid  system_tcasxxx.o
-    0x10003d6c   0x10003d6c   0x00000002   Code   RO         1269    i.SysTick_Handler   interrupt.o
-    0x10003d6e   0x10003d6e   0x00000002   Code   RO         2014    i.SystemAnlogTrim   system_tcasxxx.o
-    0x10003d70   0x10003d70   0x00000024   Code   RO         2015    i.SystemConfigFlash  system_tcasxxx.o
-    0x10003d94   0x10003d94   0x00000010   Code   RO         2016    i.SystemCoreClockUpdate  system_tcasxxx.o
-    0x10003da4   0x10003da4   0x00000064   Code   RO         2017    i.SystemCoreSwitchHclkSrc  system_tcasxxx.o
-    0x10003e08   0x10003e08   0x00000074   Code   RO         2018    i.SystemGetHClkFreq  system_tcasxxx.o
-    0x10003e7c   0x10003e7c   0x0000006c   Code   RO         2019    i.SystemInit        system_tcasxxx.o
-    0x10003ee8   0x10003ee8   0x00000034   Code   RO          208    i.TCmain            main.o
-    0x10003f1c   0x10003f1c   0x00000010   Code   RO          797    i.Tia_Enable        tia.o
-    0x10003f2c   0x10003f2c   0x000000ec   Code   RO          798    i.Tia_Init          tia.o
-    0x10004018   0x10004018   0x00000020   Code   RO          853    i.TriggerSARAdcStart  saradc.o
-    0x10004038   0x10004038   0x0000008a   Code   RO         2452    i.UG2864_ClearRegion  ug2864driver.o
-    0x100040c2   0x100040c2   0x00000002   PAD
-    0x100040c4   0x100040c4   0x000000a0   Code   RO         2456    i.UG2864_Display    ug2864driver.o
-    0x10004164   0x10004164   0x0000002c   Code   RO         2457    i.UG2864_Fill_RAM   ug2864driver.o
-    0x10004190   0x10004190   0x00000078   Code   RO         2459    i.UG2864_OLED_Init  ug2864driver.o
-    0x10004208   0x10004208   0x0000000c   Code   RO         2461    i.UG2864_Set_Addressing_Mode  ug2864driver.o
-    0x10004214   0x10004214   0x00000014   Code   RO         2465    i.UG2864_Set_Common_Config  ug2864driver.o
-    0x10004228   0x10004228   0x0000000c   Code   RO         2466    i.UG2864_Set_Common_Remap  ug2864driver.o
-    0x10004234   0x10004234   0x00000012   Code   RO         2467    i.UG2864_Set_Contrast_Control  ug2864driver.o
-    0x10004246   0x10004246   0x00000012   Code   RO         2469    i.UG2864_Set_Display_Clock  ug2864driver.o
-    0x10004258   0x10004258   0x00000012   Code   RO         2470    i.UG2864_Set_Display_Offset  ug2864driver.o
-    0x1000426a   0x1000426a   0x0000000c   Code   RO         2471    i.UG2864_Set_Display_On_Off  ug2864driver.o
-    0x10004276   0x10004276   0x0000000c   Code   RO         2472    i.UG2864_Set_Entire_Display  ug2864driver.o
-    0x10004282   0x10004282   0x0000000c   Code   RO         2473    i.UG2864_Set_Inverse_Display  ug2864driver.o
-    0x1000428e   0x1000428e   0x00000012   Code   RO         2475    i.UG2864_Set_Multiplex_Ratio  ug2864driver.o
-    0x100042a0   0x100042a0   0x00000012   Code   RO         2478    i.UG2864_Set_Precharge_Period  ug2864driver.o
-    0x100042b2   0x100042b2   0x00000012   Code   RO         2479    i.UG2864_Set_Pump   ug2864driver.o
-    0x100042c4   0x100042c4   0x0000000c   Code   RO         2481    i.UG2864_Set_Segment_Remap  ug2864driver.o
-    0x100042d0   0x100042d0   0x00000016   Code   RO         2482    i.UG2864_Set_Start_Column  ug2864driver.o
-    0x100042e6   0x100042e6   0x0000000c   Code   RO         2483    i.UG2864_Set_Start_Line  ug2864driver.o
-    0x100042f2   0x100042f2   0x0000000c   Code   RO         2484    i.UG2864_Set_Start_Page  ug2864driver.o
-    0x100042fe   0x100042fe   0x00000012   Code   RO         2485    i.UG2864_Set_VCOMH  ug2864driver.o
-    0x10004310   0x10004310   0x00000028   Code   RO         2488    i.UG2864_Write_Command  ug2864driver.o
-    0x10004338   0x10004338   0x00000028   Code   RO         2489    i.UG2864_Write_Data  ug2864driver.o
-    0x10004360   0x10004360   0x00000058   Code   RO         2086    i.WriteFlashCfg     defaultsetup.o
-    0x100043b8   0x100043b8   0x0000006c   Code   RO         2772    i._DoInit           segger_rtt.o
-    0x10004424   0x10004424   0x00000018   Code   RO         2773    i._GetAvailWriteSpace  segger_rtt.o
-    0x1000443c   0x1000443c   0x000000e6   Code   RO         2913    i._PrintInt         segger_rtt_printf.o
-    0x10004522   0x10004522   0x00000002   PAD
-    0x10004524   0x10004524   0x000000e8   Code   RO         2914    i._PrintUnsigned    segger_rtt_printf.o
-    0x1000460c   0x1000460c   0x0000003e   Code   RO         2915    i._StoreChar        segger_rtt_printf.o
-    0x1000464a   0x1000464a   0x00000062   Code   RO         2775    i._WriteBlocking    segger_rtt.o
-    0x100046ac   0x100046ac   0x0000003e   Code   RO         2776    i._WriteNoCheck     segger_rtt.o
-    0x100046ea   0x100046ea   0x0000002e   Code   RO         3437    i.__ARM_clz         mf_p.l(depilogue.o)
-    0x10004718   0x10004718   0x0000001a   Code   RO         1475    i.__ARM_common_switch8  lpm.o
-    0x10004732   0x10004732   0x00000002   PAD
-    0x10004734   0x10004734   0x00000018   Code   RO         1275    i.__NVIC_ClearPendingIRQ  interrupt.o
-    0x1000474c   0x1000474c   0x00000018   Code   RO           15    i.__NVIC_EnableIRQ  systemdriver.o
-    0x10004764   0x10004764   0x00000018   Code   RO         1276    i.__NVIC_SetPendingIRQ  interrupt.o
-    0x1000477c   0x1000477c   0x00000044   Code   RO           16    i.__NVIC_SetPriority  systemdriver.o
-    0x100047c0   0x100047c0   0x000000c8   Code   RO         1277    i.aic_IRQHandler    interrupt.o
-    0x10004888   0x10004888   0x00000050   Code   RO          360    i.delay1ms          delay.o
-    0x100048d8   0x100048d8   0x0000023c   Code   RO         1279    i.fic_IRQHandler    interrupt.o
-    0x10004b14   0x10004b14   0x00000030   Code   RO         1280    i.lic_IRQHandler    interrupt.o
-    0x10004b44   0x10004b44   0x0000001c   Data   RO           17    .constdata          systemdriver.o
-    0x10004b60   0x10004b60   0x00000020   Data   RO          728    .constdata          op.o
-    0x10004b80   0x10004b80   0x00000060   Data   RO         2204    .constdata          preprocess.o
-    0x10004be0   0x10004be0   0x00000028   Data   RO         2294    .constdata          displaydriver.o
-    0x10004c08   0x10004c08   0x000001b4   Data   RO         2408    .constdata          fontlibs.o
-    0x10004dbc   0x10004dbc   0x00000232   Data   RO         2410    .constdata          fontlibs.o
-    0x10004fee   0x10004fee   0x00000170   Data   RO         2411    .constdata          fontlibs.o
-    0x1000515e   0x1000515e   0x000002f0   Data   RO         2412    .constdata          fontlibs.o
-    0x1000544e   0x1000544e   0x000001e4   Data   RO         2413    .constdata          fontlibs.o
-    0x10005632   0x10005632   0x000001ad   Data   RO         2414    .constdata          fontlibs.o
-    0x100057df   0x100057df   0x0000018c   Data   RO         2415    .constdata          fontlibs.o
-    0x1000596b   0x1000596b   0x000000ce   Data   RO         2416    .constdata          fontlibs.o
-    0x10005a39   0x10005a39   0x0000009c   Data   RO         2417    .constdata          fontlibs.o
-    0x10005ad5   0x10005ad5   0x00000046   Data   RO         2418    .constdata          fontlibs.o
-    0x10005b1b   0x10005b1b   0x0000003c   Data   RO         2419    .constdata          fontlibs.o
-    0x10005b57   0x10005b57   0x0000004e   Data   RO         2420    .constdata          fontlibs.o
-    0x10005ba5   0x10005ba5   0x0000002d   Data   RO         2421    .constdata          fontlibs.o
-    0x10005bd2   0x10005bd2   0x00000015   Data   RO         2422    .constdata          fontlibs.o
-    0x10005be7   0x10005be7   0x00000015   Data   RO         2423    .constdata          fontlibs.o
-    0x10005bfc   0x10005bfc   0x0000000e   Data   RO         2424    .constdata          fontlibs.o
-    0x10005c0a   0x10005c0a   0x0000002c   Data   RO         2425    .constdata          fontlibs.o
-    0x10005c36   0x10005c36   0x00000012   Data   RO         2426    .constdata          fontlibs.o
-    0x10005c48   0x10005c48   0x00000012   Data   RO         2427    .constdata          fontlibs.o
-    0x10005c5a   0x10005c5a   0x00000006   Data   RO         2428    .constdata          fontlibs.o
-    0x10005c60   0x10005c60   0x00000006   Data   RO         2429    .constdata          fontlibs.o
-    0x10005c66   0x10005c66   0x00000010   Data   RO         2430    .constdata          fontlibs.o
-    0x10005c76   0x10005c76   0x00000010   Data   RO         2431    .constdata          fontlibs.o
-    0x10005c86   0x10005c86   0x0000001e   Data   RO         2432    .constdata          fontlibs.o
-    0x10005ca4   0x10005ca4   0x0000001e   Data   RO         2433    .constdata          fontlibs.o
-    0x10005cc2   0x10005cc2   0x00000030   Data   RO         2434    .constdata          fontlibs.o
-    0x10005cf2   0x10005cf2   0x00000030   Data   RO         2435    .constdata          fontlibs.o
-    0x10005d22   0x10005d22   0x00000040   Data   RO         2436    .constdata          fontlibs.o
-    0x10005d62   0x10005d62   0x000000a8   Data   RO         2437    .constdata          fontlibs.o
-    0x10005e0a   0x10005e0a   0x0000003e   Data   RO         2438    .constdata          fontlibs.o
-    0x10005e48   0x10005e48   0x00000106   Data   RO         2491    .constdata          ug2864driver.o
-    0x10005f4e   0x10005f4e   0x00000010   Data   RO         2916    .constdata          segger_rtt_printf.o
+    0x00004020   0x10003a98   0x000000f4   Code   RO         1173    RAMCODE             flash.o
+    0x00004114   0x10003b8c   0x00000024   Data   RW         1289    .data               interrupt.o
+    0x00004138   0x10003bb0   0x00000004   Data   RW         2028    .data               system_tcasxxx.o
+    0x0000413c   0x10003bb4   0x00000004   Data   RW         2097    .data               defaultsetup.o
+    0x00004140   0x10003bb8   0x00000006   Data   RW         2153    .data               lightdriver.o
+    0x00004146   0x10003bbe   0x00000004   Data   RW         2213    .data               preprocess.o
+    0x0000414a   0x10003bc2   0x00000014   Data   RW         2303    .data               displaydriver.o
+    0x0000415e   0x10003bd6   0x00000006   Data   RW         2737    .data               buzzdriver.o
+    0x00004164   0x10003bdc   0x0000001c   Data   RW         3096    .data               segdriver.o
+    0x00004180        -       0x00000018   Zero   RW         2095    .bss                defaultsetup.o
+    0x00004198        -       0x0000006c   Zero   RW         2151    .bss                lightdriver.o
+    0x00004204        -       0x00000020   Zero   RW         2210    .bss                preprocess.o
+    0x00004224        -       0x0000040c   Zero   RW         2211    .bss                preprocess.o
+    0x00004630        -       0x000000aa   Zero   RW         2300    .bss                displaydriver.o
+    0x000046da        -       0x00000010   Zero   RW         2301    .bss                displaydriver.o
+    0x000046ea   0x10003bf8   0x00000116   PAD
+    0x00004800        -       0x00000078   Zero   RW         2785    .ARM.__AT_0x00004800  segger_rtt.o
+    0x00004878        -       0x00000400   Zero   RW         2011    STACK               startup_tcasxxx.o
+
+
+    Execution Region ER_IROM1 (Exec base: 0x10000000, Load base: 0x10000000, Size: 0x00003a78, Max: 0x00010000, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x10000000   0x10000000   0x0000004c   Data   RO         2013    RESET               startup_tcasxxx.o
+    0x1000004c   0x1000004c   0x00000048   Code   RO         2014  * .text               startup_tcasxxx.o
+    0x10000094   0x10000094   0x0000002c   Code   RO         3263    .text               mc_p.l(uidiv.o)
+    0x100000c0   0x100000c0   0x00000028   Code   RO         3265    .text               mc_p.l(idiv.o)
+    0x100000e8   0x100000e8   0x00000040   Code   RO         3269    .text               mc_p.l(memmovea.o)
+    0x10000128   0x10000128   0x00000024   Code   RO         3271    .text               mc_p.l(memseta.o)
+    0x1000014c   0x1000014c   0x000000b2   Code   RO         3543    .text               mf_p.l(fadd.o)
+    0x100001fe   0x100001fe   0x0000007a   Code   RO         3545    .text               mf_p.l(fmul.o)
+    0x10000278   0x10000278   0x000000d0   Code   RO         3549    .text               mf_p.l(dmul.o)
+    0x10000348   0x10000348   0x000000f0   Code   RO         3551    .text               mf_p.l(ddiv.o)
+    0x10000438   0x10000438   0x00000016   Code   RO         3553    .text               mf_p.l(fflti.o)
+    0x1000044e   0x1000044e   0x00000002   PAD
+    0x10000450   0x10000450   0x00000028   Code   RO         3557    .text               mf_p.l(dflti.o)
+    0x10000478   0x10000478   0x00000032   Code   RO         3559    .text               mf_p.l(ffixi.o)
+    0x100004aa   0x100004aa   0x00000002   PAD
+    0x100004ac   0x100004ac   0x00000048   Code   RO         3563    .text               mf_p.l(dfixi.o)
+    0x100004f4   0x100004f4   0x00000022   Code   RO         3567    .text               mc_p.l(llushr.o)
+    0x10000516   0x10000516   0x00000000   Code   RO         3569    .text               mc_p.l(iusefp.o)
+    0x10000516   0x10000516   0x00000082   Code   RO         3570    .text               mf_p.l(fepilogue.o)
+    0x10000598   0x10000598   0x000000be   Code   RO         3572    .text               mf_p.l(depilogue.o)
+    0x10000656   0x10000656   0x00000020   Code   RO         3582    .text               mc_p.l(llshl.o)
+    0x10000676   0x10000676   0x00000002   PAD
+    0x10000678   0x10000678   0x0000000c   Ven    RO         3587    Veneer$$Code        anon$$obj.o
+    0x10000684   0x10000684   0x0000000c   Ven    RO         3588    Veneer$$Code        anon$$obj.o
+    0x10000690   0x10000690   0x0000000c   Ven    RO         3589    Veneer$$Code        anon$$obj.o
+    0x1000069c   0x1000069c   0x0000000c   Code   RO         1040    i.ADT_StartTimer    timer.o
+    0x100006a8   0x100006a8   0x0000005c   Code   RO          984    i.Cmp_CLKConfig     cmp.o
+    0x10000704   0x10000704   0x00000020   Code   RO          987    i.Cmp_Enable        cmp.o
+    0x10000724   0x10000724   0x000001b8   Code   RO          988    i.Cmp_Init          cmp.o
+    0x100008dc   0x100008dc   0x000000ac   Code   RO          990    i.Cmp_VrefConfig    cmp.o
+    0x10000988   0x10000988   0x0000002c   Code   RO         2020    i.CopyDataRWtoImage  system_tcasxxx.o
+    0x100009b4   0x100009b4   0x00000048   Code   RO          410    i.DMA_Init          dma.o
+    0x100009fc   0x100009fc   0x00000018   Code   RO          412    i.DMA_StartChannel  dma.o
+    0x10000a14   0x10000a14   0x00000022   Code   RO          366    i.DelayForCommandExeDone  delay.o
+    0x10000a36   0x10000a36   0x00000002   Code   RO         2290    i.Display_Init      displaydriver.o
+    0x10000a38   0x10000a38   0x0000000a   Code   RO         2089    i.ErasePage         defaultsetup.o
+    0x10000a42   0x10000a42   0x00000002   PAD
+    0x10000a44   0x10000a44   0x0000000c   Code   RO         1174    i.Flash_DeInit      flash.o
+    0x10000a50   0x10000a50   0x00000018   Code   RO         1175    i.Flash_Init        flash.o
+    0x10000a68   0x10000a68   0x0000002c   Code   RO          250    i.GPIO_ClearBits    gpio.o
+    0x10000a94   0x10000a94   0x0000001c   Code   RO          252    i.GPIO_ClrAFMode    gpio.o
+    0x10000ab0   0x10000ab0   0x00000034   Code   RO          253    i.GPIO_Config       gpio.o
+    0x10000ae4   0x10000ae4   0x000000d2   Code   RO          254    i.GPIO_ExtModeConfig  gpio.o
+    0x10000bb6   0x10000bb6   0x000000f8   Code   RO          259    i.GPIO_Init         gpio.o
+    0x10000cae   0x10000cae   0x00000002   PAD
+    0x10000cb0   0x10000cb0   0x0000006c   Code   RO          260    i.GPIO_PinMuxAdrMap  gpio.o
+    0x10000d1c   0x10000d1c   0x00000068   Code   RO          261    i.GPIO_RegisterMap  gpio.o
+    0x10000d84   0x10000d84   0x0000003a   Code   RO          262    i.GPIO_SetAFMode    gpio.o
+    0x10000dbe   0x10000dbe   0x0000002c   Code   RO          263    i.GPIO_SetBits      gpio.o
+    0x10000dea   0x10000dea   0x00000002   Code   RO         1270    i.HardFault_Handler  interrupt.o
+    0x10000dec   0x10000dec   0x00000048   Code   RO         1274    i.IC_PowupInit      interrupt.o
+    0x10000e34   0x10000e34   0x00000030   Code   RO         1873    i.IWDG_ClearITPending  wdg.o
+    0x10000e64   0x10000e64   0x00000010   Code   RO         1875    i.IWDG_Enable       wdg.o
+    0x10000e74   0x10000e74   0x00000030   Code   RO         1876    i.IWDG_GetITFlag    wdg.o
+    0x10000ea4   0x10000ea4   0x00000038   Code   RO            3    i.IwdgCallback      systemdriver.o
+    0x10000edc   0x10000edc   0x00000100   Code   RO         2147    i.Light_AdaptBaselineSet  lightdriver.o
+    0x10000fdc   0x10000fdc   0x00000154   Code   RO         2148    i.Light_AdjustDrive  lightdriver.o
+    0x10001130   0x10001130   0x00000110   Code   RO         2149    i.Light_ProbeDriveAdjust  lightdriver.o
+    0x10001240   0x10001240   0x00000274   Code   RO         2150    i.Light_StatSampleACVariety  lightdriver.o
+    0x100014b4   0x100014b4   0x00000002   Code   RO         1275    i.NMI_Handler       interrupt.o
+    0x100014b6   0x100014b6   0x00000002   PAD
+    0x100014b8   0x100014b8   0x00000018   Code   RO          727    i.OP2_OutPadConfig  op.o
+    0x100014d0   0x100014d0   0x00000018   Code   RO          728    i.OP2_VinPadConfig  op.o
+    0x100014e8   0x100014e8   0x00000018   Code   RO          729    i.OP2_VipPadConfig  op.o
+    0x10001500   0x10001500   0x00000024   Code   RO          731    i.OPA_Enable        op.o
+    0x10001524   0x10001524   0x00000110   Code   RO          733    i.OPA_Init          op.o
+    0x10001634   0x10001634   0x00000002   Code   RO         1276    i.PendSV_Handler    interrupt.o
+    0x10001636   0x10001636   0x00000002   PAD
+    0x10001638   0x10001638   0x00000078   Code   RO          414    i.PeripheralsRxDmaConfig  dma.o
+    0x100016b0   0x100016b0   0x00000002   Code   RO         3055    i.PrintInit         trace.o
+    0x100016b2   0x100016b2   0x00000002   PAD
+    0x100016b4   0x100016b4   0x00000124   Code   RO         2206    i.Process_FixedSmoothFilter  preprocess.o
+    0x100017d8   0x100017d8   0x000000c4   Code   RO         2207    i.Process_LowPassFiltFIR  preprocess.o
+    0x1000189c   0x1000189c   0x000000cc   Code   RO         2208    i.Process_ResampleSignal  preprocess.o
+    0x10001968   0x10001968   0x000000cc   Code   RO         2209    i.Process_SampleData  preprocess.o
+    0x10001a34   0x10001a34   0x00000070   Code   RO         2090    i.ReadFlashCfg      defaultsetup.o
+    0x10001aa4   0x10001aa4   0x00000002   Code   RO         1277    i.SVC_Handler       interrupt.o
+    0x10001aa6   0x10001aa6   0x00000002   PAD
+    0x10001aa8   0x10001aa8   0x000000fc   Code   RO            4    i.SYS_ADC_Init      systemdriver.o
+    0x10001ba4   0x10001ba4   0x00000194   Code   RO            5    i.SYS_GPIO_Init     systemdriver.o
+    0x10001d38   0x10001d38   0x0000001c   Code   RO            6    i.SYS_Hardware_Init  systemdriver.o
+    0x10001d54   0x10001d54   0x00000058   Code   RO            7    i.SYS_Interrupt_Enable  systemdriver.o
+    0x10001dac   0x10001dac   0x0000000c   Code   RO            8    i.SYS_ModuleDrive_Init  systemdriver.o
+    0x10001db8   0x10001db8   0x00000088   Code   RO            9    i.SYS_OPA_Init      systemdriver.o
+    0x10001e40   0x10001e40   0x00000040   Code   RO           10    i.SYS_PressKey_Init  systemdriver.o
+    0x10001e80   0x10001e80   0x0000001c   Code   RO           11    i.SYS_TIMER_Init    systemdriver.o
+    0x10001e9c   0x10001e9c   0x0000003c   Code   RO           12    i.SYS_TIMER_PWM_Init  systemdriver.o
+    0x10001ed8   0x10001ed8   0x00000078   Code   RO         1050    i.SetTimer          timer.o
+    0x10001f50   0x10001f50   0x00000030   Code   RO         2092    i.Setup_RestoreDevice  defaultsetup.o
+    0x10001f80   0x10001f80   0x00000054   Code   RO         2021    i.SysCheckTrimValid  system_tcasxxx.o
+    0x10001fd4   0x10001fd4   0x00000002   Code   RO         1278    i.SysTick_Handler   interrupt.o
+    0x10001fd6   0x10001fd6   0x00000002   Code   RO         2022    i.SystemAnlogTrim   system_tcasxxx.o
+    0x10001fd8   0x10001fd8   0x00000024   Code   RO         2023    i.SystemConfigFlash  system_tcasxxx.o
+    0x10001ffc   0x10001ffc   0x00000010   Code   RO         2024    i.SystemCoreClockUpdate  system_tcasxxx.o
+    0x1000200c   0x1000200c   0x00000064   Code   RO         2025    i.SystemCoreSwitchHclkSrc  system_tcasxxx.o
+    0x10002070   0x10002070   0x00000074   Code   RO         2026    i.SystemGetHClkFreq  system_tcasxxx.o
+    0x100020e4   0x100020e4   0x0000006c   Code   RO         2027    i.SystemInit        system_tcasxxx.o
+    0x10002150   0x10002150   0x00000038   Code   RO          197    i.TCmain            main.o
+    0x10002188   0x10002188   0x00000010   Code   RO          806    i.Tia_Enable        tia.o
+    0x10002198   0x10002198   0x000000ec   Code   RO          807    i.Tia_Init          tia.o
+    0x10002284   0x10002284   0x00000020   Code   RO          862    i.TriggerSARAdcStart  saradc.o
+    0x100022a4   0x100022a4   0x00000058   Code   RO         2094    i.WriteFlashCfg     defaultsetup.o
+    0x100022fc   0x100022fc   0x0000002e   Code   RO         3574    i.__ARM_clz         mf_p.l(depilogue.o)
+    0x1000232a   0x1000232a   0x0000001a   Code   RO         1483    i.__ARM_common_switch8  lpm.o
+    0x10002344   0x10002344   0x00000018   Code   RO         1284    i.__NVIC_ClearPendingIRQ  interrupt.o
+    0x1000235c   0x1000235c   0x00000018   Code   RO           13    i.__NVIC_EnableIRQ  systemdriver.o
+    0x10002374   0x10002374   0x00000044   Code   RO           14    i.__NVIC_SetPriority  systemdriver.o
+    0x100023b8   0x100023b8   0x000000a4   Code   RO         1285    i.aic_IRQHandler    interrupt.o
+    0x1000245c   0x1000245c   0x00000050   Code   RO          369    i.delay1ms          delay.o
+    0x100024ac   0x100024ac   0x0000026c   Code   RO         1287    i.fic_IRQHandler    interrupt.o
+    0x10002718   0x10002718   0x000000b0   Code   RO         1288    i.lic_IRQHandler    interrupt.o
+    0x100027c8   0x100027c8   0x000000f6   Code   RO         3075    i.lowLevelInit      segdriver.o
+    0x100028be   0x100028be   0x00000140   Code   RO         3076    i.seg1_num_load     segdriver.o
+    0x100029fe   0x100029fe   0x00000016   Code   RO         3077    i.seg1_show         segdriver.o
+    0x10002a14   0x10002a14   0x00000140   Code   RO         3078    i.seg2_num_load     segdriver.o
+    0x10002b54   0x10002b54   0x00000016   Code   RO         3079    i.seg2_show         segdriver.o
+    0x10002b6a   0x10002b6a   0x00000140   Code   RO         3080    i.seg3_num_load     segdriver.o
+    0x10002caa   0x10002caa   0x00000016   Code   RO         3081    i.seg3_show         segdriver.o
+    0x10002cc0   0x10002cc0   0x00000140   Code   RO         3082    i.seg4_num_load     segdriver.o
+    0x10002e00   0x10002e00   0x00000016   Code   RO         3083    i.seg4_show         segdriver.o
+    0x10002e16   0x10002e16   0x00000140   Code   RO         3084    i.seg5_num_load     segdriver.o
+    0x10002f56   0x10002f56   0x00000016   Code   RO         3085    i.seg5_show         segdriver.o
+    0x10002f6c   0x10002f6c   0x00000140   Code   RO         3086    i.seg6_num_load     segdriver.o
+    0x100030ac   0x100030ac   0x00000016   Code   RO         3087    i.seg6_show         segdriver.o
+    0x100030c2   0x100030c2   0x00000140   Code   RO         3088    i.seg7_num_load     segdriver.o
+    0x10003202   0x10003202   0x00000016   Code   RO         3089    i.seg7_show         segdriver.o
+    0x10003218   0x10003218   0x00000140   Code   RO         3090    i.seg8_num_load     segdriver.o
+    0x10003358   0x10003358   0x00000016   Code   RO         3091    i.seg8_show         segdriver.o
+    0x1000336e   0x1000336e   0x00000002   PAD
+    0x10003370   0x10003370   0x00000018   Code   RO         3092    i.segSetUp          segdriver.o
+    0x10003388   0x10003388   0x000000f8   Code   RO         3093    i.segShow           segdriver.o
+    0x10003480   0x10003480   0x00000250   Code   RO         3094    i.seg_show_thread   segdriver.o
+    0x100036d0   0x100036d0   0x00000328   Code   RO         3095    i.stateShow         segdriver.o
+    0x100039f8   0x100039f8   0x00000020   Data   RO          737    .constdata          op.o
+    0x10003a18   0x10003a18   0x00000060   Data   RO         2212    .constdata          preprocess.o
 
 
 ==============================================================================
@@ -2098,38 +2034,35 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       112         10          0          6          0       1311   buzzdriver.o
-       736         30          0          0          0       2717   cmp.o
-       306         48          0          6         24       4422   defaultsetup.o
-       114         14          0          0          0        988   delay.o
-      6562        296         40         20        186      21682   displaydriver.o
-       216         36          0          0          0       2119   dma.o
-       280         22          0          0          0       2203   flash.o
-         0          0       4672          0          0       2088   fontlibs.o
-       634         18          0          0          0       5642   gpio.o
-       950        132          0         68          0      15957   interrupt.o
-      1496         58          0          6        108       6674   lightdriver.o
+         0          0          0          6          0        796   buzzdriver.o
+       736         30          0          0          0       2793   cmp.o
+       258         40          0          4         24       4025   defaultsetup.o
+       114         14          0          0          0       1020   delay.o
+         2          0          0         20        186      11573   displaydriver.o
+       216         36          0          0          0       2179   dma.o
+       280         22          0          0          0       2251   flash.o
+       896         18          0          0          0       7297   gpio.o
+      1066        152          0         68          0      15981   interrupt.o
+      1496         58          0          6        108       6786   lightdriver.o
         26          0          0          0          0         72   lpm.o
-        52         10          0          0          0       1365   main.o
-       380         30         32          0          0       2837   op.o
-       896         46         96          4       1068       5610   preprocess.o
-        32          6          0          0          0        445   saradc.o
-       448         44          0          0       1160       7546   segger_rtt.o
-       962          6         16          0          0       6513   segger_rtt_printf.o
-       270          0          0          0          0       3181   spi.o
-        72         26         76          0       1024        736   startup_tcasxxx.o
-       506        104          0          4          0       6025   system_tcasxxx.o
-      1452         94         28          0          0      68906   systemdriver.o
-       252          8          0          0          0       1380   tia.o
-       132          0          0          0          0       1248   timer.o
-         2          0          0          0          0        388   trace.o
-       806         24        262          0          0      13988   ug2864driver.o
-       112         14          0          0          0       1545   wdg.o
+        56         10          0          0          0       3669   main.o
+       380         30         32          0          0       2933   op.o
+       896         46         96          4       1068       5722   preprocess.o
+        32          6          0          0          0        457   saradc.o
+      4654        132          0         28          0      16656   segdriver.o
+         0          0          0          0        120       3210   segger_rtt.o
+        72         26         76          0       1024        752   startup_tcasxxx.o
+       506        104          0          4          0       6189   system_tcasxxx.o
+      1220         84          0          0          0      65866   systemdriver.o
+       252          8          0          0          0       1420   tia.o
+       132          0          0          0          0       1288   timer.o
+         2          0          0          0          0        404   trace.o
+       112         14          0          0          0       1593   wdg.o
 
     ----------------------------------------------------------------------
-     17862       1088       5224        116       3872     187588   Object Totals
+     13454        842        204        140       2808     164932   Object Totals
         36         12          0          0          0          0   (incl. Generated)
-        20          0          2          2        302          0   (incl. Padding)
+        14          0          0          0        278          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -2141,7 +2074,6 @@ Image component sizes
         34          0          0          0          0         68   llushr.o
         64          0          0          0          0         68   memmovea.o
         36          0          0          0          0        100   memseta.o
-        18          0          0          0          0         60   strcpy.o
         44          0          0          0          0         72   uidiv.o
        240          6          0          0          0         84   ddiv.o
        236          0          0          0          0        216   depilogue.o
@@ -2155,18 +2087,18 @@ Image component sizes
        122          0          0          0          0         72   fmul.o
 
     ----------------------------------------------------------------------
-      1574         28          0          0          0       1488   Library Totals
-         8          0          0          0          0          0   (incl. Padding)
+      1554         28          0          0          0       1428   Library Totals
+         6          0          0          0          0          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Name
 
-       268          0          0          0          0        508   mc_p.l
+       250          0          0          0          0        448   mc_p.l
       1298         28          0          0          0        980   mf_p.l
 
     ----------------------------------------------------------------------
-      1574         28          0          0          0       1488   Library Totals
+      1554         28          0          0          0       1428   Library Totals
 
     ----------------------------------------------------------------------
 
@@ -2175,15 +2107,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     19436       1116       5224        116       3872     182344   Grand Totals
-     19436       1116       5224        116       3872     182344   ELF Image Totals
-     19436       1116       5224        116          0          0   ROM Totals
+     15008        870        204        140       2808     161344   Grand Totals
+     15008        870        204        140       2808     161344   ELF Image Totals
+     15008        870        204        140          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                24660 (  24.08kB)
-    Total RW  Size (RW Data + ZI Data)              3988 (   3.89kB)
-    Total ROM Size (Code + RO Data + RW Data)      24776 (  24.20kB)
+    Total RO  Size (Code + RO Data)                15212 (  14.86kB)
+    Total RW  Size (RW Data + ZI Data)              2948 (   2.88kB)
+    Total ROM Size (Code + RO Data + RW Data)      15352 (  14.99kB)
 
 ==============================================================================
 

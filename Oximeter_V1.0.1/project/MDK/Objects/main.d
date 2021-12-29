@@ -22,3 +22,12 @@
 .\objects\main.o: ..\driver\inc\interrupt.h
 .\objects\main.o: ..\driver\inc\wdg.h
 .\objects\main.o: ..\driver\inc\delay.h
+.\objects\main.o: ..\Users\FuncDrivers\LightDriver.h
+.\objects\main.o: ..\Users\SegDrivers\SegDriver.h
+.\objects\main.o: ..\midware\pt-1.4\pt-1.4\pt.h
+.\objects\main.o: ..\midware\pt-1.4\pt-1.4\lc.h
+.\objects\main.o: ..\midware\pt-1.4\pt-1.4\lc-switch.h
+.\objects\main.o: ..\midware\pt-1.4\pt-1.4\pt-sem.h
+.\objects\main.o: ..\driver\inc\gpio.h
+.\objects\main.o: ..\Users\OledDrivers\DisplayDriver.h
+.\objects\main.o: ..\Users\OledDrivers\UG2864Driver.h
